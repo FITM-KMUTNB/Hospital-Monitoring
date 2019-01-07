@@ -20,8 +20,8 @@ services:
             - MYSQL_DATABASE=hosmonitor
             - MYSQL_USER=admin
             - MYSQL_PASSWORD=dinsorsee
-        ports:
-            - 3306:3306
+        expose:
+            - "3306"
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         container_name: hos_monitor_phpmyadmin
@@ -34,4 +34,4 @@ services:
         depends_on:
             - database
         ports:
-            - 3031:80
+            - "3031:80"
