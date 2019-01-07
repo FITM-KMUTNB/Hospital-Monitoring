@@ -1,22 +1,6 @@
 version: '3.7'
 services:
-    nginx:
-        build:
-            context: ./docker/nginx
-        container_name: hos_monitor_nginx
-        volumes:
-            - ./app/:/var/app/public
-        ports:
-            - "80:80"
-    phpfpm:
-        build:
-            context: ./docker/php7-fpm
-        container_name: hos_monitor_phpfpm
-        volumes:
-            - ./app/:/var/app/public
-        expose:
-            - "9000"
-    weba:
+    phpapp:
         image: tutum/apache-php
         container_name: hos_monitor_apache
         environment:
