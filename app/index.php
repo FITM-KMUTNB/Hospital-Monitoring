@@ -64,7 +64,7 @@ $devices->listDevices($space->id,$_GET['zone']);
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
-<link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.0.9/css/fontawesome-all.min.css"/>
 </head>
 <body>
 
@@ -72,7 +72,7 @@ $devices->listDevices($space->id,$_GET['zone']);
 <div id="filter"></div>
 
 <header class="header">
-	<div class="btn" id="btn-space-toggle"><i class="fa fa-align-left" aria-hidden="true"></i></div>
+	<div class="btn" id="btn-space-toggle"><i class="far fa-bars"></i></div>
 	<?php if(count($allzone) > 0){?>
 	<a href="space/<?php echo $space->id;?>" class="navi-items <?php echo (empty($_GET['zone'])?'-active':'');?>" target="_parent">ดูทั้งหมด</a>
 	<?php }?>
