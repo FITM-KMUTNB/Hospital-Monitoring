@@ -58,7 +58,7 @@ if(!empty($space->id)){
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
-<link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/all.min.css"/>
 </head>
 <body>
 <div id="progress-bar"></div>
