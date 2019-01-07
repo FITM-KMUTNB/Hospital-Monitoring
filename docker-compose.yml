@@ -34,4 +34,4 @@ services:
         depends_on:
             - database
         ports:
-            - "3031:80"
+            - "9001:80"
