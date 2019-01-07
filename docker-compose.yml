@@ -24,7 +24,7 @@ services:
         ports:
             - "9000:80"
         volumes:
-            - ./app/:/var/app/public
+            - ./app:/app
     database:
         image: mariadb:10.3.9
         container_name: hos_monitor_mariadb

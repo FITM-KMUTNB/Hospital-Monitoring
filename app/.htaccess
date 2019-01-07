@@ -1,0 +1,29 @@
+RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^device/([0-9]+)$ /device.php?device=$1 [L]
+RewriteRule ^newdevice/space/([0-9]+)$ /device-editor.php?space=$1 [L]
+RewriteRule ^editdevice/([0-9]+)$ /device-editor.php?device=$1 [L]
+
+RewriteRule ^newspace$ /space-editor.php [L]
+RewriteRule ^editspace/([0-9]+)$ /space-editor.php?id=$1 [L,QSA]
+
+RewriteRule ^/?space/([0-9]+)/([^_]*)$ /index.php?space=$1&zone=$2 [L]
+RewriteRule ^/?space/([0-9]+)$ /index.php?space=$1 [L]
+
+RewriteRule ^invite$ /invite.php [L]
+
+RewriteRule ^signin$ /login.php [L]
+RewriteRule ^signup$ /register.php [L]
+RewriteRule ^logout$ /logout.php [L]
+
+ErrorDocument 400     /error-404.php
+ErrorDocument 401     /error-404.php
+ErrorDocument 403     /error-403.php
+ErrorDocument 404     /error-404.php
+ErrorDocument 500     /error-500.php
+ErrorDocument 503     /error-500.php
