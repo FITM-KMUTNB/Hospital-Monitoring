@@ -1,0 +1,126 @@
+// @font-face {
+//     font-family: 'Mitr';
+//     src: url('../font/mitr/mitr.eot');
+//     src: url('../font/mitr/mitr.eot?#iefix') format('embedded-opentype'),
+//          url('../font/mitr/mitr.woff') format('woff'),
+//          url('../font/mitr/mitr.ttf') format('truetype'),
+//          url('../font/mitr/mitr.svg#mitr') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+@FontStylePrimary   :sans-serif;
+@topic_font         :sans-serif;
+
+// http://www.color-hex.com/color/21ce99
+@primary_color      :#21ce99; // Active Color
+@primary_color_dark :#093d2d;
+@primary_color_light:#bcf0e0;
+
+@second_color       :#e74c3c; // Alert Color
+@second_color_dark  :#451612; // Alert Color
+@second_color_light :#f3a59d; // Alert Color
+
+@third_color        :#ff9800; // Lost Color
+@third_color_dark   :#4c2d00; // Lost Color
+@third_color_light  :#ffcb7f; // Lost Color
+
+// http://www.color-hex.com/color/040d14
+@bg_color           :#040d14;
+@bg_color_dark      :#030a10;
+@bg_color_light     :#1d252b;
+
+@text_active_color  :#FFFFFF;
+@text_normal_color  :#BBBBBB;
+
+@text_dark_color    :#0d5e4e;
+@black_color        :#000000;
+
+@border_color       :#14191e;
+
+html {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+a[href], button {
+    -ms-touch-action: none; /* IE10 */
+    touch-action: none;     /* IE11 */
+}
+
+body{
+    background: @bg_color;
+    font-family: @topic_font;
+    font-weight: 200;
+    // overflow-y:scroll;
+    overflow-x:hidden;
+}
+
+// Freebie: Google Material Design Shadow Helper
+// https://medium.com/@Florian/freebie-google-material-design-shadow-helper-2a0501295a2d
+// by Florian Kutschera
+.boxShadow(@level:1){
+	@level:1;
+	& when (@level = 1) {
+		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	}
+	& when (@level = 2) {
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	}
+	& when (@level = 3) {
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	}
+	& when (@level = 4) {
+		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	}
+	& when (@level = 5) {
+		box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+	}
+}
+
+@-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+    40% {-webkit-transform: translateY(-10px);}
+    60% {-webkit-transform: translateY(-5px);}
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+.bounce{
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+
+    -webkit-animation-iteration-count:infinite;
+    animation-iteration-count:infinite;
+}
+
+// Animation of Textarea
+.animated{
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+}
+
+.transitionAnimation(@s){
+    transition:all @s ease-in-out;
+    -moz-transition:all @s ease-in-out;
+    -webkit-transition:all @s ease-in-out;
+    -o-transition:all @s ease-in-out;
+}
+
+
+// background: red; /* For browsers that do not support gradients */
+// background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)); /* For Safari 5.1 to 6.0 */
+// background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)); /* For Opera 11.1 to 12.0 */
+// background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)); /* For Firefox 3.6 to 15 */
+// background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)); /* Standard syntax */

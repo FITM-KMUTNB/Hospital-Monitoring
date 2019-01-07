@@ -1,0 +1,189 @@
+.header{
+	.title{
+		width: 80%;
+		padding: 16px 0px;
+		height: 28px;
+		display: inline-block;
+
+		.name{ line-height: 1.3em; }
+		.location{ font-size: 0.75em; }
+	}
+
+	.mobile-title{
+		width: 80%;
+		display: inline-block;
+	}
+	.navi-items{ display: none; }
+	.btn{
+		width: 10%;
+		padding: 22px 0%;
+		height: 16px;
+		&.btn-zone-toggle{ display: inline-block; }
+	}
+}
+
+.container{
+	width: 93%;
+	margin: 5% 3.5%;
+	margin-top: 60px;
+
+	.temp-card{
+		width: 48%;
+		margin-top: 2%;
+		margin-right: 0%;
+
+		&:nth-child(2n+0){ margin-left: 2%; }
+
+		.icon{
+			width: 17%;
+			padding: 6% 0%;
+			font-size: 1.8em;
+		}
+
+		.detail{
+			width: 55%;
+			padding-top: 5.5%;
+			line-height: 1.1em;
+
+			.name{ font-size: 1.2em; }
+			.desc{ font-size: 0.7em; }
+		}
+		a.temp{
+			width: 25%;
+			padding: 6% 0%;
+			padding-right: 3%;
+			font-size: 1.8em;
+		}
+
+		.status{
+			right: 2%;
+			font-size: 0.5em;
+		}
+	}
+}
+
+.logout{ margin-top: 45%; }
+.login{
+	.welcome{
+		width: 60%;
+		margin: 10% 20%;
+
+		.logo{
+			width: 20%;
+			margin: 3% 40%;
+		}
+		h1{ font-size: 2.2em; }
+		p{ font-size: 1em; }
+	}
+	.detail{
+		width: 40%;
+		padding: 0% 30%;
+		margin: 0%;
+		border: 0px;
+
+		.input-text{ margin-bottom: 3%; }
+		.btn{
+			padding: 5%;
+			margin-top: 5%;
+		}
+	}
+}
+
+.form{
+	width: 80%;
+	margin: 0% 10%;
+	padding-bottom: 10%;
+
+	h2{ display: none; }
+	.form-items{
+		margin-top: 5%;
+		margin-bottom: 0%;
+
+		.input{
+			button.btn{ padding: 5% 7%; }
+			a.btn-nav{ padding: 5% 7%; }
+		}
+	}
+}
+
+.device-head{
+	width: 80%;
+	margin: 0% 10%;
+	padding: 7% 0%;
+
+	.title{ display: none; }
+	.current{ width: 100%; }
+}
+
+.device-info{
+	width: 80%;
+	margin: 0% 10%;
+
+	.info{
+		width: 90%;
+		padding: 1% 5%;
+	}
+
+	.graph{
+		margin-top: 5%;
+		height: 200px;
+
+		canvas{ height: 200px; }
+	}
+}
+
+.device-history{
+	width: 80%;
+	margin: 0% 10%;
+
+	.history{
+		width: 100%;
+		padding: 5% 0%;
+		background: transparent;
+
+		.logitems{
+			padding: 3.5% 0%;
+
+			.id{ width: 30%; }
+			.time{ width: 40%; }
+			.temp{ width: 20%; }
+			.icon{ width: 10%; }
+		}
+	}
+}
+
+.footer{
+	width: 93%;
+	padding: 1% 3.5%;
+}
+
+.slide-panel{
+	left: -35%;
+	width: 35%;
+
+	&.-zone-panel{ right: -35%; }
+}
+
+.message-box{
+	padding: 40% 0%;
+
+	&.-minibox{
+		padding: 10% 0%;
+		.msg{ margin-bottom: 5%; }
+	}
+
+	.icon{ font-size: 4em; }
+	.msg{
+		margin-bottom: 8%;
+		font-size: 1.8em;
+	}
+}
+
+#disconnect-bar{
+	line-height: 1.5em;
+
+	i{
+		margin-right: 5px;
+		font-size: 1em;
+	}
+}
