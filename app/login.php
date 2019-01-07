@@ -65,8 +65,8 @@ if(!empty($space->id)){
 <form class="login" action="javascript:login();">
 	<div class="welcome">
 		<div class="logo"><img src="image/logo.png" alt=""></div>
-		<h1><a href="index.php">Bhubejhr Monitor</a></h1>
-		<p>โรงพยาบาลเจ้าพระยาอภัยภูเบศร</p>
+		<h1><a href="index.php"><?php echo TITLE;?></a></h1>
+		<p><?php echo DESCRIPTION;?></p>
 	</div>
 	<div class="detail">
 		<p>ยังไม่มีบัญชี <a href="signup<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">ลงทะเบียน<i class="fa fa-external-link" aria-hidden="true"></i></a></p>

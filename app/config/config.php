@@ -7,9 +7,9 @@ define("DB_PASS" 	,"dinsorsee");
 define("DOMAIN" 	,"http://".$_SERVER['SERVER_NAME'].":9000");
 
 // SITE SETUP
-define("TITLE" 		,'Bhubejhr Monitor');
-define("DESCRIPTION",'Internet of Things (IoT) monitoring โรงพยาบาลเจ้าพระยาอภัยภูเบศร');
-define("SITENAME"	,'BhubejhrMonitor');
+define("TITLE" 		,'Hospital Monitoring');
+define("DESCRIPTION",'Internet of Things (IoT) Hospital monitoring.');
+define("SITENAME"	,'HospitalMonitoring');
 
 // SITE SECRET KEY
 define("SECRET_KEY"	,'dinsorsee');
