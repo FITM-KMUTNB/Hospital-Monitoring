@@ -70,13 +70,13 @@ if(!empty($space->id)){
 		<p><?php echo DESCRIPTION;?></p>
 	</div>
 	<div class="detail -register">
-		<p>ถ้าคุณมีบัญชีอยู่แล้ว <a href="signin<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">เข้าระบบ<i class="fa fa-external-link" aria-hidden="true"></i></a></p>
 		<input class="input-text" type="text" id="name" placeholder="ชื่อ - นามสกุล" autofocus>
 		<input class="input-text" type="email" id="email" placeholder="อีเมล">
 		<input class="input-text" type="password" id="password" placeholder="รหัสผ่าน">
 		<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('register',SECRET_KEY);?>">
 		<input type="hidden" id="invite_code" value="<?php echo $_GET['invite'];?>">
 		<button id="btn-register" class="btn">ลงทะเบียน<?php echo (!empty($space->id)?'และร่วมกลุ่ม':'');?></button>
+		<p>ถ้าคุณมีบัญชีอยู่แล้ว <a href="signin<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">เข้าระบบ<i class="fa fa-external-link" aria-hidden="true"></i></a></p>
 	</div>
 </form>
 

@@ -425,116 +425,96 @@ body {
 }
 .login {
   width: 100%;
-  margin: 0%;
-  float: left;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
 }
-.login .welcome {
-  width: 50%;
-  float: left;
-  display: inline-block;
+.login div {
+  width: 28%;
+  margin: 0 36%;
   text-align: center;
-  margin-top: 17%;
 }
-.login .welcome .logo {
-  width: 16%;
-  margin: 3% 42%;
+.login div .logo {
+  width: 30%;
+  margin: 0 35%;
+  margin-bottom: 5%;
   float: left;
-  display: inline-block;
+  display: block;
 }
-.login .welcome .logo img {
+.login div .logo img {
   width: 100%;
   float: left;
-  display: inline-block;
+  display: block;
 }
-.login .welcome h1 {
+.login div h1 {
   width: 100%;
   float: left;
-  display: inline-block;
-  font-size: 2.8em;
+  display: block;
+  font-size: 2.2em;
 }
-.login .welcome h1 a {
+.login div h1 a {
   text-decoration: none;
   color: #000000;
 }
-.login .welcome p {
+.login div p {
   width: 100%;
   float: left;
-  display: inline-block;
+  display: block;
   color: #111111;
-  font-size: 1em;
+  font-size: 1.1em;
 }
-.login .detail {
-  width: 21%;
-  padding: 0% 14%;
-  float: right;
-  display: inline-block;
-  border-left: 1px solid #eeeeee;
-  margin-top: 17%;
-}
-.login .detail.-register .input-text {
-  color: #ff9800;
-}
-.login .detail.-register .input-text:focus {
-  border: 1px solid #ff9800;
-  color: #ff9800;
-}
-.login .detail.-register .btn {
-  background: #ff9800;
-}
-.login .detail.-register .btn.-loading {
-  color: #ff9800;
-}
-.login .detail.-register p a {
-  color: #4095c8;
-}
-.login .detail .input-text {
-  width: 90%;
+.login div .input-text {
+  width: 88%;
   float: left;
-  display: inline-block;
-  font-size: 1em;
+  display: block;
+  font-size: 1.1em;
   border: 0px;
-  padding: 5%;
-  background: #eeeeee;
+  padding: 5% 6%;
+  background: #dddddd;
   color: #4095c8;
   margin: 0%;
   margin-bottom: 5%;
-  border-radius: 2px;
+  border-radius: 5px;
   font-family: sans-serif;
   line-height: 1.5em;
-  border: 1px solid #1d252b;
+  border: 0;
 }
-.login .detail .input-text:focus {
+.login div .input-text:focus {
   color: #4095c8;
-  border: 1px solid #4095c8;
 }
-.login .detail .btn {
+.login div .btn {
   width: 100%;
   float: left;
-  display: inline-block;
-  font-size: 1em;
-  line-height: 1.5em;
+  display: block;
+  font-size: 1.1em;
   border: 0px;
-  padding: 4% 5%;
+  padding: 5%;
   margin: 0%;
-  border-radius: 2px;
+  margin-bottom: 10%;
+  border-radius: 5px;
   background: #4095c8;
   color: #ffffff;
-  margin-top: 5%;
   font-family: sans-serif;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.25);
 }
-.login .detail .btn i {
+.login div .btn i {
   margin-left: 10px;
   font-size: 0.9em;
 }
-.login .detail .btn:hover {
+.login div .btn:hover {
   cursor: pointer;
+  background: #3581c2;
 }
-.login .detail .btn.-loading {
+.login div .btn.-loading {
   background: transparent;
   color: #4095c8;
 }
-.login .detail p {
+.login div p {
   width: 100%;
   float: left;
   display: inline-block;
@@ -543,15 +523,15 @@ body {
   margin-bottom: 10%;
   text-align: center;
 }
-.login .detail p i {
+.login div p i {
   margin-left: 5px;
   font-size: 0.8em;
 }
-.login .detail p a {
-  color: #ff9800;
+.login div p a {
+  color: #4095c8;
   text-decoration: none;
 }
-.login .detail p a:hover {
+.login div p a:hover {
   text-decoration: underline;
 }
 .form {
@@ -569,7 +549,7 @@ body {
   display: inline-block;
   font-size: 3em;
   color: #000000;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #dddddd;
   text-align: center;
 }
 .form .form-items {
@@ -607,7 +587,7 @@ body {
   border: 0px;
   margin: 0px;
   line-height: 1.2em;
-  background: #eeeeee;
+  background: #dddddd;
   color: #4095c8;
   font-family: sans-serif;
   border-radius: 2px;
@@ -658,7 +638,7 @@ body {
   font-size: 1em;
   border: 0px;
   line-height: 1.3em;
-  background: #eeeeee;
+  background: #dddddd;
   color: #4095c8;
   border-radius: 2px;
   font-family: sans-serif;
@@ -822,7 +802,7 @@ body {
   line-height: 1.5em;
   background: transparent;
   color: #4095c8;
-  border: 1px solid #eeeeee;
+  border: 1px solid #dddddd;
   border-radius: 2px;
   margin: 0px;
 }
@@ -935,7 +915,7 @@ body {
   padding: 4% 0%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #dddddd;
   font-size: 1em;
   line-height: 1em;
 }
@@ -1012,7 +992,7 @@ body {
   padding: 3.5% 0%;
   float: left;
   display: inline-block;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #dddddd;
   font-size: 1em;
   color: #111111;
   line-height: 1em;
@@ -2120,7 +2100,7 @@ body {
     margin-bottom: 0%;
   }
   .form .form-items.toggle-type {
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid #dddddd;
   }
   .form .form-items.toggle-type .label {
     width: 50%;
