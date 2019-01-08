@@ -72,7 +72,7 @@ if(!empty($space->id)){
 		<input class="input-text" type="password" id="password" placeholder="รหัสผ่าน">
 		<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('login',SECRET_KEY);?>">
 		<button id="btn-login" class="btn">เข้าสู่ระบบ<?php echo (!empty($space->id)?'และร่วมกลุ่ม':'');?></button>
-		<p>ยังไม่มีบัญชี <a href="signup<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">ลงทะเบียน<i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+		<p>ยังไม่มีบัญชี <a href="signup<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">ลงทะเบียน<i class="fal fa-link"></i></a></p>
 
 		<input type="hidden" id="redirect_page" value="<?php echo $_GET['redirect'];?>">
 		<input type="hidden" id="redirect_id" value="<?php echo $_GET['id'];?>">

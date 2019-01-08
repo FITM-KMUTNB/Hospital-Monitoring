@@ -194,16 +194,16 @@ function historyRender(dataset){
 
         switch (v.log_state) {
             case 'up':
-                icon = '<i class="fa fa-arrow-up" aria-hidden="true"></i>';
+                icon = '<i class="far fa-arrow-up"></i>';
                 break;
             case 'down':
-                icon = '<i class="fa fa-arrow-down" aria-hidden="true"></i>';
+                icon = '<i class="far fa-arrow-down"></i>';
                 break;
             default: 
                 ;
         }
 
-        if(v.alert) alert = '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>';
+        if(v.alert) alert = '<i class="far fa-exclamation-triangle"></i>';
 
         html +='<div class="logitems">';
         html +='<div class="id">#'+v.log_id+alert+'</div>';

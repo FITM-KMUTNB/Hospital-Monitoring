@@ -54,7 +54,7 @@ $allzone = $space->listZone($space->id);
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
-<link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.0.9/css/fontawesome-all.min.css"/>
 
 </head>
 <body>
@@ -65,10 +65,8 @@ $allzone = $space->listZone($space->id);
 	<a href="#" class="btn btn-hidden" target="_parent"><i class="fa fa-circle-thin" aria-hidden="true"></i></a>
 	<?php }?>
 
-	<div class="mobile-title"><a href="index.php">จัดการอุปกรณ์</a></div>
-
 	<?php if(!empty($devices->id)){?>
-	<a href="device/<?php echo $devices->id;?>" class="btn btn-setting" target="_parent"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+	<a href="device/<?php echo $devices->id;?>" class="btn btn-setting" target="_parent"><i class="fal fa-times"></i></a>
 	<?php }?>
 </header>
 <div class="form">
@@ -79,7 +77,7 @@ $allzone = $space->listZone($space->id);
 			<div class="label">รับข้อมูลจากอุปกรณ์</div>
 			<div class="input">
 				<div id="btn-status-toggle">
-					<?php echo ($devices->status == 'active'?'<i class="fa fa-toggle-on" aria-hidden="true"></i>':'<i class="fa fa-toggle-off" aria-hidden="true"></i>');?>
+					<?php echo ($devices->status == 'active'?'<i class="fal fa-toggle-on"></i>':'<i class="fal fa-toggle-off"></i>');?>
 				</div>
 			</div>
 		</div>
@@ -88,7 +86,7 @@ $allzone = $space->listZone($space->id);
 		<div class="label">การแจ้งเตือน</div>
 		<div class="input">
 			<div id="btn-notify-toggle">
-				<?php echo ($devices->notify == 'active'?'<i class="fa fa-toggle-on" aria-hidden="true"></i>':'<i class="fa fa-toggle-off" aria-hidden="true"></i>');?>
+				<?php echo ($devices->notify == 'active'?'<i class="fal fa-toggle-on"></i>':'<i class="fal fa-toggle-off"></i>');?>
 			</div>
 		</div>
 	</div>

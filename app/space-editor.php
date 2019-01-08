@@ -40,7 +40,7 @@ if(!empty($space->id) && isset($space->id)){
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
-<link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.0.9/css/fontawesome-all.min.css"/>
 
 </head>
 <body>
@@ -50,9 +50,6 @@ if(!empty($space->id) && isset($space->id)){
 	<?php }else{?>
 	<a href="space/<?php echo $space->id;?>" class="btn" target="_parent"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
 	<?php }?>
-
-	<div class="mobile-title"><a href="index.php">จัดการกลุ่ม</a></div>
-
 </header>
 <div class="form">
 	<h2>จัดการกลุ่ม</h2>
@@ -71,12 +68,12 @@ if(!empty($space->id) && isset($space->id)){
 		<div class="input">
 			<div class="list">
 				<?php foreach ($allzone as $var) {?>
-				<div class="list-items" id="zone-<?php echo $var['id'];?>" data-id="<?php echo $var['id'];?>"><span class="c"><i class="fa fa-location-arrow" aria-hidden="true"></i><?php echo $var['title'];?></span><span class="btn btn-zone-delete"><i class="fa fa-times" aria-hidden="true"></i></span></div>
+				<div class="list-items" id="zone-<?php echo $var['id'];?>" data-id="<?php echo $var['id'];?>"><span class="c"><i class="fal fa-map-pin"></i><?php echo $var['title'];?></span><span class="btn btn-zone-delete"><i class="fal fa-trash-alt"></i></span></div>
 				<?php }?>
 			</div>
 			<div class="list-input">
 				<input type="text" id="zone_title" class="input-list-text" placeholder="เพิ่มสถานที่...">
-				<div class="btn" id="btn-zone-save"><i class="fa fa-plus" aria-hidden="true"></i></div>
+				<div class="btn" id="btn-zone-save"><i class="far fa-plus"></i></div>
 			</div>
 		</div>
 	</div>
@@ -86,7 +83,7 @@ if(!empty($space->id) && isset($space->id)){
 		<div class="label">LINE Access Token</div>
 		<div class="input">
 			<input class="input-text" type="text" id="line_token" value="<?php echo $space->line_token;?>">
-			<p>คุณจำเป็นต้องมี Access Token จาก LINE Notify เพื่อใช้ในการแจ้งเตือน <a href="https://notify-bot.line.me/th/">ขอคีย์ได้ที่นี่<i class="fa fa-external-link-square" aria-hidden="true"></i></a></p>
+			<p>คุณจำเป็นต้องมี Access Token จาก LINE Notify เพื่อใช้ในการแจ้งเตือน <a href="https://notify-bot.line.me/th/">ขอคีย์ได้ที่นี่<i class="far fa-external-link-square"></i></a></p>
 		</div>
 	</div>
 

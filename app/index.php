@@ -72,7 +72,28 @@ $devices->listDevices($space->id,$_GET['zone']);
 <div id="filter"></div>
 
 <header class="header">
-	<div class="btn" id="btn-space-toggle"><i class="far fa-bars"></i></div>
+	<div class="logo"><img src="image/logo.png" alt=""></div>
+	<a class="logo-title" href="index.php"><?php echo TITLE;?></a>
+	<a class="btn btn-setting" href="logout" target="_parent"><i class="fal fa-power-off"></i></a>
+</header>
+
+<div class="container">
+	<div class="menu-list">
+		<?php foreach ($spacelist as $var){ ?>
+		<a class="btn <?php echo ($var['space_id'] == $space->id?'-active':'');?>" href="space/<?php echo $var['space_id'];?>">
+			<i class="fa fa-folder-o" aria-hidden="true"></i><?php echo $var['space_title'];?><?php echo ($var['total_device'] > 0 ? ' ('.$var['total_device'].')':'');?></a>
+		<?php }?>
+		<a href="newspace?back=<?php echo $space->id;?>"><i class="fal fa-plus"></i>สร้างกลุ่ม</a>
+	</div>
+
+	<?php if($hasSpace){?>
+	<div class="menu-list">
+		<a class="btn" href="editspace/<?php echo $space->id;?>"><i class="fal fa-cogs"></i>แก้ไขกลุ่ม</a>
+		<a class="btn" href="space-user.php?id=<?php echo $space->id;?>"><i class="fal fa-user-plus"></i>เพิ่มผู้ดูแล</a>
+		<a class="btn" href="newdevice/space/<?php echo $space->id;?>"><i class="fal fa-plus-circle"></i>เพิ่มอุปกรณ์</a>
+	</div>
+	<?php }?>
+
 	<?php if(count($allzone) > 0){?>
 	<a href="space/<?php echo $space->id;?>" class="navi-items <?php echo (empty($_GET['zone'])?'-active':'');?>" target="_parent">ดูทั้งหมด</a>
 	<?php }?>
@@ -81,45 +102,6 @@ $devices->listDevices($space->id,$_GET['zone']);
 	<a href="space/<?php echo $space->id;?>/<?php echo $var['id'];?>" class="navi-items <?php echo ($_GET['zone'] == $var['id']?'-active':'');?>" target="_parent"><?php echo $var['title'];?></a>
 	<?php }?>
 
-	<div class="mobile-title"><a href="index.php">Bhubejhr Monitor</a></div>
-
-	<div class="btn btn-zone-toggle" id="btn-zone-toggle"><i class="fa fa-location-arrow" aria-hidden="true"></i></div>
-</header>
-
-<div class="slide-panel" id="space-panel">
-	<div class="btn-close"><?php echo TITLE;?></div>
-
-	<?php if($hasSpace){?>
-	<div class="menu-list">
-		<a class="btn" href="editspace/<?php echo $space->id;?>"><i class="fa fa-cog" aria-hidden="true"></i>แก้ไขกลุ่ม</a>
-		<a class="btn" href="newdevice/space/<?php echo $space->id;?>"><i class="fa fa-plus-circle" aria-hidden="true"></i>เพิ่มอุปกรณ์</a>
-		<a class="btn" href="space-user.php?id=<?php echo $space->id;?>"><i class="fa fa-user-plus" aria-hidden="true"></i>เพิ่มผู้ดูแล</a>
-	</div>
-	<?php }?>
-
-	<div class="menu-list">
-		<?php foreach ($spacelist as $var){ ?>
-		<a class="btn <?php echo ($var['space_id'] == $space->id?'-active':'');?>" href="space/<?php echo $var['space_id'];?>">
-			<i class="fa fa-folder-o" aria-hidden="true"></i><?php echo $var['space_title'];?><?php echo ($var['total_device'] > 0 ? ' ('.$var['total_device'].')':'');?></a>
-		<?php }?>
-		<a class="btn" href="newspace?back=<?php echo $space->id;?>"><i class="fa fa-plus-square-o" aria-hidden="true"></i>สร้างกลุ่มใหม่</a>
-	</div>
-	<div class="menu-list -profile">
-		<a class="btn btn-logout" href="logout"><i class="fa fa-sign-out" aria-hidden="true"></i>ออกจาก <?php echo $user->fname;?></a>
-	</div>
-</div>
-
-<div class="slide-panel -zone-panel" id="zone-panel">
-	<div class="btn-close">สถานที่</div>
-
-	<div class="menu-list">
-		<?php foreach ($allzone as $var){ ?>
-		<a class="btn -location-items <?php echo ($_GET['zone'] == $var['id']?'-active':'');?>" href="space/<?php echo $space->id;?>/<?php echo $var['id'];?>" target="_parent"><i class="fa fa-location-arrow" aria-hidden="true"></i><?php echo $var['title'];?></a>
-		<?php }?>
-	</div>
-</div>
-
-<div class="container">
 	<?php if(!$hasSpace){?>
 	<div class="message-box">
 		<div class="icon"><i class="fa fa-cube" aria-hidden="true"></i></div>
@@ -127,7 +109,6 @@ $devices->listDevices($space->id,$_GET['zone']);
 		<div class="control"><a href="newspace" class="btn">สร้างกลุ่มใหม่</a></div>
 	</div>
 	<?php }else{?>
-
 		<?php if($space->total_device > 0){?>
 			<?php if(empty($space->line_token)){?>
 				<div class="message-box -minibox">

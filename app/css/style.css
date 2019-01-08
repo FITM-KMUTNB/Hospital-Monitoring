@@ -193,57 +193,39 @@ body {
   width: 100%;
   height: 60px;
   float: left;
-  display: inline-block;
+  display: block;
   z-index: 99;
-  background: #030a10;
-  font-family: sans-serif;
 }
-.header.-nonfixed {
-  position: relative;
-  background: transparent;
-  box-shadow: none;
-}
-.header .mobile-title {
+.header .logo {
   float: left;
-  padding: 18px 0%;
-  height: 18px;
-  font-size: 1.2em;
-  text-decoration: none;
-  line-height: 1em;
-  text-align: center;
-  display: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  display: block;
+  height: 60px;
 }
-.header .mobile-title a {
-  color: #000000;
-  text-decoration: none;
+.header .logo img {
+  height: 60px;
 }
-.header .title {
-  width: 90%;
+.header a.logo-title {
   float: left;
-  display: inline-block;
+  display: block;
   padding: 24px 0%;
   height: 12px;
   font-size: 1.2em;
   text-decoration: none;
   line-height: 1em;
-  color: #000000;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  background: #999999;
 }
-.header .title i {
+.header a.logo-title i {
   margin-right: 5px;
 }
 .header .navi-items {
   float: left;
-  display: inline-block;
+  display: block;
   padding: 22px 0%;
   margin-right: 1.5%;
   height: 16px;
-  color: #000000;
   font-size: 1.2em;
   text-decoration: none;
   line-height: 1em;
@@ -829,16 +811,12 @@ body {
   color: #64bee3;
 }
 .device-info {
-  position: fixed;
-  top: 100px;
-  width: 29%;
-  padding: 3%;
-  border: 1px solid #1d252b;
-  right: 15%;
+  width: 34%;
+  margin: 0 33%;
   float: left;
-  display: inline-block;
+  display: block;
   border-radius: 3px;
-  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+  background: #DDDDDD;
 }
 .device-info .current {
   width: 100%;
@@ -958,11 +936,12 @@ body {
   height: 250px;
 }
 .device-history {
-  width: 27%;
-  margin-left: 20%;
+  width: 34%;
+  margin: 0 33%;
   float: left;
-  display: inline-block;
-  margin-top: 40px;
+  display: block;
+  border-radius: 3px;
+  background: #DDDDDD;
 }
 .device-history .history {
   width: 100%;
