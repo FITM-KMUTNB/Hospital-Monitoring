@@ -6,97 +6,146 @@
 	top: 0px;
 	left: 0px;
 	width: 100%;
-	height: 60px;
+	height: 80px;
 	float: left;
 	display: block;
-	z-index: 99;
+	z-index: -1;
 
-	.logo {
+	a.btn-icon {
 		float: left;
 		display: block;
-		height: 60px;
+		font-size: 1.8em;
+		width: 80px;
+		height: 40px;
+		padding: 20px 0;
+		text-align: center;
+		color: #666666;
+
+		&.right {
+			float: right;
+		}
+
+		&:hover {
+			color: #000000;
+		}
+	}
+
+	a.logo-icon {
+		float: left;
+		display: block;
+
 		img {
 			height: 60px;
+		padding: 10px;
 		}
 	}
 
 	a.logo-title{
 		float: left;
 		display: block;
-		padding: 24px 0%;
-		height: 12px;
-		font-size: 1.2em;
+		font-size: 2em;
+		height: 40px;
+		padding: 20px 10px;
 		text-decoration: none;
-		line-height: 1em;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		overflow: hidden;
-		background: #999999;
-
-		i{ margin-right: 5px; }
-	}
-
-	.navi-items{
-		float: left;
-		display: block;
-		padding: 22px 0%;
-		margin-right: 1.5%;
-		height: 16px;
-		font-size: 1.2em;
-		text-decoration: none;
-		line-height: 1em;
-
-		&:hover{ cursor: pointer; }
-		&.-active{ color: @primary_color; }
-	}
-
-	.btn{
-		width: 5%;
-		float: left;
-		display: inline-block;
-		padding: 22px 0%;
-		height: 16px;
-		color: @primary_color;
-		font-size: 1.3em;
-		text-decoration: none;
-		line-height: 1em;
-		text-align: center;
-
-		&.btn-hidden{ visibility: hidden; }
-		&.btn-zone-toggle{
-			float: right;
-			display: none;
-		}
-
-		&.btn-setting{ float: right; }
-		&:hover{ cursor: pointer; }
-		&:active{ color: #999999; }
+		line-height: 1.3em;
+		color: #000000;
 	}
 }
 
 .container{
-	width: 90%;
-	margin: 5%;
-	margin-top: 60px;
+	width: 60%;
+	margin: 5% 20%;
+	margin-top: 80px;
 	float: left;
-	display: inline-block;
+	display: block;
+
+	.space-list {
+		width: 100%;
+		float: left;
+		display: block;
+		margin-top: 20px;
+
+		a.link {
+			float: left;
+			padding: 10px 20px;
+			display: block;
+			text-decoration: none;
+			font-size: 1.2em;
+			border-radius: 20px;
+			border: 1px solid #EEEEEE;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			line-height: 1em;
+			color: #999999;
+			background: #FAFAFA;
+
+			&.active {
+				color: #FFFFFF;
+				background: @primary_color;
+				border: 1px solid @primary_color;
+			}
+
+			&.button {
+				background: transparent;
+				border: 1px dashed #AAAAAA;
+				i {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+
+	.option-list {
+		width: 100%;
+		float: left;
+		display: block;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		border-bottom: 2px solid #DDDDDD;
+
+		.button {
+			float: left;
+			display: block;
+			font-size: 1.1em;
+			text-decoration: none;
+			padding: 15px 0;
+			margin-right: 20px;
+			color: #666666;
+
+			&.active {
+				color: @primary_color;
+			}
+
+			&.right {
+				float: right;
+				margin: 0;
+				margin-left: 20px;
+
+				i {
+					margin-right: 5px;
+				}
+			}
+		}
+	}
 
 	.temp-card{
-		width: 19.2%;
-		padding: 2% 0%;
-		margin-top: 1%;
-		margin-right: 1%;
+		width: 32%;
+		height: 180px;
+		margin-right: 2%;
+		margin-bottom: 2%;
 		float: left;
-		display: inline-block;
+		display: block;
 		font-family: @topic_font;
-		border-radius: 2px;
-		background: @bg_color_light;
+		border-radius: 5px;
+		background: #EEEEEE;
 		color: @text_normal_color;
 		overflow: hidden;
 		position: relative;
 		text-align: center;
 
-		&:nth-child(5n+0){ margin-right: 0%; }
+		&:nth-child(3n+0){
+			margin-right: 0%;
+		}
 		
 		&.-active{
 			background: @primary_color;
@@ -614,8 +663,8 @@
 }
 
 .device-info{
-	width: 34%;
-	margin: 0 33%;
+	width: 40%;
+	margin: 80px 30%;
 	float: left;
 	display: block;
 	border-radius: 3px;
@@ -827,45 +876,17 @@
 }
 
 .footer{
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	width: 90%;
-	padding: 1% 5%;
+	width: 40%;
+	padding: 3% 30%;
 	float: left;
-	display: inline-block;
-	color: @text_normal_color;
-	font-size: 0.7em;
+	display: block;
+	color: #666666;
+	font-size: 1em;
+	text-align: center;
+	font-style: italic;
 
 	i{
-		margin-right: 3px;
-		font-size: 0.8em;
-	}
-
-	.note{
-		width: 50%;
-		float: left;
-		display: inline-block;
-		color: @text_normal_color;
-
-		span{
-			float: left;
-			display: inline-block;
-			margin-right: 10px;
-		}
-
-		.active i{ color: @primary_color; }
-		.alert i{ color: @second_color; }
-		.lostconnect i{ color: @third_color; }
-	}
-
-	.executetime{
-		width: 50%;
-		float: left;
-		display: inline-block;
-		text-align: right;
-
-		span{ color: @text_active_color; }
+		margin-right: 5px;
 	}
 }
 

@@ -72,34 +72,32 @@ $devices->listDevices($space->id,$_GET['zone']);
 <div id="filter"></div>
 
 <header class="header">
-	<div class="logo"><img src="image/logo.png" alt=""></div>
+	<a class="logo-icon" href="index.php"><img src="image/logo.png" alt=""></a>
 	<a class="logo-title" href="index.php"><?php echo TITLE;?></a>
-	<a class="btn btn-setting" href="logout" target="_parent"><i class="fal fa-power-off"></i></a>
+	<a class="btn-icon right" href="logout" target="_parent"><i class="fal fa-power-off"></i></a>
 </header>
 
 <div class="container">
-	<div class="menu-list">
+	<div class="space-list">
 		<?php foreach ($spacelist as $var){ ?>
-		<a class="btn <?php echo ($var['space_id'] == $space->id?'-active':'');?>" href="space/<?php echo $var['space_id'];?>">
+		<a class="link <?php echo ($var['space_id'] == $space->id?'active':'');?>" href="space/<?php echo $var['space_id'];?>">
 			<i class="fa fa-folder-o" aria-hidden="true"></i><?php echo $var['space_title'];?><?php echo ($var['total_device'] > 0 ? ' ('.$var['total_device'].')':'');?></a>
 		<?php }?>
-		<a href="newspace?back=<?php echo $space->id;?>"><i class="fal fa-plus"></i>สร้างกลุ่ม</a>
+		<a class="link button" href="newspace?back=<?php echo $space->id;?>">สร้างกลุ่ม</a>
 	</div>
 
 	<?php if($hasSpace){?>
-	<div class="menu-list">
-		<a class="btn" href="editspace/<?php echo $space->id;?>"><i class="fal fa-cogs"></i>แก้ไขกลุ่ม</a>
-		<a class="btn" href="space-user.php?id=<?php echo $space->id;?>"><i class="fal fa-user-plus"></i>เพิ่มผู้ดูแล</a>
-		<a class="btn" href="newdevice/space/<?php echo $space->id;?>"><i class="fal fa-plus-circle"></i>เพิ่มอุปกรณ์</a>
+	<div class="option-list">
+		<?php if(count($allzone) > 0){?>
+		<a href="space/<?php echo $space->id;?>" class="button <?php echo (empty($_GET['zone'])?'active':'');?>" target="_parent">ดูทั้งหมด</a>
+		<?php }?>
+		<?php foreach ($allzone as $var){ ?>
+		<a href="space/<?php echo $space->id;?>/<?php echo $var['id'];?>" class="button <?php echo ($_GET['zone'] == $var['id']?'active':'');?>" target="_parent"><?php echo $var['title'];?></a>
+		<?php }?>
+
+		<a class="button right" href="editspace/<?php echo $space->id;?>"><i class="fal fa-cogs"></i>แก้ไขกลุ่ม</a>
+		<a class="button right" href="space-user.php?id=<?php echo $space->id;?>"><i class="fal fa-user-plus"></i>เพิ่มผู้ดูแล</a>
 	</div>
-	<?php }?>
-
-	<?php if(count($allzone) > 0){?>
-	<a href="space/<?php echo $space->id;?>" class="navi-items <?php echo (empty($_GET['zone'])?'-active':'');?>" target="_parent">ดูทั้งหมด</a>
-	<?php }?>
-
-	<?php foreach ($allzone as $var){ ?>
-	<a href="space/<?php echo $space->id;?>/<?php echo $var['id'];?>" class="navi-items <?php echo ($_GET['zone'] == $var['id']?'-active':'');?>" target="_parent"><?php echo $var['title'];?></a>
 	<?php }?>
 
 	<?php if(!$hasSpace){?>
@@ -120,6 +118,7 @@ $devices->listDevices($space->id,$_GET['zone']);
 				</div>
 			<?php }?>
 			<div class="templist">
+				<a class="temp-card craete-button" href="newdevice/space/<?php echo $space->id;?>"><i class="fal fa-plus-circle"></i>เพิ่มอุปกรณ์</a>
 			<?php
 			foreach ($devices->devices_set as $var) {
 				$status = ($var['status'] == 'active'?true:false);

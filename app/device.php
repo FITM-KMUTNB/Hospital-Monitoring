@@ -65,10 +65,10 @@ if(!$user_online){ // ไม่ออนไลน์
 
 <div id="disconnect-bar"><i class="fa fa-refresh fa-spin" aria-hidden="true"></i>ขาดการติดต่อ!</div>
 
-<header class="header -nonfixed">
-	<a href="space/<?php echo $devices->space_id;?>" class="btn btn-setting" target="_parent"><i class="fal fa-times"></i></a>
+<header class="header">
+	<a class="btn-icon" href="space/<?php echo $devices->space_id;?>" target="_parent"><i class="fal fa-arrow-left"></i></a>
 	<?php if($hasPermission && $user_online){?>
-	<a class="btn btn-setting" href="editdevice/<?php echo $devices->id;?>" target="_parent"><i class="fal fa-cog"></i></a>
+	<a class="btn-icon right" href="editdevice/<?php echo $devices->id;?>" target="_parent"><i class="fal fa-cog"></i></a>
 	<?php }?>
 </header>
 

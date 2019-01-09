@@ -191,102 +191,128 @@ body {
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 60px;
+  height: 80px;
   float: left;
   display: block;
-  z-index: 99;
+  z-index: -1;
 }
-.header .logo {
+.header a.btn-icon {
   float: left;
   display: block;
-  height: 60px;
+  font-size: 1.8em;
+  width: 80px;
+  height: 40px;
+  padding: 20px 0;
+  text-align: center;
+  color: #666666;
 }
-.header .logo img {
+.header a.btn-icon.right {
+  float: right;
+}
+.header a.btn-icon:hover {
+  color: #000000;
+}
+.header a.logo-icon {
+  float: left;
+  display: block;
+}
+.header a.logo-icon img {
   height: 60px;
+  padding: 10px;
 }
 .header a.logo-title {
   float: left;
   display: block;
-  padding: 24px 0%;
-  height: 12px;
-  font-size: 1.2em;
+  font-size: 2em;
+  height: 40px;
+  padding: 20px 10px;
   text-decoration: none;
-  line-height: 1em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  background: #999999;
-}
-.header a.logo-title i {
-  margin-right: 5px;
-}
-.header .navi-items {
-  float: left;
-  display: block;
-  padding: 22px 0%;
-  margin-right: 1.5%;
-  height: 16px;
-  font-size: 1.2em;
-  text-decoration: none;
-  line-height: 1em;
-}
-.header .navi-items:hover {
-  cursor: pointer;
-}
-.header .navi-items.-active {
-  color: #4095c8;
-}
-.header .btn {
-  width: 5%;
-  float: left;
-  display: inline-block;
-  padding: 22px 0%;
-  height: 16px;
-  color: #4095c8;
-  font-size: 1.3em;
-  text-decoration: none;
-  line-height: 1em;
-  text-align: center;
-}
-.header .btn.btn-hidden {
-  visibility: hidden;
-}
-.header .btn.btn-zone-toggle {
-  float: right;
-  display: none;
-}
-.header .btn.btn-setting {
-  float: right;
-}
-.header .btn:hover {
-  cursor: pointer;
-}
-.header .btn:active {
-  color: #999999;
+  line-height: 1.3em;
+  color: #000000;
 }
 .container {
-  width: 90%;
-  margin: 5%;
-  margin-top: 60px;
+  width: 60%;
+  margin: 5% 20%;
+  margin-top: 80px;
   float: left;
-  display: inline-block;
+  display: block;
+}
+.container .space-list {
+  width: 100%;
+  float: left;
+  display: block;
+  margin-top: 20px;
+}
+.container .space-list a.link {
+  float: left;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 20px;
+  border: 1px solid #EEEEEE;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  line-height: 1em;
+  color: #999999;
+  background: #FAFAFA;
+}
+.container .space-list a.link.active {
+  color: #FFFFFF;
+  background: #4095c8;
+  border: 1px solid #4095c8;
+}
+.container .space-list a.link.button {
+  background: transparent;
+  border: 1px dashed #AAAAAA;
+}
+.container .space-list a.link.button i {
+  margin-right: 10px;
+}
+.container .option-list {
+  width: 100%;
+  float: left;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #DDDDDD;
+}
+.container .option-list .button {
+  float: left;
+  display: block;
+  font-size: 1.1em;
+  text-decoration: none;
+  padding: 15px 0;
+  margin-right: 20px;
+  color: #666666;
+}
+.container .option-list .button.active {
+  color: #4095c8;
+}
+.container .option-list .button.right {
+  float: right;
+  margin: 0;
+  margin-left: 20px;
+}
+.container .option-list .button.right i {
+  margin-right: 5px;
 }
 .container .temp-card {
-  width: 19.2%;
-  padding: 2% 0%;
-  margin-top: 1%;
-  margin-right: 1%;
+  width: 32%;
+  height: 180px;
+  margin-right: 2%;
+  margin-bottom: 2%;
   float: left;
-  display: inline-block;
+  display: block;
   font-family: sans-serif;
-  border-radius: 2px;
-  background: #1d252b;
+  border-radius: 5px;
+  background: #EEEEEE;
   color: #111111;
   overflow: hidden;
   position: relative;
   text-align: center;
 }
-.container .temp-card:nth-child(5n+0) {
+.container .temp-card:nth-child(3n+0) {
   margin-right: 0%;
 }
 .container .temp-card.-active {
@@ -811,8 +837,8 @@ body {
   color: #64bee3;
 }
 .device-info {
-  width: 34%;
-  margin: 0 33%;
+  width: 40%;
+  margin: 80px 30%;
   float: left;
   display: block;
   border-radius: 3px;
@@ -1016,48 +1042,17 @@ body {
   color: #e74c3c;
 }
 .footer {
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  width: 90%;
-  padding: 1% 5%;
+  width: 40%;
+  padding: 3% 30%;
   float: left;
-  display: inline-block;
-  color: #111111;
-  font-size: 0.7em;
+  display: block;
+  color: #666666;
+  font-size: 1em;
+  text-align: center;
+  font-style: italic;
 }
 .footer i {
-  margin-right: 3px;
-  font-size: 0.8em;
-}
-.footer .note {
-  width: 50%;
-  float: left;
-  display: inline-block;
-  color: #111111;
-}
-.footer .note span {
-  float: left;
-  display: inline-block;
-  margin-right: 10px;
-}
-.footer .note .active i {
-  color: #4095c8;
-}
-.footer .note .alert i {
-  color: #e74c3c;
-}
-.footer .note .lostconnect i {
-  color: #ff9800;
-}
-.footer .executetime {
-  width: 50%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-}
-.footer .executetime span {
-  color: #000000;
+  margin-right: 5px;
 }
 #progress-bar {
   position: fixed;
