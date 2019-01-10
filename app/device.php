@@ -92,13 +92,13 @@ if(!$user_online){ // ไม่ออนไลน์
 	<div class="info">
 		<div class="info-items">
 			<div class="c">กลุ่ม</div>
-			<div class="v"><a href="space/<?php echo $devices->space_id;?>"><?php echo $devices->space_name;?><i class="fa fa-external-link-square" aria-hidden="true"></i></a></div>
+			<div class="v"><a href="space/<?php echo $devices->space_id;?>"><?php echo $devices->space_name;?><i class="far fa-link"></i></a></div>
 		</div>
 
 		<?php if(!empty($devices->zone_id)){?>
 		<div class="info-items">
 			<div class="c">สถานที่</div>
-			<div class="v"><a href="space/<?php echo $devices->space_id;?>/<?php echo $devices->zone_id;?>"><?php echo $devices->zone_title;?><i class="fa fa-external-link-square" aria-hidden="true"></i></a></div>
+			<div class="v"><a href="space/<?php echo $devices->space_id;?>/<?php echo $devices->zone_id;?>"><?php echo $devices->zone_title;?><i class="far fa-link"></i></a></div>
 		</div>
 		<?php }?>
 		

@@ -8,7 +8,7 @@ define("DOMAIN" 	,"http://".$_SERVER['SERVER_NAME'].":9000");
 
 // SITE SETUP
 define("TITLE" 		,'Hospital Monitoring');
-define("DESCRIPTION",'Internet of Things (IoT) Hospital monitoring.');
+define("DESCRIPTION",'Internet of Things (IoT) Monitoring.');
 define("SITENAME"	,'HospitalMonitoring');
 
 // SITE SECRET KEY

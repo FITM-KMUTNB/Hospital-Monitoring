@@ -44,11 +44,11 @@ if(!empty($space->id) && isset($space->id)){
 
 </head>
 <body>
-<header class="header -nonfixed">
+<header class="header">
 	<?php if(empty($space->id)){?>
-	<a href="space/<?php echo $_GET['back'];?>" class="btn" target="_parent"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+	<a href="space/<?php echo $_GET['back'];?>" class="btn-icon" target="_parent"><i class="far fa-arrow-left"></i></a>
 	<?php }else{?>
-	<a href="space/<?php echo $space->id;?>" class="btn" target="_parent"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+	<a href="space/<?php echo $space->id;?>" class="btn-icon" target="_parent"><i class="far fa-arrow-left"></i></a>
 	<?php }?>
 </header>
 <div class="form">
