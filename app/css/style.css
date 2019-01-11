@@ -297,41 +297,44 @@ body {
 .container .option-list .button.right i {
   margin-right: 5px;
 }
-.container .temp-card {
+.container .templist {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .templist .temp-card {
   width: 32%;
-  height: 180px;
-  margin-right: 2%;
   margin-bottom: 2%;
-  float: left;
-  display: block;
+  display: flex;
+  height: 200px;
   font-family: sans-serif;
   border-radius: 5px;
   background: #EEEEEE;
   color: #111111;
-  overflow: hidden;
-  position: relative;
   text-align: center;
+  text-decoration: none;
+  flex-direction: column;
+  justify-content: center;
 }
-.container .temp-card:nth-child(3n+0) {
-  margin-right: 0%;
-}
-.container .temp-card.-active {
+.container .templist .temp-card.-active {
   background: #4095c8;
 }
-.container .temp-card.-active .icon {
+.container .templist .temp-card.-active .icon {
   color: #64bee3;
 }
-.container .temp-card.-active .detail .name a {
+.container .templist .temp-card.-active .detail .name a {
   color: #3581c2;
 }
-.container .temp-card.-active .detail .desc {
+.container .templist .temp-card.-active .detail .desc {
   color: #3581c2;
 }
-.container .temp-card.-active a.temp,
-.container .temp-card.-active .notify {
+.container .templist .temp-card.-active a.temp,
+.container .templist .temp-card.-active .notify {
   color: #3581c2;
 }
-.container .temp-card.-alret {
+.container .templist .temp-card.-alret {
   background: #e74c3c;
   -webkit-animation-name: bounce;
   animation-name: bounce;
@@ -342,81 +345,30 @@ body {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
-.container .temp-card.-alret .icon {
+.container .templist .temp-card.-alret .icon {
   color: #f3a59d;
 }
-.container .temp-card.-alret .detail .name a {
+.container .templist .temp-card.-alret .detail .name a {
   color: #451612;
 }
-.container .temp-card.-alret .detail .desc {
+.container .templist .temp-card.-alret .detail .desc {
   color: #451612;
 }
-.container .temp-card.-alret a.temp,
-.container .temp-card.-alret .notify {
+.container .templist .temp-card.-alret a.temp,
+.container .templist .temp-card.-alret .notify {
   color: #451612;
 }
-.container .temp-card.-lostconnect .icon {
+.container .templist .temp-card.-lostconnect .icon {
   color: #ff9800;
 }
-.container .temp-card .icon {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 80%;
-  padding: 10%;
-  display: inline-block;
-  font-size: 1em;
-  line-height: 1em;
-  text-align: right;
-}
-.container .temp-card a.temp {
-  width: 80%;
-  padding: 5% 10%;
-  padding-top: 1%;
-  float: left;
-  display: inline-block;
-  font-size: 4em;
-  text-decoration: none;
-  line-height: 1em;
-  color: #030a10;
-  font-weight: bold;
-}
-.container .temp-card .detail {
-  width: 80%;
-  padding: 0% 10%;
-  float: left;
-  display: inline-block;
-  line-height: 1.3em;
-}
-.container .temp-card .detail .name {
+.container .templist .temp-card .temp {
   width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 1.4em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  padding: 4% 0%;
 }
-.container .temp-card .detail .name a {
-  color: #111111;
-  text-decoration: none;
-}
-.container .temp-card .detail .name a:hover {
-  text-decoration: underline;
-}
-.container .temp-card .detail .name i {
-  font-size: 0.8em;
-}
-.container .temp-card .detail .desc {
+.container .templist .temp-card .name {
   width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.75em;
-  color: #111111;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+}
+.container .templist .temp-card .desc {
+  width: 100%;
 }
 .logout {
   width: 100%;

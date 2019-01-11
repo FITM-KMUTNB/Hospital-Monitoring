@@ -118,27 +118,25 @@ $devices->listDevices($space->id,$_GET['zone']);
 				</div>
 			<?php }?>
 			<div class="templist">
-				<a class="temp-card craete-button" href="newdevice/space/<?php echo $space->id;?>"><i class="fal fa-plus-circle"></i>เพิ่มอุปกรณ์</a>
+				<a class="temp-card" href="newdevice/space/<?php echo $space->id;?>">เพิ่มอุปกรณ์</a>
 			<?php
 			foreach ($devices->devices_set as $var) {
 				$status = ($var['status'] == 'active'?true:false);
 				$notify = ($var['notify'] == 'active'?true:false);
 			?>
-				<div class="temp-card" id="device-<?php echo $var[id];?>">
+				<a class="temp-card" id="device-<?php echo $var[id];?>" a href="device/<?php echo $var['id'];?>">
 					<div class="icon"><i class="fa fa-thermometer-full" aria-hidden="true"></i></div>
-					<a href="device/<?php echo $var['id'];?>" class="temp">n/a</a>
-					<div class="detail">
-						<div class="name">
-							<a href="device/<?php echo $var['id'];?>"><?php echo $var['name'];?></a>
-							<?php echo ($var['status'] != 'active'?'<i class="fa fa-lock" aria-hidden="true"></i>':'');?>
-							<?php echo ($var['notify'] != 'active'?'<i class="fa fa-bell-slash" aria-hidden="true"></i>':'');?>
-						</div>
-						<div class="desc">
-							<?php echo (!empty($var['zone_title'])?'<span>'.$var['zone_title'].'</span> · ':'');?>
-							<span class="time"><?php echo (status?'กำลังโหลด..':'ปิดรับข้อมูล')?></span>
-						</div>
+					<div class="temp">n/a</div>
+					<div class="name">
+						<?php echo $var['name'];?>
+						<?php echo ($var['status'] != 'active'?'<i class="fa fa-lock"></i>':'');?>
+						<?php echo ($var['notify'] != 'active'?'<i class="fa fa-bell-slash"></i>':'');?>
 					</div>
-				</div>
+					<div class="desc">
+						<?php echo (!empty($var['zone_title'])?'<span>'.$var['zone_title'].'</span> · ':'');?>
+						<span class="time"><?php echo (status?'กำลังโหลด..':'ปิดรับข้อมูล')?></span>
+					</div>
+				</a>
 			<?php }?>
 			</div>
 		<?php }else{?>
