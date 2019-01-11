@@ -81,7 +81,9 @@ $devices->listDevices($space->id,$_GET['zone']);
 	<div class="space-list">
 		<?php foreach ($spacelist as $var){ ?>
 		<a class="link <?php echo ($var['space_id'] == $space->id?'active':'');?>" href="space/<?php echo $var['space_id'];?>">
-			<i class="fa fa-folder-o" aria-hidden="true"></i><?php echo $var['space_title'];?><?php echo ($var['total_device'] > 0 ? ' ('.$var['total_device'].')':'');?></a>
+			<div class="name"><?php echo $var['space_title'];?></div>
+			<div class="counter"><?php echo ($var['total_device'] > 0 ? $var['total_device'].' อุปกรณ์' : 'ไม่มีอุปกรณ์');?></div>
+		</a>
 		<?php }?>
 		<a class="link button" href="newspace?back=<?php echo $space->id;?>">สร้างกลุ่ม</a>
 	</div>
@@ -131,11 +133,9 @@ $devices->listDevices($space->id,$_GET['zone']);
 						<?php echo $var['name'];?>
 						<?php echo ($var['status'] != 'active'?'<i class="fa fa-lock"></i>':'');?>
 						<?php echo ($var['notify'] != 'active'?'<i class="fa fa-bell-slash"></i>':'');?>
-					</div>
-					<div class="desc">
 						<?php echo (!empty($var['zone_title'])?'<span>'.$var['zone_title'].'</span> · ':'');?>
-						<span class="time"><?php echo (status?'กำลังโหลด..':'ปิดรับข้อมูล')?></span>
 					</div>
+					<div class="desc time"><?php echo (status?'กำลังโหลด..':'ปิดรับข้อมูล')?></div>
 				</a>
 			<?php }?>
 			</div>
