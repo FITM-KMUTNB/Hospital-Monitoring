@@ -237,6 +237,48 @@ body {
   float: left;
   display: block;
 }
+.container .box {
+  display: flex;
+  flex-flow: column wrap;
+}
+.container .box h2 {
+  font-size: 2em;
+}
+.container .box .lists {
+  display: flex;
+  flex-flow: row wrap;
+}
+.container .box .lists a.link {
+  padding: 0 20px;
+  width: 140px;
+  height: 140px;
+  text-decoration: none;
+  background: #EEEEEE;
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #999999;
+}
+.container .box .lists a.link.active {
+  background: #4095c8;
+  color: #FFFFFF;
+}
+.container .box .lists a.link .name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.container .box .lists a.link .counter {
+  font-size: 0.8em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 .container .space-list {
   width: 100%;
   float: left;

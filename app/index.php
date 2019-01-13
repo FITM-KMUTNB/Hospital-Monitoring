@@ -78,15 +78,20 @@ $devices->listDevices($space->id,$_GET['zone']);
 </header>
 
 <div class="container">
-	<div class="space-list">
-		<?php foreach ($spacelist as $var){ ?>
-		<a class="link <?php echo ($var['space_id'] == $space->id?'active':'');?>" href="space/<?php echo $var['space_id'];?>">
-			<div class="name"><?php echo $var['space_title'];?></div>
-			<div class="counter"><?php echo ($var['total_device'] > 0 ? $var['total_device'].' อุปกรณ์' : 'ไม่มีอุปกรณ์');?></div>
-		</a>
-		<?php }?>
-		<a class="link button" href="newspace?back=<?php echo $space->id;?>">สร้างกลุ่ม</a>
+	<div class="box">
+		<h2>กลุ่มอุปกรณ์</h2>
+		<div class="lists">
+			<?php foreach ($spacelist as $var){ ?>
+			<a class="link <?php echo ($var['space_id'] == $space->id?'active':'');?>" href="space/<?php echo $var['space_id'];?>">
+				<div class="name"><?php echo $var['space_title'];?></div>
+				<div class="counter"><?php echo ($var['total_device'] > 0 ? $var['total_device'].' อุปกรณ์' : 'ไม่มีอุปกรณ์');?></div>
+			</a>
+			<?php }?>
+		</div>
 	</div>
+	<!-- <div class="space-list">
+		<a class="link button" href="newspace?back=<?php echo $space->id;?>">สร้างกลุ่ม</a>
+	</div> -->
 
 	<?php if($hasSpace){?>
 	<div class="option-list">
