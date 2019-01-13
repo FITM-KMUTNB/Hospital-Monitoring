@@ -10,6 +10,7 @@
 	float: left;
 	display: block;
 	z-index: -1;
+	background: #999999;
 
 	a.btn-icon {
 		float: left;
@@ -62,13 +63,110 @@
 	.box {
 		display: flex;
 		flex-flow: column wrap;
+		background: #AA6666;
 
-		h2 {
-			font-size: 2em;
+		.head {
+			background: #445455;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
+			h2 {
+				font-size: 2em;
+			}
+			a.space-option {
+				text-decoration: none;
+				padding: 7px 10px;
+				border: 1px solid #EEEEEE;
+				border-radius: 5px;
+				margin-left: 10px;
+				color: #AAAAAA;
+
+				&.push {
+					margin-left: auto;
+				}
+
+				i {
+					margin-right: 7px;
+				}
+			}
+		}
+		.filter {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
+			a.filter-item {
+				text-decoration: none;
+				margin-right: 10px;
+				color: #666666;
+
+				&.active {
+					color: #000000;
+					font-weight: bold;
+				}
+			}
 		}
 		.lists {
 			display: flex;
 			flex-flow: row wrap;
+
+			a.device-card {
+				padding: 0 20px;
+				width: 140px;
+				height: 140px;
+				text-decoration: none;
+				background: #EEEEEE;
+				border-radius: 5px;
+				margin-right: 20px;
+				margin-top: 20px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				color: #999999;
+				position: relative;
+
+				&.button-create {
+					text-align: center;
+					font-size: 1.2em;
+				}
+
+				.icon {
+					position: absolute;
+					width: 20px;
+					height: 20px;
+					padding: 5px;
+					top: -15px;
+					right: -15px;
+					background: #333333;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					border-radius: 50%;
+					font-size: 0.8em;
+				}
+
+				.temp {
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+					font-size: 1.4em;
+					font-weight: bold;
+				}
+				.name {
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+					font-size: 1.2em;
+					font-weight: bold;
+				}
+				.desc {
+					font-size: 0.8em;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+				}
+			}
 
 			a.link {
 				padding: 0 20px;
@@ -938,6 +1036,8 @@
 	font-size: 1em;
 	text-align: center;
 	font-style: italic;
+	background: #DD5005;
+	margin-top: 5%;
 
 	i{
 		margin-right: 5px;

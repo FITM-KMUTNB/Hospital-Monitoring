@@ -195,6 +195,7 @@ body {
   float: left;
   display: block;
   z-index: -1;
+  background: #999999;
 }
 .header a.btn-icon {
   float: left;
@@ -240,13 +241,101 @@ body {
 .container .box {
   display: flex;
   flex-flow: column wrap;
+  background: #AA6666;
 }
-.container .box h2 {
+.container .box .head {
+  background: #445455;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container .box .head h2 {
   font-size: 2em;
+}
+.container .box .head a.space-option {
+  text-decoration: none;
+  padding: 7px 10px;
+  border: 1px solid #EEEEEE;
+  border-radius: 5px;
+  margin-left: 10px;
+  color: #AAAAAA;
+}
+.container .box .head a.space-option.push {
+  margin-left: auto;
+}
+.container .box .head a.space-option i {
+  margin-right: 7px;
+}
+.container .box .filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container .box .filter a.filter-item {
+  text-decoration: none;
+  margin-right: 10px;
+  color: #666666;
+}
+.container .box .filter a.filter-item.active {
+  color: #000000;
+  font-weight: bold;
 }
 .container .box .lists {
   display: flex;
   flex-flow: row wrap;
+}
+.container .box .lists a.device-card {
+  padding: 0 20px;
+  width: 140px;
+  height: 140px;
+  text-decoration: none;
+  background: #EEEEEE;
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #999999;
+  position: relative;
+}
+.container .box .lists a.device-card.button-create {
+  text-align: center;
+  font-size: 1.2em;
+}
+.container .box .lists a.device-card .icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  top: -15px;
+  right: -15px;
+  background: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 0.8em;
+}
+.container .box .lists a.device-card .temp {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.container .box .lists a.device-card .name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.container .box .lists a.device-card .desc {
+  font-size: 0.8em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .container .box .lists a.link {
   padding: 0 20px;
@@ -1038,6 +1127,8 @@ body {
   font-size: 1em;
   text-align: center;
   font-style: italic;
+  background: #DD5005;
+  margin-top: 5%;
 }
 .footer i {
   margin-right: 5px;

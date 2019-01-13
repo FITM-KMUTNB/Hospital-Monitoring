@@ -73,13 +73,17 @@ $devices->listDevices($space->id,$_GET['zone']);
 
 <header class="header">
 	<a class="logo-icon" href="index.php"><img src="image/logo.png" alt=""></a>
-	<a class="logo-title" href="index.php"><?php echo TITLE;?></a>
+	<!-- <a class="logo-title" href="index.php"><?php echo TITLE;?></a> -->
 	<a class="btn-icon right" href="logout" target="_parent"><i class="fal fa-power-off"></i></a>
 </header>
 
 <div class="container">
 	<div class="box">
-		<h2>กลุ่มอุปกรณ์</h2>
+		<div class="head">
+			<h2>กลุ่ม</h2>
+			<a class="space-option push" href="editspace/<?php echo $space->id;?>"><i class="fal fa-cogs"></i>แก้ไขกลุ่ม</a>
+			<a class="space-option" href="space-user.php?id=<?php echo $space->id;?>"><i class="fal fa-user-plus"></i>เพิ่มผู้ดูแล</a>
+		</div>
 		<div class="lists">
 			<?php foreach ($spacelist as $var){ ?>
 			<a class="link <?php echo ($var['space_id'] == $space->id?'active':'');?>" href="space/<?php echo $var['space_id'];?>">
@@ -88,24 +92,45 @@ $devices->listDevices($space->id,$_GET['zone']);
 			</a>
 			<?php }?>
 		</div>
+
+	<div class="box">
+		<div class="head">
+			<h2>อุปกรณ์</h2>
+		</div>
+		<?php if($hasSpace){?>
+		<div class="filter">
+			<?php if(count($allzone) > 0){?>
+			<a href="space/<?php echo $space->id;?>" class="filter-item <?php echo (empty($_GET['zone'])?'active':'');?>" target="_parent">ดูทั้งหมด</a>
+			<?php }?>
+			<?php foreach ($allzone as $var){ ?>
+			<a href="space/<?php echo $space->id;?>/<?php echo $var['id'];?>" class="filter-item <?php echo ($_GET['zone'] == $var['id']?'active':'');?>" target="_parent"><?php echo $var['title'];?></a>
+			<?php }?>
+		</div>
+		<?php }?>
+		<div class="lists">
+			<a class="device-card button-create" href="newdevice/space/<?php echo $space->id;?>">เพิ่มอุปกรณ์</a>
+			<?php
+			foreach ($devices->devices_set as $var) {
+				$status = ($var['status'] == 'active' ? true : false);
+				$notify = ($var['notify'] == 'active' ? true : false);
+			?>
+			<a class="device-card" id="device-<?php echo $var[id];?>" a href="device/<?php echo $var['id'];?>">
+				<div class="icon"><i class="far fa-thermometer-full"></i></div>
+				<div class="temp">n/a</div>
+				<div class="name">
+					<?php echo $var['name'];?>
+					<?php echo ($var['status'] != 'active'?'<i class="fa fa-lock"></i>':'');?>
+					<?php echo ($var['notify'] != 'active'?'<i class="fa fa-bell-slash"></i>':'');?>
+					<?php echo (!empty($var['zone_title'])?'<span>'.$var['zone_title'].'</span>':'');?>
+				</div>
+				<div class="desc time"><?php echo (status?'กำลังโหลด..':'ปิดรับข้อมูล')?></div>
+			</a>
+			<?php }?>
+		</div>
 	</div>
 	<!-- <div class="space-list">
 		<a class="link button" href="newspace?back=<?php echo $space->id;?>">สร้างกลุ่ม</a>
 	</div> -->
-
-	<?php if($hasSpace){?>
-	<div class="option-list">
-		<?php if(count($allzone) > 0){?>
-		<a href="space/<?php echo $space->id;?>" class="button <?php echo (empty($_GET['zone'])?'active':'');?>" target="_parent">ดูทั้งหมด</a>
-		<?php }?>
-		<?php foreach ($allzone as $var){ ?>
-		<a href="space/<?php echo $space->id;?>/<?php echo $var['id'];?>" class="button <?php echo ($_GET['zone'] == $var['id']?'active':'');?>" target="_parent"><?php echo $var['title'];?></a>
-		<?php }?>
-
-		<a class="button right" href="editspace/<?php echo $space->id;?>"><i class="fal fa-cogs"></i>แก้ไขกลุ่ม</a>
-		<a class="button right" href="space-user.php?id=<?php echo $space->id;?>"><i class="fal fa-user-plus"></i>เพิ่มผู้ดูแล</a>
-	</div>
-	<?php }?>
 
 	<?php if(!$hasSpace){?>
 	<div class="message-box">
@@ -124,26 +149,7 @@ $devices->listDevices($space->id,$_GET['zone']);
 					</div>
 				</div>
 			<?php }?>
-			<div class="templist">
-				<a class="temp-card" href="newdevice/space/<?php echo $space->id;?>">เพิ่มอุปกรณ์</a>
-			<?php
-			foreach ($devices->devices_set as $var) {
-				$status = ($var['status'] == 'active'?true:false);
-				$notify = ($var['notify'] == 'active'?true:false);
-			?>
-				<a class="temp-card" id="device-<?php echo $var[id];?>" a href="device/<?php echo $var['id'];?>">
-					<div class="icon"><i class="fa fa-thermometer-full" aria-hidden="true"></i></div>
-					<div class="temp">n/a</div>
-					<div class="name">
-						<?php echo $var['name'];?>
-						<?php echo ($var['status'] != 'active'?'<i class="fa fa-lock"></i>':'');?>
-						<?php echo ($var['notify'] != 'active'?'<i class="fa fa-bell-slash"></i>':'');?>
-						<?php echo (!empty($var['zone_title'])?'<span>'.$var['zone_title'].'</span> · ':'');?>
-					</div>
-					<div class="desc time"><?php echo (status?'กำลังโหลด..':'ปิดรับข้อมูล')?></div>
-				</a>
-			<?php }?>
-			</div>
+			<div class="templist"></div>
 		<?php }else{?>
 			<div class="message-box">
 				<div class="icon"><i class="fa fa-file-o" aria-hidden="true"></i></div>
