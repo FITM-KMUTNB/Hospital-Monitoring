@@ -10,7 +10,6 @@
 	float: left;
 	display: block;
 	z-index: -1;
-	background: #999999;
 
 	a.btn-icon {
 		float: left;
@@ -62,32 +61,32 @@
 
 	.box {
 		display: flex;
-		flex-flow: column wrap;
-		background: #AA6666;
+		flex-direction: column;
 
 		.head {
-			background: #445455;
 			display: flex;
 			flex-direction: row;
 			align-items: center;
+			margin-bottom: 25px;
+			font-family: @font_family_topic;
 
 			h2 {
-				font-size: 2em;
+				font-size: 2.5em;
 			}
-			a.space-option {
+			a.button-option {
 				text-decoration: none;
-				padding: 7px 10px;
+				padding: 7px 15px;
 				border: 1px solid #EEEEEE;
-				border-radius: 5px;
+				border-radius: 10px;
 				margin-left: 10px;
 				color: #AAAAAA;
 
-				&.push {
+				&.first-right {
 					margin-left: auto;
 				}
 
 				i {
-					margin-right: 7px;
+					margin-right: 10px;
 				}
 			}
 		}
@@ -95,10 +94,13 @@
 			display: flex;
 			flex-direction: row;
 			align-items: center;
+			margin-bottom: 25px;
+			font-family: @font_family_topic;
+			font-size: 1.2em;
 
 			a.filter-item {
 				text-decoration: none;
-				margin-right: 10px;
+				margin-right: 15px;
 				color: #666666;
 
 				&.active {
@@ -110,55 +112,57 @@
 		.lists {
 			display: flex;
 			flex-flow: row wrap;
+			margin-bottom: 25px;
+			padding-bottom: 15px;
+			border-bottom: 1px solid #DDDDDD;
 
 			a.device-card {
-				padding: 0 20px;
-				width: 140px;
-				height: 140px;
+				width: 23%;
+				padding: 3%;
+				box-sizing: border-box;
+				margin-right: 2.66%;
+				margin-bottom: 2.66%;
+				height: 170px;
 				text-decoration: none;
-				background: #EEEEEE;
-				border-radius: 5px;
-				margin-right: 20px;
-				margin-top: 20px;
+				border-radius: 10px;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				color: #999999;
 				position: relative;
+				background: #DDDDDD;
+				color: #999999;
 
-				&.button-create {
-					text-align: center;
-					font-size: 1.2em;
+				&:nth-child(4n+0) {
+					margin-right: 0%;
 				}
 
 				.icon {
 					position: absolute;
 					width: 20px;
 					height: 20px;
-					padding: 5px;
-					top: -15px;
-					right: -15px;
-					background: #333333;
+					top: 15px;
+					right: 15px;
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					border-radius: 50%;
-					font-size: 0.8em;
+					font-size: 1.2em;
 				}
 
 				.temp {
 					text-overflow: ellipsis;
 					white-space: nowrap;
 					overflow: hidden;
-					font-size: 1.4em;
+					font-size: 3em;
 					font-weight: bold;
+					font-family: @font_family_topic;
 				}
 				.name {
 					text-overflow: ellipsis;
 					white-space: nowrap;
 					overflow: hidden;
 					font-size: 1.2em;
-					font-weight: bold;
+					margin-bottom: 5px;
+					font-family: @font_family_topic;
 				}
 				.desc {
 					font-size: 0.8em;
@@ -166,21 +170,57 @@
 					white-space: nowrap;
 					overflow: hidden;
 				}
+
+				&.active {
+					background: @primary_color_dark;
+					color: #FFFFFF;
+					box-shadow: 3px 5px 10px rgba(0,0,0,0.15);
+
+					.desc {
+						color: @primary_color_light;
+					}
+				}
+				
+				&.alret{
+					background: @second_color;
+					color: #FFFFFF;
+		
+					-webkit-animation-name: bounce;
+						animation-name: bounce;
+		
+					-webkit-animation-duration: 1s;
+					animation-duration: 1s;
+		
+					-webkit-animation-delay: 1s;
+						animation-delay: 1s;
+		
+					 -webkit-animation-iteration-count:infinite;
+					 animation-iteration-count:infinite;
+				}
+		
+				&.lostconnect{
+					.icon{ color: @third_color; }
+				}
 			}
 
 			a.link {
-				padding: 0 20px;
-				width: 140px;
-				height: 140px;
+				width: 23%;
+				padding: 0 3%;
+				box-sizing: border-box;
+				margin-right: 2.66%;
+				margin-bottom: 2.66%;
+				height: 80px;
 				text-decoration: none;
 				background: #EEEEEE;
-				border-radius: 5px;
-				margin-right: 20px;
-				margin-top: 20px;
+				border-radius: 10px;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				color: #999999;
+
+				&:nth-child(4n+0) {
+					margin-right: 0%;
+				}
 
 				&.active {
 					background: @primary_color;
@@ -191,8 +231,9 @@
 					text-overflow: ellipsis;
 					white-space: nowrap;
 					overflow: hidden;
-					font-size: 1.4em;
+					font-size: 1.2em;
 					font-weight: bold;
+					font-family: @font_family_topic;
 				}
 				.counter {
 					font-size: 0.8em;
@@ -285,7 +326,7 @@
 			margin-bottom: 2%;
 			display: flex;
 			height: 200px;
-			font-family: @topic_font;
+			font-family: @font_family_topic;
 			border-radius: 5px;
 			background: #EEEEEE;
 			color: @text_normal_color;
@@ -294,37 +335,7 @@
 			flex-direction: column;
 			justify-content: center;
 			
-			&.-active{
-				background: @primary_color;
-				.icon{ color: @primary_color_light; }
-				.detail .name a{ color: @primary_color_dark; }
-				.detail .desc{ color: @primary_color_dark; }
-				a.temp , .notify{ color: @primary_color_dark; }
-			}
-	
-			&.-alret{
-				background: @second_color;
-				.icon{ color: @second_color_light; }
-				.detail .name a{ color: @second_color_dark; }
-				.detail .desc{ color: @second_color_dark; }
-				a.temp , .notify{ color: @second_color_dark; }
-	
-				-webkit-animation-name: bounce;
-					animation-name: bounce;
-	
-				-webkit-animation-duration: 1s;
-				animation-duration: 1s;
-	
-				-webkit-animation-delay: 1s;
-					animation-delay: 1s;
-	
-				 -webkit-animation-iteration-count:infinite;
-				 animation-iteration-count:infinite;
-			}
-	
-			&.-lostconnect{
-				.icon{ color: @third_color; }
-			}
+			
 
 			.temp {
 				width: 100%;
@@ -474,7 +485,7 @@
 			margin: 0%;
 			margin-bottom: 5%;
 			border-radius: 5px;
-			font-family: @topic_font;
+			font-family: @font_family_topic;
 			border: 0;
 
 			&:focus{
@@ -494,7 +505,7 @@
 			border-radius: 5px;
 			background: @primary_color;
 			color: @bg_color;
-			font-family: @topic_font;
+			font-family: @font_family_topic;
 			box-shadow: 3px 3px 7px rgba(0,0,0,0.25);
 
 			i{
@@ -588,7 +599,7 @@
 				margin: 0px;
 				background: #EEEEEE;
 				color: #000000;
-				font-family: @topic_font;
+				font-family: @font_family_topic;
 				border-radius: 5px;
 				resize: none;
 				border: 1px solid #DDDDDD;
@@ -633,7 +644,7 @@
 					background: @border_color;
 					color: @primary_color;
 					border-radius: 2px;
-					font-family: @topic_font;
+					font-family: @font_family_topic;
 					border: 1px solid @bg_color_light;
 
 					&:hover{ cursor: pointer; }
@@ -699,7 +710,7 @@
 				margin-top: 5%;
 				background: @primary_color;
 				color: #FFFFFF;
-				font-family: @topic_font;
+				font-family: @font_family_topic;
 				box-shadow: 1px 3px 5px rgba(0,0,0,0.25);
 
 				&.-completed{
@@ -719,7 +730,7 @@
 				line-height: 1.1em;
 				margin: 0%;
 				margin-top: 5%;
-				font-family: @topic_font;
+				font-family: @font_family_topic;
 				text-decoration: none;
 				background: transparent;
 				color: @text_normal_color;
@@ -783,7 +794,7 @@
 					float: left;
 					display: inline-block;
 					border: 0px;
-					font-family: @topic_font;
+					font-family: @font_family_topic;
 					font-size: 1em;
 					line-height: 1.5em;
 					background: transparent;
@@ -818,49 +829,40 @@
 .device-info{
 	width: 40%;
 	margin: 80px 30%;
-	float: left;
-	display: block;
+	display: flex;
+	flex-direction: column;
+	background: #DDDDDD;
 	
 	h1 {
-		font-size: 2em;
+		font-size: 3em;
+		font-family: @font_family_topic;
 	}
 
-	.current{
-		width: 100%;
-		padding-bottom: 10%;
-		float: left;
-		display: block;
+	.temperature {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: baseline;
 
-		.current-now{
-			width: 33.33%;
-			float: left;
-			display: block;
-
-			.v{
-				width: 100%;
-				float: left;
-				display: block;
-				font-size: 4em;
-				line-height: 1em;
-				color: @primary_color;
-				font-weight: bold;
+		.box-item {
+			width: 30%;
+			h3 {
+				font-family: @font_family_topic;
+				font-size: 3em;
+				line-height: 1.2em;
 			}
-			.c{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				font-size: 0.75em;
-				color: @text_normal_color;
-				line-height: 1em;
+			p {
+				font-size: 0.8em;
 			}
-		}
 
-		.current-items{
-			width: 33.33%;
-			float: left;
-			display: block;
-			text-align: right;
-			margin-top: 7%;
+			&.current {
+				width: 40%;
+
+				h3 {
+					font-size: 6em;
+					line-height: 1.2em;
+				}
+			}
 
 			&.-highest{
 				.v{ color: @text_normal_color; }
@@ -870,67 +872,21 @@
 				.v{ color: @text_normal_color; }
 				.over{ color: @second_color; }
 			}
-
-			.v{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				line-height: 1em;
-				color: @primary_color;
-				font-weight: bold;
-				font-size: 2em;
-				margin-bottom: 2%;
-			}
-			.c{
-				width: 100%;
-				float: left;
-				display: inline-block;
-				font-size: 0.75em;
-				color: @text_normal_color;
-				line-height: 1em;
-			}
 		}
 	}
 
 	.info{
-		width: 100%;
-		float: left;
-		display: block;
+		display: flex;
+		flex-direction: row;
 
-		.info-items{
-			width: 100%;
-			padding: 4% 0%;
-			float: left;
-			display: inline-block;
-			border-bottom: 1px solid @border_color;
-			font-size: 1.2em;
-			line-height: 1em;
+		a {
+			text-decoration: none;
+			margin-right: 15px;
+			color: #666666;
 
-			&:last-child{ border-bottom: 0px; }
-
-			.c{
-				width: 50%;
-				float: left;
-				display: inline-block;
-				color: @text_normal_color;
-			}
-
-			.v{
-				width: 50%;
-				float: left;
-				display: inline-block;
-				text-align: right;
-				color: @text_active_color;
-				font-weight: bold;
-
-				a{
-					text-decoration: none;
-					color: @primary_color;
-
-					&:hover{ text-decoration: underline; }
-
-					i{ margin-left: 5px; }
-				}
+			i {
+				margin-right: 5px;
+				color: @primary_color;
 			}
 		}
 	}
@@ -1036,8 +992,6 @@
 	font-size: 1em;
 	text-align: center;
 	font-style: italic;
-	background: #DD5005;
-	margin-top: 5%;
 
 	i{
 		margin-right: 5px;

@@ -1,0 +1,78 @@
+/*
+@font-face {
+    font-family: 'Maledpan';
+    src: url('./maledpan-regular-webfont.eot');
+    src: url('./maledpan-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./maledpan-regular-webfont.woff2') format('woff2'),
+         url('./maledpan-regular-webfont.woff') format('woff'),
+         url('./maledpan-regular-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maledpan';
+    src: url('./maledpan-light-webfont.eot');
+    src: url('./maledpan-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./maledpan-light-webfont.woff2') format('woff2'),
+         url('./maledpan-light-webfont.woff') format('woff'),
+         url('./maledpan-light-webfont.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maledpan';
+    src: url('./maledpan-bold-webfont.eot');
+    src: url('./maledpan-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./maledpan-bold-webfont.woff2') format('woff2'),
+         url('./maledpan-bold-webfont.woff') format('woff'),
+         url('./maledpan-bold-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+*/
+
+@font-face {
+    font-family: 'Maledpan';
+    src: url('./maledpan-regular-webfont.eot');
+    src: url('./maledpan-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./maledpan-regular-webfont.woff2') format('woff2'),
+         url('./maledpan-regular-webfont.woff') format('woff'),
+         url('./maledpan-regular-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+	-webkit-backface-visibility: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	color: #222;
+	background-color: #fff;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+h1, h2, h3, p {
+	font-family: 'Maledpan', sans-serif;
+}
+
+
+
+/* ==================== */
+
+h1 {text-align: center;border-bottom: 1px solid #ddd;padding-bottom: 20px;}
+h2 {font-weight: normal; margin: 10px 0 0;}
+h3 {background-color: #222; color: #fff; display: inline-block; padding: 2px 8px; margin-bottom: 5px;}
+a {text-decoration: none;color: #00989a;}
+div {box-sizing: border-box;}
+article {margin: 20px auto; }
+._light {font-weight: 200; opacity: 0.3}
+._normal {font-weight: 400;}
+._bold {font-weight: 700; opacity: 0.3}
+@media (min-width:768px){
+	.columns {overflow: hidden;padding: 0 20px;}
+	.column {width: 33.3333%;padding: 0 20px;float: left;}
+}

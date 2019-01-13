@@ -63,7 +63,7 @@ if(!$user_online){ // ไม่ออนไลน์
 <div id="loading-bar"></div>
 <div id="filter"></div>
 
-<div id="disconnect-bar"><i class="fa fa-refresh fa-spin" aria-hidden="true"></i>ขาดการติดต่อ!</div>
+<div id="disconnect-bar"><i class="fas fa-sync fa-spin"></i>ขาดการติดต่อ!</div>
 
 <header class="header">
 	<a class="btn-icon" href="space/<?php echo $devices->space_id;?>" target="_parent"><i class="fal fa-arrow-left"></i></a>
@@ -74,37 +74,27 @@ if(!$user_online){ // ไม่ออนไลน์
 
 <div class="device-info">
 	<h1><?php echo ($devices->notify!='active'?'<i class="fal fa-bell-slash"></i> ':'');?><?php echo $devices->name;?> <?php echo $devices->zone_title;?></h1>
-	<div class="current">
-		<div class="current-now">
-			<div class="v" id="tempcurrent">C</div>
-			<div class="c">ล่าสุด <span id="timecurrent"></span></div>
-		</div>
-		<div class="current-items -mini -highest">
-			<div class="v" id="temphighest">H</div>
-			<div class="c">สูงสุด <span id="timehighest"></span></div>
-		</div>
-		<div class="current-items -mini -lowest">
-			<div class="v" id="templowest">L</div>
-			<div class="c">ต่ำสุด <span id="timelowest"></span></div>
-		</div>
-	</div>
 
 	<div class="info">
-		<div class="info-items">
-			<div class="c">กลุ่ม</div>
-			<div class="v"><a href="space/<?php echo $devices->space_id;?>"><?php echo $devices->space_name;?><i class="far fa-link"></i></a></div>
-		</div>
-
+		<a href="space/<?php echo $devices->space_id;?>"><i class="far fa-folder"></i><?php echo $devices->space_name;?></a>
 		<?php if(!empty($devices->zone_id)){?>
-		<div class="info-items">
-			<div class="c">สถานที่</div>
-			<div class="v"><a href="space/<?php echo $devices->space_id;?>/<?php echo $devices->zone_id;?>"><?php echo $devices->zone_title;?><i class="far fa-link"></i></a></div>
-		</div>
+		<a href="space/<?php echo $devices->space_id;?>/<?php echo $devices->zone_id;?>"><i class="fal fa-map-marker-alt"></i><?php echo $devices->zone_title;?></a>
 		<?php }?>
-		
-		<div class="info-items">
-			<div class="c">อุณหภูมิตั้งค่า</div>
-			<div class="v"><span class="temps"><?php echo $devices->min;?>°</span> ถึง <span class="temps"><?php echo $devices->max;?>°</span></div>
+		<a href="space/<?php echo $devices->space_id;?>"><i class="fal fa-thermometer-three-quarters"></i>อุณหภูมิ <?php echo $devices->min;?>° ถึง <?php echo $devices->max;?>°</a>
+	</div>
+
+	<div class="temperature">
+		<div class="box-item current">
+			<h3 id="tempcurrent">C</h3>
+			<p>ล่าสุด <span id="timecurrent"></span></p>
+		</div>
+		<div class="box-item -mini -highest">
+			<h3 id="temphighest">H</h3>
+			<p>สูงสุด <span id="timehighest"></span></p>
+		</div>
+		<div class="box-item -mini -lowest">
+			<h3 id="templowest">L</h3>
+			<p>ต่ำสุด <span id="timelowest"></span></p>
 		</div>
 	</div>
 

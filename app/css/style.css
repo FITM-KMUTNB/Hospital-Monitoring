@@ -124,6 +124,13 @@ a img {
 :focus {
   outline: 0;
 }
+@font-face {
+  font-family: 'maledpan';
+  src: url('../font/maledpan/maledpan-regular-webfont.eot');
+  src: url('../font/maledpan/maledpan-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../font/maledpan/maledpan-regular-webfont.woff') format('woff'), url('../font/maledpan/maledpan-regular-webfont.ttf') format('truetype'), url('../font/maledpan/maledpan-regular-webfont.svg#mitr') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
@@ -137,7 +144,7 @@ button {
 }
 body {
   background: #ffffff;
-  font-family: sans-serif;
+  font-family: 'sans-serif';
   font-weight: 200;
   overflow-x: hidden;
 }
@@ -195,7 +202,6 @@ body {
   float: left;
   display: block;
   z-index: -1;
-  background: #999999;
 }
 .header a.btn-icon {
   float: left;
@@ -240,40 +246,43 @@ body {
 }
 .container .box {
   display: flex;
-  flex-flow: column wrap;
-  background: #AA6666;
+  flex-direction: column;
 }
 .container .box .head {
-  background: #445455;
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 25px;
+  font-family: 'maledpan';
 }
 .container .box .head h2 {
-  font-size: 2em;
+  font-size: 2.5em;
 }
-.container .box .head a.space-option {
+.container .box .head a.button-option {
   text-decoration: none;
-  padding: 7px 10px;
+  padding: 7px 15px;
   border: 1px solid #EEEEEE;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-left: 10px;
   color: #AAAAAA;
 }
-.container .box .head a.space-option.push {
+.container .box .head a.button-option.first-right {
   margin-left: auto;
 }
-.container .box .head a.space-option i {
-  margin-right: 7px;
+.container .box .head a.button-option i {
+  margin-right: 10px;
 }
 .container .box .filter {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 25px;
+  font-family: 'maledpan';
+  font-size: 1.2em;
 }
 .container .box .filter a.filter-item {
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 15px;
   color: #666666;
 }
 .container .box .filter a.filter-item.active {
@@ -283,53 +292,55 @@ body {
 .container .box .lists {
   display: flex;
   flex-flow: row wrap;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #DDDDDD;
 }
 .container .box .lists a.device-card {
-  padding: 0 20px;
-  width: 140px;
-  height: 140px;
+  width: 23%;
+  padding: 3%;
+  box-sizing: border-box;
+  margin-right: 2.66%;
+  margin-bottom: 2.66%;
+  height: 170px;
   text-decoration: none;
-  background: #EEEEEE;
-  border-radius: 5px;
-  margin-right: 20px;
-  margin-top: 20px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #999999;
   position: relative;
+  background: #DDDDDD;
+  color: #999999;
 }
-.container .box .lists a.device-card.button-create {
-  text-align: center;
-  font-size: 1.2em;
+.container .box .lists a.device-card:nth-child(4n+0) {
+  margin-right: 0%;
 }
 .container .box .lists a.device-card .icon {
   position: absolute;
   width: 20px;
   height: 20px;
-  padding: 5px;
-  top: -15px;
-  right: -15px;
-  background: #333333;
+  top: 15px;
+  right: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  font-size: 0.8em;
+  font-size: 1.2em;
 }
 .container .box .lists a.device-card .temp {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 1.4em;
+  font-size: 3em;
   font-weight: bold;
+  font-family: 'maledpan';
 }
 .container .box .lists a.device-card .name {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   font-size: 1.2em;
-  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: 'maledpan';
 }
 .container .box .lists a.device-card .desc {
   font-size: 0.8em;
@@ -337,19 +348,46 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
+.container .box .lists a.device-card.active {
+  background: #3581c2;
+  color: #FFFFFF;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.15);
+}
+.container .box .lists a.device-card.active .desc {
+  color: #64bee3;
+}
+.container .box .lists a.device-card.alret {
+  background: #e74c3c;
+  color: #FFFFFF;
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.container .box .lists a.device-card.lostconnect .icon {
+  color: #ff9800;
+}
 .container .box .lists a.link {
-  padding: 0 20px;
-  width: 140px;
-  height: 140px;
+  width: 23%;
+  padding: 0 3%;
+  box-sizing: border-box;
+  margin-right: 2.66%;
+  margin-bottom: 2.66%;
+  height: 80px;
   text-decoration: none;
   background: #EEEEEE;
-  border-radius: 5px;
-  margin-right: 20px;
-  margin-top: 20px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: #999999;
+}
+.container .box .lists a.link:nth-child(4n+0) {
+  margin-right: 0%;
 }
 .container .box .lists a.link.active {
   background: #4095c8;
@@ -359,8 +397,9 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: bold;
+  font-family: 'maledpan';
 }
 .container .box .lists a.link .counter {
   font-size: 0.8em;
@@ -440,7 +479,7 @@ body {
   margin-bottom: 2%;
   display: flex;
   height: 200px;
-  font-family: sans-serif;
+  font-family: 'maledpan';
   border-radius: 5px;
   background: #EEEEEE;
   color: #111111;
@@ -448,49 +487,6 @@ body {
   text-decoration: none;
   flex-direction: column;
   justify-content: center;
-}
-.container .templist .temp-card.-active {
-  background: #4095c8;
-}
-.container .templist .temp-card.-active .icon {
-  color: #64bee3;
-}
-.container .templist .temp-card.-active .detail .name a {
-  color: #3581c2;
-}
-.container .templist .temp-card.-active .detail .desc {
-  color: #3581c2;
-}
-.container .templist .temp-card.-active a.temp,
-.container .templist .temp-card.-active .notify {
-  color: #3581c2;
-}
-.container .templist .temp-card.-alret {
-  background: #e74c3c;
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-.container .templist .temp-card.-alret .icon {
-  color: #f3a59d;
-}
-.container .templist .temp-card.-alret .detail .name a {
-  color: #451612;
-}
-.container .templist .temp-card.-alret .detail .desc {
-  color: #451612;
-}
-.container .templist .temp-card.-alret a.temp,
-.container .templist .temp-card.-alret .notify {
-  color: #451612;
-}
-.container .templist .temp-card.-lostconnect .icon {
-  color: #ff9800;
 }
 .container .templist .temp-card .temp {
   width: 100%;
@@ -571,7 +567,7 @@ body {
   margin: 0%;
   margin-bottom: 5%;
   border-radius: 5px;
-  font-family: sans-serif;
+  font-family: 'maledpan';
   border: 0;
 }
 .login div .input-text:focus {
@@ -589,7 +585,7 @@ body {
   border-radius: 5px;
   background: #4095c8;
   color: #ffffff;
-  font-family: sans-serif;
+  font-family: 'maledpan';
   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.25);
 }
 .login div .btn i {
@@ -675,7 +671,7 @@ body {
   margin: 0px;
   background: #EEEEEE;
   color: #000000;
-  font-family: sans-serif;
+  font-family: 'maledpan';
   border-radius: 5px;
   resize: none;
   border: 1px solid #DDDDDD;
@@ -727,7 +723,7 @@ body {
   background: #dddddd;
   color: #4095c8;
   border-radius: 2px;
-  font-family: sans-serif;
+  font-family: 'maledpan';
   border: 1px solid #1d252b;
 }
 .form .form-items .input .select select:hover {
@@ -796,7 +792,7 @@ body {
   margin-top: 5%;
   background: #4095c8;
   color: #FFFFFF;
-  font-family: sans-serif;
+  font-family: 'maledpan';
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
 }
 .form .form-items .input button.btn.-completed {
@@ -817,7 +813,7 @@ body {
   line-height: 1.1em;
   margin: 0%;
   margin-top: 5%;
-  font-family: sans-serif;
+  font-family: 'maledpan';
   text-decoration: none;
   background: transparent;
   color: #111111;
@@ -883,7 +879,7 @@ body {
   float: left;
   display: inline-block;
   border: 0px;
-  font-family: sans-serif;
+  font-family: 'maledpan';
   font-size: 1em;
   line-height: 1.5em;
   background: transparent;
@@ -917,117 +913,62 @@ body {
 .device-info {
   width: 40%;
   margin: 80px 30%;
-  float: left;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  background: #DDDDDD;
 }
 .device-info h1 {
-  font-size: 2em;
+  font-size: 3em;
+  font-family: 'maledpan';
 }
-.device-info .current {
-  width: 100%;
-  padding-bottom: 10%;
-  float: left;
-  display: block;
+.device-info .temperature {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
-.device-info .current .current-now {
-  width: 33.33%;
-  float: left;
-  display: block;
+.device-info .temperature .box-item {
+  width: 30%;
 }
-.device-info .current .current-now .v {
-  width: 100%;
-  float: left;
-  display: block;
-  font-size: 4em;
-  line-height: 1em;
-  color: #4095c8;
-  font-weight: bold;
+.device-info .temperature .box-item h3 {
+  font-family: 'maledpan';
+  font-size: 3em;
+  line-height: 1.2em;
 }
-.device-info .current .current-now .c {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.75em;
-  color: #111111;
-  line-height: 1em;
+.device-info .temperature .box-item p {
+  font-size: 0.8em;
 }
-.device-info .current .current-items {
-  width: 33.33%;
-  float: left;
-  display: block;
-  text-align: right;
-  margin-top: 7%;
+.device-info .temperature .box-item.current {
+  width: 40%;
 }
-.device-info .current .current-items.-highest .v {
+.device-info .temperature .box-item.current h3 {
+  font-size: 6em;
+  line-height: 1.2em;
+}
+.device-info .temperature .box-item.-highest .v {
   color: #111111;
 }
-.device-info .current .current-items.-highest .over {
+.device-info .temperature .box-item.-highest .over {
   color: #e74c3c;
 }
-.device-info .current .current-items.-lowest .v {
+.device-info .temperature .box-item.-lowest .v {
   color: #111111;
 }
-.device-info .current .current-items.-lowest .over {
+.device-info .temperature .box-item.-lowest .over {
   color: #e74c3c;
-}
-.device-info .current .current-items .v {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  line-height: 1em;
-  color: #4095c8;
-  font-weight: bold;
-  font-size: 2em;
-  margin-bottom: 2%;
-}
-.device-info .current .current-items .c {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  font-size: 0.75em;
-  color: #111111;
-  line-height: 1em;
 }
 .device-info .info {
-  width: 100%;
-  float: left;
-  display: block;
+  display: flex;
+  flex-direction: row;
 }
-.device-info .info .info-items {
-  width: 100%;
-  padding: 4% 0%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #dddddd;
-  font-size: 1.2em;
-  line-height: 1em;
-}
-.device-info .info .info-items:last-child {
-  border-bottom: 0px;
-}
-.device-info .info .info-items .c {
-  width: 50%;
-  float: left;
-  display: inline-block;
-  color: #111111;
-}
-.device-info .info .info-items .v {
-  width: 50%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-  color: #000000;
-  font-weight: bold;
-}
-.device-info .info .info-items .v a {
+.device-info .info a {
   text-decoration: none;
+  margin-right: 15px;
+  color: #666666;
+}
+.device-info .info a i {
+  margin-right: 5px;
   color: #4095c8;
-}
-.device-info .info .info-items .v a:hover {
-  text-decoration: underline;
-}
-.device-info .info .info-items .v a i {
-  margin-left: 5px;
 }
 .device-info .graph {
   width: 100%;
@@ -1127,8 +1068,6 @@ body {
   font-size: 1em;
   text-align: center;
   font-style: italic;
-  background: #DD5005;
-  margin-top: 5%;
 }
 .footer i {
   margin-right: 5px;

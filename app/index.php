@@ -81,8 +81,11 @@ $devices->listDevices($space->id,$_GET['zone']);
 	<div class="box">
 		<div class="head">
 			<h2>กลุ่ม</h2>
-			<a class="space-option push" href="editspace/<?php echo $space->id;?>"><i class="fal fa-cogs"></i>แก้ไขกลุ่ม</a>
-			<a class="space-option" href="space-user.php?id=<?php echo $space->id;?>"><i class="fal fa-user-plus"></i>เพิ่มผู้ดูแล</a>
+			<a class="button-option first-right" href="space-user.php?id=<?php echo $space->id;?>"><i class="fal fa-user-plus"></i>เพิ่มผู้ดูแล</a>
+			<a class="button-option" href="editspace/<?php echo $space->id;?>"><i class="fal fa-cog"></i>แก้ไข</a>
+			<?php if(empty($space->line_token)){?>
+			<a class="button-option" href="editspace/<?php echo $space->id;?>#line_token"><i class="fal fa-exclamation-circle"></i>ใส่ LINE Token</a>
+			<?php }?>
 		</div>
 		<div class="lists">
 			<?php foreach ($spacelist as $var){ ?>
@@ -96,6 +99,7 @@ $devices->listDevices($space->id,$_GET['zone']);
 	<div class="box">
 		<div class="head">
 			<h2>อุปกรณ์</h2>
+			<a class="button-option first-right" href="newdevice/space/<?php echo $space->id;?>"><i class="fal fa-plus-circle"></i>เพิ่มอุปกรณ์</a>
 		</div>
 		<?php if($hasSpace){?>
 		<div class="filter">
@@ -108,7 +112,6 @@ $devices->listDevices($space->id,$_GET['zone']);
 		</div>
 		<?php }?>
 		<div class="lists">
-			<a class="device-card button-create" href="newdevice/space/<?php echo $space->id;?>">เพิ่มอุปกรณ์</a>
 			<?php
 			foreach ($devices->devices_set as $var) {
 				$status = ($var['status'] == 'active' ? true : false);
@@ -123,7 +126,7 @@ $devices->listDevices($space->id,$_GET['zone']);
 					<?php echo ($var['notify'] != 'active'?'<i class="fa fa-bell-slash"></i>':'');?>
 					<?php echo (!empty($var['zone_title'])?'<span>'.$var['zone_title'].'</span>':'');?>
 				</div>
-				<div class="desc time"><?php echo (status?'กำลังโหลด..':'ปิดรับข้อมูล')?></div>
+				<div class="desc"><?php echo (status?'กำลังโหลด..':'ปิดรับข้อมูล')?></div>
 			</a>
 			<?php }?>
 		</div>
@@ -150,16 +153,7 @@ $devices->listDevices($space->id,$_GET['zone']);
 				</div>
 			<?php }?>
 			<div class="templist"></div>
-		<?php }else{?>
-			<div class="message-box">
-				<div class="icon"><i class="fa fa-file-o" aria-hidden="true"></i></div>
-				<div class="msg">ในกลุ่ม "<?php echo $space->title;?>" ยังไม่มีอุปกรณ์</div>
-				<div class="control">
-					<a class="btn" href="newdevice/space/<?php echo $space->id;?>" class="btn">เพิ่มอุปกรณ์ใหม่</a>
-				</div>
-			</div>
 		<?php }?>
-
 	<?php }?>
 </div>
 

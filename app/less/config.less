@@ -1,16 +1,16 @@
-// @font-face {
-//     font-family: 'Mitr';
-//     src: url('../font/mitr/mitr.eot');
-//     src: url('../font/mitr/mitr.eot?#iefix') format('embedded-opentype'),
-//          url('../font/mitr/mitr.woff') format('woff'),
-//          url('../font/mitr/mitr.ttf') format('truetype'),
-//          url('../font/mitr/mitr.svg#mitr') format('svg');
-//     font-weight: normal;
-//     font-style: normal;
-// }
+@font-face {
+    font-family: 'maledpan';
+    src: url('../font/maledpan/maledpan-regular-webfont.eot');
+    src: url('../font/maledpan/maledpan-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/maledpan/maledpan-regular-webfont.woff') format('woff'),
+         url('../font/maledpan/maledpan-regular-webfont.ttf') format('truetype'),
+         url('../font/maledpan/maledpan-regular-webfont.svg#mitr') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
-@FontStylePrimary   :sans-serif;
-@topic_font         :sans-serif;
+@FontStylePrimary   : sans-serif;
+@font_family_topic  : 'maledpan';
 
 // http://www.color-hex.com/color/21ce99
 @primary_color      :#4095C8; // Active Color
@@ -53,7 +53,7 @@ a[href], button {
 
 body{
     background: @bg_color;
-    font-family: @topic_font;
+    font-family: 'sans-serif';
     font-weight: 200;
     overflow-x:hidden;
 }
