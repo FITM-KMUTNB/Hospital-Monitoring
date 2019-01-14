@@ -53,7 +53,7 @@ if(strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)){
 	<div class="icon"><i class="fa fa-sign-in" aria-hidden="true"></i></div>
 	<div class="msg">คุณต้องการเข้าร่วมกลุ่ม "<?php echo $space->title;?>" ใช่หรือไม่ ?</div>
 	<div class="control">
-		<?php if($_GET['action'] == 'accept'){?>
+		<?php if ($_GET['action'] == 'accept') {?>
 			<p>กรุณารอซักครู่...</p>
 		<?php }else{?>
 			<a href="index.php" class="btn btn-not-Accept">ยกเลิก</a>
@@ -63,9 +63,9 @@ if(strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)){
 </div>
 </body>
 
-<?php if(strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code) && $_GET['action'] == 'accept'){?>
+<?php if (strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code) && $_GET['action'] == 'accept') {?>
 <script type="text/javascript">
-	setTimeout(function(){window.location = '<?php echo $redirect;?>';},2000);
+	setTimeout(function(){ window.location = '<?php echo $redirect;?>'; },2000);
 </script>
 <?php }?>
 </html>
