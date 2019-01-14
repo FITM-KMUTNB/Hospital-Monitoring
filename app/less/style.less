@@ -1180,23 +1180,28 @@
 
 #disconnect-bar{
 	position: fixed;
-	top: -16px;
+	bottom: -50px;
 	left: 0px;
 	width: 100%;
-	height: 16px;
-	float: left;
-	display: inline-block;
+	height: 50px;
+	display: flex;
 	background: @third_color;
 	color: @third_color_dark;
+	font-family: @font_family_topic;
 	z-index: 9999;
-	text-align: center;
-	font-size: 0.7em;
-	line-height: 1.5em;
+	font-size: 1em;
+	justify-content: center;
+	align-items: center;
 	
 	.transitionAnimation(0.3s);
-	&.-active{ transform: translateY(100%); }
+	
+	&.-active {
+		transform: translateY(-100%);
+	}
 
-	i{ margin-right: 5px; }
+	i {
+		margin-right: 10px;
+	}
 }
 /* Other Device and Screen */
 @media only screen and (min-width:1910px) {@import "style-1920";}
