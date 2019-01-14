@@ -734,7 +734,6 @@
 	margin: 80px 30%;
 	display: flex;
 	flex-direction: column;
-	background: #DDDDDD;
 	
 	h1 {
 		font-size: 3em;
@@ -811,13 +810,60 @@
 .device-history{
 	width: 40%;
 	margin: 0 30%;
-	float: left;
-	display: block;
+	padding-bottom: 5%;
+	display: flex;
 
 	.history{
 		width: 100%;
-		float: left;
-		display: block;
+		display: flex;
+		flex-direction: column;
+
+		.logitems {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding: 10px 15px;
+			font-size: 1.2em;
+			font-family: @font_family_topic;
+			border-radius: 5px;
+
+			&:nth-child(even) {
+				background: #EEEEEE;
+			}
+
+			&:hover {
+				cursor: pointer;
+				background: #DDDDDD;
+			}
+
+			.time{
+				width: 35%;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			.temp{
+				width: 15%;
+				color: @text_active_color;
+			}
+			.icon{
+				width: 5%;
+				text-align: center;
+
+				i.fa-angle-double-down{ color: @primary_color; }
+				i.fa-angle-double-up{ color: @second_color; }
+			}
+			.id{
+				width: 55%;
+				text-align: right;
+				color: #BBBBBB;
+
+				i {
+					color: @second_color;
+					margin-left: 5px;
+				}
+			}
+		}
 
 		.loading{
 			width: 100%;
@@ -837,51 +883,6 @@
 			text-align: center;
 			color: @text_normal_color;
 			font-size: 0.9em;
-		}
-
-		.logitems{
-			width: 100%;
-			padding: 3.5% 0%;
-			float: left;
-			display: block;
-			border-bottom: 1px solid @border_color;
-			font-size: 1.2em;
-			color: @text_normal_color;
-			line-height: 1em;
-
-			&:last-child{ border-bottom: 0px; }
-
-			.id{
-				width: 35%;
-				float: left;
-				display: block;
-
-				i { color: @second_color; margin-left: 5px; }
-			}
-			.time{
-				width: 35%;
-				float: left;
-				display: block;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-				overflow: hidden;
-			}
-			.temp{
-				width: 20%;
-				float: left;
-				display: block;
-				text-align: right;
-				color: @text_active_color;
-			}
-			.icon{
-				width: 10%;
-				float: left;
-				display: block;
-				text-align: right;
-
-				i.fa-angle-double-down{ color: @primary_color; }
-				i.fa-angle-double-up{ color: @second_color; }
-			}
 		}
 	}
 }
@@ -1000,10 +1001,10 @@
 
 #disconnect-bar{
 	position: fixed;
-	bottom: -50px;
+	bottom: -40px;
 	left: 0px;
 	width: 100%;
-	height: 50px;
+	height: 40px;
 	display: flex;
 	background: @third_color;
 	color: @third_color_dark;

@@ -885,7 +885,6 @@ body {
   margin: 80px 30%;
   display: flex;
   flex-direction: column;
-  background: #DDDDDD;
 }
 .device-info h1 {
   font-size: 3em;
@@ -954,13 +953,58 @@ body {
 .device-history {
   width: 40%;
   margin: 0 30%;
-  float: left;
-  display: block;
+  padding-bottom: 5%;
+  display: flex;
 }
 .device-history .history {
   width: 100%;
-  float: left;
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+.device-history .history .logitems {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  font-family: 'maledpan';
+  border-radius: 5px;
+}
+.device-history .history .logitems:nth-child(even) {
+  background: #EEEEEE;
+}
+.device-history .history .logitems:hover {
+  cursor: pointer;
+  background: #DDDDDD;
+}
+.device-history .history .logitems .time {
+  width: 35%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.device-history .history .logitems .temp {
+  width: 15%;
+  color: #000000;
+}
+.device-history .history .logitems .icon {
+  width: 5%;
+  text-align: center;
+}
+.device-history .history .logitems .icon i.fa-angle-double-down {
+  color: #4095c8;
+}
+.device-history .history .logitems .icon i.fa-angle-double-up {
+  color: #e74c3c;
+}
+.device-history .history .logitems .id {
+  width: 55%;
+  text-align: right;
+  color: #BBBBBB;
+}
+.device-history .history .logitems .id i {
+  color: #e74c3c;
+  margin-left: 5px;
 }
 .device-history .history .loading {
   width: 100%;
@@ -979,55 +1023,6 @@ body {
   text-align: center;
   color: #111111;
   font-size: 0.9em;
-}
-.device-history .history .logitems {
-  width: 100%;
-  padding: 3.5% 0%;
-  float: left;
-  display: block;
-  border-bottom: 1px solid #dddddd;
-  font-size: 1.2em;
-  color: #111111;
-  line-height: 1em;
-}
-.device-history .history .logitems:last-child {
-  border-bottom: 0px;
-}
-.device-history .history .logitems .id {
-  width: 35%;
-  float: left;
-  display: block;
-}
-.device-history .history .logitems .id i {
-  color: #e74c3c;
-  margin-left: 5px;
-}
-.device-history .history .logitems .time {
-  width: 35%;
-  float: left;
-  display: block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.device-history .history .logitems .temp {
-  width: 20%;
-  float: left;
-  display: block;
-  text-align: right;
-  color: #000000;
-}
-.device-history .history .logitems .icon {
-  width: 10%;
-  float: left;
-  display: block;
-  text-align: right;
-}
-.device-history .history .logitems .icon i.fa-angle-double-down {
-  color: #4095c8;
-}
-.device-history .history .logitems .icon i.fa-angle-double-up {
-  color: #e74c3c;
 }
 .footer {
   width: 40%;
@@ -1136,10 +1131,10 @@ body {
 }
 #disconnect-bar {
   position: fixed;
-  bottom: -50px;
+  bottom: -40px;
   left: 0px;
   width: 100%;
-  height: 50px;
+  height: 40px;
   display: flex;
   background: #ff9800;
   color: #4c2d00;

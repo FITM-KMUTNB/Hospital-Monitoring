@@ -36,10 +36,7 @@ function init(){
             limit: limit,
         },
         error: function (request, status, error) {
-            console.log("Request Error");
-
             $('#disconnect-bar').addClass('-active');
-
             setTimeout(function(){
                 myChart.destroy();
                 init();
@@ -61,9 +58,6 @@ function init(){
         });
 
         deviceDisconnect(tstemp[0],data.data.update);
-
-        // console.log(dataTime,dataTemp,tstemp);
-
         graphRender(dataTemp.reverse(),dataTime.reverse());
         historyRender(dataItems);
 
@@ -77,14 +71,13 @@ function init(){
     });
 }
 
-function deviceDisconnect(timestamp,now){
-    // console.log('Diff time',now-timestamp);
+function deviceDisconnect(timestamp, now) {
     $disconnect = $('#disconnect-bar');
     var diff = now - timestamp;
 
-    if(diff > 300){
+    if (diff > 300) {
         $disconnect.addClass('-active');
-    }else{
+    } else {
         $disconnect.removeClass('-active');
     }
 }
@@ -117,7 +110,7 @@ function limitChecking(temp){
         var color = ['#e74c3c','#451612'];
         return color;
     }else{
-        var color = ['#21ce99','#093d2d'];
+        var color = ['#204a64','#9fcae3'];
         return color;
     }
 }
@@ -137,6 +130,7 @@ function graphRender(dataTemp,dataTime){
                 data: dataTemp,
                 backgroundColor: borderColor[1],
                 borderColor: borderColor[0],
+                borderWidth: 1,
                 fill: 'origin',
                 pointRadius: 1,
             }],
@@ -160,7 +154,6 @@ function graphRender(dataTemp,dataTime){
             scales: {
                 yAxes: [{
                     ticks: {
-                        // beginAtZero:true
                         stepSize: 1,
                     },
                     position: "right",
@@ -170,12 +163,12 @@ function graphRender(dataTemp,dataTime){
             }],
             },
             animation: {
-                duration: 0, // general animation time
+                duration: 0,
             },
             hover: {
-                animationDuration: 0, // duration of animations when hovering an item
+                animationDuration: 0,
             },
-            responsiveAnimationDuration: 0, // animation duration after a resize
+            responsiveAnimationDuration: 0,
         }
     });
 }
@@ -183,18 +176,12 @@ function graphRender(dataTemp,dataTime){
 function historyRender(dataset){
     var html = '';
     var gtemp = new Array();
-
     if(dataset.length == 0){
-        $('#historylog').html('<div class="empty">ไม่มีข้อมูลของอุปกรณ์นี้</div>');
+        $('#historylog').html('<div class="empty">ไม่มีข้อมูลอุปกรณ์นี้</div>');
         return false;
     }
-
     $.each(dataset,function(k,v){
-
-        gtemp.push(parseFloat(v.log_temp)); // Find last temp.
-
-        // console.log(v.log_state);
-
+        gtemp.push(parseFloat(v.log_temp));
         var alert = '';
         var icon = '';
 
@@ -209,13 +196,13 @@ function historyRender(dataset){
                 ;
         }
 
-        if(v.alert) alert = '<i class="far fa-exclamation-triangle"></i>';
+        if (v.alert) alert = '<i class="far fa-exclamation-triangle"></i>';
 
         html +='<div class="logitems">';
-        html +='<div class="id">#'+v.log_id+alert+'</div>';
         html +='<div class="time">'+v.log_time_fb+'</div>';
-        html +='<div class="temp">'+v.log_temp+'°</div>';
         html +='<div class="icon">'+icon+'</div>';
+        html +='<div class="temp">'+v.log_temp+'°</div>';
+        html +='<div class="id">#'+v.log_id+alert+'</div>';
         html +='</div>';
     });
 
