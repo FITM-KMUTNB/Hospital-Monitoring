@@ -58,15 +58,11 @@ $allzone = $space->listZone($space->id);
 
 </head>
 <body>
-<header class="header -nonfixed">
-	<?php if(empty($devices->id)){?>
-	<a href="space/<?php echo $space->id;?>" class="btn" target="_parent"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>	
-	<?php }else{?>
-	<a href="#" class="btn btn-hidden" target="_parent"><i class="fa fa-circle-thin" aria-hidden="true"></i></a>
-	<?php }?>
-
-	<?php if(!empty($devices->id)){?>
-	<a href="device/<?php echo $devices->id;?>" class="btn btn-setting" target="_parent"><i class="fal fa-times"></i></a>
+<header class="header">
+	<?php if (empty($devices->id)) {?>
+	<a class="btn-icon" href="space/<?php echo $space->id;?>" target="_parent"><i class="fa fa-arrow-left"></i></a>	
+	<?php } else {?>
+	<a href="device/<?php echo $devices->id;?>" class="btn-icon" target="_parent"><i class="fal fa-arrow-left"></i></a>
 	<?php }?>
 </header>
 <div class="form">

@@ -104,13 +104,13 @@ function renderCurrent(data){
 
 function limitChecking(temp){
 
-    var current = temp[(temp.length)-1];
+    var current = temp[(temp.length) - 1];
 
-    if(current >= device_max || current <= device_min){
+    if (current >= device_max || current <= device_min) {
         var color = ['#e74c3c','#451612'];
         return color;
-    }else{
-        var color = ['#204a64','#9fcae3'];
+    } else {
+        var color = ['#4095C8','#ebf4f9'];
         return color;
     }
 }
@@ -130,7 +130,7 @@ function graphRender(dataTemp,dataTime){
                 data: dataTemp,
                 backgroundColor: borderColor[1],
                 borderColor: borderColor[0],
-                borderWidth: 1,
+                borderWidth: 3,
                 fill: 'origin',
                 pointRadius: 1,
             }],
@@ -187,10 +187,10 @@ function historyRender(dataset){
 
         switch (v.log_state) {
             case 'up':
-                icon = '<i class="fal fa-angle-double-up"></i>';
+                icon = '<i class="fal fa-caret-up"></i>';
                 break;
             case 'down':
-                icon = '<i class="fal fa-angle-double-down"></i>';
+                icon = '<i class="fal fa-caret-down"></i>';
                 break;
             default: 
                 ;
@@ -199,9 +199,9 @@ function historyRender(dataset){
         if (v.alert) alert = '<i class="far fa-exclamation-triangle"></i>';
 
         html +='<div class="logitems">';
-        html +='<div class="time">'+v.log_time_fb+'</div>';
         html +='<div class="icon">'+icon+'</div>';
         html +='<div class="temp">'+v.log_temp+'°</div>';
+        html +='<div class="time">'+v.log_time_fb+'</div>';
         html +='<div class="id">#'+v.log_id+alert+'</div>';
         html +='</div>';
     });

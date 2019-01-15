@@ -827,7 +827,7 @@
 			font-family: @font_family_topic;
 			border-radius: 5px;
 
-			&:nth-child(even) {
+			&:nth-child(odd) {
 				background: #EEEEEE;
 			}
 
@@ -835,26 +835,24 @@
 				cursor: pointer;
 				background: #DDDDDD;
 			}
+			.icon{
+				width: 5%;
 
+				i.fa-caret-down{ color: @primary_color; }
+				i.fa-caret-up{ color: @second_color; }
+			}
+			.temp{
+				width: 25%;
+				color: @text_active_color;
+			}
 			.time{
-				width: 35%;
+				width: 30%;
 				text-overflow: ellipsis;
 				white-space: nowrap;
 				overflow: hidden;
 			}
-			.temp{
-				width: 15%;
-				color: @text_active_color;
-			}
-			.icon{
-				width: 5%;
-				text-align: center;
-
-				i.fa-angle-double-down{ color: @primary_color; }
-				i.fa-angle-double-up{ color: @second_color; }
-			}
 			.id{
-				width: 55%;
+				width: 40%;
 				text-align: right;
 				color: #BBBBBB;
 
@@ -918,10 +916,11 @@
 
 #loading-bar{
 	position: fixed;
-	top: 0px;
+	top: 5px;
 	left: 0px;
 	width: 5%;
-	height: 3px;
+	height: 5px;
+	border-radius: 20%;
 	background: @primary_color;
 	float: left;
 	display: block;

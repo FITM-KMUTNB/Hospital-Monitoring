@@ -970,35 +970,34 @@ body {
   font-family: 'maledpan';
   border-radius: 5px;
 }
-.device-history .history .logitems:nth-child(even) {
+.device-history .history .logitems:nth-child(odd) {
   background: #EEEEEE;
 }
 .device-history .history .logitems:hover {
   cursor: pointer;
   background: #DDDDDD;
 }
+.device-history .history .logitems .icon {
+  width: 5%;
+}
+.device-history .history .logitems .icon i.fa-caret-down {
+  color: #4095c8;
+}
+.device-history .history .logitems .icon i.fa-caret-up {
+  color: #e74c3c;
+}
+.device-history .history .logitems .temp {
+  width: 25%;
+  color: #000000;
+}
 .device-history .history .logitems .time {
-  width: 35%;
+  width: 30%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
-.device-history .history .logitems .temp {
-  width: 15%;
-  color: #000000;
-}
-.device-history .history .logitems .icon {
-  width: 5%;
-  text-align: center;
-}
-.device-history .history .logitems .icon i.fa-angle-double-down {
-  color: #4095c8;
-}
-.device-history .history .logitems .icon i.fa-angle-double-up {
-  color: #e74c3c;
-}
 .device-history .history .logitems .id {
-  width: 55%;
+  width: 40%;
   text-align: right;
   color: #BBBBBB;
 }
@@ -1051,10 +1050,11 @@ body {
 }
 #loading-bar {
   position: fixed;
-  top: 0px;
+  top: 5px;
   left: 0px;
   width: 5%;
-  height: 3px;
+  height: 5px;
+  border-radius: 20%;
   background: #4095c8;
   float: left;
   display: block;
