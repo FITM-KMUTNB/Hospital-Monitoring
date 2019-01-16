@@ -97,7 +97,10 @@ $allzone = $space->listZone($space->id);
 		<div class="input"><textarea class="input-textarea" id="description"><?php echo $devices->description;?></textarea></div>
 	</div>
 	<div class="form-items">
-		<div class="label">สถานที่</div>
+		<div class="label">
+			<div>สถานที่</div>
+			<a href="editspace/<?php echo $space_id;?>?return_device=<?php echo $devices->id;?>#zone_title"><i class="fa fa-plus"></i>เพิ่มสถานที่</a>
+		</div>
 		<div class="input">
 			<div class="select">
 			<select id="zone_id">
@@ -107,26 +110,29 @@ $allzone = $space->listZone($space->id);
 				<?php }?>
 			</select>
 			</div>
-			<p>กลุ่ม : <?php echo $space->title;?> <span class="link"><a href="editspace/<?php echo $space_id;?>?return_device=<?php echo $devices->id;?>#zone_title">เพิ่มสถานที่<i class="fa fa-external-link-square" aria-hidden="true"></i></a></span></p>
+			<p>กลุ่ม : <?php echo $space->title;?></p>
 		</div>
 	</div>
 	<div class="form-items">
 		<div class="label">อุณหภูมิตั้งค่า</div>
-		<div class="input">
-			<input class="input-text -haft" type="text" id="min" value="<?php echo (!empty($devices->min)?$devices->min:0);?>" placeholder="อุณหภูมิต่ำสุด">
-			<input class="input-text -haft -haft-right" type="text" id="max" value="<?php echo (!empty($devices->max)?$devices->max:5);?>" placeholder="อุณหภูมิสูงสุด">
-			<p>หากอุณหภูมิของอุปกรณ์สูงหรือตำ่กว่าค่าที่ระบุไว้ ระบบจะเริ่มแจ้งเตือน</p>
+		<div class="input twins">
+			<input class="input-text" type="text" id="min" value="<?php echo (!empty($devices->min)?$devices->min:0);?>" placeholder="อุณหภูมิต่ำสุด">
+			<input class="input-text" type="text" id="max" value="<?php echo (!empty($devices->max)?$devices->max:5);?>" placeholder="อุณหภูมิสูงสุด">
 		</div>
+		<p>หากอุณหภูมิของอุปกรณ์สูงหรือตำ่กว่าค่าที่ระบุไว้ ระบบจะเริ่มแจ้งเตือน</p>
 	</div>
 
 	<?php if(!empty($devices->id)){?>
 	<div class="form-items">
-		<div class="label">Token</div>
+		<div class="label">
+			<div>Token</div>
+			<div class="btn" id="btn-token-reset">สร้างคีย์ใหม่</div>
+		</div>
 		<div class="input">
 			<input class="input-text" type="text" value="<?php echo $devices->token;?>" disabled>
-			<p>ส่งข้อมูล: <i><?php echo DOMAIN;?>/push.php</i><br>
-				คีย์ ใช้เป็นกุญแจสำหรับเชื่อมข้อมูลจากอุปกรณ์ของคุณเข้ากับเว็บไซต์นี้<span class="btn" id="btn-token-reset">สร้างคีย์ใหม่</span></p>
 		</div>
+		<p>ส่งข้อมูล: <i><?php echo DOMAIN;?>/push.php</i><br>
+				คีย์ ใช้เป็นกุญแจสำหรับเชื่อมข้อมูลจากอุปกรณ์ของคุณเข้ากับเว็บไซต์นี้</p>
 	</div>
 	<?php }?>
 
@@ -135,13 +141,7 @@ $allzone = $space->listZone($space->id);
 	<input type="hidden" id="sign" value="<?php echo $signature->generateSignature('device_editor',SECRET_KEY);?>">
 
 	<div class="form-items">
-		<div class="input">
-			<button class="btn" id="btn-save"><?php echo (!empty($devices->id)?'บันทึก':'เพิ่มอุปกรณ์ใหม่');?></button>
-
-			<?php if(!empty($devices->id)){?>
-			<a class="btn-nav" id="btn-nav" href="device/<?php echo $devices->id;?>">ไปหน้าอุปกรณ์<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-			<?php }?>
-		</div>
+		<button class="btn" id="btn-save"><?php echo (!empty($devices->id)?'บันทึก':'เพิ่มอุปกรณ์ใหม่');?></button>
 	</div>
 </div>
 
