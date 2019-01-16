@@ -227,16 +227,6 @@ body {
   height: 60px;
   padding: 10px;
 }
-.header a.logo-title {
-  float: left;
-  display: block;
-  font-size: 2em;
-  height: 40px;
-  padding: 20px 10px;
-  text-decoration: none;
-  line-height: 1.3em;
-  color: #000000;
-}
 .container {
   width: 60%;
   margin: 5% 20%;
@@ -635,14 +625,21 @@ body {
   border-radius: 5px;
   background: #4095c8;
   color: #FFFFFF;
-  font-size: 0.7em;
+  font-size: 0.6em;
   padding: 5px 7px;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 }
 .form .form-items .label .btn i {
   margin-right: 7px;
 }
 .form .form-items p {
   color: #999999;
+}
+.form .form-items p a {
+  color: #4095c8;
+}
+.form .form-items p a i {
+  margin-left: 5px;
 }
 .form .form-items .input {
   padding: 10px 0;
@@ -733,77 +730,76 @@ body {
   color: #4095c8;
 }
 .form .form-items .input .list {
-  width: 100%;
-  float: left;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #DDDDDD;
+  border-radius: 5px;
+  font-size: 1.2em;
+  margin-bottom: 10px;
 }
 .form .form-items .input .list .list-items {
-  width: 100%;
-  float: left;
-  display: block;
-  color: #3581c2;
-  margin-top: 1.5%;
-  background: #4095c8;
-  border-radius: 2px;
-  font-size: 1em;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #EEEEEE;
+}
+.form .form-items .input .list .list-items:last-child {
+  border-bottom: 0;
 }
 .form .form-items .input .list .list-items .c {
-  width: 82%;
-  float: left;
-  display: block;
-  padding: 2% 4%;
+  width: 85%;
+  padding: 2.5% 3%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 .form .form-items .input .list .list-items .c i {
   margin-right: 15px;
+  color: #4095c8;
 }
 .form .form-items .input .list .list-items .btn {
-  width: 6%;
-  float: right;
-  display: block;
-  padding: 2%;
+  width: 15%;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #DDDDDD;
 }
 .form .form-items .input .list .list-items .btn:hover {
   cursor: pointer;
+  color: #999999;
 }
 .form .form-items .input .list-input {
-  width: 100%;
-  float: left;
-  display: block;
-  margin-top: 2%;
+  display: flex;
   position: relative;
-  overflow: hidden;
 }
 .form .form-items .input .list-input .input-list-text {
-  width: 93.5%;
-  padding: 3%;
-  float: left;
-  display: block;
+  width: 100%;
+  padding: 2.5%;
+  font-size: 1.2em;
   border: 0px;
-  font-family: 'maledpan';
-  font-size: 1em;
-  line-height: 1.5em;
-  background: transparent;
-  color: #4095c8;
-  border: 1px solid #dddddd;
-  border-radius: 2px;
   margin: 0px;
+  background: #FAFAFA;
+  color: #000000;
+  border-radius: 5px;
+  resize: none;
+  border: 2px solid #DDDDDD;
+  box-sizing: border-box;
 }
 .form .form-items .input .list-input .input-list-text:focus {
-  border: 1px solid #4095c8;
+  border: 2px solid #4095c8;
+}
+.form .form-items .input .list-input .input-list-text:hover {
+  cursor: pointer;
 }
 .form .form-items .input .list-input .btn {
   position: absolute;
   top: 0px;
   right: 0px;
-  width: 8%;
-  padding: 3%;
-  float: right;
-  display: block;
-  text-align: center;
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #3581c2;
   font-size: 1.2em;
 }
@@ -849,40 +845,50 @@ body {
   font-size: 3em;
   font-family: 'maledpan';
 }
-.device-info .temperature {
+.device-info .temperature-current {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3% 0;
+}
+.device-info .temperature-current h3 {
+  font-family: 'maledpan';
+  font-size: 8em;
+  line-height: 1.2em;
+}
+.device-info .temperature-current p {
+  font-size: 0.8em;
+}
+.device-info .temperature-stat {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: baseline;
+  justify-content: center;
 }
-.device-info .temperature .box-item {
-  width: 30%;
+.device-info .temperature-stat .box {
+  text-align: center;
+  flex-grow: 1;
+  padding: 1%;
 }
-.device-info .temperature .box-item h3 {
+.device-info .temperature-stat .box h3 {
   font-family: 'maledpan';
-  font-size: 3em;
+  font-size: 2em;
   line-height: 1.2em;
 }
-.device-info .temperature .box-item p {
+.device-info .temperature-stat .box p {
   font-size: 0.8em;
 }
-.device-info .temperature .box-item.current {
-  width: 40%;
-}
-.device-info .temperature .box-item.current h3 {
-  font-size: 6em;
-  line-height: 1.2em;
-}
-.device-info .temperature .box-item.-highest .v {
+.device-info .temperature-stat .box.-highest .v {
   color: #111111;
 }
-.device-info .temperature .box-item.-highest .over {
+.device-info .temperature-stat .box.-highest .over {
   color: #e74c3c;
 }
-.device-info .temperature .box-item.-lowest .v {
+.device-info .temperature-stat .box.-lowest .v {
   color: #111111;
 }
-.device-info .temperature .box-item.-lowest .over {
+.device-info .temperature-stat .box.-lowest .over {
   color: #e74c3c;
 }
 .device-info .info {
@@ -901,8 +907,7 @@ body {
 .device-info .graph {
   width: 100%;
   margin-top: 5%;
-  float: left;
-  display: block;
+  display: flex;
   height: 250px;
 }
 .device-info .graph canvas {

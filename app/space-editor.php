@@ -83,8 +83,8 @@ if(!empty($space->id) && isset($space->id)){
 		<div class="label">LINE Access Token</div>
 		<div class="input">
 			<input class="input-text" type="text" id="line_token" value="<?php echo $space->line_token;?>">
-			<p>คุณจำเป็นต้องมี Access Token จาก LINE Notify เพื่อใช้ในการแจ้งเตือน <a href="https://notify-bot.line.me/th/">ขอคีย์ได้ที่นี่<i class="far fa-external-link-square"></i></a></p>
 		</div>
+		<p>คุณจำเป็นต้องมี Access Token จาก LINE Notify เพื่อใช้ในการแจ้งเตือน <a href="https://notify-bot.line.me/th/">ขอคีย์ได้ที่นี่<i class="far fa-external-link-square"></i></a></p>
 	</div>
 
 	<input type="hidden" id="return_device" value="<?php echo $_GET['return_device'];?>">
@@ -92,13 +92,7 @@ if(!empty($space->id) && isset($space->id)){
 	<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('space_editor',SECRET_KEY);?>">
 
 	<div class="form-items">
-		<div class="input">
-			<button class="btn" id="btn-save"><?php echo (!empty($space->id)?'บันทึก':'สร้างกลุ่มใหม่');?></button>
-
-			<?php if(!empty($space->id)){?>
-			<a class="btn-nav" id="btn-nav" href="space/<?php echo $space->id;?>">ไปหน้ากลุ่ม<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-			<?php }?>
-		</div>
+		<button class="btn" id="btn-save"><?php echo (!empty($space->id)?'บันทึก':'สร้างกลุ่มใหม่');?></button>
 	</div>
 </div>
 

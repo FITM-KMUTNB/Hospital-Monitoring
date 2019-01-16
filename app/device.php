@@ -73,8 +73,8 @@ if(!$user_online){ // ไม่ออนไลน์
 </header>
 
 <div class="device-info">
-	<h1><?php echo ($devices->notify!='active'?'<i class="fal fa-bell-slash"></i> ':'');?><?php echo $devices->name;?> <?php echo $devices->zone_title;?></h1>
-
+	<h1><?php echo ($devices->notify != 'active' ? '<i class="fal fa-bell-slash"></i> ':'');?><?php echo $devices->name;?> <?php echo $devices->zone_title;?></h1>
+	
 	<div class="info">
 		<a href="space/<?php echo $devices->space_id;?>"><i class="far fa-folder"></i><?php echo $devices->space_name;?></a>
 		<?php if(!empty($devices->zone_id)){?>
@@ -83,18 +83,23 @@ if(!$user_online){ // ไม่ออนไลน์
 		<a href="space/<?php echo $devices->space_id;?>"><i class="fal fa-thermometer-three-quarters"></i>อุณหภูมิ <?php echo $devices->min;?>° ถึง <?php echo $devices->max;?>°</a>
 	</div>
 
-	<div class="temperature">
-		<div class="box-item current">
-			<h3 id="tempcurrent">C</h3>
-			<p>ล่าสุด <span id="timecurrent"></span></p>
-		</div>
-		<div class="box-item -mini -highest">
+	<div class="temperature-current">
+		<h3 id="tempcurrent">C</h3>
+		<p>ล่าสุด <span id="timecurrent"></span></p>
+	</div>
+
+	<div class="temperature-stat">
+		<div class="box">
 			<h3 id="temphighest">H</h3>
 			<p>สูงสุด <span id="timehighest"></span></p>
 		</div>
-		<div class="box-item -mini -lowest">
+		<div class="box">
 			<h3 id="templowest">L</h3>
 			<p>ต่ำสุด <span id="timelowest"></span></p>
+		</div>
+		<div class="box">
+			<h3>4.5°</h3>
+			<p>ค่าเฉลี่ย</p>
 		</div>
 	</div>
 

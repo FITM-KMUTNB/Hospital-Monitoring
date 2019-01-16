@@ -45,8 +45,7 @@ if(!empty($space->id) && isset($space->id)){
 </head>
 <body>
 <header class="header -nonfixed">
-	<a href="space/<?php echo $space->id;?>" class="btn" target="_parent"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-	<div class="mobile-title"><a href="index.php">ผู้ดูแลกลุ่ม</a></div>
+	<a href="space/<?php echo $space->id;?>" class="btn-icon" target="_parent"><i class="fal fa-arrow-left" aria-hidden="true"></i></a>
 </header>
 <div class="form">
 	<h2>ผู้ดูแลกลุ่ม</h2>

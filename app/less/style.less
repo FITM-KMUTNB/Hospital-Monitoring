@@ -39,17 +39,6 @@
 		padding: 10px;
 		}
 	}
-
-	a.logo-title{
-		float: left;
-		display: block;
-		font-size: 2em;
-		height: 40px;
-		padding: 20px 10px;
-		text-decoration: none;
-		line-height: 1.3em;
-		color: #000000;
-	}
 }
 
 .container{
@@ -184,18 +173,14 @@
 				&.alret{
 					background: @second_color;
 					color: #FFFFFF;
-		
 					-webkit-animation-name: bounce;
-						animation-name: bounce;
-		
+					animation-name: bounce;
 					-webkit-animation-duration: 1s;
 					animation-duration: 1s;
-		
 					-webkit-animation-delay: 1s;
-						animation-delay: 1s;
-		
-					 -webkit-animation-iteration-count:infinite;
-					 animation-iteration-count:infinite;
+					animation-delay: 1s;
+					-webkit-animation-iteration-count:infinite;
+					animation-iteration-count:infinite;
 				}
 		
 				&.lostconnect{
@@ -498,8 +483,9 @@
 				border-radius: 5px;
 				background: @primary_color;
 				color: #FFFFFF;
-				font-size: 0.7em;
+				font-size: 0.6em;
 				padding: 5px 7px;
+				box-shadow: 0px 2px 3px rgba(0,0,0,0.25);
 
 				i {
 					margin-right: 7px;
@@ -509,6 +495,13 @@
 
 		p {
 			color: #999999;
+
+			a {
+				color: @primary_color;
+				i {
+					margin-left: 5px;
+				}
+			}
 		}
 
 		.input {
@@ -602,80 +595,86 @@
 				i.fa-toggle-on{ color: @primary_color; }
 			}
 
-			.list{
-				width: 100%;
-				float: left;
-				display: block;
+			.list {
+				display: flex;
+				flex-direction: column;
+				border: 2px solid #DDDDDD;
+				border-radius: 5px;
+				font-size: 1.2em;
+				margin-bottom: 10px;
 
-				.list-items{
-					width: 100%;
-					float: left;
-					display: block;
-					color: @primary_color_dark;
-					margin-top: 1.5%;
-					background: @primary_color;
-					border-radius: 2px;
-					font-size: 1em;
+				.list-items {
+					display: flex;
+					flex-direction: row;
+					border-bottom: 1px solid #EEEEEE;
 
-					.c{
-						width: 82%;
-						float: left;
-						display: block;
-						padding: 2% 4%;
+					&:last-child {
+						border-bottom: 0;
+					}
+
+					.c {
+						width: 85%;
+						padding: 2.5% 3%;
 						text-overflow: ellipsis;
 						white-space: nowrap;
 						overflow: hidden;
 
-						i{ margin-right: 15px; }
+						i {
+							margin-right: 15px;
+							color: @primary_color;
+						}
 					}
 
-					.btn{
-						width: 6%;
-						float: right;
-						display: block;
-						padding: 2%;
+					.btn {
+						width: 15%;
 						text-align: center;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: #DDDDDD;
 
-						&:hover{ cursor: pointer; }
+						&:hover {
+							cursor: pointer;
+							color: #999999;
+						}
 					}
 				}
 			}
 
-			.list-input{
-				width: 100%;
-				float: left;
-				display: block;
-				margin-top: 2%;
+			.list-input {
+				display: flex;
 				position: relative;
-				overflow: hidden;
 
 				.input-list-text{
-					width: 93.5%;
-					padding: 3%;
-					float: left;
-					display: block;
+					width: 100%;
+					padding: 2.5%;
+					font-size: 1.2em;
 					border: 0px;
-					font-family: @font_family_topic;
-					font-size: 1em;
-					line-height: 1.5em;
-					background: transparent;
-					color: @primary_color;
-					border: 1px solid @border_color;
-					border-radius: 2px;
 					margin: 0px;
+					background: #FAFAFA;
+					color: #000000;
+					border-radius: 5px;
+					resize: none;
+					border: 2px solid #DDDDDD;
+					box-sizing: border-box;
 
-					&:focus{ border: 1px solid @primary_color; }
+					&:focus {
+						border: 2px solid @primary_color;
+					}
+					&:hover {
+						cursor: pointer;
+					}
 				}
 
-				.btn{
+				.btn {
 					position: absolute;
 					top: 0px;
 					right: 0px;
-					width: 8%;
-					padding: 3%;
-					float: right;
-					display: block;
-					text-align: center;
+					width: 10%;
+					height: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
 					color: @primary_color_dark;
 					font-size: 1.2em;
 
@@ -726,30 +725,41 @@
 		font-family: @font_family_topic;
 	}
 
-	.temperature {
+	.temperature-current {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 3% 0;
+
+		h3 {
+			font-family: @font_family_topic;
+			font-size: 8em;
+			line-height: 1.2em;
+		}
+		p {
+			font-size: 0.8em;
+		}
+	}
+
+	.temperature-stat {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		align-items: baseline;
+		justify-content: center;
 
-		.box-item {
-			width: 30%;
+		.box {
+			text-align: center;
+			flex-grow: 1;
+			padding: 1%;
+
 			h3 {
 				font-family: @font_family_topic;
-				font-size: 3em;
+				font-size: 2em;
 				line-height: 1.2em;
 			}
 			p {
 				font-size: 0.8em;
-			}
-
-			&.current {
-				width: 40%;
-
-				h3 {
-					font-size: 6em;
-					line-height: 1.2em;
-				}
 			}
 
 			&.-highest{
@@ -782,8 +792,7 @@
 	.graph{
 		width: 100%;
 		margin-top: 5%;
-		float: left;
-		display: block;
+		display: flex;
 		height: 250px;
 
 		canvas{
