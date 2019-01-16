@@ -253,6 +253,7 @@ body {
   border-radius: 10px;
   margin-left: 10px;
   color: #AAAAAA;
+  font-size: 1em;
 }
 .container .box .head a.button-option.first-right {
   margin-left: auto;
@@ -266,7 +267,7 @@ body {
   align-items: center;
   margin-bottom: 25px;
   font-family: 'maledpan';
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 .container .box .filter a.filter-item {
   text-decoration: none;
@@ -312,13 +313,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 .container .box .lists a.device-card .temp {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: bold;
   font-family: 'maledpan';
 }
@@ -326,7 +327,7 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-bottom: 5px;
   font-family: 'maledpan';
 }
@@ -385,7 +386,7 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
   font-family: 'maledpan';
 }
@@ -394,66 +395,6 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-.container .space-list {
-  width: 100%;
-  float: left;
-  display: block;
-  margin-top: 20px;
-}
-.container .space-list a.link {
-  float: left;
-  padding: 10px 20px;
-  display: block;
-  text-decoration: none;
-  font-size: 1.2em;
-  border-radius: 20px;
-  border: 1px solid #EEEEEE;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  line-height: 1em;
-  color: #999999;
-  background: #FAFAFA;
-}
-.container .space-list a.link.active {
-  color: #FFFFFF;
-  background: #4095c8;
-  border: 1px solid #4095c8;
-}
-.container .space-list a.link.button {
-  background: transparent;
-  border: 1px dashed #AAAAAA;
-}
-.container .space-list a.link.button i {
-  margin-right: 10px;
-}
-.container .option-list {
-  width: 100%;
-  float: left;
-  display: block;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #DDDDDD;
-}
-.container .option-list .button {
-  float: left;
-  display: block;
-  font-size: 1.1em;
-  text-decoration: none;
-  padding: 15px 0;
-  margin-right: 20px;
-  color: #666666;
-}
-.container .option-list .button.active {
-  color: #4095c8;
-}
-.container .option-list .button.right {
-  float: right;
-  margin: 0;
-  margin-left: 20px;
-}
-.container .option-list .button.right i {
-  margin-right: 5px;
 }
 .login {
   width: 100%;
@@ -465,6 +406,7 @@ body {
   top: 0;
   left: 0;
   height: 100%;
+  font-family: 'maledpan';
 }
 .login div {
   width: 28%;
@@ -504,10 +446,10 @@ body {
   float: left;
   display: block;
   color: #111111;
-  font-size: 1.1em;
+  font-size: 1.4em;
 }
 .login div .input-text {
-  width: 90%;
+  width: 100%;
   float: left;
   display: block;
   font-size: 1.2em;
@@ -518,17 +460,14 @@ body {
   margin: 0%;
   margin-bottom: 5%;
   border-radius: 5px;
-  font-family: 'maledpan';
   border: 0;
-}
-.login div .input-text:focus {
-  color: #000000;
+  box-sizing: border-box;
 }
 .login div .btn {
   width: 100%;
   float: left;
   display: block;
-  font-size: 1.2em;
+  font-size: 1.4em;
   border: 0px;
   padding: 5%;
   margin: 0%;
@@ -537,7 +476,7 @@ body {
   background: #4095c8;
   color: #ffffff;
   font-family: 'maledpan';
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.25);
+  line-height: 1.2em;
 }
 .login div .btn i {
   margin-left: 10px;
@@ -556,7 +495,7 @@ body {
   float: left;
   display: block;
   color: #111111;
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-bottom: 10%;
   text-align: center;
 }
@@ -578,7 +517,7 @@ body {
   flex-direction: column;
 }
 .form h2 {
-  font-size: 3em;
+  font-size: 2.5em;
   color: #000000;
   border-bottom: 1px solid #dddddd;
   font-family: 'maledpan';
@@ -593,9 +532,9 @@ body {
   flex-direction: row;
   align-items: center;
   line-height: 1em;
+  justify-content: space-between;
 }
 .form .form-items.toggle-type .input {
-  margin-right: 20px;
   font-size: 1.2em;
   padding: 0;
 }
@@ -603,7 +542,7 @@ body {
   display: none;
 }
 .form .form-items .label {
-  font-size: 1.6em;
+  font-size: 1.4em;
   color: #000000;
   display: flex;
   flex-direction: row;
@@ -616,7 +555,7 @@ body {
   border-radius: 5px;
   background: #4095c8;
   color: #FFFFFF;
-  font-size: 0.6em;
+  font-size: 1em;
   padding: 5px 7px;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 }
@@ -625,6 +564,8 @@ body {
 }
 .form .form-items p {
   color: #999999;
+  font-family: 'maledpan';
+  font-size: 1.4em;
 }
 .form .form-items p a {
   color: #4095c8;
@@ -634,6 +575,8 @@ body {
 }
 .form .form-items .input {
   padding: 10px 0;
+  display: flex;
+  flex-direction: row;
 }
 .form .form-items .input.twins {
   display: flex;
@@ -642,9 +585,26 @@ body {
 }
 .form .form-items .input.twins .input-text {
   width: 49%;
+  text-align: center;
+  flex-grow: unset;
+}
+.form .form-items .input .input-button {
+  flex-grow: 1;
+  padding: 2.5%;
+  font-size: 1.2em;
+  border: 0px;
+  margin: 0px;
+  background: #FAFAFA;
+  color: #000000;
+  border-radius: 5px;
+  resize: none;
+  border: 2px solid #DDDDDD;
+  box-sizing: border-box;
+  margin-left: 15px;
 }
 .form .form-items .input .input-text,
 .form .form-items .input .input-textarea {
+  flex-grow: 4;
   width: 100%;
   padding: 2.5%;
   font-size: 1.2em;
@@ -801,7 +761,7 @@ body {
 .form .form-items .input .list-input .btn:active {
   color: #64bee3;
 }
-.form .form-items button {
+.form .form-items .button {
   width: 100%;
   float: left;
   display: block;
@@ -816,14 +776,14 @@ body {
   font-family: 'maledpan';
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
 }
-.form .form-items button.-completed {
+.form .form-items .button.-completed {
   background: transparent;
   color: #4095c8;
 }
-.form .form-items button:hover {
+.form .form-items .button:hover {
   cursor: pointer;
 }
-.form .form-items button i {
+.form .form-items .button i {
   margin-left: 10px;
 }
 .device-info {
@@ -833,7 +793,7 @@ body {
   flex-direction: column;
 }
 .device-info h1 {
-  font-size: 3em;
+  font-size: 2.5em;
   font-family: 'maledpan';
 }
 .device-info .temperature-current {
@@ -845,7 +805,7 @@ body {
 }
 .device-info .temperature-current h3 {
   font-family: 'maledpan';
-  font-size: 8em;
+  font-size: 7.5em;
   line-height: 1.2em;
 }
 .device-info .temperature-current p {
@@ -864,7 +824,7 @@ body {
 }
 .device-info .temperature-stat .box h3 {
   font-family: 'maledpan';
-  font-size: 2em;
+  font-size: 2.5em;
   line-height: 1.2em;
 }
 .device-info .temperature-stat .box p {
@@ -883,6 +843,7 @@ body {
   color: #e74c3c;
 }
 .device-info .info {
+  font-size: 0.8em;
   display: flex;
   flex-direction: row;
 }
@@ -921,7 +882,7 @@ body {
   flex-direction: row;
   align-items: center;
   padding: 10px 15px;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-family: 'maledpan';
   border-radius: 5px;
 }
@@ -983,11 +944,11 @@ body {
   margin: 0 20%;
   margin-bottom: 5%;
   color: #666666;
-  font-size: 1em;
-  font-style: italic;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: 'maledpan';
+  font-size: 1.4em;
 }
 .footer i {
   margin-right: 10px;
@@ -1087,18 +1048,18 @@ body {
 }
 #disconnect-bar {
   position: fixed;
-  bottom: -40px;
+  bottom: -50px;
   left: 0px;
   width: 100%;
-  height: 40px;
+  height: 50px;
   display: flex;
   background: #ff9800;
   color: #4c2d00;
   font-family: 'maledpan';
-  z-index: 9999;
-  font-size: 1em;
+  font-size: 1.4em;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
   transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;

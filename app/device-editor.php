@@ -70,48 +70,27 @@ $allzone = $space->listZone($space->id);
 
 	<?php if(!empty($devices->id)){?>
 		<div class="form-items toggle-type">
+			<div class="label">รับข้อมูลจากอุปกรณ์</div>
 			<div class="input">
 				<div id="btn-status-toggle">
 					<?php echo ($devices->status == 'active'?'<i class="fal fa-toggle-on"></i>':'<i class="fal fa-toggle-off"></i>');?>
 				</div>
 			</div>
-			<div class="label">รับข้อมูลจากอุปกรณ์</div>
 		</div>
 
 	<div class="form-items toggle-type">
+		<div class="label">การแจ้งเตือน</div>
 		<div class="input">
 			<div id="btn-notify-toggle">
 				<?php echo ($devices->notify == 'active'?'<i class="fal fa-toggle-on"></i>':'<i class="fal fa-toggle-off"></i>');?>
 			</div>
 		</div>
-		<div class="label">การแจ้งเตือน</div>
 	</div>
 	<?php }?>
 
 	<div class="form-items">
 		<div class="label">ชื่ออุปกรณ์</div>
 		<div class="input"><input class="input-text" type="text" id="name" value="<?php echo $devices->name;?>"></div>
-	</div>
-	<div class="form-items">
-		<div class="label">รายละเอียด</div>
-		<div class="input"><textarea class="input-textarea" id="description"><?php echo $devices->description;?></textarea></div>
-	</div>
-	<div class="form-items">
-		<div class="label">
-			<div>สถานที่</div>
-			<a class="btn" href="editspace/<?php echo $space_id;?>?return_device=<?php echo $devices->id;?>#zone_title"><i class="fa fa-plus"></i>เพิ่มสถานที่</a>
-		</div>
-		<div class="input">
-			<div class="select">
-			<select id="zone_id">
-				<option disabled selected>เลือกสถานที่...</option>
-				<?php foreach ($allzone as $var){ ?>
-				<option value="<?php echo $var['id']?>" <?php echo ($devices->zone_id == $var['id']?'selected':'');?>><?php echo $var['title'];?></option>
-				<?php }?>
-			</select>
-			</div>
-			<p>กลุ่ม : <?php echo $space->title;?></p>
-		</div>
 	</div>
 	<div class="form-items">
 		<div class="label">อุณหภูมิตั้งค่า</div>
@@ -126,22 +105,42 @@ $allzone = $space->listZone($space->id);
 	<div class="form-items">
 		<div class="label">
 			<div>คีย์ (Token) </div>
-			<div class="btn" id="btn-token-reset"><i class="fal fa-redo"></i>สร้างคีย์ใหม่</div>
 		</div>
 		<div class="input">
 			<input class="input-text" type="text" value="<?php echo $devices->token;?>" disabled>
+			<button class="input-button" id="btn-token-reset" title="สร้างคีย์ใหม่"><i class="fal fa-redo"></i></button>
 		</div>
-		<p>ใช้เป็นกุญแจสำหรับเชื่อมข้อมูลจากอุปกรณ์เข้ากับเว็บไซต์นี้</p>
 		<p>ส่งข้อมูล: <i><?php echo DOMAIN;?>/push.php</i></p>
 	</div>
 	<?php }?>
+	<div class="form-items">
+		<div class="label">
+			<div>สถานที่</div>
+			<a class="btn" href="editspace/<?php echo $space_id;?>?return_device=<?php echo $devices->id;?>#zone_title"><i class="fa fa-plus"></i>เพิ่มสถานที่</a>
+		</div>
+		<div class="input">
+			<div class="select">
+			<select id="zone_id">
+				<option disabled selected>เลือกสถานที่</option>
+				<?php foreach ($allzone as $var){ ?>
+				<option value="<?php echo $var['id']?>" <?php echo ($devices->zone_id == $var['id']?'selected':'');?>><?php echo $var['title'];?></option>
+				<?php }?>
+			</select>
+			</div>
+		</div>
+		<p>กลุ่ม : <?php echo $space->title;?></p>
+	</div>
+	<div class="form-items">
+		<div class="label">รายละเอียด</div>
+		<div class="input"><textarea class="input-textarea" id="description"><?php echo $devices->description;?></textarea></div>
+	</div>
 
 	<input type="hidden" id="device_id" value="<?php echo $devices->id?>">
 	<input type="hidden" id="space_id" value="<?php echo $space->id;;?>">
 	<input type="hidden" id="sign" value="<?php echo $signature->generateSignature('device_editor',SECRET_KEY);?>">
 
 	<div class="form-items">
-		<button class="btn" id="btn-save"><?php echo (!empty($devices->id)?'บันทึก':'เพิ่มอุปกรณ์ใหม่');?></button>
+		<button class="button" id="btn-save"><?php echo (!empty($devices->id)?'บันทึก':'เพิ่มอุปกรณ์ใหม่');?></button>
 	</div>
 </div>
 

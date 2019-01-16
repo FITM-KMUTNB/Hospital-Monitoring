@@ -1,7 +1,14 @@
 @import "reset";
 @import "config";
 
-.header{
+@fontsize_mini: 0.8em;
+@fontsize_topic: 2.5em;
+@fontsize_normal: 1.4em;
+@fontsize_input: 1.2em;
+@fontsize_icon: 1.8em;
+@fontsize_mini_icon: 1em;
+
+.header {
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -12,7 +19,7 @@
 	justify-content: space-between;
 
 	a.btn-icon {
-		font-size: 1.8em;
+		font-size: @fontsize_icon;
 		width: 80px;
 		height: 80px;
 		color: #666666;
@@ -57,8 +64,9 @@
 			font-family: @font_family_topic;
 
 			h2 {
-				font-size: 2.5em;
+				font-size: @fontsize_topic;
 			}
+
 			a.button-option {
 				text-decoration: none;
 				padding: 7px 15px;
@@ -66,6 +74,7 @@
 				border-radius: 10px;
 				margin-left: 10px;
 				color: #AAAAAA;
+				font-size: @fontsize_mini_icon;
 
 				&.first-right {
 					margin-left: auto;
@@ -82,7 +91,7 @@
 			align-items: center;
 			margin-bottom: 25px;
 			font-family: @font_family_topic;
-			font-size: 1.2em;
+			font-size: @fontsize_normal;
 
 			a.filter-item {
 				text-decoration: none;
@@ -131,14 +140,14 @@
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					font-size: 1.2em;
+					font-size: @fontsize_normal;
 				}
 
 				.temp {
 					text-overflow: ellipsis;
 					white-space: nowrap;
 					overflow: hidden;
-					font-size: 3em;
+					font-size: @fontsize_topic;
 					font-weight: bold;
 					font-family: @font_family_topic;
 				}
@@ -146,12 +155,12 @@
 					text-overflow: ellipsis;
 					white-space: nowrap;
 					overflow: hidden;
-					font-size: 1.2em;
+					font-size: @fontsize_normal;
 					margin-bottom: 5px;
 					font-family: @font_family_topic;
 				}
 				.desc {
-					font-size: 0.8em;
+					font-size: @fontsize_mini;
 					text-overflow: ellipsis;
 					white-space: nowrap;
 					overflow: hidden;
@@ -213,12 +222,12 @@
 					text-overflow: ellipsis;
 					white-space: nowrap;
 					overflow: hidden;
-					font-size: 1.2em;
+					font-size: @fontsize_normal;
 					font-weight: bold;
 					font-family: @font_family_topic;
 				}
 				.counter {
-					font-size: 0.8em;
+					font-size: @fontsize_mini;
 					text-overflow: ellipsis;
 					white-space: nowrap;
 					overflow: hidden;
@@ -226,76 +235,8 @@
 			}
 		}
 	}
-
-	.space-list {
-		width: 100%;
-		float: left;
-		display: block;
-		margin-top: 20px;
-
-		a.link {
-			float: left;
-			padding: 10px 20px;
-			display: block;
-			text-decoration: none;
-			font-size: 1.2em;
-			border-radius: 20px;
-			border: 1px solid #EEEEEE;
-			margin-bottom: 10px;
-			margin-right: 10px;
-			line-height: 1em;
-			color: #999999;
-			background: #FAFAFA;
-
-			&.active {
-				color: #FFFFFF;
-				background: @primary_color;
-				border: 1px solid @primary_color;
-			}
-
-			&.button {
-				background: transparent;
-				border: 1px dashed #AAAAAA;
-				i {
-					margin-right: 10px;
-				}
-			}
-		}
-	}
-
-	.option-list {
-		width: 100%;
-		float: left;
-		display: block;
-		margin-top: 20px;
-		margin-bottom: 20px;
-		border-bottom: 2px solid #DDDDDD;
-
-		.button {
-			float: left;
-			display: block;
-			font-size: 1.1em;
-			text-decoration: none;
-			padding: 15px 0;
-			margin-right: 20px;
-			color: #666666;
-
-			&.active {
-				color: @primary_color;
-			}
-
-			&.right {
-				float: right;
-				margin: 0;
-				margin-left: 20px;
-
-				i {
-					margin-right: 5px;
-				}
-			}
-		}
-	}
 }
+
 .login{
 	width: 100%;
 	display: flex;
@@ -306,6 +247,7 @@
 	top: 0;
 	left: 0;
 	height: 100%;
+	font-family: @font_family_topic;
 
 	div {
 		width: 28%;
@@ -313,7 +255,7 @@
 		text-align: center;
 
 		&.logout {
-			font-size: 1.4em;
+			font-size: @fontsize_normal;
 
 			i {
 				margin-right: 10px;
@@ -333,30 +275,30 @@
 				display: block;
 			}
 		}
-		h1{
+		h1 {
 			width: 100%;
 			float: left;
 			display: block;
-			font-size: 2.5em;
+			font-size: @fontsize_topic;
 
-			a{
+			a {
 				text-decoration: none;
 				color: @text_active_color;
 			}
 		}
-		p{
+		p {
 			width: 100%;
 			float: left;
 			display: block;
 			color: @text_normal_color;
-			font-size: 1.1em;
+			font-size: @fontsize_normal;
 		}
 
-		.input-text{
-			width: 90%;
+		.input-text {
+			width: 100%;
 			float: left;
 			display: block;
-			font-size: 1.2em;
+			font-size: @fontsize_input;
 			border: 0px;
 			padding: 5%;
 			background: @border_color;
@@ -364,19 +306,15 @@
 			margin: 0%;
 			margin-bottom: 5%;
 			border-radius: 5px;
-			font-family: @font_family_topic;
 			border: 0;
-
-			&:focus{
-				color: #000000;
-			}
+			box-sizing: border-box;
 		}
 
 		.btn{
 			width: 100%;
 			float: left;
 			display: block;
-			font-size: 1.2em;
+			font-size: @fontsize_normal;
 			border: 0px;
 			padding: 5%;
 			margin: 0%;
@@ -385,7 +323,7 @@
 			background: @primary_color;
 			color: @bg_color;
 			font-family: @font_family_topic;
-			box-shadow: 3px 3px 7px rgba(0,0,0,0.25);
+			line-height: 1.2em;
 
 			i{
 				margin-left: 10px;
@@ -403,25 +341,24 @@
 			}
 		}
 
-		p{
+		p {
 			width: 100%;
 			float: left;
 			display: block;
 			color: @text_normal_color;
-			font-size: 1.2em;
+			font-size: @fontsize_normal;
 			margin-bottom: 10%;
 			text-align: center;
 
-			i{
+			i {
 				margin-left: 5px;
 				font-size: 0.8em;
 			}
 
-			a{
+			a {
 				color: @primary_color;
 				text-decoration: none;
-
-				&:hover{ text-decoration: underline; }
+				&:hover { text-decoration: underline; }
 			}
 		}
 	}
@@ -434,7 +371,7 @@
 	flex-direction: column;
 
 	h2 {
-		font-size: 3em;
+		font-size: @fontsize_topic;
 		color: @text_active_color;
 		border-bottom: 1px solid @border_color;
 		font-family: @font_family_topic;
@@ -450,10 +387,10 @@
 			flex-direction: row;
 			align-items: center;
 			line-height: 1em;
+			justify-content: space-between;
 
 			.input {
-				margin-right: 20px;
-				font-size: 1.2em;
+				font-size: @fontsize_input;
 				padding: 0;
 			}
 		}
@@ -461,7 +398,7 @@
 		&.-hidden{ display: none; }
 
 		.label {
-			font-size: 1.6em;
+			font-size: @fontsize_normal;
 			color: @text_active_color;
 			display: flex;
 			flex-direction: row;
@@ -474,7 +411,7 @@
 				border-radius: 5px;
 				background: @primary_color;
 				color: #FFFFFF;
-				font-size: 0.6em;
+				font-size: @fontsize_mini_icon;
 				padding: 5px 7px;
 				box-shadow: 0px 2px 3px rgba(0,0,0,0.25);
 
@@ -486,6 +423,8 @@
 
 		p {
 			color: #999999;
+			font-family: @font_family_topic;
+			font-size: @fontsize_normal;
 
 			a {
 				color: @primary_color;
@@ -497,6 +436,8 @@
 
 		.input {
 			padding: 10px 0;
+			display: flex;
+			flex-direction: row;
 
 			&.twins {
 				display: flex;
@@ -505,13 +446,31 @@
 
 				.input-text {
 					width: 49%;
+					text-align: center;
+					flex-grow: unset;
 				}
 			}
 
+			.input-button {
+				flex-grow: 1;
+				padding: 2.5%;
+				font-size: @fontsize_input;
+				border: 0px;
+				margin: 0px;
+				background: #FAFAFA;
+				color: #000000;
+				border-radius: 5px;
+				resize: none;
+				border: 2px solid #DDDDDD;
+				box-sizing: border-box;
+				margin-left: 15px;
+			}
+
 			.input-text, .input-textarea{
+				flex-grow: 4;
 				width: 100%;
 				padding: 2.5%;
-				font-size: 1.2em;
+				font-size: @fontsize_input;
 				border: 0px;
 				margin: 0px;
 				background: #FAFAFA;
@@ -539,7 +498,7 @@
 				display: block;
 				position: relative;
 
-				&:after{
+				&:after {
 					content: '';
 					border-top: 12px solid #999999;
 					border-left: 8px solid transparent;
@@ -551,14 +510,14 @@
 					pointer-events: none;
 				}
 
-				select{
+				select {
 					width: 100%;
 					margin: 0%;
 					padding: 2.5%;
 					-webkit-appearance: none;
 					-moz-appearance: none;
 					appearance: none;
-					font-size: 1.2em;
+					font-size: @fontsize_input;
 					background: #FAFAFA;
 					color: #000000;
 					border-radius: 5px;
@@ -579,11 +538,11 @@
 				margin-top: -1.5%;
 				color: @text_normal_color;
 
-				&:hover{
+				&:hover {
 					cursor: pointer;
 					opacity: 0.8;
 				}
-				i.fa-toggle-on{ color: @primary_color; }
+				i.fa-toggle-on { color: @primary_color; }
 			}
 
 			.list {
@@ -675,7 +634,7 @@
 			}
 		}
 
-		button {
+		.button {
 			width: 100%;
 			float: left;
 			display: block;
@@ -712,7 +671,7 @@
 	flex-direction: column;
 	
 	h1 {
-		font-size: 3em;
+		font-size: @fontsize_topic;
 		font-family: @font_family_topic;
 	}
 
@@ -725,11 +684,11 @@
 
 		h3 {
 			font-family: @font_family_topic;
-			font-size: 8em;
+			font-size: @fontsize_topic * 3;
 			line-height: 1.2em;
 		}
 		p {
-			font-size: 0.8em;
+			font-size: @fontsize_mini;
 		}
 	}
 
@@ -746,11 +705,11 @@
 
 			h3 {
 				font-family: @font_family_topic;
-				font-size: 2em;
+				font-size: @fontsize_topic;
 				line-height: 1.2em;
 			}
 			p {
-				font-size: 0.8em;
+				font-size: @fontsize_mini;
 			}
 
 			&.-highest{
@@ -764,7 +723,8 @@
 		}
 	}
 
-	.info{
+	.info {
+		font-size: @fontsize_mini;
 		display: flex;
 		flex-direction: row;
 
@@ -809,7 +769,7 @@
 			flex-direction: row;
 			align-items: center;
 			padding: 10px 15px;
-			font-size: 1.2em;
+			font-size: @fontsize_normal;
 			font-family: @font_family_topic;
 			border-radius: 5px;
 
@@ -821,9 +781,9 @@
 				cursor: pointer;
 				background: #DDDDDD;
 			}
+
 			.icon{
 				width: 5%;
-
 				i.fa-caret-down{ color: @primary_color; }
 				i.fa-caret-up{ color: @second_color; }
 			}
@@ -849,7 +809,7 @@
 			}
 		}
 
-		.loading{
+		.loading {
 			width: 100%;
 			margin: 20% 0%;
 			float: left;
@@ -859,7 +819,7 @@
 			font-size: 0.9em;
 		}
 
-		.empty{
+		.empty {
 			width: 100%;
 			margin: 20% 0%;
 			float: left;
@@ -871,23 +831,23 @@
 	}
 }
 
-.footer{
+.footer {
 	width: 60%;
 	margin: 0 20%;
 	margin-bottom: 5%;
 	color: #666666;
-	font-size: 1em;
-	font-style: italic;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	font-family: @font_family_topic;
+	font-size: @fontsize_normal;
 
 	i {
 		margin-right: 10px;
 	}
 }
 
-#progress-bar{
+#progress-bar {
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -901,7 +861,7 @@
 }
 
 
-#loading-bar{
+#loading-bar {
 	position: fixed;
 	top: 5px;
 	left: 0px;
@@ -920,7 +880,7 @@
 	}
 }
 
-#filter{
+#filter {
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -935,7 +895,7 @@
 	display: none;
 }
 
-.message-box{
+.message-box {
 	width: 100%;
 	padding: 12% 0%;
 	float: left;
@@ -985,20 +945,20 @@
 	}
 }
 
-#disconnect-bar{
+#disconnect-bar {
 	position: fixed;
-	bottom: -40px;
+	bottom: -50px;
 	left: 0px;
 	width: 100%;
-	height: 40px;
+	height: 50px;
 	display: flex;
 	background: @third_color;
 	color: @third_color_dark;
 	font-family: @font_family_topic;
-	z-index: 9999;
-	font-size: 1em;
+	font-size: @fontsize_normal;
 	justify-content: center;
 	align-items: center;
+	z-index: 9999;
 	
 	.transitionAnimation(0.3s);
 

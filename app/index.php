@@ -101,7 +101,8 @@ $devices->listDevices($space->id,$_GET['zone']);
 			<h2>อุปกรณ์</h2>
 			<a class="button-option first-right" href="newdevice/space/<?php echo $space->id;?>"><i class="fal fa-plus-circle"></i>เพิ่มอุปกรณ์</a>
 		</div>
-		<?php if($hasSpace){?>
+		
+		<?php if ($hasSpace && count($allzone) > 0) {?>
 		<div class="filter">
 			<?php if(count($allzone) > 0){?>
 			<a href="space/<?php echo $space->id;?>" class="filter-item <?php echo (empty($_GET['zone'])?'active':'');?>" target="_parent">ดูทั้งหมด</a>
@@ -111,6 +112,7 @@ $devices->listDevices($space->id,$_GET['zone']);
 			<?php }?>
 		</div>
 		<?php }?>
+
 		<div class="lists">
 			<?php
 			foreach ($devices->devices_set as $var) {
