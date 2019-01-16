@@ -597,63 +597,55 @@ body {
   flex-direction: column;
 }
 .form h2 {
-  width: 100%;
-  padding: 3% 0%;
-  margin-bottom: 4%;
-  float: left;
-  display: block;
   font-size: 3em;
   color: #000000;
   border-bottom: 1px solid #dddddd;
   font-family: 'maledpan';
+  padding-bottom: 15px;
 }
 .form .form-items {
   display: flex;
   flex-direction: column;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 .form .form-items.toggle-type {
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  line-height: 1em;
+}
+.form .form-items.toggle-type .input {
+  margin-right: 20px;
+  font-size: 1.2em;
+  padding: 0;
 }
 .form .form-items.-hidden {
   display: none;
 }
-.form .form-items button {
-  width: 100%;
-  float: left;
-  display: block;
-  font-size: 1.2em;
-  border-radius: 5px;
-  border: 0px;
-  margin: 0%;
-  padding: 2% 0;
-  margin-top: 5%;
-  background: #4095c8;
-  color: #FFFFFF;
-  font-family: 'maledpan';
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
-}
-.form .form-items button.-completed {
-  background: transparent;
-  color: #4095c8;
-}
-.form .form-items button:hover {
-  cursor: pointer;
-}
-.form .form-items button i {
-  margin-left: 10px;
-}
 .form .form-items .label {
-  font-size: 1.2em;
+  font-size: 1.6em;
   color: #000000;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  font-family: 'maledpan';
+}
+.form .form-items .label .btn {
+  text-decoration: none;
+  border-radius: 5px;
+  background: #4095c8;
+  color: #FFFFFF;
+  font-size: 0.7em;
+  padding: 5px 7px;
+}
+.form .form-items .label .btn i {
+  margin-right: 7px;
+}
+.form .form-items p {
+  color: #999999;
 }
 .form .form-items .input {
-  padding: 1% 0;
+  padding: 10px 0;
 }
 .form .form-items .input.twins {
   display: flex;
@@ -661,29 +653,32 @@ body {
   justify-content: space-between;
 }
 .form .form-items .input.twins .input-text {
-  width: 44%;
+  width: 49%;
 }
 .form .form-items .input .input-text,
 .form .form-items .input .input-textarea {
-  width: 96%;
-  padding: 2%;
-  float: left;
-  display: block;
+  width: 100%;
+  padding: 2.5%;
   font-size: 1.2em;
   border: 0px;
   margin: 0px;
-  background: #EEEEEE;
+  background: #FAFAFA;
   color: #000000;
   border-radius: 5px;
   resize: none;
-  border: 1px solid #DDDDDD;
+  border: 2px solid #DDDDDD;
+  box-sizing: border-box;
 }
 .form .form-items .input .input-text:focus,
 .form .form-items .input .input-textarea:focus {
-  border: 1px solid #999999;
+  border: 2px solid #4095c8;
+}
+.form .form-items .input .input-text:hover,
+.form .form-items .input .input-textarea:hover {
+  cursor: pointer;
 }
 .form .form-items .input .input-textarea {
-  height: 70px;
+  height: 100px;
 }
 .form .form-items .input .select {
   width: 100%;
@@ -693,37 +688,34 @@ body {
 }
 .form .form-items .input .select:after {
   content: '';
-  border-top: 10px solid #111111;
+  border-top: 12px solid #999999;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   position: absolute;
   z-index: 2;
-  top: 17px;
-  right: 4%;
+  top: 35%;
+  right: 3%;
   pointer-events: none;
 }
 .form .form-items .input .select select {
   width: 100%;
   margin: 0%;
-  padding: 2.5% 3%;
-  float: left;
-  display: block;
+  padding: 2.5%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  font-size: 1em;
-  border: 0px;
-  line-height: 1.3em;
-  background: #dddddd;
-  color: #4095c8;
+  font-size: 1.2em;
+  background: #FAFAFA;
+  color: #000000;
   border-radius: 5px;
-  border: 1px solid #1d252b;
+  border: 2px solid #DDDDDD;
+  box-sizing: border-box;
 }
 .form .form-items .input .select select:hover {
   cursor: pointer;
 }
 .form .form-items .input .select select:focus {
-  border: 1px solid #4095c8;
+  border: 2px solid #4095c8;
 }
 .form .form-items .input #btn-status-toggle,
 .form .form-items .input #btn-notify-toggle {
@@ -739,40 +731,6 @@ body {
 .form .form-items .input #btn-status-toggle i.fa-toggle-on,
 .form .form-items .input #btn-notify-toggle i.fa-toggle-on {
   color: #4095c8;
-}
-.form .form-items .input p {
-  width: 100%;
-  float: left;
-  display: block;
-  font-size: 1em;
-  color: #111111;
-  margin-top: 4%;
-  margin-bottom: 6%;
-}
-.form .form-items .input p .link {
-  float: right;
-}
-.form .form-items .input p .btn {
-  background: #ff9800;
-  color: #000000;
-  margin-left: 10px;
-  border-radius: 2px;
-  padding: 2px 5px;
-  font-size: 0.8em;
-}
-.form .form-items .input p .btn:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-.form .form-items .input p a {
-  color: #4095c8;
-  text-decoration: none;
-}
-.form .form-items .input p a:hover {
-  text-decoration: underline;
-}
-.form .form-items .input p a i {
-  margin-left: 5px;
 }
 .form .form-items .input .list {
   width: 100%;
@@ -855,6 +813,31 @@ body {
 }
 .form .form-items .input .list-input .btn:active {
   color: #64bee3;
+}
+.form .form-items button {
+  width: 100%;
+  float: left;
+  display: block;
+  font-size: 1.2em;
+  border-radius: 5px;
+  border: 0px;
+  margin: 0%;
+  padding: 2% 0;
+  margin-top: 5%;
+  background: #4095c8;
+  color: #FFFFFF;
+  font-family: 'maledpan';
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
+}
+.form .form-items button.-completed {
+  background: transparent;
+  color: #4095c8;
+}
+.form .form-items button:hover {
+  cursor: pointer;
+}
+.form .form-items button i {
+  margin-left: 10px;
 }
 .device-info {
   width: 40%;

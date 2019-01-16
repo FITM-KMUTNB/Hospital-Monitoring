@@ -70,21 +70,21 @@ $allzone = $space->listZone($space->id);
 
 	<?php if(!empty($devices->id)){?>
 		<div class="form-items toggle-type">
-			<div class="label">รับข้อมูลจากอุปกรณ์</div>
 			<div class="input">
 				<div id="btn-status-toggle">
 					<?php echo ($devices->status == 'active'?'<i class="fal fa-toggle-on"></i>':'<i class="fal fa-toggle-off"></i>');?>
 				</div>
 			</div>
+			<div class="label">รับข้อมูลจากอุปกรณ์</div>
 		</div>
 
 	<div class="form-items toggle-type">
-		<div class="label">การแจ้งเตือน</div>
 		<div class="input">
 			<div id="btn-notify-toggle">
 				<?php echo ($devices->notify == 'active'?'<i class="fal fa-toggle-on"></i>':'<i class="fal fa-toggle-off"></i>');?>
 			</div>
 		</div>
+		<div class="label">การแจ้งเตือน</div>
 	</div>
 	<?php }?>
 
@@ -99,7 +99,7 @@ $allzone = $space->listZone($space->id);
 	<div class="form-items">
 		<div class="label">
 			<div>สถานที่</div>
-			<a href="editspace/<?php echo $space_id;?>?return_device=<?php echo $devices->id;?>#zone_title"><i class="fa fa-plus"></i>เพิ่มสถานที่</a>
+			<a class="btn" href="editspace/<?php echo $space_id;?>?return_device=<?php echo $devices->id;?>#zone_title"><i class="fa fa-plus"></i>เพิ่มสถานที่</a>
 		</div>
 		<div class="input">
 			<div class="select">
@@ -119,20 +119,20 @@ $allzone = $space->listZone($space->id);
 			<input class="input-text" type="text" id="min" value="<?php echo (!empty($devices->min)?$devices->min:0);?>" placeholder="อุณหภูมิต่ำสุด">
 			<input class="input-text" type="text" id="max" value="<?php echo (!empty($devices->max)?$devices->max:5);?>" placeholder="อุณหภูมิสูงสุด">
 		</div>
-		<p>หากอุณหภูมิของอุปกรณ์สูงหรือตำ่กว่าค่าที่ระบุไว้ ระบบจะเริ่มแจ้งเตือน</p>
+		<p>ระบบจะเริ่มแจ้งเตือน เมื่ออุณหภูมิของอุปกรณ์สูงหรือตำ่กว่าค่าที่กำหนดไว้</p>
 	</div>
 
 	<?php if(!empty($devices->id)){?>
 	<div class="form-items">
 		<div class="label">
-			<div>Token</div>
-			<div class="btn" id="btn-token-reset">สร้างคีย์ใหม่</div>
+			<div>คีย์ (Token) </div>
+			<div class="btn" id="btn-token-reset"><i class="fal fa-redo"></i>สร้างคีย์ใหม่</div>
 		</div>
 		<div class="input">
 			<input class="input-text" type="text" value="<?php echo $devices->token;?>" disabled>
 		</div>
-		<p>ส่งข้อมูล: <i><?php echo DOMAIN;?>/push.php</i><br>
-				คีย์ ใช้เป็นกุญแจสำหรับเชื่อมข้อมูลจากอุปกรณ์ของคุณเข้ากับเว็บไซต์นี้</p>
+		<p>ใช้เป็นกุญแจสำหรับเชื่อมข้อมูลจากอุปกรณ์เข้ากับเว็บไซต์นี้</p>
+		<p>ส่งข้อมูล: <i><?php echo DOMAIN;?>/push.php</i></p>
 	</div>
 	<?php }?>
 
