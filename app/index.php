@@ -95,7 +95,7 @@ $devices->listDevices($space->id,$_GET['zone']);
 			</a>
 			<?php }?>
 		</div>
-
+	</div>
 	<div class="box">
 		<div class="head">
 			<h2>อุปกรณ์</h2>
@@ -131,34 +131,8 @@ $devices->listDevices($space->id,$_GET['zone']);
 			<?php }?>
 		</div>
 	</div>
-	<!-- <div class="space-list">
-		<a class="link button" href="newspace?back=<?php echo $space->id;?>">สร้างกลุ่ม</a>
-	</div> -->
-
-	<?php if(!$hasSpace){?>
-	<div class="message-box">
-		<div class="icon"><i class="fa fa-cube" aria-hidden="true"></i></div>
-		<div class="msg">คุณจำเป็นต้องมีกลุ่มสำหรับเพิ่มอุปกรณ์</div>
-		<div class="control"><a href="newspace" class="btn">สร้างกลุ่มใหม่</a></div>
-	</div>
-	<?php }else{?>
-		<?php if($space->total_device > 0){?>
-			<?php if(empty($space->line_token)){?>
-				<div class="message-box -minibox">
-					<div class="icon"><i class="fa fa-chain-broken" aria-hidden="true"></i></div>
-					<div class="msg">คุณไม่มี LINE Access Token สำหรับการแจ้งเตือน</div>
-					<div class="control">
-						<a class="btn" href="editspace/<?php echo $space->id;?>#line_token" class="btn">แก้ไข Access Token</a>
-					</div>
-				</div>
-			<?php }?>
-			<div class="templist"></div>
-		<?php }?>
-	<?php }?>
 </div>
-
 <input type="hidden" value="<?php echo $space->id;?>" id="space_id">
-
 <?php include'footer.php';?>
 
 <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>

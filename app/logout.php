@@ -40,10 +40,13 @@ session_destroy();
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.0.9/css/fontawesome-all.min.css"/>
 
 </head>
 <body>
-<div class="logout">กำลังออกจากระบบ...</div>
+	<div class="login">
+		<div class="logout"><i class="fas fa-spinner fa-pulse"></i>กำลังออกจากระบบ</div>
+	</div>
 </body>
 
 <script type="text/javascript">

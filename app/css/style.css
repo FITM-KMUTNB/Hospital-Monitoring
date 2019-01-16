@@ -199,29 +199,27 @@ body {
   left: 0px;
   width: 100%;
   height: 80px;
-  float: left;
-  display: block;
-  z-index: -1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .header a.btn-icon {
-  float: left;
-  display: block;
   font-size: 1.8em;
   width: 80px;
-  height: 40px;
-  padding: 20px 0;
-  text-align: center;
+  height: 80px;
   color: #666666;
-}
-.header a.btn-icon.right {
-  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 .header a.btn-icon:hover {
   color: #000000;
 }
 .header a.logo-icon {
-  float: left;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header a.logo-icon img {
   height: 60px;
@@ -457,19 +455,6 @@ body {
 .container .option-list .button.right i {
   margin-right: 5px;
 }
-.logout {
-  width: 100%;
-  margin-top: 28%;
-  float: left;
-  display: block;
-  text-align: center;
-  font-size: 1.2em;
-  color: #4095c8;
-  line-height: 1em;
-}
-.logout i {
-  margin-left: 5px;
-}
 .login {
   width: 100%;
   display: flex;
@@ -485,6 +470,12 @@ body {
   width: 28%;
   margin: 0 36%;
   text-align: center;
+}
+.login div.logout {
+  font-size: 1.4em;
+}
+.login div.logout i {
+  margin-right: 10px;
 }
 .login div .logo {
   width: 30%;
@@ -988,17 +979,18 @@ body {
   font-size: 0.9em;
 }
 .footer {
-  width: 40%;
-  padding: 3% 30%;
-  float: left;
-  display: block;
+  width: 60%;
+  margin: 0 20%;
+  margin-bottom: 5%;
   color: #666666;
   font-size: 1em;
-  text-align: center;
   font-style: italic;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .footer i {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 #progress-bar {
   position: fixed;
