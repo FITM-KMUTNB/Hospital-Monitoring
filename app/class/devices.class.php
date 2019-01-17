@@ -9,12 +9,10 @@ class Devices extends Database{
 	public $zone_title;
 	public $zone_id;
 	public $url_short;
-
 	public $line_token;
 	public $space_id;
 	public $space_name;
 	public $space_description;
-
 	public $status;
 	public $notify;
 
@@ -158,18 +156,22 @@ class Devices extends Database{
 		return $dataset['sort'];
 	}
 
-	public function listDevices($space_id,$zone_id){
-		if(!empty($zone_id)){
-			parent::query('SELECT devices.id,devices.name,devices.description,devices.zone_id,devices.token,devices.max,devices.min,devices.warning,devices.ip,devices.create_time,devices.edit_time,devices.type,devices.status,devices.notify,zone.title zone_title FROM devices AS devices LEFT JOIN zone AS zone ON devices.zone_id = zone.id WHERE devices.space_id = :space_id AND devices.zone_id = :zone_id ORDER BY devices.sort ASC');
-			parent::bind(':zone_id' ,$zone_id);
-		}else{
-			parent::query('SELECT devices.id,devices.name,devices.description,devices.zone_id,devices.token,devices.max,devices.min,devices.warning,devices.ip,devices.create_time,devices.edit_time,devices.type,devices.status,devices.notify,zone.title zone_title FROM devices AS devices LEFT JOIN zone AS zone ON devices.zone_id = zone.id WHERE devices.space_id = :space_id ORDER BY devices.sort ASC');
-		}
-		parent::bind(':space_id',$space_id);
+	public function listDevices($user_id){
+		parent::query('SELECT space.id,space.title,space.description,space.line_token,permission.permission,space.create_time,space.update_time,space.invite_code FROM space_permission AS permission LEFT JOIN space AS space ON permission.space_id = space.id WHERE permission.user_id = :user_id');
+		parent::bind(':user_id',$user_id);
 		parent::execute();
-		$dataset = parent::resultset();
+		$space_lists = parent::resultset();
 
-		$this->devices_set = $dataset;
+		foreach ($space_lists as $k => $var) {
+			parent::query('SELECT devices.id,devices.name,devices.description,devices.zone_id,zone.title zone_title,devices.token,devices.max,devices.min,devices.warning,devices.ip,devices.create_time,devices.edit_time,devices.type,devices.status,devices.notify FROM devices AS devices LEFT JOIN zone AS zone ON devices.zone_id = zone.id WHERE devices.space_id = :space_id ORDER BY devices.sort ASC');
+			parent::bind(':space_id',$var['id']);
+			parent::execute();
+			$dataset = parent::resultset();
+
+			$space_lists[$k]['devices'] = $dataset;
+		}
+		
+		return $space_lists;
 	}
 }
 ?>

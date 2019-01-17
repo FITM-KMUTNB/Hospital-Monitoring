@@ -23,11 +23,10 @@ if(!empty($space_id) && isset($space_id)){
 		die();
 	}
 }
-
 $hasSpace 	= $space->hasSpace($user->id);
 $allzone 	= $space->listZone($space->id);
 $spacelist 	= $space->listAll($user->id);
-$devices->listDevices($space->id,$_GET['zone']);
+$space_list = $devices->listDevices($user->id);
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -78,61 +77,39 @@ $devices->listDevices($space->id,$_GET['zone']);
 </header>
 
 <div class="container">
+	<?php foreach ($space_list as $project) { ?>
 	<div class="box">
 		<div class="head">
-			<h2>กลุ่ม</h2>
-			<a class="button-option first-right" href="space-user.php?id=<?php echo $space->id;?>"><i class="fal fa-user-plus"></i>เพิ่มผู้ดูแล</a>
-			<a class="button-option" href="editspace/<?php echo $space->id;?>"><i class="fal fa-cog"></i>แก้ไข</a>
-			<?php if(empty($space->line_token)){?>
-			<a class="button-option" href="editspace/<?php echo $space->id;?>#line_token"><i class="fal fa-exclamation-circle"></i>ใส่ LINE Token</a>
-			<?php }?>
-		</div>
-		<div class="lists">
-			<?php foreach ($spacelist as $var){ ?>
-			<a class="link <?php echo ($var['space_id'] == $space->id?'active':'');?>" href="space/<?php echo $var['space_id'];?>">
-				<div class="name"><?php echo $var['space_title'];?></div>
-				<div class="counter"><?php echo ($var['total_device'] > 0 ? $var['total_device'].' อุปกรณ์' : 'ไม่มีอุปกรณ์');?></div>
-			</a>
-			<?php }?>
-		</div>
-	</div>
-	<div class="box">
-		<div class="head">
-			<h2>อุปกรณ์</h2>
-			<a class="button-option first-right" href="newdevice/space/<?php echo $space->id;?>"><i class="fal fa-plus-circle"></i>เพิ่มอุปกรณ์</a>
-		</div>
-		
-		<?php if ($hasSpace && count($allzone) > 0) {?>
-		<div class="filter">
-			<?php if(count($allzone) > 0){?>
-			<a href="space/<?php echo $space->id;?>" class="filter-item <?php echo (empty($_GET['zone'])?'active':'');?>" target="_parent">ดูทั้งหมด</a>
-			<?php }?>
-			<?php foreach ($allzone as $var){ ?>
-			<a href="space/<?php echo $space->id;?>/<?php echo $var['id'];?>" class="filter-item <?php echo ($_GET['zone'] == $var['id']?'active':'');?>" target="_parent"><?php echo $var['title'];?></a>
-			<?php }?>
-		</div>
-		<?php }?>
+			<h2><?php echo $project['title'];?></h2>
 
+			<a class="button-option first-right" href="space-user.php?id=<?php echo $project['id'];?>"><i class="fal fa-user-plus"></i>เพิ่มผู้ดูแล</a>
+			<a class="button-option" href="editspace/<?php echo $project['id'];?>"><i class="fal fa-cog"></i>แก้ไข</a>
+			<?php if(empty($project['line_token'])){?>
+			<a class="button-option" href="editspace/<?php echo $project['id'];?>#line_token"><i class="fal fa-exclamation-circle"></i>ใส่ LINE Token</a>
+			<?php }?>
+			<a class="button-option" href="newdevice/space/<?php echo $project['id'];?>"><i class="fal fa-plus-circle"></i>เพิ่มอุปกรณ์</a>
+		</div>
 		<div class="lists">
 			<?php
-			foreach ($devices->devices_set as $var) {
-				$status = ($var['status'] == 'active' ? true : false);
-				$notify = ($var['notify'] == 'active' ? true : false);
+			foreach ($project['devices'] as $device) {
+				$status = ($device['status'] == 'active' ? true : false);
+				$notify = ($device['notify'] == 'active' ? true : false);
 			?>
-			<a class="device-card" id="device-<?php echo $var[id];?>" a href="device/<?php echo $var['id'];?>">
+			<a class="device-card" id="device-<?php echo $device['id'];?>" a href="device/<?php echo $device['id'];?>">
 				<div class="icon"><i class="far fa-thermometer-full"></i></div>
 				<div class="temp">n/a</div>
 				<div class="name">
-					<?php echo $var['name'];?>
-					<?php echo ($var['status'] != 'active'?'<i class="fa fa-lock"></i>':'');?>
-					<?php echo ($var['notify'] != 'active'?'<i class="fa fa-bell-slash"></i>':'');?>
-					<?php echo (!empty($var['zone_title'])?'<span>'.$var['zone_title'].'</span>':'');?>
+					<?php echo $device['name'];?>
+					<?php echo ($device['status'] != 'active' ? '<i class="fa fa-lock"></i>' : '');?>
+					<?php echo ($device['notify'] != 'active' ? '<i class="fa fa-bell-slash"></i>' : '');?>
+					<?php echo (!empty($device['zone_title']) ? ' '.$device['zone_title'] : '');?>
 				</div>
-				<div class="desc"><?php echo (status?'กำลังโหลด..':'ปิดรับข้อมูล')?></div>
+				<div class="desc"><?php echo (status ? 'กำลังโหลด' : 'ปิดรับข้อมูล');?></div>
 			</a>
 			<?php }?>
 		</div>
 	</div>
+	<?php }?>
 </div>
 <input type="hidden" value="<?php echo $space->id;?>" id="space_id">
 <?php include'footer.php';?>
