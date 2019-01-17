@@ -1,5 +1,8 @@
 $(document).ready(function(){
-    getlastlog();
+    getlastlog()
+    tippy('[title]', {
+        arrow: true
+    })
 });
 
 function getlastlog(){

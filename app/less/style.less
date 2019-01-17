@@ -16,7 +16,6 @@
 	height: 80px;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 
 	a.btn-icon {
 		font-size: @fontsize_icon;
@@ -28,6 +27,10 @@
 		align-items: center;
 		text-decoration: none;
 
+		&.btn-back {
+			margin-right: auto;
+		}
+
 		&:hover {
 			color: #000000;
 		}
@@ -37,6 +40,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-right: auto;
 
 		img {
 			height: 60px;
@@ -104,12 +108,12 @@
 				}
 			}
 		}
-		.lists {
+		.device-list {
 			display: flex;
 			flex-flow: row wrap;
 			margin-bottom: 25px;
 			padding-bottom: 15px;
-			border-bottom: 1px solid #DDDDDD;
+			border-bottom: 2px solid #EEEEEE;
 
 			a.device-card {
 				width: 23%;
@@ -126,6 +130,22 @@
 				position: relative;
 				background: #DDDDDD;
 				color: #999999;
+
+				&.create-button {
+					background: #FFFFFF;
+					border: 2px dashed #DDDDDD;
+					font-size: @fontsize_normal;
+					align-items: center;
+					
+					i {
+						font-size: @fontsize_icon;
+						margin-bottom: 5px;
+					}
+
+					p {
+						font-family: @font_family_topic;
+					}
+				}
 
 				&:nth-child(4n+0) {
 					margin-right: 0%;
@@ -280,7 +300,6 @@
 			float: left;
 			display: block;
 			font-size: @fontsize_topic;
-
 			a {
 				text-decoration: none;
 				color: @text_active_color;
@@ -301,13 +320,20 @@
 			font-size: @fontsize_input;
 			border: 0px;
 			padding: 5%;
-			background: @border_color;
+			background: #EEEEEE;
 			color: #333333;
 			margin: 0%;
 			margin-bottom: 5%;
 			border-radius: 5px;
-			border: 0;
+			border: 2px solid #DDDDDD;
 			box-sizing: border-box;
+
+			&:hover {
+				cursor: pointer;
+			}
+			&:focus {
+				border: 2px solid @primary_color;
+			}
 		}
 
 		.btn{
@@ -324,6 +350,7 @@
 			color: @bg_color;
 			font-family: @font_family_topic;
 			line-height: 1.2em;
+			box-shadow: 1px 3px 5px rgba(0,0,0,0.25);
 
 			i{
 				margin-left: 10px;
@@ -863,10 +890,10 @@
 
 #loading-bar {
 	position: fixed;
-	top: 5px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	width: 5%;
-	height: 5px;
+	height: 2px;
 	border-radius: 20%;
 	background: @primary_color;
 	float: left;

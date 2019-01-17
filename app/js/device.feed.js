@@ -11,12 +11,13 @@ Chart.defaults.global.defaultFontColor = '#AAAAAA';
 Chart.defaults.global.defaultFontSize = '10';
 
 $(document).ready(function() {
-
-    device_min  = parseInt($('#device_min').val());
-    device_max  = parseInt($('#device_max').val());
+    device_min  = parseInt($('#device_min').val())
+    device_max  = parseInt($('#device_max').val())
     device_id   = $('#device_id').val();
-
-    init();
+    tippy('[title]', {
+        arrow: true
+    })
+    init()
 });
 
 function init(){

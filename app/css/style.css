@@ -201,7 +201,6 @@ body {
   height: 80px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 .header a.btn-icon {
   font-size: 1.8em;
@@ -213,6 +212,9 @@ body {
   align-items: center;
   text-decoration: none;
 }
+.header a.btn-icon.btn-back {
+  margin-right: auto;
+}
 .header a.btn-icon:hover {
   color: #000000;
 }
@@ -220,6 +222,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: auto;
 }
 .header a.logo-icon img {
   height: 60px;
@@ -278,14 +281,14 @@ body {
   color: #000000;
   font-weight: bold;
 }
-.container .box .lists {
+.container .box .device-list {
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 25px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 2px solid #EEEEEE;
 }
-.container .box .lists a.device-card {
+.container .box .device-list a.device-card {
   width: 23%;
   padding: 3%;
   box-sizing: border-box;
@@ -301,10 +304,23 @@ body {
   background: #DDDDDD;
   color: #999999;
 }
-.container .box .lists a.device-card:nth-child(4n+0) {
+.container .box .device-list a.device-card.create-button {
+  background: #FFFFFF;
+  border: 2px dashed #DDDDDD;
+  font-size: 1.4em;
+  align-items: center;
+}
+.container .box .device-list a.device-card.create-button i {
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+.container .box .device-list a.device-card.create-button p {
+  font-family: 'maledpan';
+}
+.container .box .device-list a.device-card:nth-child(4n+0) {
   margin-right: 0%;
 }
-.container .box .lists a.device-card .icon {
+.container .box .device-list a.device-card .icon {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -315,7 +331,7 @@ body {
   align-items: center;
   font-size: 1.4em;
 }
-.container .box .lists a.device-card .temp {
+.container .box .device-list a.device-card .temp {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -323,7 +339,7 @@ body {
   font-weight: bold;
   font-family: 'maledpan';
 }
-.container .box .lists a.device-card .name {
+.container .box .device-list a.device-card .name {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -331,21 +347,21 @@ body {
   margin-bottom: 5px;
   font-family: 'maledpan';
 }
-.container .box .lists a.device-card .desc {
+.container .box .device-list a.device-card .desc {
   font-size: 0.8em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
-.container .box .lists a.device-card.active {
+.container .box .device-list a.device-card.active {
   background: #3581c2;
   color: #FFFFFF;
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.15);
 }
-.container .box .lists a.device-card.active .desc {
+.container .box .device-list a.device-card.active .desc {
   color: #64bee3;
 }
-.container .box .lists a.device-card.alret {
+.container .box .device-list a.device-card.alret {
   background: #e74c3c;
   color: #FFFFFF;
   -webkit-animation-name: bounce;
@@ -357,10 +373,10 @@ body {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
-.container .box .lists a.device-card.lostconnect .icon {
+.container .box .device-list a.device-card.lostconnect .icon {
   color: #ff9800;
 }
-.container .box .lists a.link {
+.container .box .device-list a.link {
   width: 23%;
   padding: 0 3%;
   box-sizing: border-box;
@@ -375,14 +391,14 @@ body {
   justify-content: center;
   color: #999999;
 }
-.container .box .lists a.link:nth-child(4n+0) {
+.container .box .device-list a.link:nth-child(4n+0) {
   margin-right: 0%;
 }
-.container .box .lists a.link.active {
-  background: #4095c8;
+.container .box .device-list a.link.active {
+  background: #2962ff;
   color: #FFFFFF;
 }
-.container .box .lists a.link .name {
+.container .box .device-list a.link .name {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -390,7 +406,7 @@ body {
   font-weight: bold;
   font-family: 'maledpan';
 }
-.container .box .lists a.link .counter {
+.container .box .device-list a.link .counter {
   font-size: 0.8em;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -455,13 +471,19 @@ body {
   font-size: 1.2em;
   border: 0px;
   padding: 5%;
-  background: #dddddd;
+  background: #EEEEEE;
   color: #333333;
   margin: 0%;
   margin-bottom: 5%;
   border-radius: 5px;
-  border: 0;
+  border: 2px solid #DDDDDD;
   box-sizing: border-box;
+}
+.login div .input-text:hover {
+  cursor: pointer;
+}
+.login div .input-text:focus {
+  border: 2px solid #2962ff;
 }
 .login div .btn {
   width: 100%;
@@ -473,10 +495,11 @@ body {
   margin: 0%;
   margin-bottom: 10%;
   border-radius: 5px;
-  background: #4095c8;
+  background: #2962ff;
   color: #ffffff;
   font-family: 'maledpan';
   line-height: 1.2em;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
 }
 .login div .btn i {
   margin-left: 10px;
@@ -488,7 +511,7 @@ body {
 }
 .login div .btn.-loading {
   background: transparent;
-  color: #4095c8;
+  color: #2962ff;
 }
 .login div p {
   width: 100%;
@@ -504,7 +527,7 @@ body {
   font-size: 0.8em;
 }
 .login div p a {
-  color: #4095c8;
+  color: #2962ff;
   text-decoration: none;
 }
 .login div p a:hover {
@@ -553,7 +576,7 @@ body {
 .form .form-items .label .btn {
   text-decoration: none;
   border-radius: 5px;
-  background: #4095c8;
+  background: #2962ff;
   color: #FFFFFF;
   font-size: 1em;
   padding: 5px 7px;
@@ -568,7 +591,7 @@ body {
   font-size: 1.4em;
 }
 .form .form-items p a {
-  color: #4095c8;
+  color: #2962ff;
 }
 .form .form-items p a i {
   margin-left: 5px;
@@ -619,7 +642,7 @@ body {
 }
 .form .form-items .input .input-text:focus,
 .form .form-items .input .input-textarea:focus {
-  border: 2px solid #4095c8;
+  border: 2px solid #2962ff;
 }
 .form .form-items .input .input-text:hover,
 .form .form-items .input .input-textarea:hover {
@@ -663,7 +686,7 @@ body {
   cursor: pointer;
 }
 .form .form-items .input .select select:focus {
-  border: 2px solid #4095c8;
+  border: 2px solid #2962ff;
 }
 .form .form-items .input #btn-status-toggle,
 .form .form-items .input #btn-notify-toggle {
@@ -678,7 +701,7 @@ body {
 }
 .form .form-items .input #btn-status-toggle i.fa-toggle-on,
 .form .form-items .input #btn-notify-toggle i.fa-toggle-on {
-  color: #4095c8;
+  color: #2962ff;
 }
 .form .form-items .input .list {
   display: flex;
@@ -705,7 +728,7 @@ body {
 }
 .form .form-items .input .list .list-items .c i {
   margin-right: 15px;
-  color: #4095c8;
+  color: #2962ff;
 }
 .form .form-items .input .list .list-items .btn {
   width: 15%;
@@ -737,7 +760,7 @@ body {
   box-sizing: border-box;
 }
 .form .form-items .input .list-input .input-list-text:focus {
-  border: 2px solid #4095c8;
+  border: 2px solid #2962ff;
 }
 .form .form-items .input .list-input .input-list-text:hover {
   cursor: pointer;
@@ -756,7 +779,7 @@ body {
 }
 .form .form-items .input .list-input .btn:hover {
   cursor: pointer;
-  color: #4095c8;
+  color: #2962ff;
 }
 .form .form-items .input .list-input .btn:active {
   color: #64bee3;
@@ -771,14 +794,14 @@ body {
   margin: 0%;
   padding: 2% 0;
   margin-top: 5%;
-  background: #4095c8;
+  background: #2962ff;
   color: #FFFFFF;
   font-family: 'maledpan';
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
 }
 .form .form-items .button.-completed {
   background: transparent;
-  color: #4095c8;
+  color: #2962ff;
 }
 .form .form-items .button:hover {
   cursor: pointer;
@@ -854,7 +877,7 @@ body {
 }
 .device-info .info a i {
   margin-right: 5px;
-  color: #4095c8;
+  color: #2962ff;
 }
 .device-info .graph {
   width: 100%;
@@ -897,7 +920,7 @@ body {
   width: 5%;
 }
 .device-history .history .logitems .icon i.fa-caret-down {
-  color: #4095c8;
+  color: #2962ff;
 }
 .device-history .history .logitems .icon i.fa-caret-up {
   color: #e74c3c;
@@ -959,7 +982,7 @@ body {
   left: 0px;
   width: 5%;
   height: 3px;
-  background: #4095c8;
+  background: #2962ff;
   float: left;
   display: block;
   z-index: 100;
@@ -967,12 +990,12 @@ body {
 }
 #loading-bar {
   position: fixed;
-  top: 5px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 5%;
-  height: 5px;
+  height: 2px;
   border-radius: 20%;
-  background: #4095c8;
+  background: #2962ff;
   float: left;
   display: block;
   z-index: 100;
@@ -1033,7 +1056,7 @@ body {
 }
 .message-box .control a.btn {
   text-decoration: none;
-  background: #4095c8;
+  background: #2962ff;
   color: #3581c2;
   padding: 10px 25px;
   margin: 5px;

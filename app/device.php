@@ -66,9 +66,9 @@ if(!$user_online){ // ไม่ออนไลน์
 <div id="disconnect-bar"><i class="fas fa-sync fa-spin"></i>ขาดการติดต่อ!</div>
 
 <header class="header">
-	<a class="btn-icon" href="space/<?php echo $devices->space_id;?>" target="_parent"><i class="fal fa-arrow-left"></i></a>
+	<a class="btn-icon btn-back" href="space/<?php echo $devices->space_id;?>" target="_parent"><i class="fal fa-arrow-left"></i></a>
 	<?php if($hasPermission && $user_online){?>
-	<a class="btn-icon right" href="editdevice/<?php echo $devices->id;?>" target="_parent"><i class="fal fa-cog"></i></a>
+	<a class="btn-icon" href="editdevice/<?php echo $devices->id;?>" target="_parent" title="แก้ไขอุปกรณ์"><i class="fal fa-cog"></i></a>
 	<?php }?>
 </header>
 
@@ -123,5 +123,6 @@ if(!$user_online){ // ไม่ออนไลน์
 <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/lib/chart.min.js"></script>
 <script type="text/javascript" src="js/min/device.feed.min.js"></script>
+<script type="text/javascript" src="js/lib/tippy.all.min.js"></script>
 </body>
 </html>

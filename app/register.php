@@ -66,7 +66,6 @@ if(!empty($space->id)){
 <form action="javascript:register();" class="login">
 	<div>
 		<div class="logo"><img src="image/logo.png" alt=""></div>
-		<h1><a href="index.php"><?php echo TITLE;?></a></h1>
 		<p><?php echo DESCRIPTION;?></p>
 		<input class="input-text" type="text" id="name" placeholder="ชื่อ - นามสกุล" autofocus>
 		<input class="input-text" type="email" id="email" placeholder="อีเมล">
@@ -74,7 +73,7 @@ if(!empty($space->id)){
 		<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('register',SECRET_KEY);?>">
 		<input type="hidden" id="invite_code" value="<?php echo $_GET['invite'];?>">
 		<button id="btn-register" class="btn">ลงทะเบียน<?php echo (!empty($space->id)?'และร่วมกลุ่ม':'');?></button>
-		<p>ถ้าคุณมีบัญชีอยู่แล้ว <a href="signin<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">เข้าระบบ<i class="fal fa-link"></i></a></p>
+		<p>ถ้าคุณมีบัญชีอยู่แล้ว <a href="signin<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">เข้าระบบ</a></p>
 	</div>
 </form>
 

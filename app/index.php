@@ -1,51 +1,24 @@
 <?php
 include_once 'autoload.php';
-if(!$user_online){
+if (!$user_online) {
 	header('Location: '.DOMAIN.'/signin');
 	die();
 }
-
-$space_id = $_GET['space'];
-
-if(!empty($space_id) && isset($space_id)){
-	$space->get($space_id);
-
-	if(empty($space->id)){
-		header('Location: error-400.php');
-		die();
-	}
-}else{
-	$space_id = $space->defaultSpace($user->id);
-	$space->get($space_id);
-
-	if(!empty($space->id) && isset($space->id)){
-		header('Location: '.DOMAIN.'/space/'.$space->id);
-		die();
-	}
-}
-$hasSpace 	= $space->hasSpace($user->id);
-$allzone 	= $space->listZone($space->id);
-$spacelist 	= $space->listAll($user->id);
-$space_list = $devices->listDevices($user->id);
+$spacelist = $devices->listDevices($user->id);
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
 <head>
-
 <!--[if lt IE 9]>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
 <![endif]-->
-
 <!-- Meta Tag -->
 <meta charset="utf-8">
-
 <!-- Viewport (Responsive) -->
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-
 <?php include'favicon.php';?>
-
 <!-- Meta Tag Main -->
 <meta name="description" content="<?php echo DESCRIPTION;?>"/>
 <meta property="og:title" content="<?php echo TITLE;?>"/>
@@ -54,42 +27,34 @@ $space_list = $devices->listDevices($user->id);
 <meta property="og:image" content="<?php echo DOMAIN;?>/image/ogimage.jpg"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="<?php echo SITENAME;?>"/>
-
 <meta itemprop="name" content="<?php echo TITLE;?>">
 <meta itemprop="description" content="<?php echo DESCRIPTION;?>">
 <meta itemprop="image" content="<?php echo DOMAIN;?>/image/ogimage.jpg">
-
 <title><?php echo $space->title;?> | <?php echo TITLE.' '.VERSION;?></title>
-
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.0.9/css/fontawesome-all.min.css"/>
 </head>
 <body>
-
 <div id="loading-bar"></div>
 <div id="filter"></div>
-
 <header class="header">
-	<a class="logo-icon" href="index.php"><img src="image/logo.png" alt=""></a>
-	<!-- <a class="logo-title" href="index.php"><?php echo TITLE;?></a> -->
-	<a class="btn-icon right" href="logout" target="_parent"><i class="fal fa-power-off"></i></a>
+	<a class="logo-icon" href="index.php"><img src="image/logo.png" alt="logo"></a>
+	<a class="btn-icon" href="logout" target="_parent" title="สร้างโปรเจ็คใหม่"><i class="fal fa-plus-circle"></i></a>
+	<a class="btn-icon" href="logout" target="_parent" title="ออกจากระบบ"><i class="fal fa-power-off"></i></a>
 </header>
-
 <div class="container">
-	<?php foreach ($space_list as $project) { ?>
+	<?php foreach ($spacelist as $project) { ?>
 	<div class="box">
 		<div class="head">
 			<h2><?php echo $project['title'];?></h2>
-
 			<a class="button-option first-right" href="space-user.php?id=<?php echo $project['id'];?>"><i class="fal fa-user-plus"></i>เพิ่มผู้ดูแล</a>
 			<a class="button-option" href="editspace/<?php echo $project['id'];?>"><i class="fal fa-cog"></i>แก้ไข</a>
 			<?php if(empty($project['line_token'])){?>
 			<a class="button-option" href="editspace/<?php echo $project['id'];?>#line_token"><i class="fal fa-exclamation-circle"></i>ใส่ LINE Token</a>
 			<?php }?>
-			<a class="button-option" href="newdevice/space/<?php echo $project['id'];?>"><i class="fal fa-plus-circle"></i>เพิ่มอุปกรณ์</a>
 		</div>
-		<div class="lists">
+		<div class="device-list">
 			<?php
 			foreach ($project['devices'] as $device) {
 				$status = ($device['status'] == 'active' ? true : false);
@@ -107,15 +72,20 @@ $space_list = $devices->listDevices($user->id);
 				<div class="desc"><?php echo (status ? 'กำลังโหลด' : 'ปิดรับข้อมูล');?></div>
 			</a>
 			<?php }?>
+
+			<a class="device-card create-button" href="newdevice/space/<?php echo $project['id'];?>">
+				<i class="fal fa-plus-circle"></i>
+				<p>เพิ่มอุปกรณ์</p>
+			</a>
 		</div>
 	</div>
 	<?php }?>
 </div>
 <input type="hidden" value="<?php echo $space->id;?>" id="space_id">
 <?php include'footer.php';?>
-
 <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/min/timeline.min.js"></script>
 <script type="text/javascript" src="js/min/layout.min.js"></script>
+<script type="text/javascript" src="js/lib/tippy.all.min.js"></script>
 </body>
 </html>
