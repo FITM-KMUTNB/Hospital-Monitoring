@@ -36,41 +36,7 @@ if($_POST['calling'] != '' && $signature->verifySign($_POST['sign'])){
 			$api->errorMessage('COMMENT POST API ERROR!');
 			break;
 	}
-}
-
-// API Request $_GET
-else if($_GET['calling'] != ''){
-	switch ($_GET['calling']) {
-		case 'device':
-			switch ($_GET['action']) {
-				case 'list_patient':
-					// $dataset = $patient->listPatient($_SESSION['station_id'],$_GET['status']);
-
-					// Export data to json format
-					$data = array(
-						"apiVersion" => "1.0",
-						"data" => array(
-							"update" => time(),
-							"execute" => round(microtime(true)-StTime,4)."s",
-							"totalFeeds" => floatval($total),
-							"items" => $dataset
-						),
-					);
-
-					echo json_encode($data);
-					break;
-				default:
-					break;
-			}
-			break;
-		default:
-			$api->errorMessage('COMMENT GET API ERROR!');
-			break;
-	}
-}
-
-// API Request is Fail or Null calling
-else{
+} else {
 	$api->errorMessage('Invalid Signature or API not found!');
 }
 

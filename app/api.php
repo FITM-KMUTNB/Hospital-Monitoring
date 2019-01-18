@@ -19,25 +19,19 @@ if($_POST['calling'] != ''){
 			$api->errorMessage('COMMENT POST API ERROR!');
 			break;
 	}
-}
-
-// API Request $_GET
-else if($_GET['calling'] != ''){
+} else if ($_GET['calling'] != '') {
 	switch ($_GET['calling']) {
 		case 'log':
 			switch ($_GET['action']) {
 				case 'getupdated':
 					$space_id = $_GET['space_id'];
-					$dataset = $log->lastlog($space_id);
-
+					$dataset = $log->lastlog($user->id);
 					foreach ($dataset as $k => $var) {
-						if($var['device_temp'] > $var['device_max'] || $var['device_temp'] < $var['device_min'])
+						if ($var['device_temp'] > $var['device_max'] || $var['device_temp'] < $var['device_min'])
 							$dataset[$k]['device_alert'] = true;
 						else
 							$dataset[$k]['device_alert'] = false;
 					}
-
-					// Export data to json format
 					$data = array(
 						"apiVersion" => "1.0",
 						"data" => array(
@@ -45,9 +39,8 @@ else if($_GET['calling'] != ''){
 							"execute" 		=> round(microtime(true)-StTime,4)." s.",
 							"totalFeeds" 	=> floatval($total),
 							"items" 		=> $dataset,
-						),
+						)
 					);
-					
 					echo json_encode($data);
 					break;
 				case 'history_log':
@@ -64,16 +57,10 @@ else if($_GET['calling'] != ''){
 						else
 							$dataset[$k]['alert'] = false;
 					}
-
-					// Export data to json format
 					$data = array(
 						"apiVersion" => "1.1",
 						"data" => array(
 							"message" 		=> 'History Logs',
-							// "config" => array(
-							// 	'min' => floatval($devices->min),
-							// 	'max' => floatval($devices->max)
-							// ),
 							"update" 		=> time(),
 							"execute" 		=> floatval(round(microtime(true)-StTime,4)),
 							"totalFeeds" 	=> floatval(count($dataset)),
@@ -105,12 +92,8 @@ else if($_GET['calling'] != ''){
 			$api->errorMessage('COMMENT GET API ERROR!');
 			break;
 	}
-}
-
-// API Request is Fail or Null calling
-else{
+} else {
 	$api->errorMessage('API NOT FOUND!');
 }
-
 exit();
 ?>

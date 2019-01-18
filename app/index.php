@@ -81,7 +81,7 @@ $spacelist = $devices->listDevices($user->id);
 	</div>
 	<?php }?>
 </div>
-<input type="hidden" value="<?php echo $space->id;?>" id="space_id">
+<input type="hidden" value="<?php echo $user->id;?>" id="space_id">
 <?php include'footer.php';?>
 <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/min/timeline.min.js"></script>

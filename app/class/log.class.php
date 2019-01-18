@@ -24,21 +24,20 @@ class Log extends Database{
 		parent::execute();
 	}
 
-	public function lastlog($space_id){
-		parent::query('SELECT id device_id,devices.temp device_temp,devices.update_time,devices.name,devices.description,devices.min device_min,devices.max device_max FROM devices WHERE space_id = :space_id');
-		parent::bind(':space_id',$space_id);
+	public function lastlog($user_id){
+		parent::query('SELECT devices.id device_id,devices.temp device_temp,devices.update_time,devices.name,devices.description,devices.min device_min,devices.max device_max,permission.user_id permission_user_id FROM devices AS devices LEFT JOIN space_permission AS permission ON devices.space_id = permission.space_id WHERE permission.user_id = :user_id');
+		parent::bind(':user_id',$user_id);
 		parent::execute();
 		$dataset = parent::resultset();
 
 		foreach ($dataset as $k => $var) {
-			// $dataset[$k]['log_id'] 				= floatval($var['log_id']);
-			$dataset[$k]['device_id'] 			= floatval($var['device_id']);
-			$dataset[$k]['device_temp'] 		= floatval(round($var['device_temp'],1));
-			$dataset[$k]['device_min'] 			= floatval($var['device_min']);
-			$dataset[$k]['device_max'] 			= floatval($var['device_max']);
-			$dataset[$k]['update_timestemp'] 	= time() - strtotime($var['update_time']);
-			$dataset[$k]['update_datetime'] 	= parent::time_thaiformat($var['update_time']);
-			$dataset[$k]['update_time'] 		= parent::date_facebookformat($var['update_time']);
+			$dataset[$k]['device_id'] = floatval($var['device_id']);
+			$dataset[$k]['device_temp'] = floatval(round($var['device_temp'], 1));
+			$dataset[$k]['device_min'] = floatval($var['device_min']);
+			$dataset[$k]['device_max'] = floatval($var['device_max']);
+			$dataset[$k]['update_timestemp'] = time() - strtotime($var['update_time']);
+			$dataset[$k]['update_datetime'] = parent::time_thaiformat($var['update_time']);
+			$dataset[$k]['update_time'] = parent::date_facebookformat($var['update_time']);
 		}
 
 		return $dataset;
