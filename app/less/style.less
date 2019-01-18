@@ -1,12 +1,10 @@
 @import "reset";
 @import "config";
 
-@fontsize_mini: 0.8em;
-@fontsize_topic: 2.5em;
-@fontsize_normal: 1.4em;
-@fontsize_input: 1.2em;
+@fontsize_mini: 0.9em;
+@fontsize_topic: 2.75em;
+@fontsize_normal: 1.2em;
 @fontsize_icon: 1.8em;
-@fontsize_mini_icon: 1em;
 
 .header {
 	position: fixed;
@@ -78,7 +76,7 @@
 				border-radius: 10px;
 				margin-left: 10px;
 				color: #AAAAAA;
-				font-size: @fontsize_mini_icon;
+				font-size: @fontsize_mini;
 
 				&.first-right {
 					margin-left: auto;
@@ -258,140 +256,104 @@
 }
 
 .login{
-	width: 100%;
+	width: 24%;
+	margin: 0 38%;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
-	font-family: @font_family_topic;
 
-	div {
-		width: 28%;
-		margin: 0 36%;
+	&.logout {
+		font-size: @fontsize_normal;
+		i {
+			margin-right: 10px;
+		}
+	}
+
+	.logo{
+		width: 34%;
+		margin: 0 33%;
+		margin-bottom: 5%;
+		float: left;
+		display: block;
+
+		img{
+			width: 100%;
+			float: left;
+			display: block;
+		}
+	}
+	.input-text {
+		width: 100%;
+		float: left;
+		display: block;
+		font-size: @fontsize_normal;
+		padding: 18px;
+		background: #EEEEEE;
+		color: #333333;
+		margin: 0%;
+		margin-bottom: 5%;
+		border-radius: 5px;
+		box-sizing: border-box;
+		border: 2px solid #DDDDDD;
+
+		&:hover {
+			cursor: pointer;
+		}
+		&:focus {
+			border: 2px solid @primary_color;
+		}
+	}
+
+	button {
+		width: 100%;
+		float: left;
+		display: block;
+		font-size: @fontsize_normal;
+		border: 0px;
+		padding: 20px;
+		margin: 0%;
+		margin-bottom: 10%;
+		border-radius: 5px;
+		background: @primary_color;
+		color: @bg_color;
+		line-height: 1.2em;
+		box-shadow: 1px 3px 5px rgba(0,0,0,0.25);
+		font-size: @fontsize_normal;
+
+		i {
+			margin-left: 10px;
+			font-size: 0.9em;
+		}
+
+		&:hover{
+			cursor: pointer;
+			background: @primary_color_dark;
+		}
+
+		&.loading{
+			background: #DDDDDD;
+			color: #999999;
+			box-shadow: none;
+		}
+	}
+
+	p {
+		font-size: @fontsize_normal;
+		margin-bottom: 10%;
 		text-align: center;
+		color: #333333;
 
-		&.logout {
-			font-size: @fontsize_normal;
-
-			i {
-				margin-right: 10px;
-			}
-		}
-
-		.logo{
-			width: 30%;
-			margin: 0 35%;
-			margin-bottom: 5%;
-			float: left;
-			display: block;
-
-			img{
-				width: 100%;
-				float: left;
-				display: block;
-			}
-		}
-		h1 {
-			width: 100%;
-			float: left;
-			display: block;
-			font-size: @fontsize_topic;
-			a {
-				text-decoration: none;
-				color: @text_active_color;
-			}
-		}
-		p {
-			width: 100%;
-			float: left;
-			display: block;
-			color: @text_normal_color;
-			font-size: @fontsize_normal;
-		}
-
-		.input-text {
-			width: 100%;
-			float: left;
-			display: block;
-			font-size: @fontsize_input;
-			border: 0px;
-			padding: 5%;
-			background: #EEEEEE;
-			color: #333333;
-			margin: 0%;
-			margin-bottom: 5%;
-			border-radius: 5px;
-			border: 2px solid #DDDDDD;
-			box-sizing: border-box;
-
-			&:hover {
-				cursor: pointer;
-			}
-			&:focus {
-				border: 2px solid @primary_color;
-			}
-		}
-
-		.btn{
-			width: 100%;
-			float: left;
-			display: block;
-			font-size: @fontsize_normal;
-			border: 0px;
-			padding: 5%;
-			margin: 0%;
-			margin-bottom: 10%;
-			border-radius: 5px;
-			background: @primary_color;
-			color: @bg_color;
-			font-family: @font_family_topic;
-			line-height: 1.2em;
-			box-shadow: 1px 3px 5px rgba(0,0,0,0.25);
-
-			i{
-				margin-left: 10px;
-				font-size: 0.9em;
-			}
-
-			&:hover{
-				cursor: pointer;
-				background: @primary_color_dark;
-			}
-
-			&.-loading{
-				background: transparent;
-				color: @primary_color;
-			}
-		}
-
-		p {
-			width: 100%;
-			float: left;
-			display: block;
-			color: @text_normal_color;
-			font-size: @fontsize_normal;
-			margin-bottom: 10%;
-			text-align: center;
-
-			i {
-				margin-left: 5px;
-				font-size: 0.8em;
-			}
-
-			a {
-				color: @primary_color;
-				text-decoration: none;
-				&:hover { text-decoration: underline; }
-			}
+		a {
+			color: @primary_color;
 		}
 	}
 }
 
-.form{
+.form {
 	width: 40%;
 	margin: 80px 30%;
 	display: flex;
@@ -417,7 +379,7 @@
 			justify-content: space-between;
 
 			.input {
-				font-size: @fontsize_input;
+				font-size: @fontsize_normal;
 				padding: 0;
 			}
 		}
@@ -440,7 +402,7 @@
 				border-radius: 5px;
 				background: @primary_color;
 				color: #FFFFFF;
-				font-size: @fontsize_mini_icon;
+				font-size: @fontsize_mini;
 				padding: 5px 7px;
 				box-shadow: 0px 2px 3px rgba(0,0,0,0.25);
 
@@ -453,7 +415,7 @@
 		p {
 			color: #999999;
 			font-family: @font_family_topic;
-			font-size: @fontsize_normal;
+			font-size: @fontsize_mini;
 
 			a {
 				color: @primary_color;
@@ -482,32 +444,36 @@
 
 			.input-button {
 				flex-grow: 1;
-				padding: 2.5%;
-				font-size: @fontsize_input;
+				padding: 18px;
+				font-size: @fontsize_normal;
 				border: 0px;
 				margin: 0px;
-				background: #FAFAFA;
-				color: #000000;
+				background: @primary_color;
+				color: #FFFFFF;
 				border-radius: 5px;
 				resize: none;
-				border: 2px solid #DDDDDD;
 				box-sizing: border-box;
 				margin-left: 15px;
+
+				&:hover {
+					cursor: pointer;
+				}
 			}
 
 			.input-text, .input-textarea{
 				flex-grow: 4;
 				width: 100%;
-				padding: 2.5%;
-				font-size: @fontsize_input;
-				border: 0px;
-				margin: 0px;
-				background: #FAFAFA;
-				color: #000000;
+				float: left;
+				display: block;
+				font-size: @fontsize_normal;
+				padding: 18px;
+				background: #EEEEEE;
+				color: #333333;
+				margin: 0%;
+				margin-bottom: 5%;
 				border-radius: 5px;
-				resize: none;
-				border: 2px solid #DDDDDD;
 				box-sizing: border-box;
+				border: 2px solid #DDDDDD;
 
 				&:focus {
 					border: 2px solid @primary_color;
@@ -546,7 +512,7 @@
 					-webkit-appearance: none;
 					-moz-appearance: none;
 					appearance: none;
-					font-size: @fontsize_input;
+					font-size: @fontsize_normal;
 					background: #FAFAFA;
 					color: #000000;
 					border-radius: 5px;
@@ -869,7 +835,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	font-family: @font_family_topic;
-	font-size: @fontsize_normal;
+	font-size: @fontsize_mini;
 
 	i {
 		margin-right: 10px;

@@ -63,19 +63,18 @@ if(!empty($space->id)){
 <body>
 <div id="progress-bar"></div>
 <form class="login" action="javascript:login();">
-	<div>
-		<div class="logo"><img src="image/logo.png" alt=""></div>
-		<p><?php echo DESCRIPTION;?></p>
-		<input class="input-text" type="email" id="email" placeholder="อีเมล" autofocus>
-		<input class="input-text" type="password" id="password" placeholder="รหัสผ่าน">
-		<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('login',SECRET_KEY);?>">
-		<button id="btn-login" class="btn">เข้าสู่ระบบ<?php echo (!empty($space->id)?'และร่วมกลุ่ม':'');?></button>
-		<p>ยังไม่มีบัญชี <a href="signup<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">ลงทะเบียน</a></p>
-
-		<input type="hidden" id="redirect_page" value="<?php echo $_GET['redirect'];?>">
-		<input type="hidden" id="redirect_id" value="<?php echo $_GET['id'];?>">
-		<input type="hidden" id="invite_code" value="<?php echo $_GET['invite'];?>">
-	</div>
+	<div class="logo"><img src="image/logo.png" alt=""></div>
+	<p><?php echo DESCRIPTION;?></p>
+	
+	<input class="input-text" type="email" id="email" placeholder="อีเมล" autofocus>
+	<input class="input-text" type="password" id="password" placeholder="รหัสผ่าน">
+	<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('login',SECRET_KEY);?>">
+	<button id="btn-login">เข้าสู่ระบบ<?php echo (!empty($space->id)?'และร่วมกลุ่ม':'');?></button>
+	
+	<p>ยังไม่มีบัญชี <a href="signup<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">ลงทะเบียน</a></p>
+	<input type="hidden" id="redirect_page" value="<?php echo $_GET['redirect'];?>">
+	<input type="hidden" id="redirect_id" value="<?php echo $_GET['id'];?>">
+	<input type="hidden" id="invite_code" value="<?php echo $_GET['invite'];?>">
 </form>
 
 <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
