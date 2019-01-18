@@ -85,34 +85,28 @@ $(document).ready(function(){
 	});
 
 	$('#btn-save').click(function(){
-
 		var name 		= $('#name').val();
 		var description = $('#description').val();
-		var zone_id 	= $('#zone_id').val();
 		var space_id 	= $('#space_id').val();
 		var min 		= parseFloat($('#min').val());
 		var max 		= parseFloat($('#max').val());
 		var device_id 	= $('#device_id').val();
-		// console.log(min,max);
-		if(name == ''){
+		
+		if (name == '') {
 			alert('คุณจำเป็นต้องระบุชื่ออุปกรณ์!');
 			$('#name').focus();
 			return false;
-		}else if(isNaN(min)){
+		} else if (isNaN(min)) {
 			alert('ไม่มีค่าอุณหภูมิต่ำที่สุด!');
 			$('#min').focus();
 			return false;
-		}else if(isNaN(max)){
+		} else if (isNaN(max)) {
 			alert('ไม่มีค่าอุณหภูมิสูงที่สุด!');
 			$('#max').focus();
 			return false;
-		}else if(parseFloat(min) >= parseFloat(max)){
+		} else if (parseFloat(min) >= parseFloat(max)) {
 			alert('อุณหภูมิต่ำสุดไม่ควรเกินจุดสูงสุด!');
 			$('#min').focus();
-			return false;
-		}else if(!zone_id){
-			alert('เลือกสถานที่ติดตั้งอุปรกรณ์!');
-			$('#zone_id').focus();
 			return false;
 		}
 
@@ -130,7 +124,6 @@ $(document).ready(function(){
 	            action      :'submit',
 	            name		:name,
 	            description	:description,
-	            zone_id		:zone_id,
 	            space_id	:space_id,
 	            min			:min,
 	            max			:max,
@@ -154,7 +147,6 @@ $(document).ready(function(){
 	        	$('#btn-save').html('บันทึกแล้ว<i class="fa fa-check" aria-hidden="true"></i>');
 	        	$('#btn-nav').addClass('-show');
 	        }
-
 	    });
 	});
 });

@@ -45,11 +45,7 @@ if(!empty($space->id) && isset($space->id)){
 </head>
 <body>
 <header class="header">
-	<?php if(empty($space->id)){?>
-	<a href="space/<?php echo $_GET['back'];?>" class="btn-icon" target="_parent"><i class="far fa-arrow-left"></i></a>
-	<?php }else{?>
-	<a href="space/<?php echo $space->id;?>" class="btn-icon" target="_parent"><i class="far fa-arrow-left"></i></a>
-	<?php }?>
+<a class="btn-icon btn-back" href="/" target="_parent"><i class="fal fa-arrow-left"></i></a>
 </header>
 <div class="form">
 	<h2>จัดการกลุ่ม</h2>
@@ -57,11 +53,10 @@ if(!empty($space->id) && isset($space->id)){
 		<div class="label">ชื่อกลุ่ม</div>
 		<div class="input"><input class="input-text" type="text" id="name" value="<?php echo $space->title;?>"></div>
 	</div>
-	<div class="form-items <?php echo (empty($space->id)?'-hidden':'');?>">
+	<div class="form-items <?php echo (empty($space->id) ? 'hidden' : '');?>">
 		<div class="label">รายละเอียด</div>
 		<div class="input"><textarea class="input-textarea" id="description"><?php echo $space->description;?></textarea></div>
 	</div>
-
 	<?php if(!empty($space->id) && isset($space->id)){?>
 	<div class="form-items">
 		<div class="label">สถานที่</div>
@@ -79,7 +74,7 @@ if(!empty($space->id) && isset($space->id)){
 	</div>
 	<?php }?>
 
-	<div class="form-items <?php echo (empty($space->id)?'-hidden':'');?>">
+	<div class="form-items <?php echo (empty($space->id) ? 'hidden' : '');?>">
 		<div class="label">LINE Access Token</div>
 		<div class="input">
 			<input class="input-text" type="text" id="line_token" value="<?php echo $space->line_token;?>">
@@ -92,7 +87,7 @@ if(!empty($space->id) && isset($space->id)){
 	<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('space_editor',SECRET_KEY);?>">
 
 	<div class="form-items">
-		<button class="btn" id="btn-save"><?php echo (!empty($space->id)?'บันทึก':'สร้างกลุ่มใหม่');?></button>
+		<button class="button" id="btn-save"><?php echo (!empty($space->id) ? 'บันทึก' : 'สร้างกลุ่มใหม่');?></button>
 	</div>
 </div>
 

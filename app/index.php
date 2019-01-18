@@ -40,7 +40,7 @@ $spacelist = $devices->listDevices($user->id);
 <div id="filter"></div>
 <header class="header">
 	<a class="logo-icon" href="index.php"><img src="image/logo.png" alt="logo"></a>
-	<a class="btn-icon" href="logout" target="_parent" title="สร้างโปรเจ็คใหม่"><i class="fal fa-plus-circle"></i></a>
+	<a class="btn-icon" href="newspace" target="_parent" title="สร้างโปรเจ็คใหม่"><i class="fal fa-plus-circle"></i></a>
 	<a class="btn-icon" href="logout" target="_parent" title="ออกจากระบบ"><i class="fal fa-power-off"></i></a>
 </header>
 <div class="container">

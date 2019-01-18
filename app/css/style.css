@@ -561,7 +561,7 @@ body {
   font-size: 1.2em;
   padding: 0;
 }
-.form .form-items.-hidden {
+.form .form-items.hidden {
   display: none;
 }
 .form .form-items .label {

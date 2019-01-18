@@ -28,10 +28,7 @@ if(empty($_GET['space']) && isset($devices->space_id)){
 
 // ดึงข้อมูล Space
 $space->get($space_id);
-
-// ดึงข้อมูล Zone
-$allzone = $space->listZone($space->id);
-
+$page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพิ่มอุปกรณ์ใหม่');
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -50,7 +47,7 @@ $allzone = $space->listZone($space->id);
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>EDIT | <?php echo $devices->name;?><?php echo (!empty($devices->zone_title)?' ('.$devices->zone_title.')':'');?></title>
+<title><?php echo $page_title;?> - <?php echo $space->title;?></title>
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
@@ -66,14 +63,13 @@ $allzone = $space->listZone($space->id);
 	<?php }?>
 </header>
 <div class="form">
-	<h2>จัดการอุปกรณ์</h2>
-
+	<h2><?php echo $page_title;?></h2>
 	<?php if(!empty($devices->id)){?>
 		<div class="form-items toggle-type">
 			<div class="label">รับข้อมูลจากอุปกรณ์</div>
 			<div class="input">
 				<div id="btn-status-toggle">
-					<?php echo ($devices->status == 'active'?'<i class="fal fa-toggle-on"></i>':'<i class="fal fa-toggle-off"></i>');?>
+					<?php echo ($devices->status == 'active' ? '<i class="fal fa-toggle-on"></i>' : '<i class="fal fa-toggle-off"></i>');?>
 				</div>
 			</div>
 		</div>
@@ -82,7 +78,7 @@ $allzone = $space->listZone($space->id);
 		<div class="label">การแจ้งเตือน</div>
 		<div class="input">
 			<div id="btn-notify-toggle">
-				<?php echo ($devices->notify == 'active'?'<i class="fal fa-toggle-on"></i>':'<i class="fal fa-toggle-off"></i>');?>
+				<?php echo ($devices->notify == 'active' ? '<i class="fal fa-toggle-on"></i>' : '<i class="fal fa-toggle-off"></i>');?>
 			</div>
 		</div>
 	</div>
@@ -90,7 +86,7 @@ $allzone = $space->listZone($space->id);
 
 	<div class="form-items">
 		<div class="label">ชื่ออุปกรณ์</div>
-		<div class="input"><input class="input-text" type="text" id="name" value="<?php echo $devices->name;?>"></div>
+		<div class="input"><input class="input-text" type="text" id="name" value="<?php echo $devices->name;?>" autofocus></div>
 	</div>
 	<div class="form-items">
 		<div class="label">อุณหภูมิตั้งค่า</div>
@@ -113,23 +109,6 @@ $allzone = $space->listZone($space->id);
 		<p>ส่งข้อมูล: <i><?php echo DOMAIN;?>/push.php</i></p>
 	</div>
 	<?php }?>
-	<div class="form-items">
-		<div class="label">
-			<div>สถานที่</div>
-			<a class="btn" href="editspace/<?php echo $space_id;?>?return_device=<?php echo $devices->id;?>#zone_title"><i class="fa fa-plus"></i>เพิ่มสถานที่</a>
-		</div>
-		<div class="input">
-			<div class="select">
-			<select id="zone_id">
-				<option disabled selected>เลือกสถานที่</option>
-				<?php foreach ($allzone as $var){ ?>
-				<option value="<?php echo $var['id']?>" <?php echo ($devices->zone_id == $var['id']?'selected':'');?>><?php echo $var['title'];?></option>
-				<?php }?>
-			</select>
-			</div>
-		</div>
-		<p>กลุ่ม : <?php echo $space->title;?></p>
-	</div>
 	<div class="form-items">
 		<div class="label">รายละเอียด</div>
 		<div class="input"><textarea class="input-textarea" id="description"><?php echo $devices->description;?></textarea></div>
