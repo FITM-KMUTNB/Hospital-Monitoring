@@ -251,18 +251,12 @@ body {
 }
 .container .box .head a.button-option {
   text-decoration: none;
-  padding: 7px 15px;
-  border: 1px solid #EEEEEE;
-  border-radius: 10px;
-  margin-left: 10px;
+  padding: 10px;
   color: #AAAAAA;
-  font-size: 0.9em;
+  font-size: 1.2em;
 }
 .container .box .head a.button-option.first-right {
   margin-left: auto;
-}
-.container .box .head a.button-option i {
-  margin-right: 10px;
 }
 .container .box .device-list {
   display: flex;
@@ -283,7 +277,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
   background: #DDDDDD;
   color: #999999;
 }
@@ -303,16 +296,20 @@ body {
 .container .box .device-list a.device-card:nth-child(4n+0) {
   margin-right: 0%;
 }
-.container .box .device-list a.device-card .icon {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 15px;
-  right: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container .box .device-list a.device-card .info {
   font-size: 1.2em;
+  margin-bottom: 5px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .box .device-list a.device-card .info .name {
+  margin-right: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .container .box .device-list a.device-card .temp {
   text-overflow: ellipsis;
@@ -321,20 +318,14 @@ body {
   font-size: 2.5em;
   font-weight: bold;
   font-family: sans-serif;
-}
-.container .box .device-list a.device-card .name {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 1.2em;
-  margin-bottom: 5px;
-  font-family: sans-serif;
+  text-align: center;
 }
 .container .box .device-list a.device-card .desc {
   font-size: 0.9em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  text-align: center;
 }
 .container .box .device-list a.device-card.active {
   background: #3581c2;
@@ -356,8 +347,15 @@ body {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
+.container .box .device-list a.device-card.lostconnect {
+  background: #FFEB3B;
+}
 .container .box .device-list a.device-card.lostconnect .icon {
   color: #ff9800;
+}
+.container .box .device-list a.device-card.disable {
+  background: #DDDDDD;
+  color: #999999;
 }
 .container .box .device-list a.link {
   width: 23%;

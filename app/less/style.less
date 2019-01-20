@@ -71,19 +71,12 @@
 
 			a.button-option {
 				text-decoration: none;
-				padding: 7px 15px;
-				border: 1px solid #EEEEEE;
-				border-radius: 10px;
-				margin-left: 10px;
+				padding: 10px;
 				color: #AAAAAA;
-				font-size: @fontsize_mini;
+				font-size: @fontsize_normal;
 
 				&.first-right {
 					margin-left: auto;
-				}
-
-				i {
-					margin-right: 10px;
 				}
 			}
 		}
@@ -106,7 +99,6 @@
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				position: relative;
 				background: #DDDDDD;
 				color: #999999;
 
@@ -129,19 +121,22 @@
 				&:nth-child(4n+0) {
 					margin-right: 0%;
 				}
-
-				.icon {
-					position: absolute;
-					width: 20px;
-					height: 20px;
-					top: 15px;
-					right: 15px;
-					display: flex;
-					justify-content: center;
-					align-items: center;
+				.info {
 					font-size: @fontsize_normal;
-				}
+					margin-bottom: 5px;
+					font-family: @font_family_topic;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
 
+					.name {	
+						margin-right: 10px;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						overflow: hidden;
+					}
+				}
 				.temp {
 					text-overflow: ellipsis;
 					white-space: nowrap;
@@ -149,20 +144,14 @@
 					font-size: @fontsize_topic;
 					font-weight: bold;
 					font-family: @font_family_topic;
-				}
-				.name {
-					text-overflow: ellipsis;
-					white-space: nowrap;
-					overflow: hidden;
-					font-size: @fontsize_normal;
-					margin-bottom: 5px;
-					font-family: @font_family_topic;
+					text-align: center;
 				}
 				.desc {
 					font-size: @fontsize_mini;
 					text-overflow: ellipsis;
 					white-space: nowrap;
 					overflow: hidden;
+					text-align: center;
 				}
 
 				&.active {
@@ -175,7 +164,7 @@
 					}
 				}
 				
-				&.alret{
+				&.alret {
 					background: @second_color;
 					color: #FFFFFF;
 					-webkit-animation-name: bounce;
@@ -188,8 +177,14 @@
 					animation-iteration-count:infinite;
 				}
 		
-				&.lostconnect{
+				&.lostconnect {
+					background: #FFEB3B;
 					.icon{ color: @third_color; }
+				}
+
+				&.disable {
+					background: #DDDDDD;
+					color: #999999;
 				}
 			}
 

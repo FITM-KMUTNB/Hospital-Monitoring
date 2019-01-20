@@ -50,6 +50,6 @@ session_destroy();
 </body>
 
 <script type="text/javascript">
-	// setTimeout(function(){window.location = 'signin';},300);
+	setTimeout(function(){window.location = 'signin';},300);
 </script>
 </html>
