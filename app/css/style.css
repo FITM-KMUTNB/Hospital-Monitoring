@@ -411,10 +411,8 @@ body {
   text-align: center;
 }
 .form.login.logout {
-  font-size: 1.2em;
-}
-.form.login.logout i {
-  margin-right: 10px;
+  font-size: 1.8em;
+  color: #2962ff;
 }
 .form.login p {
   font-size: 1.2em;
@@ -505,7 +503,7 @@ body {
   border: 0px;
   padding: 12px;
   margin: 0%;
-  margin-bottom: 10%;
+  margin-top: 15px;
   border-radius: 5px;
   background: #2962ff;
   color: #ffffff;
@@ -546,6 +544,41 @@ body {
   width: 49%;
   text-align: center;
   flex-grow: unset;
+}
+.form .form-items .lists {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #DDDDDD;
+  border-radius: 5px;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.form .form-items .lists .list-items {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #EEEEEE;
+}
+.form .form-items .lists .list-items:last-child {
+  border-bottom: 0;
+}
+.form .form-items .lists .list-items .c {
+  width: 85%;
+  padding: 2.5% 3%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.form .form-items .lists .list-items .btn {
+  width: 15%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #DDDDDD;
+}
+.form .form-items .lists .list-items .btn:hover {
+  cursor: pointer;
+  color: #999999;
 }
 .form .toggle-items {
   display: flex;

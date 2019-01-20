@@ -63,15 +63,25 @@ if(!empty($space->id)){
 </head>
 <body>
 <div id="progress-bar"></div>
-<form action="javascript:register();" class="login">
+<form class="form login" action="javascript:register();">
 	<div class="logo"><img src="image/logo.png" alt=""></div>
-	<p><?php echo DESCRIPTION;?></p>
-	<input class="input-text" type="text" id="name" placeholder="ชื่อ - นามสกุล" autofocus>
-	<input class="input-text" type="email" id="email" placeholder="อีเมล">
-	<input class="input-text" type="password" id="password" placeholder="รหัสผ่าน">
+	<div class="form-items">
+		<label for="name">ชื่อ-นามสกุล</label>
+		<input class="input-text" type="text" id="name" autofocus>
+	</div>
+	<div class="form-items">
+		<label for="email">อีเมล</label>
+		<input class="input-text" type="email" id="email">
+	</div>
+	<div class="form-items">
+		<label for="password">รหัสผ่าน</label>
+		<input class="input-text" type="password" id="password">
+	</div>
 	<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('register',SECRET_KEY);?>">
 	<input type="hidden" id="invite_code" value="<?php echo $_GET['invite'];?>">
-	<button id="btn-register">ลงทะเบียน<?php echo (!empty($space->id)?'และร่วมกลุ่ม':'');?></button>
+	<div class="form-items">
+		<button class="btn-submit" id="btn-register">ลงทะเบียน<?php echo (!empty($space->id)?'และร่วมกลุ่ม':'');?></button>
+	</div>
 	<p>ถ้าคุณมีบัญชีอยู่แล้ว <a href="signin<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">เข้าระบบ</a></p>
 </form>
 
