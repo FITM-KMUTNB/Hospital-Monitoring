@@ -62,13 +62,13 @@ $spacelist = $devices->listDevices($user->id);
 			?>
 			<a class="device-card" id="device-<?php echo $device['id'];?>" a href="device/<?php echo $device['id'];?>">
 				<div class="icon"><i class="far fa-thermometer-full"></i></div>
-				<div class="temp">n/a</div>
 				<div class="name">
 					<?php echo $device['name'];?>
 					<?php echo ($device['status'] != 'active' ? '<i class="fa fa-lock"></i>' : '');?>
 					<?php echo ($device['notify'] != 'active' ? '<i class="fa fa-bell-slash"></i>' : '');?>
 					<?php echo (!empty($device['zone_title']) ? ' '.$device['zone_title'] : '');?>
 				</div>
+				<div class="temp">n/a</div>
 				<div class="desc"><?php echo (status ? 'กำลังโหลด' : 'ปิดรับข้อมูล');?></div>
 			</a>
 			<?php }?>

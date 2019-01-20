@@ -247,7 +247,7 @@ body {
   font-family: sans-serif;
 }
 .container .box .head h2 {
-  font-size: 2.75em;
+  font-size: 2.5em;
 }
 .container .box .head a.button-option {
   text-decoration: none;
@@ -263,23 +263,6 @@ body {
 }
 .container .box .head a.button-option i {
   margin-right: 10px;
-}
-.container .box .filter {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 25px;
-  font-family: sans-serif;
-  font-size: 1.2em;
-}
-.container .box .filter a.filter-item {
-  text-decoration: none;
-  margin-right: 15px;
-  color: #666666;
-}
-.container .box .filter a.filter-item.active {
-  color: #000000;
-  font-weight: bold;
 }
 .container .box .device-list {
   display: flex;
@@ -335,7 +318,7 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 2.75em;
+  font-size: 2.5em;
   font-weight: bold;
   font-family: sans-serif;
 }
@@ -412,370 +395,173 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
-.login {
-  width: 24%;
-  margin: 0 38%;
+.form {
+  width: 30%;
+  margin: 80px 35%;
   display: flex;
   flex-direction: column;
+}
+.form.login {
   justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
+  margin: 0 35%;
+  text-align: center;
 }
-.login.logout {
+.form.login.logout {
   font-size: 1.2em;
 }
-.login.logout i {
+.form.login.logout i {
   margin-right: 10px;
 }
-.login .logo {
-  width: 34%;
-  margin: 0 33%;
-  margin-bottom: 5%;
+.form.login p {
+  font-size: 1.2em;
+  text-align: center;
+}
+.form.login p a {
+  color: #2962ff;
+  text-decoration: none;
+}
+.form.login .logo {
+  width: 30%;
+  margin: 0 35%;
+  margin-bottom: 15px;
   float: left;
   display: block;
 }
-.login .logo img {
+.form.login .logo img {
   width: 100%;
   float: left;
   display: block;
 }
-.login .input-text {
+.form h2 {
+  font-size: 2.5em;
+  border-bottom: 2px solid #DDDDDD;
+  font-family: sans-serif;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.form .form-items {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.form .form-items.hidden {
+  display: none;
+}
+.form .form-items label {
+  font-size: 0.9em;
+  color: #666666;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.form .form-items label .label-button {
+  color: #2962ff;
+}
+.form .form-items label .label-button i {
+  margin-right: 5px;
+}
+.form .form-items label .label-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.form .form-items label:hover {
+  cursor: pointer;
+}
+.form .form-items .input-text,
+.form .form-items .input-textarea {
   width: 100%;
   float: left;
   display: block;
   font-size: 1.2em;
-  padding: 18px;
+  padding: 12px;
   background: #EEEEEE;
   color: #333333;
   margin: 0%;
-  margin-bottom: 5%;
   border-radius: 5px;
   box-sizing: border-box;
   border: 2px solid #DDDDDD;
+  resize: none;
 }
-.login .input-text:hover {
+.form .form-items .input-text:hover,
+.form .form-items .input-textarea:hover {
   cursor: pointer;
 }
-.login .input-text:focus {
+.form .form-items .input-text:focus,
+.form .form-items .input-textarea:focus {
   border: 2px solid #2962ff;
 }
-.login button {
+.form .form-items .input-textarea {
+  height: 100px;
+}
+.form .form-items .btn-submit {
   width: 100%;
   float: left;
   display: block;
   border: 0px;
-  padding: 20px;
+  padding: 12px;
   margin: 0%;
   margin-bottom: 10%;
   border-radius: 5px;
   background: #2962ff;
   color: #ffffff;
-  line-height: 1.2em;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
   font-size: 1.2em;
 }
-.login button i {
+.form .form-items .btn-submit i {
   margin-left: 10px;
   font-size: 0.9em;
 }
-.login button:hover {
+.form .form-items .btn-submit:hover {
   cursor: pointer;
   background: #3581c2;
 }
-.login button.loading {
+.form .form-items .btn-submit.loading {
   background: #DDDDDD;
   color: #999999;
   box-shadow: none;
 }
-.login p {
-  font-size: 1.2em;
-  margin-bottom: 10%;
-  text-align: center;
-  color: #333333;
-}
-.login p a {
-  color: #2962ff;
-}
-.form {
-  width: 40%;
-  margin: 80px 30%;
-  display: flex;
-  flex-direction: column;
-}
-.form h2 {
-  font-size: 2.75em;
-  color: #000000;
-  border-bottom: 1px solid #dddddd;
-  font-family: sans-serif;
-  padding-bottom: 15px;
-}
-.form .form-items {
-  display: flex;
-  flex-direction: column;
-  padding: 15px 0;
-}
-.form .form-items.toggle-type {
-  flex-direction: row;
-  align-items: center;
-  line-height: 1em;
-  justify-content: space-between;
-}
-.form .form-items.toggle-type .input {
-  font-size: 1.2em;
-  padding: 0;
-}
-.form .form-items.hidden {
-  display: none;
-}
-.form .form-items .label {
-  font-size: 1.2em;
-  color: #000000;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  font-family: sans-serif;
-}
-.form .form-items .label .btn {
-  text-decoration: none;
-  border-radius: 5px;
-  background: #2962ff;
-  color: #FFFFFF;
-  font-size: 0.9em;
-  padding: 5px 7px;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
-}
-.form .form-items .label .btn i {
-  margin-right: 7px;
-}
-.form .form-items p {
+.form .form-items .note {
   color: #999999;
   font-family: sans-serif;
   font-size: 0.9em;
+  margin-top: 6px;
 }
-.form .form-items p a {
+.form .form-items .note a {
   color: #2962ff;
 }
-.form .form-items p a i {
+.form .form-items .note a i {
   margin-left: 5px;
 }
-.form .form-items .input {
-  padding: 10px 0;
-  display: flex;
-  flex-direction: row;
-}
-.form .form-items .input.twins {
+.form .form-items .inputs {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.form .form-items .input.twins .input-text {
+.form .form-items .inputs .input-text {
   width: 49%;
   text-align: center;
   flex-grow: unset;
 }
-.form .form-items .input .input-button {
-  flex-grow: 1;
-  padding: 18px;
-  font-size: 1.2em;
-  border: 0px;
-  margin: 0px;
-  background: #2962ff;
-  color: #FFFFFF;
-  border-radius: 5px;
-  resize: none;
-  box-sizing: border-box;
-  margin-left: 15px;
-}
-.form .form-items .input .input-button:hover {
-  cursor: pointer;
-}
-.form .form-items .input .input-text,
-.form .form-items .input .input-textarea {
-  flex-grow: 4;
-  width: 100%;
-  float: left;
-  display: block;
-  font-size: 1.2em;
-  padding: 18px;
-  background: #EEEEEE;
-  color: #333333;
-  margin: 0%;
-  margin-bottom: 5%;
-  border-radius: 5px;
-  box-sizing: border-box;
-  border: 2px solid #DDDDDD;
-}
-.form .form-items .input .input-text:focus,
-.form .form-items .input .input-textarea:focus {
-  border: 2px solid #2962ff;
-}
-.form .form-items .input .input-text:hover,
-.form .form-items .input .input-textarea:hover {
-  cursor: pointer;
-}
-.form .form-items .input .input-textarea {
-  height: 100px;
-}
-.form .form-items .input .select {
-  width: 100%;
-  float: left;
-  display: block;
-  position: relative;
-}
-.form .form-items .input .select:after {
-  content: '';
-  border-top: 12px solid #999999;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  position: absolute;
-  z-index: 2;
-  top: 35%;
-  right: 3%;
-  pointer-events: none;
-}
-.form .form-items .input .select select {
-  width: 100%;
-  margin: 0%;
-  padding: 2.5%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  font-size: 1.2em;
-  background: #FAFAFA;
-  color: #000000;
-  border-radius: 5px;
-  border: 2px solid #DDDDDD;
-  box-sizing: border-box;
-}
-.form .form-items .input .select select:hover {
-  cursor: pointer;
-}
-.form .form-items .input .select select:focus {
-  border: 2px solid #2962ff;
-}
-.form .form-items .input #btn-status-toggle,
-.form .form-items .input #btn-notify-toggle {
-  font-size: 2.5em;
-  margin-top: -1.5%;
-  color: #111111;
-}
-.form .form-items .input #btn-status-toggle:hover,
-.form .form-items .input #btn-notify-toggle:hover {
-  cursor: pointer;
-  opacity: 0.8;
-}
-.form .form-items .input #btn-status-toggle i.fa-toggle-on,
-.form .form-items .input #btn-notify-toggle i.fa-toggle-on {
-  color: #2962ff;
-}
-.form .form-items .input .list {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid #DDDDDD;
-  border-radius: 5px;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-.form .form-items .input .list .list-items {
+.form .toggle-items {
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid #EEEEEE;
-}
-.form .form-items .input .list .list-items:last-child {
-  border-bottom: 0;
-}
-.form .form-items .input .list .list-items .c {
-  width: 85%;
-  padding: 2.5% 3%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.form .form-items .input .list .list-items .c i {
-  margin-right: 15px;
-  color: #2962ff;
-}
-.form .form-items .input .list .list-items .btn {
-  width: 15%;
-  text-align: center;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  color: #DDDDDD;
-}
-.form .form-items .input .list .list-items .btn:hover {
-  cursor: pointer;
-  color: #999999;
-}
-.form .form-items .input .list-input {
-  display: flex;
-  position: relative;
-}
-.form .form-items .input .list-input .input-list-text {
-  width: 100%;
-  padding: 2.5%;
+  line-height: 1em;
+  justify-content: space-between;
   font-size: 1.2em;
-  border: 0px;
-  margin: 0px;
-  background: #FAFAFA;
-  color: #000000;
-  border-radius: 5px;
-  resize: none;
-  border: 2px solid #DDDDDD;
-  box-sizing: border-box;
+  margin-bottom: 15px;
 }
-.form .form-items .input .list-input .input-list-text:focus {
-  border: 2px solid #2962ff;
+.form .toggle-items i {
+  font-size: 2.1em;
+  padding: 0;
 }
-.form .form-items .input .list-input .input-list-text:hover {
-  cursor: pointer;
-}
-.form .form-items .input .list-input .btn {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 10%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #3581c2;
-  font-size: 1.2em;
-}
-.form .form-items .input .list-input .btn:hover {
-  cursor: pointer;
+.form .toggle-items i.fa-toggle-on {
   color: #2962ff;
-}
-.form .form-items .input .list-input .btn:active {
-  color: #64bee3;
-}
-.form .form-items .button {
-  width: 100%;
-  float: left;
-  display: block;
-  font-size: 1.2em;
-  border-radius: 5px;
-  border: 0px;
-  margin: 0%;
-  padding: 2% 0;
-  margin-top: 5%;
-  background: #2962ff;
-  color: #FFFFFF;
-  font-family: sans-serif;
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
-}
-.form .form-items .button.-completed {
-  background: transparent;
-  color: #2962ff;
-}
-.form .form-items .button:hover {
-  cursor: pointer;
-}
-.form .form-items .button i {
-  margin-left: 10px;
 }
 .device-info {
   width: 40%;
@@ -784,7 +570,7 @@ body {
   flex-direction: column;
 }
 .device-info h1 {
-  font-size: 2.75em;
+  font-size: 2.5em;
   font-family: sans-serif;
 }
 .device-info .temperature-current {
@@ -796,7 +582,7 @@ body {
 }
 .device-info .temperature-current h3 {
   font-family: sans-serif;
-  font-size: 8.25em;
+  font-size: 7.5em;
   line-height: 1.2em;
 }
 .device-info .temperature-current p {
@@ -815,7 +601,7 @@ body {
 }
 .device-info .temperature-stat .box h3 {
   font-family: sans-serif;
-  font-size: 2.75em;
+  font-size: 2.5em;
   line-height: 1.2em;
 }
 .device-info .temperature-stat .box p {
