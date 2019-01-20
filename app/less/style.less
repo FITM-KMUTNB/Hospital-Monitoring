@@ -19,7 +19,7 @@
 		font-size: @fontsize_icon;
 		width: 80px;
 		height: 80px;
-		color: #666666;
+		color: @icon_color_default;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -30,7 +30,7 @@
 		}
 
 		&:hover {
-			color: #000000;
+			color: @icon_color_hover;
 		}
 	}
 
@@ -67,16 +67,21 @@
 
 			h2 {
 				font-size: @fontsize_topic;
+				color: @text_color_normal;
 			}
 
 			a.button-option {
 				text-decoration: none;
 				padding: 10px;
-				color: #AAAAAA;
+				color: @icon_color_default;
 				font-size: @fontsize_normal;
 
 				&.first-right {
 					margin-left: auto;
+				}
+
+				&:hover {
+					color: @icon_color_hover;
 				}
 			}
 		}
@@ -85,7 +90,7 @@
 			flex-flow: row wrap;
 			margin-bottom: 25px;
 			padding-bottom: 15px;
-			border-bottom: 2px solid #EEEEEE;
+			border-bottom: 2px solid @border_color;
 
 			a.device-card {
 				width: 23%;
@@ -101,12 +106,14 @@
 				justify-content: center;
 				background: #DDDDDD;
 				color: #999999;
+				box-shadow: 0px 3px 7px rgba(0,0,0,0.25);
 
 				&.create-button {
 					background: #FFFFFF;
 					border: 2px dashed #DDDDDD;
 					font-size: @fontsize_normal;
 					align-items: center;
+					box-shadow: none;
 					
 					i {
 						font-size: @fontsize_icon;
@@ -154,19 +161,28 @@
 					text-align: center;
 				}
 
-				&.active {
-					background: @primary_color_dark;
-					color: #FFFFFF;
-					box-shadow: 3px 5px 10px rgba(0,0,0,0.15);
+				&.disable {
+					background: #E3F2FD;
+					color: #2962FF;
+					box-shadow: none;
+				}
 
-					.desc {
-						color: @primary_color_light;
+				&.active {
+					background: #2962FF;
+					color: #FFFFFF;
+
+					.desc , .status-icon {
+						color: #90CAF9;
 					}
 				}
 				
 				&.alret {
-					background: @second_color;
+					background: #FF1744;
 					color: #FFFFFF;
+
+					.desc , .status-icon {
+						color: #FFCDD2;
+					}
 					-webkit-animation-name: bounce;
 					animation-name: bounce;
 					-webkit-animation-duration: 1s;
@@ -178,13 +194,8 @@
 				}
 		
 				&.lostconnect {
-					background: #FFEB3B;
-					.icon{ color: @third_color; }
-				}
-
-				&.disable {
-					background: #DDDDDD;
-					color: #999999;
+					background: #CFD8DC;
+					color: #607D8B;
 				}
 			}
 
@@ -278,7 +289,7 @@
 
 	h2 {
 		font-size: @fontsize_topic;
-		border-bottom: 2px solid #DDDDDD;
+		border-bottom: 2px solid @border_color;
 		font-family: @font_family_topic;
 		padding-bottom: 10px;
 		margin-bottom: 20px;
@@ -464,30 +475,36 @@
 }
 
 .device-info{
-	width: 40%;
-	margin: 80px 30%;
+	width: 37%;
 	display: flex;
 	flex-direction: column;
-	
-	h1 {
-		font-size: @fontsize_topic;
-		font-family: @font_family_topic;
-	}
+	position: fixed;
+	top: 0;
+	left: 20%;
+	margin-top: 80px;
 
-	.temperature-current {
+	.info {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		flex-direction: row;
+		justify-content: space-between;
 		align-items: center;
-		padding: 3% 0;
+		margin-bottom: 25px;
 
-		h3 {
-			font-family: @font_family_topic;
-			font-size: @fontsize_topic * 3;
-			line-height: 1.2em;
+		.datail {
+			h1 {
+				font-size: @fontsize_topic;
+				font-family: @font_family_topic;
+			}
+			p {
+				font-size: @fontsize_normal;
+			}
 		}
-		p {
-			font-size: @fontsize_mini;
+
+		.temperature-current {
+			font-family: @font_family_topic;
+			font-size: @fontsize_topic * 2.2;
+			line-height: 1.2em;
+			font-weight: bold;
 		}
 	}
 
@@ -495,7 +512,7 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: center;
+		margin-bottom: 25px;
 
 		.box {
 			text-align: center;
@@ -552,11 +569,13 @@
 	}
 }
 
-.device-history{
-	width: 40%;
-	margin: 0 30%;
-	padding-bottom: 5%;
+.device-history {
+	width: 30%;
+	margin: 100px 0;
+	margin-left: 50%;
 	display: flex;
+	box-sizing: border-box;
+	padding-left: 10%;
 
 	.history{
 		width: 100%;
@@ -580,31 +599,22 @@
 				cursor: pointer;
 				background: #DDDDDD;
 			}
-
-			.icon{
-				width: 5%;
-				i.fa-caret-down{ color: @primary_color; }
-				i.fa-caret-up{ color: @second_color; }
-			}
-			.temp{
-				width: 25%;
-				color: @text_active_color;
-			}
-			.time{
-				width: 30%;
+			.time {
+				width: 65%;
 				text-overflow: ellipsis;
 				white-space: nowrap;
 				overflow: hidden;
 			}
-			.id{
-				width: 40%;
+			.icon{
+				width: 10%;
+				text-align: center;
+				i.fa-caret-down{ color: @primary_color; }
+				i.fa-caret-up{ color: @second_color; }
+			}
+			.temp {
+				width: 25%;
 				text-align: right;
-				color: #BBBBBB;
-
-				i {
-					color: @second_color;
-					margin-left: 5px;
-				}
+				color: @text_active_color;
 			}
 		}
 

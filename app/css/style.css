@@ -206,7 +206,7 @@ body {
   font-size: 1.8em;
   width: 80px;
   height: 80px;
-  color: #666666;
+  color: #999999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -248,22 +248,26 @@ body {
 }
 .container .box .head h2 {
   font-size: 2.5em;
+  color: #333333;
 }
 .container .box .head a.button-option {
   text-decoration: none;
   padding: 10px;
-  color: #AAAAAA;
+  color: #999999;
   font-size: 1.2em;
 }
 .container .box .head a.button-option.first-right {
   margin-left: auto;
+}
+.container .box .head a.button-option:hover {
+  color: #000000;
 }
 .container .box .device-list {
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 25px;
   padding-bottom: 15px;
-  border-bottom: 2px solid #EEEEEE;
+  border-bottom: 2px solid #dddddd;
 }
 .container .box .device-list a.device-card {
   width: 23%;
@@ -279,12 +283,14 @@ body {
   justify-content: center;
   background: #DDDDDD;
   color: #999999;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.25);
 }
 .container .box .device-list a.device-card.create-button {
   background: #FFFFFF;
   border: 2px dashed #DDDDDD;
   font-size: 1.2em;
   align-items: center;
+  box-shadow: none;
 }
 .container .box .device-list a.device-card.create-button i {
   font-size: 1.8em;
@@ -327,16 +333,21 @@ body {
   overflow: hidden;
   text-align: center;
 }
-.container .box .device-list a.device-card.active {
-  background: #3581c2;
-  color: #FFFFFF;
-  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.15);
+.container .box .device-list a.device-card.disable {
+  background: #E3F2FD;
+  color: #2962FF;
+  box-shadow: none;
 }
-.container .box .device-list a.device-card.active .desc {
-  color: #64bee3;
+.container .box .device-list a.device-card.active {
+  background: #2962FF;
+  color: #FFFFFF;
+}
+.container .box .device-list a.device-card.active .desc,
+.container .box .device-list a.device-card.active .status-icon {
+  color: #90CAF9;
 }
 .container .box .device-list a.device-card.alret {
-  background: #e74c3c;
+  background: #FF1744;
   color: #FFFFFF;
   -webkit-animation-name: bounce;
   animation-name: bounce;
@@ -347,15 +358,13 @@ body {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
+.container .box .device-list a.device-card.alret .desc,
+.container .box .device-list a.device-card.alret .status-icon {
+  color: #FFCDD2;
+}
 .container .box .device-list a.device-card.lostconnect {
-  background: #FFEB3B;
-}
-.container .box .device-list a.device-card.lostconnect .icon {
-  color: #ff9800;
-}
-.container .box .device-list a.device-card.disable {
-  background: #DDDDDD;
-  color: #999999;
+  background: #CFD8DC;
+  color: #607D8B;
 }
 .container .box .device-list a.link {
   width: 23%;
@@ -434,7 +443,7 @@ body {
 }
 .form h2 {
   font-size: 2.5em;
-  border-bottom: 2px solid #DDDDDD;
+  border-bottom: 2px solid #dddddd;
   font-family: sans-serif;
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -595,35 +604,39 @@ body {
   color: #2962ff;
 }
 .device-info {
-  width: 40%;
-  margin: 80px 30%;
+  width: 37%;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 20%;
+  margin-top: 80px;
 }
-.device-info h1 {
+.device-info .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.device-info .info .datail h1 {
   font-size: 2.5em;
   font-family: sans-serif;
 }
-.device-info .temperature-current {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3% 0;
+.device-info .info .datail p {
+  font-size: 1.2em;
 }
-.device-info .temperature-current h3 {
+.device-info .info .temperature-current {
   font-family: sans-serif;
-  font-size: 7.5em;
+  font-size: 5.5em;
   line-height: 1.2em;
-}
-.device-info .temperature-current p {
-  font-size: 0.9em;
+  font-weight: bold;
 }
 .device-info .temperature-stat {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  margin-bottom: 25px;
 }
 .device-info .temperature-stat .box {
   text-align: center;
@@ -675,10 +688,12 @@ body {
   height: 250px;
 }
 .device-history {
-  width: 40%;
-  margin: 0 30%;
-  padding-bottom: 5%;
+  width: 30%;
+  margin: 100px 0;
+  margin-left: 50%;
   display: flex;
+  box-sizing: border-box;
+  padding-left: 10%;
 }
 .device-history .history {
   width: 100%;
@@ -701,8 +716,15 @@ body {
   cursor: pointer;
   background: #DDDDDD;
 }
+.device-history .history .logitems .time {
+  width: 65%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 .device-history .history .logitems .icon {
-  width: 5%;
+  width: 10%;
+  text-align: center;
 }
 .device-history .history .logitems .icon i.fa-caret-down {
   color: #2962ff;
@@ -712,22 +734,8 @@ body {
 }
 .device-history .history .logitems .temp {
   width: 25%;
-  color: #000000;
-}
-.device-history .history .logitems .time {
-  width: 30%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.device-history .history .logitems .id {
-  width: 40%;
   text-align: right;
-  color: #BBBBBB;
-}
-.device-history .history .logitems .id i {
-  color: #e74c3c;
-  margin-left: 5px;
+  color: #000000;
 }
 .device-history .history .loading {
   width: 100%;

@@ -34,16 +34,16 @@ function getlastlog(){
             $('#device-'+v.device_id).removeClass('lostconnect , alret , active , disable');
             if (!v.device_status) {
                 $('#device-'+v.device_id).addClass('disable');
-                $('#device-'+v.device_id+' .info .status-icon').html('<i class="fal fa-lock-alt"></i>');
+                $('#device-'+v.device_id+' .info .status-icon').html('<i class="fa fa-lock-alt"></i>');
             } else if (v.update_timestemp > 240) {
                 $('#device-'+v.device_id).addClass('lostconnect');
-                $('#device-'+v.device_id+' .info .status-icon').html('<i class="far fa-exclamation-triangle"></i>');
+                $('#device-'+v.device_id+' .info .status-icon').html('<i class="fa fa-sync fa-spin"></i>');
             } else if (v.device_alert) {
                 $('#device-'+v.device_id).addClass('alret');
-                $('#device-'+v.device_id+' .info .status-icon').html('<i class="far fa-exclamation-circle"></i>');
+                $('#device-'+v.device_id+' .info .status-icon').html('<i class="fa fa-exclamation-circle"></i>');
             } else {
                 $('#device-'+v.device_id).addClass('active');
-                $('#device-'+v.device_id+' .info .status-icon').html('<i class="far fa-spinner fa-pulse"></i>');
+                $('#device-'+v.device_id+' .info .status-icon').html('<i class="fa fa-thermometer-full"></i>');
             }
 
             $('#device-'+v.device_id+' .desc').html(v.update_time);
