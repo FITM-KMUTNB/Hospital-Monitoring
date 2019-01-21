@@ -651,15 +651,23 @@
 	width: 60%;
 	margin: 0 20%;
 	margin-bottom: 5%;
-	color: #666666;
+	color: @text_color_normal;
 	display: flex;
+	font-size: @fontsize_mini;
 	flex-direction: row;
 	justify-content: space-between;
-	font-family: @font_family_topic;
-	font-size: @fontsize_mini;
 
 	i {
-		margin-right: 10px;
+		margin-right: 5px;
+		color: @primary_color;
+	}
+
+	a {
+		padding: 3px 10px;
+		text-decoration: none;
+		background: #EEEEEE;
+		color: #666666;
+		border-radius: 5px;
 	}
 }
 

@@ -41,7 +41,6 @@ $spacelist = $devices->listDevices($user->id);
 <header class="header">
 	<a class="logo-icon" href="index.php"><img src="image/logo.png" alt="logo"></a>
 	<a class="btn-text" href="newspace" target="_parent">สร้างโปรเจ็ค</a>
-	<a class="btn-icon" href="logout" target="_parent" title="ออกจากระบบ"><i class="fal fa-sign-out-alt"></i></a>
 </header>
 <div class="container">
 	<?php foreach ($spacelist as $project) { ?>

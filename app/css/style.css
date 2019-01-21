@@ -765,15 +765,22 @@ body {
   width: 60%;
   margin: 0 20%;
   margin-bottom: 5%;
-  color: #666666;
+  color: #333333;
   display: flex;
+  font-size: 0.9em;
   flex-direction: row;
   justify-content: space-between;
-  font-family: 'maledpan';
-  font-size: 0.9em;
 }
 .footer i {
-  margin-right: 10px;
+  margin-right: 5px;
+  color: #2962ff;
+}
+.footer a {
+  padding: 3px 10px;
+  text-decoration: none;
+  background: #EEEEEE;
+  color: #666666;
+  border-radius: 5px;
 }
 #progress-bar {
   position: fixed;
