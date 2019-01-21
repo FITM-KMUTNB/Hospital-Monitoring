@@ -66,7 +66,6 @@ if(!empty($space->id)){
 <form action="javascript:register();" class="login">
 	<div>
 		<div class="logo"><img src="image/logo.png" alt=""></div>
-		<p><?php echo DESCRIPTION;?></p>
 		<input class="input-text" type="text" id="name" placeholder="ชื่อ - นามสกุล" autofocus>
 		<input class="input-text" type="email" id="email" placeholder="อีเมล">
 		<input class="input-text" type="password" id="password" placeholder="รหัสผ่าน">

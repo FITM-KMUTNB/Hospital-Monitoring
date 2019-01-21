@@ -258,16 +258,99 @@
 }
 
 .login{
-	width: 100%;
+	width: 26%;
+	margin: 0 37%;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
 	font-family: @font_family_topic;
+
+	.logo {
+		width: 40%;
+		margin: 0 30%;
+		margin-bottom: 5%;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	label {
+		width: 100%;
+		text-align: left;
+		color: #666666;
+		font-size: @fontsize_normal;
+
+		i {
+			color: @primary_color;
+			margin-right: 15px;
+		}
+	}
+
+	.input-text {
+		width: 100%;
+		font-size: @fontsize_input;
+		border: 0px;
+		padding: 3% 0;
+		color: #333333;
+		margin: 0%;
+		margin-bottom: 10%;
+		border: 0;
+		border-bottom: 2px solid #DDDDDD;
+		box-sizing: border-box;
+
+		&:hover {
+			cursor: pointer;
+		}
+		&:focus {
+			border-bottom: 2px solid @primary_color;
+			color: @primary_color;
+		}
+	}
+
+	.btn{
+		width: 100%;
+		float: left;
+		display: block;
+		font-size: @fontsize_normal;
+		border: 0px;
+		padding: 5%;
+		margin: 0%;
+		margin-bottom: 10%;
+		border-radius: 5px;
+		background: @primary_color;
+		color: @bg_color;
+		font-family: @font_family_topic;
+		line-height: 1.2em;
+		box-shadow: 1px 3px 5px rgba(0,0,0,0.25);
+
+		i{
+			margin-left: 10px;
+			font-size: 0.9em;
+		}
+
+		&:hover{
+			cursor: pointer;
+			background: @primary_color_dark;
+		}
+
+		&.-loading{
+			background: transparent;
+			color: @primary_color;
+		}
+	}
+
+	p {
+		width: 100%;
+		color: #DDDDDD;
+		font-size: @fontsize_normal;
+		text-align: center;
+	}
 
 	div {
 		width: 28%;
@@ -279,92 +362,6 @@
 
 			i {
 				margin-right: 10px;
-			}
-		}
-
-		.logo{
-			width: 30%;
-			margin: 0 35%;
-			margin-bottom: 5%;
-			float: left;
-			display: block;
-
-			img{
-				width: 100%;
-				float: left;
-				display: block;
-			}
-		}
-		h1 {
-			width: 100%;
-			float: left;
-			display: block;
-			font-size: @fontsize_topic;
-			a {
-				text-decoration: none;
-				color: @text_active_color;
-			}
-		}
-		p {
-			width: 100%;
-			float: left;
-			display: block;
-			color: @text_normal_color;
-			font-size: @fontsize_normal;
-		}
-
-		.input-text {
-			width: 100%;
-			float: left;
-			display: block;
-			font-size: @fontsize_input;
-			border: 0px;
-			padding: 5%;
-			background: #EEEEEE;
-			color: #333333;
-			margin: 0%;
-			margin-bottom: 5%;
-			border-radius: 5px;
-			border: 2px solid #DDDDDD;
-			box-sizing: border-box;
-
-			&:hover {
-				cursor: pointer;
-			}
-			&:focus {
-				border: 2px solid @primary_color;
-			}
-		}
-
-		.btn{
-			width: 100%;
-			float: left;
-			display: block;
-			font-size: @fontsize_normal;
-			border: 0px;
-			padding: 5%;
-			margin: 0%;
-			margin-bottom: 10%;
-			border-radius: 5px;
-			background: @primary_color;
-			color: @bg_color;
-			font-family: @font_family_topic;
-			line-height: 1.2em;
-			box-shadow: 1px 3px 5px rgba(0,0,0,0.25);
-
-			i{
-				margin-left: 10px;
-				font-size: 0.9em;
-			}
-
-			&:hover{
-				cursor: pointer;
-				background: @primary_color_dark;
-			}
-
-			&.-loading{
-				background: transparent;
-				color: @primary_color;
 			}
 		}
 

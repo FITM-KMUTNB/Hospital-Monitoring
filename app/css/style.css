@@ -413,10 +413,11 @@ body {
   overflow: hidden;
 }
 .login {
-  width: 100%;
+  width: 26%;
+  margin: 0 37%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
@@ -424,68 +425,44 @@ body {
   height: 100%;
   font-family: 'maledpan';
 }
-.login div {
-  width: 28%;
-  margin: 0 36%;
-  text-align: center;
-}
-.login div.logout {
-  font-size: 1.4em;
-}
-.login div.logout i {
-  margin-right: 10px;
-}
-.login div .logo {
-  width: 30%;
-  margin: 0 35%;
+.login .logo {
+  width: 40%;
+  margin: 0 30%;
   margin-bottom: 5%;
-  float: left;
-  display: block;
 }
-.login div .logo img {
+.login .logo img {
   width: 100%;
-  float: left;
-  display: block;
 }
-.login div h1 {
+.login label {
   width: 100%;
-  float: left;
-  display: block;
-  font-size: 2.5em;
-}
-.login div h1 a {
-  text-decoration: none;
-  color: #000000;
-}
-.login div p {
-  width: 100%;
-  float: left;
-  display: block;
-  color: #111111;
+  text-align: left;
+  color: #666666;
   font-size: 1.4em;
 }
-.login div .input-text {
+.login label i {
+  color: #2962ff;
+  margin-right: 15px;
+}
+.login .input-text {
   width: 100%;
-  float: left;
-  display: block;
   font-size: 1.2em;
   border: 0px;
-  padding: 5%;
-  background: #EEEEEE;
+  padding: 3% 0;
   color: #333333;
   margin: 0%;
-  margin-bottom: 5%;
-  border-radius: 5px;
-  border: 2px solid #DDDDDD;
+  margin-bottom: 10%;
+  border: 0;
+  border-bottom: 2px solid #DDDDDD;
   box-sizing: border-box;
 }
-.login div .input-text:hover {
+.login .input-text:hover {
   cursor: pointer;
 }
-.login div .input-text:focus {
-  border: 2px solid #2962ff;
+.login .input-text:focus {
+  border-bottom: 2px solid #2962ff;
+  color: #2962ff;
 }
-.login div .btn {
+.login .btn {
   width: 100%;
   float: left;
   display: block;
@@ -501,17 +478,34 @@ body {
   line-height: 1.2em;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
 }
-.login div .btn i {
+.login .btn i {
   margin-left: 10px;
   font-size: 0.9em;
 }
-.login div .btn:hover {
+.login .btn:hover {
   cursor: pointer;
   background: #3581c2;
 }
-.login div .btn.-loading {
+.login .btn.-loading {
   background: transparent;
   color: #2962ff;
+}
+.login p {
+  width: 100%;
+  color: #DDDDDD;
+  font-size: 1.4em;
+  text-align: center;
+}
+.login div {
+  width: 28%;
+  margin: 0 36%;
+  text-align: center;
+}
+.login div.logout {
+  font-size: 1.4em;
+}
+.login div.logout i {
+  margin-right: 10px;
 }
 .login div p {
   width: 100%;
