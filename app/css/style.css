@@ -218,6 +218,23 @@ body {
 .header a.btn-icon:hover {
   color: #000000;
 }
+.header a.btn-text {
+  font-size: 1em;
+  height: 40px;
+  color: #2962ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: #E3F2FD;
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin: 20px 0;
+  border-radius: 20px;
+}
+.header a.btn-text:hover {
+  color: #000000;
+}
 .header a.logo-icon {
   display: flex;
   justify-content: center;
@@ -254,20 +271,21 @@ body {
   text-decoration: none;
   height: 50px;
   width: 50px;
-  color: #999999;
+  color: #2962ff;
   font-size: 1.2em;
-  background: #dddddd;
+  background: #E3F2FD;
   margin-left: 7px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 7px;
+  border-radius: 50%;
 }
 .container .box .head a.button-option.first-right {
   margin-left: auto;
 }
 .container .box .head a.button-option:hover {
-  background: #bbbbbb;
+  background: #2962ff;
+  color: #FFFFFF;
 }
 .container .box .device-list {
   display: flex;
@@ -345,11 +363,10 @@ body {
 }
 .container .box .device-list a.device-card.active {
   background: #2962FF;
-  color: #FFFFFF;
-}
-.container .box .device-list a.device-card.active .desc,
-.container .box .device-list a.device-card.active .status-icon {
   color: #90CAF9;
+}
+.container .box .device-list a.device-card.active .temp {
+  color: #FFFFFF;
 }
 .container .box .device-list a.device-card.alret {
   background: #FF1744;
@@ -395,6 +412,10 @@ body {
   text-align: center;
 }
 .form.login p a {
+  background: #E3F2FD;
+  padding: 3px 6px;
+  border-radius: 5px;
+  margin-left: 3px;
   color: #2962ff;
   text-decoration: none;
 }
@@ -414,14 +435,14 @@ body {
   font-size: 2.5em;
   border-bottom: 2px solid #dddddd;
   font-family: 'maledpan';
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
   color: #333333;
 }
 .form .form-items {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 .form .form-items.hidden {
   display: none;
@@ -432,7 +453,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
   font-weight: bold;
 }
 .form .form-items label .label-button {
@@ -456,7 +477,7 @@ body {
   font-size: 1.2em;
   padding: 14px;
   background: #FAFAFA;
-  color: #333333;
+  color: #2962ff;
   margin: 0%;
   border-radius: 5px;
   box-sizing: border-box;
@@ -475,6 +496,11 @@ body {
 .form .form-items .input-text:focus,
 .form .form-items .input-textarea:focus {
   border: 2px solid #2962ff;
+}
+.form .form-items .input-text:disabled,
+.form .form-items .input-textarea:disabled {
+  background: #dddddd;
+  color: #2962ff;
 }
 .form .form-items .input-textarea {
   height: 100px;
@@ -509,10 +535,18 @@ body {
 .form .form-items .note {
   color: #333333;
   font-size: 0.9em;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 .form .form-items .note a {
   color: #2962ff;
+  background: #E3F2FD;
+  text-decoration: none;
+  padding: 3px 6px;
+  border-radius: 5px;
+  margin-left: 3px;
+}
+.form .form-items .note a:hover {
+  text-decoration: underline;
 }
 .form .form-items .note a i {
   margin-left: 5px;
@@ -633,6 +667,9 @@ body {
 .device-info .temperature-stat .box p {
   font-size: 0.9em;
   color: #999999;
+}
+.device-info .temperature-stat .box p i {
+  margin-right: 10px;
 }
 .device-info .temperature-stat .box.-highest .v {
   color: #333333;

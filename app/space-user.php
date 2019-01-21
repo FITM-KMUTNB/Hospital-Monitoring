@@ -78,7 +78,7 @@ if(!empty($space->id) && isset($space->id)){
 	<div class="form-items">
 		<label for="invite_url">เชิญผู้ดูแล</label>
 		<div class="input">
-			<input type="text" class="input-text" id="invite_url" value="<?php echo DOMAIN.'/invite?c='.$space->invite_code;?>">
+			<input type="text" class="input-text" id="invite_url" value="<?php echo DOMAIN.'/invite?c='.$space->invite_code;?>" disabled>
 		</div>
 	</div>
 	<?php }?>
