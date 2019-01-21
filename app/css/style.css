@@ -244,7 +244,7 @@ body {
   flex-direction: row;
   align-items: center;
   margin-bottom: 25px;
-  font-family: sans-serif;
+  font-family: 'maledpan';
 }
 .container .box .head h2 {
   font-size: 2.5em;
@@ -252,15 +252,22 @@ body {
 }
 .container .box .head a.button-option {
   text-decoration: none;
-  padding: 10px;
+  height: 50px;
+  width: 50px;
   color: #999999;
   font-size: 1.2em;
+  background: #dddddd;
+  margin-left: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
 }
 .container .box .head a.button-option.first-right {
   margin-left: auto;
 }
 .container .box .head a.button-option:hover {
-  color: #000000;
+  background: #bbbbbb;
 }
 .container .box .device-list {
   display: flex;
@@ -277,27 +284,27 @@ body {
   margin-bottom: 2.66%;
   height: 170px;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 7px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: #DDDDDD;
   color: #999999;
-  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.25);
 }
 .container .box .device-list a.device-card.create-button {
   background: #FFFFFF;
-  border: 2px dashed #DDDDDD;
+  border: 2px dashed #dddddd;
+  color: #dddddd;
   font-size: 1.2em;
   align-items: center;
   box-shadow: none;
 }
-.container .box .device-list a.device-card.create-button i {
-  font-size: 1.8em;
-  margin-bottom: 5px;
-}
 .container .box .device-list a.device-card.create-button p {
-  font-family: sans-serif;
+  font-family: 'maledpan';
+}
+.container .box .device-list a.device-card.create-button:hover {
+  border: 2px dashed #bbbbbb;
+  color: #bbbbbb;
 }
 .container .box .device-list a.device-card:nth-child(4n+0) {
   margin-right: 0%;
@@ -305,7 +312,7 @@ body {
 .container .box .device-list a.device-card .info {
   font-size: 1.2em;
   margin-bottom: 5px;
-  font-family: sans-serif;
+  font-family: 'maledpan';
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -323,15 +330,13 @@ body {
   overflow: hidden;
   font-size: 2.5em;
   font-weight: bold;
-  font-family: sans-serif;
-  text-align: center;
+  font-family: 'maledpan';
 }
 .container .box .device-list a.device-card .desc {
   font-size: 0.9em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  text-align: center;
 }
 .container .box .device-list a.device-card.disable {
   background: #E3F2FD;
@@ -363,54 +368,9 @@ body {
   color: #FFCDD2;
 }
 .container .box .device-list a.device-card.lostconnect {
-  background: #CFD8DC;
-  color: #607D8B;
-}
-.container .box .device-list a.link {
-  width: 23%;
-  padding: 0 3%;
-  box-sizing: border-box;
-  margin-right: 2.66%;
-  margin-bottom: 2.66%;
-  height: 80px;
-  text-decoration: none;
-  background: #EEEEEE;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  background: #DDDDDD;
   color: #999999;
 }
-.container .box .device-list a.link:nth-child(4n+0) {
-  margin-right: 0%;
-}
-.container .box .device-list a.link.active {
-  background: #2962ff;
-  color: #FFFFFF;
-}
-.container .box .device-list a.link .name {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 1.2em;
-  font-weight: bold;
-  font-family: sans-serif;
-}
-.container .box .device-list a.link .counter {
-  font-size: 0.9em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-<<<<<<< HEAD
-.login {
-  width: 26%;
-  margin: 0 37%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-=======
 .form {
   width: 30%;
   margin: 80px 35%;
@@ -419,21 +379,10 @@ body {
 }
 .form.login {
   justify-content: center;
->>>>>>> dc7f748f08999ec410561932bd8a3a5cda044b55
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-<<<<<<< HEAD
-  font-family: 'maledpan';
-}
-.login .logo {
-  width: 40%;
-  margin: 0 30%;
-  margin-bottom: 5%;
-}
-.login .logo img {
-=======
   margin: 0 35%;
   text-align: center;
 }
@@ -457,28 +406,17 @@ body {
   display: block;
 }
 .form.login .logo img {
->>>>>>> dc7f748f08999ec410561932bd8a3a5cda044b55
   width: 100%;
+  float: left;
+  display: block;
 }
-<<<<<<< HEAD
-.login label {
-  width: 100%;
-  text-align: left;
-  color: #666666;
-  font-size: 1.4em;
-}
-.login label i {
-  color: #2962ff;
-  margin-right: 15px;
-}
-.login .input-text {
-=======
 .form h2 {
   font-size: 2.5em;
   border-bottom: 2px solid #dddddd;
-  font-family: sans-serif;
+  font-family: 'maledpan';
   padding-bottom: 10px;
   margin-bottom: 20px;
+  color: #333333;
 }
 .form .form-items {
   display: flex;
@@ -490,11 +428,12 @@ body {
 }
 .form .form-items label {
   font-size: 0.9em;
-  color: #666666;
+  color: #333333;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 6px;
+  font-weight: bold;
 }
 .form .form-items label .label-button {
   color: #2962ff;
@@ -511,38 +450,24 @@ body {
 }
 .form .form-items .input-text,
 .form .form-items .input-textarea {
->>>>>>> dc7f748f08999ec410561932bd8a3a5cda044b55
   width: 100%;
+  float: left;
+  display: block;
   font-size: 1.2em;
-<<<<<<< HEAD
-  border: 0px;
-  padding: 3% 0;
-  color: #333333;
-  margin: 0%;
-  margin-bottom: 10%;
-  border: 0;
-  border-bottom: 2px solid #DDDDDD;
-=======
-  padding: 12px;
-  background: #EEEEEE;
+  padding: 14px;
+  background: #FAFAFA;
   color: #333333;
   margin: 0%;
   border-radius: 5px;
->>>>>>> dc7f748f08999ec410561932bd8a3a5cda044b55
   box-sizing: border-box;
-  border: 2px solid #DDDDDD;
+  border: 2px solid #dddddd;
   resize: none;
 }
-<<<<<<< HEAD
-.login .input-text:hover {
-  cursor: pointer;
-}
-.login .input-text:focus {
-  border-bottom: 2px solid #2962ff;
+.form .form-items .input-text.-loading,
+.form .form-items .input-textarea.-loading {
+  background: transparent;
   color: #2962ff;
 }
-.login .btn {
-=======
 .form .form-items .input-text:hover,
 .form .form-items .input-textarea:hover {
   cursor: pointer;
@@ -555,122 +480,19 @@ body {
   height: 100px;
 }
 .form .form-items .btn-submit {
->>>>>>> dc7f748f08999ec410561932bd8a3a5cda044b55
   width: 100%;
   float: left;
   display: block;
   border: 0px;
-  padding: 12px;
+  padding: 14px;
   margin: 0%;
   margin-top: 15px;
   border-radius: 5px;
   background: #2962ff;
   color: #ffffff;
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
   font-size: 1.2em;
+  font-weight: bold;
 }
-<<<<<<< HEAD
-.login .btn i {
-  margin-left: 10px;
-  font-size: 0.9em;
-}
-.login .btn:hover {
-  cursor: pointer;
-  background: #3581c2;
-}
-.login .btn.-loading {
-  background: transparent;
-  color: #2962ff;
-}
-.login p {
-  width: 100%;
-  color: #DDDDDD;
-  font-size: 1.4em;
-  text-align: center;
-}
-.login div {
-  width: 28%;
-  margin: 0 36%;
-  text-align: center;
-}
-.login div.logout {
-  font-size: 1.4em;
-}
-.login div.logout i {
-  margin-right: 10px;
-}
-.login div p {
-  width: 100%;
-  float: left;
-  display: block;
-  color: #111111;
-  font-size: 1.4em;
-  margin-bottom: 10%;
-  text-align: center;
-}
-.login div p i {
-  margin-left: 5px;
-  font-size: 0.8em;
-}
-.login div p a {
-  color: #2962ff;
-  text-decoration: none;
-}
-.login div p a:hover {
-  text-decoration: underline;
-}
-.form {
-  width: 40%;
-  margin: 80px 30%;
-  display: flex;
-  flex-direction: column;
-}
-.form h2 {
-  font-size: 2.5em;
-  color: #000000;
-  border-bottom: 1px solid #dddddd;
-  font-family: 'maledpan';
-  padding-bottom: 15px;
-}
-.form .form-items {
-  display: flex;
-  flex-direction: column;
-  padding: 15px 0;
-}
-.form .form-items.toggle-type {
-  flex-direction: row;
-  align-items: center;
-  line-height: 1em;
-  justify-content: space-between;
-}
-.form .form-items.toggle-type .input {
-  font-size: 1.2em;
-  padding: 0;
-}
-.form .form-items.hidden {
-  display: none;
-}
-.form .form-items .label {
-  font-size: 1.4em;
-  color: #000000;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  font-family: 'maledpan';
-}
-.form .form-items .label .btn {
-  text-decoration: none;
-  border-radius: 5px;
-  background: #2962ff;
-  color: #FFFFFF;
-  font-size: 1em;
-  padding: 5px 7px;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
-}
-.form .form-items .label .btn i {
-  margin-right: 7px;
-=======
 .form .form-items .btn-submit i {
   margin-left: 10px;
   font-size: 0.9em;
@@ -683,11 +505,9 @@ body {
   background: #DDDDDD;
   color: #999999;
   box-shadow: none;
->>>>>>> dc7f748f08999ec410561932bd8a3a5cda044b55
 }
 .form .form-items .note {
-  color: #999999;
-  font-family: sans-serif;
+  color: #333333;
   font-size: 0.9em;
   margin-top: 6px;
 }
@@ -710,7 +530,7 @@ body {
 .form .form-items .lists {
   display: flex;
   flex-direction: column;
-  border: 2px solid #DDDDDD;
+  border: 2px solid #dddddd;
   border-radius: 5px;
   font-size: 1.2em;
   margin-bottom: 10px;
@@ -718,7 +538,7 @@ body {
 .form .form-items .lists .list-items {
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #dddddd;
 }
 .form .form-items .lists .list-items:last-child {
   border-bottom: 0;
@@ -754,9 +574,13 @@ body {
 .form .toggle-items i {
   font-size: 2.1em;
   padding: 0;
+  color: #dddddd;
 }
 .form .toggle-items i.fa-toggle-on {
   color: #2962ff;
+}
+.form .toggle-items i:hover {
+  cursor: pointer;
 }
 .device-info {
   width: 37%;
@@ -776,16 +600,19 @@ body {
 }
 .device-info .info .datail h1 {
   font-size: 2.5em;
-  font-family: sans-serif;
+  font-family: 'maledpan';
+  color: #333333;
 }
 .device-info .info .datail p {
   font-size: 1.2em;
+  color: #999999;
 }
 .device-info .info .temperature-current {
-  font-family: sans-serif;
+  font-family: 'maledpan';
   font-size: 5.5em;
   line-height: 1.2em;
   font-weight: bold;
+  color: #333333;
 }
 .device-info .temperature-stat {
   display: flex;
@@ -794,53 +621,40 @@ body {
   margin-bottom: 25px;
 }
 .device-info .temperature-stat .box {
-  text-align: center;
   flex-grow: 1;
   padding: 1%;
 }
 .device-info .temperature-stat .box h3 {
-  font-family: sans-serif;
+  font-family: 'maledpan';
   font-size: 2.5em;
   line-height: 1.2em;
+  color: #333333;
 }
 .device-info .temperature-stat .box p {
   font-size: 0.9em;
+  color: #999999;
 }
 .device-info .temperature-stat .box.-highest .v {
-  color: #111111;
+  color: #333333;
 }
 .device-info .temperature-stat .box.-highest .over {
   color: #e74c3c;
 }
 .device-info .temperature-stat .box.-lowest .v {
-  color: #111111;
+  color: #333333;
 }
 .device-info .temperature-stat .box.-lowest .over {
   color: #e74c3c;
-}
-.device-info .info {
-  font-size: 0.9em;
-  display: flex;
-  flex-direction: row;
-}
-.device-info .info a {
-  text-decoration: none;
-  margin-right: 15px;
-  color: #666666;
-}
-.device-info .info a i {
-  margin-right: 5px;
-  color: #2962ff;
 }
 .device-info .graph {
   width: 100%;
   margin-top: 5%;
   display: flex;
-  height: 250px;
+  height: 300px;
 }
 .device-info .graph canvas {
   width: 100%;
-  height: 250px;
+  height: 300px;
 }
 .device-history {
   width: 30%;
@@ -861,7 +675,7 @@ body {
   align-items: center;
   padding: 10px 15px;
   font-size: 1.2em;
-  font-family: sans-serif;
+  font-family: 'maledpan';
   border-radius: 5px;
 }
 .device-history .history .logitems:nth-child(odd) {
@@ -881,10 +695,10 @@ body {
   width: 10%;
   text-align: center;
 }
-.device-history .history .logitems .icon i.fa-caret-down {
+.device-history .history .logitems .icon i.fa-arrow-down {
   color: #2962ff;
 }
-.device-history .history .logitems .icon i.fa-caret-up {
+.device-history .history .logitems .icon i.fa-arrow-up {
   color: #e74c3c;
 }
 .device-history .history .logitems .temp {
@@ -898,7 +712,7 @@ body {
   float: left;
   display: block;
   text-align: center;
-  color: #111111;
+  color: #333333;
   font-size: 0.9em;
 }
 .device-history .history .empty {
@@ -907,7 +721,7 @@ body {
   float: left;
   display: block;
   text-align: center;
-  color: #111111;
+  color: #999999;
   font-size: 0.9em;
 }
 .footer {
@@ -918,7 +732,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: sans-serif;
+  font-family: 'maledpan';
   font-size: 0.9em;
 }
 .footer i {
@@ -1015,7 +829,7 @@ body {
 }
 .message-box .control a.btn.btn-not-Accept {
   background: transparent;
-  color: #111111;
+  color: #999999;
 }
 #disconnect-bar {
   position: fixed;
@@ -1026,7 +840,7 @@ body {
   display: flex;
   background: #ff9800;
   color: #4c2d00;
-  font-family: sans-serif;
+  font-family: 'maledpan';
   font-size: 1.2em;
   justify-content: center;
   align-items: center;

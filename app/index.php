@@ -74,7 +74,6 @@ $spacelist = $devices->listDevices($user->id);
 			<?php }?>
 
 			<a class="device-card create-button" href="newdevice/space/<?php echo $project['id'];?>">
-				<i class="fal fa-plus-circle"></i>
 				<p>เพิ่มอุปกรณ์</p>
 			</a>
 		</div>

@@ -188,10 +188,10 @@ function historyRender(dataset){
 
         switch (v.log_state) {
             case 'up':
-                icon = '<i class="fal fa-caret-up"></i>';
+                icon = '<i class="fa fa-arrow-up"></i>';
                 break;
             case 'down':
-                icon = '<i class="fal fa-caret-down"></i>';
+                icon = '<i class="fa fa-arrow-down"></i>';
                 break;
             default: 
                 ;

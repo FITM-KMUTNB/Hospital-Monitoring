@@ -83,16 +83,16 @@ if(!$user_online){ // ไม่ออนไลน์
 
 	<div class="temperature-stat">
 		<div class="box">
+			<p><i class="fal fa-thermometer-full"></i>สูงสุด <span id="timehighest"></span></p>
 			<h3 id="temphighest">H</h3>
-			<p>สูงสุด <span id="timehighest"></span></p>
 		</div>
 		<div class="box">
+			<p><i class="fal fa-thermometer-quarter"></i>ต่ำสุด <span id="timelowest"></span></p>
 			<h3 id="templowest">L</h3>
-			<p>ต่ำสุด <span id="timelowest"></span></p>
 		</div>
 		<div class="box">
+			<p><i class="fal fa-exclamation-circle"></i>ค่าเฉลี่ย</p>
 			<h3>4.5°</h3>
-			<p>ค่าเฉลี่ย</p>
 		</div>
 	</div>
 
