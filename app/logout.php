@@ -35,7 +35,7 @@ session_destroy();
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>กำลังออกจากระบบ...</title>
+<title>ออกจากระบบ...</title>
 <base href="<?php echo DOMAIN;?>">
 
 <!-- CSS -->
@@ -44,9 +44,9 @@ session_destroy();
 
 </head>
 <body>
-	<div class="login">
-		<div class="logout"><i class="fas fa-spinner fa-pulse"></i>กำลังออกจากระบบ</div>
-	</div>
+<div class="form login logout">
+	<div class="logout"><i class="fas fa-spinner fa-pulse"></i></div>
+</div>
 </body>
 
 <script type="text/javascript">

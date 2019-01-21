@@ -196,14 +196,10 @@ function historyRender(dataset){
             default: 
                 ;
         }
-
-        if (v.alert) alert = '<i class="far fa-exclamation-triangle"></i>';
-
         html +='<div class="logitems">';
+        html +='<div class="time">'+v.log_time_fb+'</div>';
         html +='<div class="icon">'+icon+'</div>';
         html +='<div class="temp">'+v.log_temp+'°</div>';
-        html +='<div class="time">'+v.log_time_fb+'</div>';
-        html +='<div class="id">#'+v.log_id+alert+'</div>';
         html +='</div>';
     });
 

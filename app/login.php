@@ -62,14 +62,23 @@ if(!empty($space->id)){
 </head>
 <body>
 <div id="progress-bar"></div>
-<form class="login" action="javascript:login();">
-	<div class="logo"><img src="image/logo.png" alt=""></div>
-	<label for="email"><i class="fal fa-envelope"></i>อีเมล</label>
-	<input class="input-text" type="email" id="email" placeholder="" autofocus>
-	<label for="password"><i class="fal fa-unlock-alt"></i>รหัสผ่าน</label>
-	<input class="input-text" type="password" id="password" placeholder="">
+<form class="form login" action="javascript:login();">
+	<div class="logo"><img src="image/logo.png" alt="logo"></div>
+	<div class="form-items">
+		<label for="email">อีเมล</label>
+		<input class="input-text" type="email" id="email" placeholder="อีเมล" autofocus>
+	</div>
+	<div class="form-items">
+		<label for="password">รหัสผ่าน</label>
+		<input class="input-text" type="password" id="password" placeholder="รหัสผ่าน">
+	</div>
+
 	<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('login',SECRET_KEY);?>">
-	<button id="btn-login" class="btn">เข้าสู่ระบบ<?php echo (!empty($space->id)?'และร่วมกลุ่ม':'');?></button>
+
+	<div class="form-items">
+		<button class="btn-submit" id="btn-login">เข้าสู่ระบบ<?php echo (!empty($space->id) ? 'และร่วมกลุ่ม' : '');?></button>
+	</div>
+	
 	<p>ยังไม่มีบัญชี <a href="signup<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">ลงทะเบียน</a></p>
 	
 	<input type="hidden" id="redirect_page" value="<?php echo $_GET['redirect'];?>">

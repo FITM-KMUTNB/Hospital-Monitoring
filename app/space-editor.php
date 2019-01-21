@@ -48,38 +48,21 @@ if(!empty($space->id) && isset($space->id)){
 <a class="btn-icon btn-back" href="/" target="_parent"><i class="fal fa-arrow-left"></i></a>
 </header>
 <div class="form">
-	<h2>จัดการกลุ่ม</h2>
+	<h2>ตั้งค่าโปรเจ็ค</h2>
 	<div class="form-items">
-		<div class="label">ชื่อกลุ่ม</div>
+		<label for="name">ชื่อโปรเจ็ค</label>
 		<div class="input"><input class="input-text" type="text" id="name" value="<?php echo $space->title;?>"></div>
 	</div>
 	<div class="form-items <?php echo (empty($space->id) ? 'hidden' : '');?>">
-		<div class="label">รายละเอียด</div>
-		<div class="input"><textarea class="input-textarea" id="description"><?php echo $space->description;?></textarea></div>
-	</div>
-	<?php if(!empty($space->id) && isset($space->id)){?>
-	<div class="form-items">
-		<div class="label">สถานที่</div>
-		<div class="input">
-			<div class="list">
-				<?php foreach ($allzone as $var) {?>
-				<div class="list-items" id="zone-<?php echo $var['id'];?>" data-id="<?php echo $var['id'];?>"><span class="c"><i class="fal fa-map-pin"></i><?php echo $var['title'];?></span><span class="btn btn-zone-delete"><i class="fal fa-trash-alt"></i></span></div>
-				<?php }?>
-			</div>
-			<div class="list-input">
-				<input type="text" id="zone_title" class="input-list-text" placeholder="เพิ่มสถานที่...">
-				<div class="btn" id="btn-zone-save"><i class="far fa-plus"></i></div>
-			</div>
-		</div>
-	</div>
-	<?php }?>
-
-	<div class="form-items <?php echo (empty($space->id) ? 'hidden' : '');?>">
-		<div class="label">LINE Access Token</div>
+		<label for="line_token">LINE Access Token</label>
 		<div class="input">
 			<input class="input-text" type="text" id="line_token" value="<?php echo $space->line_token;?>">
 		</div>
-		<p>คุณจำเป็นต้องมี Access Token จาก LINE Notify เพื่อใช้ในการแจ้งเตือน <a href="https://notify-bot.line.me/th/">ขอคีย์ได้ที่นี่<i class="far fa-external-link-square"></i></a></p>
+		<div class="note">คุณจำเป็นต้องมี Access Token จาก LINE Notify เพื่อใช้ในการแจ้งเตือน <a href="https://notify-bot.line.me/th/">ขอคีย์ได้ที่นี่<i class="far fa-external-link-square"></i></a></div>
+	</div>
+	<div class="form-items <?php echo (empty($space->id) ? 'hidden' : '');?>">
+		<label for="description">รายละเอียด</label>
+		<div class="input"><textarea class="input-textarea" id="description"><?php echo $space->description;?></textarea></div>
 	</div>
 
 	<input type="hidden" id="return_device" value="<?php echo $_GET['return_device'];?>">
@@ -87,7 +70,7 @@ if(!empty($space->id) && isset($space->id)){
 	<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('space_editor',SECRET_KEY);?>">
 
 	<div class="form-items">
-		<button class="button" id="btn-save"><?php echo (!empty($space->id) ? 'บันทึก' : 'สร้างกลุ่มใหม่');?></button>
+		<button class="btn-submit" id="btn-save"><?php echo (!empty($space->id) ? 'บันทึก' : 'สร้างกลุ่มใหม่');?></button>
 	</div>
 </div>
 

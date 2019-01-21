@@ -48,10 +48,10 @@ $spacelist = $devices->listDevices($user->id);
 	<div class="box">
 		<div class="head">
 			<h2><?php echo $project['title'];?></h2>
-			<a class="button-option first-right" href="space-user.php?id=<?php echo $project['id'];?>"><i class="fal fa-user-plus"></i>เพิ่มผู้ดูแล</a>
-			<a class="button-option" href="editspace/<?php echo $project['id'];?>"><i class="fal fa-cog"></i>แก้ไข</a>
+			<a class="button-option first-right" href="space-user.php?id=<?php echo $project['id'];?>" title="เพิ่มผู้ดูแล"><i class="fal fa-user-plus"></i></a>
+			<a class="button-option" href="editspace/<?php echo $project['id'];?>" title="ตั้งค่า"><i class="fal fa-cog"></i></a>
 			<?php if(empty($project['line_token'])){?>
-			<a class="button-option" href="editspace/<?php echo $project['id'];?>#line_token"><i class="fal fa-exclamation-circle"></i>ใส่ LINE Token</a>
+			<a class="button-option" href="editspace/<?php echo $project['id'];?>#line_token" title="ใส่ LINE Token"><i class="fal fa-exclamation-circle"></i></a>
 			<?php }?>
 		</div>
 		<div class="device-list">
@@ -61,14 +61,14 @@ $spacelist = $devices->listDevices($user->id);
 				$notify = ($device['notify'] == 'active' ? true : false);
 			?>
 			<a class="device-card" id="device-<?php echo $device['id'];?>" a href="device/<?php echo $device['id'];?>">
-				<div class="icon"><i class="far fa-thermometer-full"></i></div>
-				<div class="temp">n/a</div>
-				<div class="name">
-					<?php echo $device['name'];?>
-					<?php echo ($device['status'] != 'active' ? '<i class="fa fa-lock"></i>' : '');?>
-					<?php echo ($device['notify'] != 'active' ? '<i class="fa fa-bell-slash"></i>' : '');?>
-					<?php echo (!empty($device['zone_title']) ? ' '.$device['zone_title'] : '');?>
+				<div class="info">
+					<div class="name">
+						<?php echo ($device['notify'] != 'active' ? '<i class="fa fa-bell-slash"></i>' : '');?>
+						<?php echo $device['name'];?>
+					</div>
+					<div class="status-icon"><i class="far fa-thermometer-full"></i></div>
 				</div>
+				<div class="temp">n/a</div>
 				<div class="desc"><?php echo (status ? 'กำลังโหลด' : 'ปิดรับข้อมูล');?></div>
 			</a>
 			<?php }?>

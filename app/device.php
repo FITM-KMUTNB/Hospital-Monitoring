@@ -73,19 +73,12 @@ if(!$user_online){ // ไม่ออนไลน์
 </header>
 
 <div class="device-info">
-	<h1><?php echo ($devices->notify != 'active' ? '<i class="fal fa-bell-slash"></i> ':'');?><?php echo $devices->name;?> <?php echo $devices->zone_title;?></h1>
-	
 	<div class="info">
-		<a href="space/<?php echo $devices->space_id;?>"><i class="far fa-folder"></i><?php echo $devices->space_name;?></a>
-		<?php if(!empty($devices->zone_id)){?>
-		<a href="space/<?php echo $devices->space_id;?>/<?php echo $devices->zone_id;?>"><i class="fal fa-map-marker-alt"></i><?php echo $devices->zone_title;?></a>
-		<?php }?>
-		<a href="space/<?php echo $devices->space_id;?>"><i class="fal fa-thermometer-three-quarters"></i>อุณหภูมิ <?php echo $devices->min;?>° ถึง <?php echo $devices->max;?>°</a>
-	</div>
-
-	<div class="temperature-current">
-		<h3 id="tempcurrent">C</h3>
-		<p>ล่าสุด <span id="timecurrent"></span></p>
+		<div class="datail">
+			<h1><?php echo ($devices->notify != 'active' ? '<i class="fal fa-bell-slash"></i> ':'');?><?php echo $devices->name;?></h1>
+			<p><?php echo $devices->space_name;?> — ตั้งค่า <?php echo $devices->min;?>° ถึง <?php echo $devices->max;?>°</p>
+		</div>
+		<div class="temperature-current" id="tempcurrent">C</div>
 	</div>
 
 	<div class="temperature-stat">

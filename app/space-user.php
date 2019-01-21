@@ -36,7 +36,7 @@ if(!empty($space->id) && isset($space->id)){
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>ผู้ดูแลกลุ่ม - <?php echo $space->title;?></title>
+<title>ผู้ดูแลกโปรเจ็ค - <?php echo $space->title;?></title>
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
@@ -48,33 +48,37 @@ if(!empty($space->id) && isset($space->id)){
 	<a href="space/<?php echo $space->id;?>" class="btn-icon" target="_parent"><i class="fal fa-arrow-left" aria-hidden="true"></i></a>
 </header>
 <div class="form">
-	<h2>ผู้ดูแลกลุ่ม</h2>
+	<h2>ผู้ดูแลโปรเจ็ค</h2>
 
 	<?php if(!empty($space->id) && isset($space->id)){?>
 	<div class="form-items">
-		<div class="label">ผู้ดูแล</div>
-		<div class="input">
-			<div class="list">
-				<?php foreach ($allAdmin as $var) {?>
-				<div class="list-items" id="admin-<?php echo $var['user_id'];?>" data-user="<?php echo $var['user_id'];?>" title="<?php echo $var['email'];?>">
-					<span class="c"><?php echo ($var['permission'] == 1?'<i class="fa fa-user" aria-hidden="true"></i>':'<i class="fa fa-user-o" aria-hidden="true"></i>');?><?php echo $var['fname'].' '.$var['lname'];?></span>
-					<?php if($var['permission'] != 1){?>
-					<span class="btn btn-amin-delete"><i class="fa fa-times" aria-hidden="true"></i></span>
-					<?php }?>
-				</div>
+		<label>ผู้ดูแล</label>
+		<div class="lists">
+			<?php foreach ($allAdmin as $var) {?>
+			<div class="list-items" id="admin-<?php echo $var['user_id'];?>" data-user="<?php echo $var['user_id'];?>" title="<?php echo $var['email'];?>">
+				<div class="c"><?php echo $var['fname'].' '.$var['lname'];?></div>
+				<?php if ($var['permission'] == 1) {?>
+				<div class="btn"><i class="fal fa-lock-alt"></i></div>
+				<?php } else {?>
+				<span class="btn btn-amin-delete"><i class="fal fa-times"></i></span>
 				<?php }?>
 			</div>
-			<div class="list-input">
-				<input type="text" id="email_admin" class="input-list-text" placeholder="เชิญผู้ดูแลด้วยอีเมล...">
-				<div class="btn" id="btn-admin-add"><i class="fa fa-user-plus" aria-hidden="true"></i></div>
-			</div>
+			<?php }?>
 		</div>
 	</div>
 
 	<div class="form-items">
-		<div class="label">เชิญผู้ดูแล</div>
+		<label for="email_admin">เพิ่มผู้ดูแล</label>
+		<input type="text" id="email_admin" class="input-text" placeholder="เชิญผู้ดูแลด้วยอีเมล...">
+	</div>
+	<div class="form-items">
+		<button class="btn-submit" id="btn-admin-add">เพิ่มผู้ดูแล</button>
+	</div>
+
+	<div class="form-items">
+		<label for="invite_url">เชิญผู้ดูแล</label>
 		<div class="input">
-			<input type="text" class="input-text" value="<?php echo DOMAIN.'/invite?c='.$space->invite_code;?>">
+			<input type="text" class="input-text" id="invite_url" value="<?php echo DOMAIN.'/invite?c='.$space->invite_code;?>">
 		</div>
 	</div>
 	<?php }?>

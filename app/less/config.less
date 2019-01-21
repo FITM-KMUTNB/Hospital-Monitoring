@@ -10,7 +10,7 @@
 }
 
 @FontStylePrimary   : sans-serif;
-@font_family_topic  : 'maledpan';
+@font_family_topic  : sans-serif;
 
 // http://www.color-hex.com/color/21ce99
 @primary_color      :#2962FF; // Active Color
@@ -29,13 +29,14 @@
 @bg_color           :#FFFFFF;
 @bg_color_dark      :#030a10;
 @bg_color_light     :#1d252b;
-
 @text_active_color  :#000000;
 @text_normal_color  :#111111;
-
+@text_color_normal: #333333;
 @text_dark_color    :#000000;
 @black_color        :#000000;
 
+@icon_color_default: #999999;
+@icon_color_hover: #000000;
 @border_color       :#DDDDDD;
 
 @font-size-normal: 1.2em;
@@ -79,13 +80,11 @@ body{
 		box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 	}
 }
-
 @-webkit-keyframes bounce {
     0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
     40% {-webkit-transform: translateY(-10px);}
     60% {-webkit-transform: translateY(-5px);}
 }
-
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
     40% {transform: translateY(-10px);}
@@ -119,10 +118,3 @@ body{
     -webkit-transition:all @s ease-in-out;
     -o-transition:all @s ease-in-out;
 }
-
-
-// background: red; /* For browsers that do not support gradients */
-// background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)); /* For Safari 5.1 to 6.0 */
-// background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)); /* For Opera 11.1 to 12.0 */
-// background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)); /* For Firefox 3.6 to 15 */
-// background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)); /* Standard syntax */
