@@ -221,19 +221,20 @@ body {
 .header a.btn-text {
   font-size: 1em;
   height: 40px;
-  color: #2962ff;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  background: #E3F2FD;
+  background: #2962ff;
+  color: #FFFFFF;
   box-sizing: border-box;
   padding: 0 20px;
   margin: 20px 0;
   border-radius: 20px;
+  margin-right: 20px;
 }
 .header a.btn-text:hover {
-  color: #000000;
+  cursor: pointer;
 }
 .header a.logo-icon {
   display: flex;
