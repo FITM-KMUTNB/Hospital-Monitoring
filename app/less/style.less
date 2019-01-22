@@ -492,7 +492,7 @@
 }
 
 .device-info{
-	width: 37%;
+	width: 35%;
 	display: flex;
 	flex-direction: column;
 	position: fixed;
@@ -564,26 +564,26 @@
 		}
 	}
 	
-	.graph{
+	.graph {
 		width: 100%;
-		margin-top: 5%;
+		margin-top: 50px;
 		display: flex;
-		height: 300px;
+		height: 250px;
 
-		canvas{
+		canvas {
 			width: 100%;
-			height: 300px;
+			height: 250px;
 		}
 	}
 }
 
 .device-history {
-	width: 30%;
+	width: 25%;
 	margin: 100px 0;
-	margin-left: 50%;
+	margin-left: 55%;
 	display: flex;
 	box-sizing: border-box;
-	padding-left: 10%;
+	padding-left: 2%;
 
 	.history{
 		width: 100%;
@@ -620,13 +620,16 @@
 			.icon{
 				width: 10%;
 				text-align: center;
-				i.fa-arrow-down { color: @primary_color; }
-				i.fa-arrow-up { color: @second_color; }
+				i.fa-arrow-down {
+					color: @primary_color;
+				}
+				i.fa-arrow-up {
+					color: @second_color;
+				}
 			}
 			.temp {
 				width: 25%;
 				text-align: right;
-				color: @text_active_color;
 			}
 		}
 

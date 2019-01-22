@@ -7,7 +7,7 @@ var myChart;
 var limit = 40;
 var disconnect_time = 240;
 
-Chart.defaults.global.defaultFontColor = '#AAAAAA';
+Chart.defaults.global.defaultFontColor = '#999999';
 Chart.defaults.global.defaultFontSize = '10';
 
 $(document).ready(function() {
@@ -111,7 +111,7 @@ function limitChecking(temp){
         var color = ['#e74c3c','#451612'];
         return color;
     } else {
-        var color = ['#4095C8','#ebf4f9'];
+        var color = ['#2962FF','#ebf4f9'];
         return color;
     }
 }
@@ -129,11 +129,12 @@ function graphRender(dataTemp,dataTime){
             labels: dataTime,
             datasets: [{
                 data: dataTemp,
-                backgroundColor: borderColor[1],
+                backgroundColor: borderColor[0],
                 borderColor: borderColor[0],
-                borderWidth: 3,
-                fill: 'origin',
-                pointRadius: 1,
+                borderWidth: 5,
+                pointBorderWidth: 0,
+                fill: false,
+                pointRadius: 0,
             }],
         },
         options: {
@@ -154,14 +155,18 @@ function graphRender(dataTemp,dataTime){
             },
             scales: {
                 yAxes: [{
-                    ticks: {
-                        stepSize: 1,
+                    gridLines: {
+                        drawBorder: false,
+                        color: '#EEEEEE',
                     },
-                    position: "right",
+                    ticks: {
+                        stepSize: 2,
+                    },
+                    position: 'right',
                 }],
                 xAxes: [{
-                display: false
-            }],
+                    display: false
+                }],
             },
             animation: {
                 duration: 0,
