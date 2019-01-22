@@ -186,6 +186,10 @@ function historyRender(dataset){
         var alert = '';
         var icon = '';
 
+        if (v.alert) {
+            alert = 'alert'
+        }
+
         switch (v.log_state) {
             case 'up':
                 icon = '<i class="fa fa-arrow-up"></i>';
@@ -196,7 +200,7 @@ function historyRender(dataset){
             default: 
                 ;
         }
-        html +='<div class="logitems">';
+        html +='<div class="logitems ' + alert + '">';
         html +='<div class="time">'+v.log_time_fb+'</div>';
         html +='<div class="icon">'+icon+'</div>';
         html +='<div class="temp">'+v.log_temp+'°</div>';

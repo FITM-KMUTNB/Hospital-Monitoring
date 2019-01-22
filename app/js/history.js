@@ -11,11 +11,9 @@ Chart.defaults.global.defaultFontColor = '#586468';
 Chart.defaults.global.defaultFontSize = '10';
 
 $(document).ready(function() {
-
     device_min  = parseInt($('#device_min').val());
     device_max  = parseInt($('#device_max').val());
     device_id   = $('#device_id').val();
-
     init();
 });
 
@@ -28,7 +26,7 @@ function init(){
         cache       :false,
         dataType    :"json",
         type        :"GET",
-        data:{
+        data: {
             calling     :'log',
             action      :'history_log',
             device_id   :device_id,
@@ -175,10 +173,11 @@ function graphRender(dataTemp,dataTime){
 }
 
 function historyRender(dataset){
+    console.log(dataset)
     var html = '';
     var gtemp = new Array();
 
-    if(dataset.length == 0){
+    if (dataset.length == 0) {
         $('#historylog').html('<div class="empty">ไม่มีข้อมูลของอุปกรณ์นี้</div>');
         return false;
     }
@@ -187,7 +186,7 @@ function historyRender(dataset){
 
         gtemp.push(parseFloat(v.log_temp)); // Find last temp.
 
-        // console.log(v.log_state);
+        console.log(v.log_state);
 
         var alert = '';
         var icon = '';
@@ -203,7 +202,7 @@ function historyRender(dataset){
                 ;
         }
 
-        if(v.alert) alert = '<i class="far fa-exclamation-triangle"></i>';
+        if (v.alert) alert = '<i class="far fa-exclamation-triangle"></i>';
 
         html +='<div class="logitems">';
         html +='<div class="id">#'+v.log_id+alert+'</div>';
