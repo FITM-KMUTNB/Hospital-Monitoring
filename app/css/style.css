@@ -715,13 +715,16 @@ body {
   font-size: 1.2em;
   font-family: 'maledpan';
   border-radius: 5px;
-}
-.device-history .history .logitems:nth-child(odd) {
-  background: #EEEEEE;
+  background: #E3F2FD;
+  color: #2962ff;
+  margin-bottom: 5px;
 }
 .device-history .history .logitems:hover {
   cursor: pointer;
-  background: #DDDDDD;
+}
+.device-history .history .logitems.alert {
+  background: #FFEBEE;
+  color: #FF1744;
 }
 .device-history .history .logitems .time {
   width: 65%;

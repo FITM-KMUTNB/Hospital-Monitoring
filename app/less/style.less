@@ -598,15 +598,19 @@
 			font-size: @fontsize_normal;
 			font-family: @font_family_topic;
 			border-radius: 5px;
-
-			&:nth-child(odd) {
-				background: #EEEEEE;
-			}
+			background: #E3F2FD;
+			color: @primary_color;
+			margin-bottom: 5px;
 
 			&:hover {
 				cursor: pointer;
-				background: #DDDDDD;
 			}
+
+			&.alert {
+				background: #FFEBEE;
+				color: #FF1744;
+			}
+
 			.time {
 				width: 65%;
 				text-overflow: ellipsis;
