@@ -67,18 +67,20 @@ if(!$user_online){ // ไม่ออนไลน์
 
 <header class="header">
 	<a class="btn-icon btn-back" href="space/<?php echo $devices->space_id;?>" target="_parent"><i class="fal fa-arrow-left"></i></a>
-	<?php if($hasPermission && $user_online){?>
-	<a class="btn-text" href="editdevice/<?php echo $devices->id;?>" target="_parent" title="แก้ไขอุปกรณ์">ตั้งค่า</a>
+
+	<div class="title">
+			<?php echo ($devices->notify != 'active' ? '<i class="fal fa-bell-slash"></i> ':'');?><?php echo $devices->name;?> <?php echo $devices->space_name;?>
+	</div>
+
+	<?php if ($hasPermission && $user_online) {?>
+	<a class="btn-icon" href="editdevice/<?php echo $devices->id;?>" target="_parent" title="แก้ไขอุปกรณ์"><i class="fal fa-cog"></i></a>
 	<?php }?>
 </header>
 
 <div class="device-info">
 	<div class="info">
-		<div class="datail">
-			<h1><?php echo ($devices->notify != 'active' ? '<i class="fal fa-bell-slash"></i> ':'');?><?php echo $devices->name;?> <?php echo $devices->space_name;?></h1>
-			<p>อุณหภูมิตั้งค่า <?php echo $devices->min;?>° ถึง <?php echo $devices->max;?>°</p>
-		</div>
 		<div class="temperature-current" id="tempcurrent">C</div>
+		<p>ล่าสุด <span id="timecurrent"></span></p>
 	</div>
 
 	<h2>วิเคราะห์</h2>
@@ -97,8 +99,8 @@ if(!$user_online){ // ไม่ออนไลน์
 			<p>ต่ำสุด <span id="timelowest"></span></p>
 		</div>
 		<div class="box">
-			<h3>4.5°</h3>
-			<p>ค่าเฉลี่ย</p>
+			<h3><?php echo $devices->min;?>° / <?php echo $devices->max;?>°</h3>
+			<p>อุณหภูมิตั้งค่า</p>
 		</div>
 	</div>
 

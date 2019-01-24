@@ -45,10 +45,11 @@ if(!empty($space->id) && isset($space->id)){
 </head>
 <body>
 <header class="header">
-<a class="btn-icon btn-back" href="/" target="_parent"><i class="fal fa-arrow-left"></i></a>
+	<a class="btn-icon btn-back" href="/" target="_parent"><i class="fal fa-arrow-left"></i></a>
+	<div class="title">ตั้งค่าโปรเจ็ค</div>
+	<div class="btn-icon"></div>
 </header>
 <div class="form">
-	<h2>ตั้งค่าโปรเจ็ค</h2>
 	<div class="form-items">
 		<label for="name">ชื่อโปรเจ็ค</label>
 		<div class="input"><input class="input-text" type="text" id="name" value="<?php echo $space->title;?>"></div>

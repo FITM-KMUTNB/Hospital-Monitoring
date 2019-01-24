@@ -2,7 +2,7 @@
 @import "config";
 
 @fontsize_mini: 0.9em;
-@fontsize_topic: 2.5em;
+@fontsize_topic: 2.4em;
 @fontsize_normal: 1.2em;
 @fontsize_icon: 1.8em;
 
@@ -14,6 +14,8 @@
 	height: 80px;
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+	background: rgba(255,255,255,0.9);
 
 	a.btn-icon {
 		font-size: @fontsize_icon;
@@ -25,38 +27,20 @@
 		align-items: center;
 		text-decoration: none;
 
-		&.btn-back {
-			margin-right: auto;
-		}
-
 		&:hover {
 			color: @icon_color_hover;
 		}
 	}
 
-	a.btn-text {
-		font-size: 1em;
-		height: 40px;
+	.title {
+		height: 80px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		text-decoration: none;
-		background: #DDDDDD;
+		flex-direction: column;
 		color: #999999;
-		box-sizing: border-box;
-		padding: 0 20px;
-		margin: 20px 0;
-		border-radius: 20px;
-		margin-right: 20px;
-
-		&:hover {
-			cursor: pointer;
-		}
-
-		&.create {
-			background: @primary_color;
-			color: #FFFFFF;
-		}
+		font-family: @font_family_topic;
+		font-size: @fontsize_topic;
 	}
 
 	a.logo-icon {
@@ -282,15 +266,6 @@
 		}
 	}
 
-	h2 {
-		font-size: @fontsize_topic;
-		border-bottom: 2px solid @border_color;
-		font-family: @font_family_topic;
-		padding-bottom: 15px;
-		margin-bottom: 30px;
-		color: @text_color_normal;
-	}
-
 	.form-items {
 		display: flex;
 		flex-direction: column;
@@ -499,34 +474,27 @@
 .device-info{
 	width: 40%;
 	margin: 80px 30%;
+	margin-top: 120px;
 	display: flex;
 	flex-direction: column;
 
 	.info {
 		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
+		flex-direction: column;
 		align-items: center;
 		margin-bottom: 40px;
 
-		.datail {
-			h1 {
-				font-size: @fontsize_topic;
-				font-family: @font_family_topic;
-				color: @text_color_normal;
-			}
-			p {
-				font-size: @fontsize_normal;
-				color: @text_color_light;
-			}
-		}
-
 		.temperature-current {
 			font-family: @font_family_topic;
-			font-size: @fontsize_topic * 2.2;
+			font-size: @fontsize_topic * 3;
 			line-height: 1.2em;
 			font-weight: bold;
 			color: @text_color_normal;
+		}
+
+		p {
+			font-size: @fontsize_mini;
+			color: @text_color_light;
 		}
 	}
 

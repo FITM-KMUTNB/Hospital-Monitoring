@@ -201,6 +201,8 @@ body {
   height: 80px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.9);
 }
 .header a.btn-icon {
   font-size: 1.8em;
@@ -212,33 +214,18 @@ body {
   align-items: center;
   text-decoration: none;
 }
-.header a.btn-icon.btn-back {
-  margin-right: auto;
-}
 .header a.btn-icon:hover {
   color: #000000;
 }
-.header a.btn-text {
-  font-size: 1em;
-  height: 40px;
+.header .title {
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
-  background: #DDDDDD;
+  flex-direction: column;
   color: #999999;
-  box-sizing: border-box;
-  padding: 0 20px;
-  margin: 20px 0;
-  border-radius: 20px;
-  margin-right: 20px;
-}
-.header a.btn-text:hover {
-  cursor: pointer;
-}
-.header a.btn-text.create {
-  background: #2962ff;
-  color: #FFFFFF;
+  font-family: 'maledpan';
+  font-size: 2.4em;
 }
 .header a.logo-icon {
   display: flex;
@@ -269,7 +256,7 @@ body {
   font-family: 'maledpan';
 }
 .container .box .head h2 {
-  font-size: 2.5em;
+  font-size: 2.4em;
   color: #333333;
 }
 .container .box .head a.button-option {
@@ -351,7 +338,7 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 2.5em;
+  font-size: 2.4em;
   font-weight: bold;
   font-family: 'maledpan';
 }
@@ -435,14 +422,6 @@ body {
   width: 100%;
   float: left;
   display: block;
-}
-.form h2 {
-  font-size: 2.5em;
-  border-bottom: 2px solid #dddddd;
-  font-family: 'maledpan';
-  padding-bottom: 15px;
-  margin-bottom: 30px;
-  color: #333333;
 }
 .form .form-items {
   display: flex;
@@ -624,31 +603,26 @@ body {
 .device-info {
   width: 40%;
   margin: 80px 30%;
+  margin-top: 120px;
   display: flex;
   flex-direction: column;
 }
 .device-info .info {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 40px;
 }
-.device-info .info .datail h1 {
-  font-size: 2.5em;
-  font-family: 'maledpan';
-  color: #333333;
-}
-.device-info .info .datail p {
-  font-size: 1.2em;
-  color: #999999;
-}
 .device-info .info .temperature-current {
   font-family: 'maledpan';
-  font-size: 5.5em;
+  font-size: 7.199999999999999em;
   line-height: 1.2em;
   font-weight: bold;
   color: #333333;
+}
+.device-info .info p {
+  font-size: 0.9em;
+  color: #999999;
 }
 .device-info .temperature-stat {
   display: flex;
@@ -663,7 +637,7 @@ body {
 }
 .device-info .temperature-stat .box h3 {
   font-family: 'maledpan';
-  font-size: 2.5em;
+  font-size: 2.4em;
   line-height: 1.2em;
   color: #333333;
 }
