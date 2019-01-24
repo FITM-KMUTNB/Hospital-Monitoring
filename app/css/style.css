@@ -225,8 +225,8 @@ body {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  background: #2962ff;
-  color: #FFFFFF;
+  background: #DDDDDD;
+  color: #999999;
   box-sizing: border-box;
   padding: 0 20px;
   margin: 20px 0;
@@ -235,6 +235,10 @@ body {
 }
 .header a.btn-text:hover {
   cursor: pointer;
+}
+.header a.btn-text.create {
+  background: #2962ff;
+  color: #FFFFFF;
 }
 .header a.logo-icon {
   display: flex;
@@ -618,20 +622,17 @@ body {
   cursor: pointer;
 }
 .device-info {
-  width: 35%;
+  width: 40%;
+  margin: 80px 30%;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 0;
-  left: 20%;
-  margin-top: 80px;
 }
 .device-info .info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 .device-info .info .datail h1 {
   font-size: 2.5em;
@@ -653,11 +654,12 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 .device-info .temperature-stat .box {
   flex-grow: 1;
   padding: 1%;
+  text-align: center;
 }
 .device-info .temperature-stat .box h3 {
   font-family: 'maledpan';
@@ -669,84 +671,85 @@ body {
   font-size: 0.9em;
   color: #999999;
 }
-.device-info .temperature-stat .box p i {
-  margin-right: 10px;
-}
-.device-info .temperature-stat .box.-highest .v {
+.device-info .temperature-stat .box.highest .v {
   color: #333333;
 }
-.device-info .temperature-stat .box.-highest .over {
+.device-info .temperature-stat .box.highest .over {
   color: #e74c3c;
 }
-.device-info .temperature-stat .box.-lowest .v {
+.device-info .temperature-stat .box.lowest .v {
   color: #333333;
 }
-.device-info .temperature-stat .box.-lowest .over {
+.device-info .temperature-stat .box.lowest .over {
   color: #e74c3c;
 }
 .device-info .graph {
   width: 100%;
-  margin-top: 50px;
   display: flex;
-  height: 250px;
+  height: 150px;
+  margin-bottom: 40px;
 }
 .device-info .graph canvas {
   width: 100%;
-  height: 250px;
+  height: 150px;
 }
-.device-history {
-  width: 25%;
-  margin: 100px 0;
-  margin-left: 55%;
-  display: flex;
-  box-sizing: border-box;
-  padding-left: 2%;
+.device-info h2 {
+  font-family: 'maledpan';
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: #999999;
+  font-weight: normal;
 }
-.device-history .history {
+.device-info .history {
   width: 100%;
   display: flex;
   flex-direction: column;
+  border: 1px solid #EEEEEE;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #dddddd;
 }
-.device-history .history .logitems {
+.device-info .history .logitems {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px 15px;
+  padding: 15px 25px;
   font-size: 1.2em;
   font-family: 'maledpan';
-  border-radius: 5px;
-  background: #E3F2FD;
-  color: #2962ff;
-  margin-bottom: 5px;
+  color: #666666;
+  border-bottom: 1px solid #dddddd;
 }
-.device-history .history .logitems:hover {
+.device-info .history .logitems:last-child {
+  border-bottom: 0;
+}
+.device-info .history .logitems:hover {
   cursor: pointer;
 }
-.device-history .history .logitems.alert {
-  background: #FFEBEE;
+.device-info .history .logitems.alert .status {
   color: #FF1744;
 }
-.device-history .history .logitems .time {
-  width: 65%;
+.device-info .history .logitems .status {
+  width: 5%;
+  color: #2962ff;
+  font-size: 0.6em;
+}
+.device-info .history .logitems .time {
+  width: 70%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
-.device-history .history .logitems .icon {
-  width: 10%;
-  text-align: center;
+.device-info .history .logitems .icon {
+  width: 5%;
+  text-align: right;
+  font-size: 0.6em;
+  color: #dddddd;
 }
-.device-history .history .logitems .icon i.fa-arrow-down {
-  color: #2962ff;
-}
-.device-history .history .logitems .icon i.fa-arrow-up {
-  color: #e74c3c;
-}
-.device-history .history .logitems .temp {
-  width: 25%;
+.device-info .history .logitems .temp {
+  width: 20%;
   text-align: right;
 }
-.device-history .history .loading {
+.device-info .history .loading {
   width: 100%;
   margin: 20% 0%;
   float: left;
@@ -755,7 +758,7 @@ body {
   color: #333333;
   font-size: 0.9em;
 }
-.device-history .history .empty {
+.device-info .history .empty {
   width: 100%;
   margin: 20% 0%;
   float: left;

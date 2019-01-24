@@ -87,7 +87,7 @@ function renderCurrent(data){
     var site_title  = $('#site_title').val();
     var device_name = $('#device_name').val();
 
-    document.title =  data.current.temp+'° | '+device_name+' | '+site_title;
+    document.title =  data.current.temp + '°C | ' + device_name;
 
     $('#tempcurrent').html(data.current.temp+'°');
     $('#timecurrent').html(data.current.time);
@@ -96,10 +96,10 @@ function renderCurrent(data){
     $('#temphighest').html(data.max.temp+'°');
     $('#timehighest').html(data.max.time);
 
-    if(data.max.temp >= device_max) $('#temphighest').addClass('over');
+    if (data.max.temp >= device_max) $('#temphighest').addClass('over');
     else $('#temphighest').removeClass('over');
 
-    if(data.min.temp <= device_min) $('#templowest').addClass('over');
+    if (data.min.temp <= device_min) $('#templowest').addClass('over');
     else $('#templowest').removeClass('over');
 }
 
@@ -131,7 +131,7 @@ function graphRender(dataTemp,dataTime){
                 data: dataTemp,
                 backgroundColor: borderColor[0],
                 borderColor: borderColor[0],
-                borderWidth: 5,
+                borderWidth: 4,
                 pointBorderWidth: 0,
                 fill: false,
                 pointRadius: 0,
@@ -157,7 +157,7 @@ function graphRender(dataTemp,dataTime){
                 yAxes: [{
                     gridLines: {
                         drawBorder: false,
-                        color: '#EEEEEE',
+                        display: false
                     },
                     ticks: {
                         stepSize: 2,
@@ -206,9 +206,10 @@ function historyRender(dataset){
                 ;
         }
         html +='<div class="logitems ' + alert + '">';
-        html +='<div class="time">'+v.log_time_fb+'</div>';
-        html +='<div class="icon">'+icon+'</div>';
-        html +='<div class="temp">'+v.log_temp+'°</div>';
+        html +='<div class="status"><i class="fas fa-circle"></i></div>';
+        html +='<div class="time">' + v.log_time_fb + '</div>';
+        html +='<div class="temp">' + v.log_temp + ' °C</div>';
+        html +='<div class="icon">' + icon + '</div>';
         html +='</div>';
     });
 
