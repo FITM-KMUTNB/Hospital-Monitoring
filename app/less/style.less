@@ -137,11 +137,9 @@
 				background: @border_color;
 				color: #999999;
 				.transitionAnimation(0.3s);
-				.BoxShadowHelper(2);
 
 				&:hover {
-					.BoxShadowHelper(3);
-					transform: translateY(-10px);
+					transform: translateY(-5px);
 				}
 
 				&.create-button {
@@ -383,7 +381,6 @@
 			color: @bg_color;
 			font-size: @fontsize_normal;
 			font-weight: bold;
-			.BoxShadowHelper(2);
 
 			i {
 				margin-left: 10px;
@@ -527,7 +524,6 @@
 			line-height: 1.2em;
 			font-weight: bold;
 			color: @primary_color;
-			text-shadow: 0 6px 9px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
 			&.over {
 				color: @second_color;
@@ -557,7 +553,6 @@
 			justify-content: center;
 			border-radius: 7px;
 			box-sizing: border-box;
-			.BoxShadowHelper(2);
 
 			&:nth-child(3n+0) {
 				margin-right: 0%;
@@ -610,7 +605,6 @@
 		box-sizing: border-box;
 		border-radius: 10px;
 		background: @border_color;
-		.BoxShadowHelper(2);
 
 		.logitems {
 			display: flex;
