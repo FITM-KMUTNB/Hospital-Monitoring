@@ -194,17 +194,14 @@ body {
   transition: height 0.2s;
 }
 .header {
-  position: fixed;
-  top: 0px;
-  left: 0px;
   width: 80%;
   padding: 0 10%;
   height: 80px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.8);
   z-index: 99;
+  background: #ffffff;
 }
 .header .btn-icon {
   font-size: 1.8em;
@@ -216,8 +213,8 @@ body {
   align-items: center;
   text-decoration: none;
 }
-.header .btn-icon:hover {
-  color: #000000;
+.header .btn-icon.create {
+  color: #2962ff;
 }
 .header .title {
   height: 80px;
@@ -225,12 +222,16 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  color: #999999;
+  color: #37474f;
   font-family: 'maledpan';
   font-size: 2.4em;
+  font-weight: bold;
 }
 .header .title i {
   margin-right: 10px;
+}
+.header .title:hover {
+  cursor: default;
 }
 .header a.logo-icon {
   display: flex;
@@ -239,13 +240,13 @@ body {
   margin-right: auto;
 }
 .header a.logo-icon img {
-  height: 60px;
   padding: 10px;
+  height: 60px;
 }
 .container {
   width: 60%;
   margin: 5% 20%;
-  margin-top: 160px;
+  margin-top: 80px;
   float: left;
   display: block;
 }
@@ -265,15 +266,14 @@ body {
 }
 .container .box .head h2 {
   font-size: 2.4em;
-  color: #333333;
+  color: #37474f;
 }
 .container .box .head a.button-option {
   text-decoration: none;
   height: 50px;
   width: 50px;
-  color: #2962ff;
+  color: #455a64;
   font-size: 1.2em;
-  background: #E3F2FD;
   margin-left: 7px;
   display: flex;
   justify-content: center;
@@ -284,15 +284,14 @@ body {
   margin-left: auto;
 }
 .container .box .head a.button-option:hover {
-  background: #2962ff;
-  color: #FFFFFF;
+  color: #37474f;
 }
 .container .box .device-list {
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 25px;
   padding-bottom: 15px;
-  border-bottom: 2px solid #dddddd;
+  border-bottom: 2px solid #eceff1;
 }
 .container .box .device-list a.device-card {
   width: 23%;
@@ -306,13 +305,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #DDDDDD;
+  background: #eceff1;
   color: #999999;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .container .box .device-list a.device-card.create-button {
   background: #FFFFFF;
-  border: 2px dashed #dddddd;
-  color: #dddddd;
+  border: 2px dashed #eceff1;
+  color: #eceff1;
   font-size: 1.2em;
   align-items: center;
   box-shadow: none;
@@ -321,8 +321,8 @@ body {
   font-family: 'maledpan';
 }
 .container .box .device-list a.device-card.create-button:hover {
-  border: 2px dashed #bbbbbb;
-  color: #bbbbbb;
+  border: 2px dashed #b0bec5;
+  color: #b0bec5;
 }
 .container .box .device-list a.device-card:nth-child(4n+0) {
   margin-right: 0%;
@@ -357,7 +357,7 @@ body {
   overflow: hidden;
 }
 .container .box .device-list a.device-card.disable {
-  background: #E3F2FD;
+  background: #eceff1;
   color: #2962FF;
   box-shadow: none;
 }
@@ -385,13 +385,13 @@ body {
   color: #FFCDD2;
 }
 .container .box .device-list a.device-card.lostconnect {
-  background: #DDDDDD;
-  color: #999999;
+  background: #eceff1;
+  color: #b0bec5;
 }
 .form {
   width: 30%;
   margin: 80px 35%;
-  margin-top: 160px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
 }
@@ -442,7 +442,7 @@ body {
 }
 .form .form-items label {
   font-size: 0.9em;
-  color: #333333;
+  color: #37474f;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -469,12 +469,12 @@ body {
   display: block;
   font-size: 1.2em;
   padding: 14px;
-  background: #FAFAFA;
+  background: #eceff1;
   color: #2962ff;
   margin: 0%;
   border-radius: 5px;
   box-sizing: border-box;
-  border: 2px solid #dddddd;
+  border: 2px solid #eceff1;
   resize: none;
 }
 .form .form-items .input-text.-loading,
@@ -488,11 +488,11 @@ body {
 }
 .form .form-items .input-text:focus,
 .form .form-items .input-textarea:focus {
-  border: 2px solid #2962ff;
+  border: 2px solid #b0bec5;
 }
 .form .form-items .input-text:disabled,
 .form .form-items .input-textarea:disabled {
-  background: #dddddd;
+  background: #eceff1;
   color: #2962ff;
 }
 .form .form-items .input-textarea {
@@ -511,6 +511,7 @@ body {
   color: #ffffff;
   font-size: 1.2em;
   font-weight: bold;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .form .form-items .btn-submit i {
   margin-left: 10px;
@@ -526,7 +527,7 @@ body {
   box-shadow: none;
 }
 .form .form-items .note {
-  color: #333333;
+  color: #37474f;
   font-size: 0.9em;
   margin-top: 10px;
 }
@@ -557,7 +558,7 @@ body {
 .form .form-items .lists {
   display: flex;
   flex-direction: column;
-  border: 2px solid #dddddd;
+  border: 2px solid #eceff1;
   border-radius: 5px;
   font-size: 1.2em;
   margin-bottom: 10px;
@@ -565,7 +566,7 @@ body {
 .form .form-items .lists .list-items {
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #eceff1;
 }
 .form .form-items .lists .list-items:last-child {
   border-bottom: 0;
@@ -601,7 +602,7 @@ body {
 .form .toggle-items i {
   font-size: 2.1em;
   padding: 0;
-  color: #dddddd;
+  color: #eceff1;
 }
 .form .toggle-items i.fa-toggle-on {
   color: #2962ff;
@@ -612,7 +613,7 @@ body {
 .device-info {
   width: 40%;
   margin: 80px 30%;
-  margin-top: 120px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
 }
@@ -634,7 +635,7 @@ body {
 }
 .device-info .info p {
   font-size: 0.9em;
-  color: #999999;
+  color: #455a64;
 }
 .device-info .temperature-stat {
   display: flex;
@@ -644,7 +645,7 @@ body {
 }
 .device-info .temperature-stat .box {
   width: 31.33%;
-  background: #dddddd;
+  background: #eceff1;
   text-align: center;
   margin-right: 3%;
   height: 150px;
@@ -653,6 +654,7 @@ body {
   justify-content: center;
   border-radius: 7px;
   box-sizing: border-box;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .device-info .temperature-stat .box:nth-child(3n+0) {
   margin-right: 0%;
@@ -661,11 +663,11 @@ body {
   font-family: 'maledpan';
   font-size: 2.4em;
   line-height: 1.2em;
-  color: #333333;
+  color: #37474f;
 }
 .device-info .temperature-stat .box p {
   font-size: 0.9em;
-  color: #999999;
+  color: #455a64;
 }
 .device-info .temperature-stat .box.highest .over {
   color: #e74c3c;
@@ -687,7 +689,7 @@ body {
   font-family: 'maledpan';
   font-size: 1.2em;
   margin-bottom: 15px;
-  color: #999999;
+  color: #455a64;
   font-weight: normal;
 }
 .device-info .history {
@@ -696,7 +698,8 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   border-radius: 10px;
-  background: #dddddd;
+  background: #eceff1;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .device-info .history .logitems {
   display: flex;
@@ -706,7 +709,7 @@ body {
   font-size: 1.2em;
   font-family: 'maledpan';
   color: #666666;
-  border-bottom: 1px solid #bbbbbb;
+  border-bottom: 1px solid #b0bec5;
 }
 .device-info .history .logitems:last-child {
   border-bottom: 0;
@@ -732,7 +735,7 @@ body {
   width: 5%;
   text-align: right;
   font-size: 0.6em;
-  color: #dddddd;
+  color: #eceff1;
 }
 .device-info .history .logitems .temp {
   width: 20%;
@@ -752,7 +755,7 @@ body {
   padding: 15% 0;
   display: flex;
   justify-content: center;
-  color: #dddddd;
+  color: #eceff1;
   font-size: 1.2em;
   font-style: italic;
 }
@@ -760,7 +763,7 @@ body {
   width: 60%;
   margin: 0 20%;
   margin-bottom: 2%;
-  color: #333333;
+  color: #37474f;
   display: flex;
   font-size: 0.9em;
   flex-direction: row;
@@ -868,7 +871,7 @@ body {
 }
 .message-box .control a.btn.btn-not-Accept {
   background: transparent;
-  color: #999999;
+  color: #455a64;
 }
 #disconnect-bar {
   position: fixed;
@@ -877,7 +880,7 @@ body {
   width: 100%;
   height: 50px;
   display: flex;
-  background: #dddddd;
+  background: #eceff1;
   color: #666666;
   font-family: 'maledpan';
   font-size: 1.2em;
@@ -1710,7 +1713,7 @@ body {
     margin-bottom: 0%;
   }
   .form .form-items.toggle-type {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #eceff1;
   }
   .form .form-items.toggle-type .label {
     width: 50%;
