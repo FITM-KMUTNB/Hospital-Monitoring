@@ -143,7 +143,7 @@ button {
   /* IE11 */
 }
 body {
-  background: #ffffff;
+  background: #fafafa;
   font-family: 'sans-serif';
   font-weight: 200;
   overflow-x: hidden;
@@ -201,7 +201,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   z-index: 99;
-  background: #ffffff;
+  background: #fafafa;
 }
 .header .btn-icon {
   font-size: 1.8em;
@@ -524,7 +524,7 @@ body {
   margin-top: 15px;
   border-radius: 5px;
   background: #2962ff;
-  color: #ffffff;
+  color: #fafafa;
   font-size: 1.2em;
   font-weight: bold;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -649,6 +649,7 @@ body {
   line-height: 1.2em;
   font-weight: bold;
   color: #2962ff;
+  text-shadow: 0 6px 9px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .device-info .info .temperature-current.over {
   color: #e74c3c;
