@@ -47,7 +47,7 @@ if(!empty($space->id) && isset($space->id)){
 <header class="header">
 	<a class="btn-icon btn-back" href="/" target="_parent"><i class="fal fa-arrow-left"></i></a>
 	<div class="title">ตั้งค่าโปรเจ็ค</div>
-	<div class="btn-icon"></div>
+	<div class="btn-icon"><i class="fal fa-check-circle"></i></div>
 </header>
 <div class="form">
 	<div class="form-items">
@@ -61,7 +61,7 @@ if(!empty($space->id) && isset($space->id)){
 		</div>
 		<div class="note">ต้องมี LINE Notify Token เพื่อใช้ในการแจ้งเตือน <a href="https://notify-bot.line.me/th/">ขอคีย์ที่นี่</a></div>
 	</div>
-	<div class="form-items <?php echo (empty($space->id) ? 'hidden' : '');?>">
+	<div class="form-items hidden">
 		<label for="description">รายละเอียด</label>
 		<div class="input"><textarea class="input-textarea" id="description"><?php echo $space->description;?></textarea></div>
 	</div>

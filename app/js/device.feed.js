@@ -87,7 +87,7 @@ function renderCurrent(data){
     var site_title  = $('#site_title').val();
     var device_name = $('#device_name').val();
 
-    document.title =  data.current.temp + '°C | ' + device_name;
+    document.title =  data.current.temp + '° | ' + device_name;
 
     $('#tempcurrent').html(data.current.temp+'°');
     $('#timecurrent').html(data.current.time);
@@ -101,6 +101,12 @@ function renderCurrent(data){
 
     if (data.min.temp <= device_min) $('#templowest').addClass('over');
     else $('#templowest').removeClass('over');
+
+    if (data.current.temp >= device_max || data.current.temp <= device_min) {
+        $('#tempcurrent').addClass('over')
+    } else {
+        $('#tempcurrent').removeClass('over')
+    }
 }
 
 function limitChecking(temp){

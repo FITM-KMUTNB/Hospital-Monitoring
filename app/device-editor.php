@@ -61,9 +61,10 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 	<?php } else {?>
 	<a href="device/<?php echo $devices->id;?>" class="btn-icon" target="_parent"><i class="fal fa-arrow-left"></i></a>
 	<?php }?>
+	<div class="title"><?php echo $page_title;?></div>
+	<div class="btn-icon"></div>
 </header>
 <div class="form">
-	<h2><?php echo $page_title;?></h2>
 	<?php if(!empty($devices->id)){?>
 		<div class="toggle-items">
 			<div class="label">รับข้อมูลจากอุปกรณ์</div>
@@ -87,8 +88,8 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 	<div class="form-items">
 		<label for="min">อุณหภูมิตั้งค่า</label>
 		<div class="inputs">
-			<input class="input-text" type="text" id="min" value="<?php echo (!empty($devices->min)?$devices->min:0);?>" placeholder="อุณหภูมิต่ำสุด">
-			<input class="input-text" type="text" id="max" value="<?php echo (!empty($devices->max)?$devices->max:5);?>" placeholder="อุณหภูมิสูงสุด">
+			<input class="input-text" type="number" id="min" value="<?php echo (!empty($devices->min)?$devices->min:0);?>" placeholder="อุณหภูมิต่ำสุด">
+			<input class="input-text" type="number" id="max" value="<?php echo (!empty($devices->max)?$devices->max:5);?>" placeholder="อุณหภูมิสูงสุด">
 		</div>
 		<div class="note">ระบบจะเริ่มแจ้งเตือน เมื่ออุณหภูมิของอุปกรณ์สูงหรือตำ่กว่าค่าที่กำหนดไว้</div>
 	</div>
@@ -105,7 +106,7 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 		<div class="note">ส่งข้อมูล: <i><?php echo DOMAIN;?>/push.php</i></div>
 	</div>
 	<?php }?>
-	<div class="form-items">
+	<div class="form-items hidden">
 		<label for="description">รายละเอียด</label>
 		<div class="input">
 			<textarea class="input-textarea" id="description"><?php echo $devices->description;?></textarea>

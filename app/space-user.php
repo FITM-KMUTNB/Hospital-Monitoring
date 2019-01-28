@@ -46,10 +46,10 @@ if(!empty($space->id) && isset($space->id)){
 <body>
 <header class="header -nonfixed">
 	<a href="space/<?php echo $space->id;?>" class="btn-icon" target="_parent"><i class="fal fa-arrow-left" aria-hidden="true"></i></a>
+	<div class="title">ผู้ดูแลโปรเจ็ค</div>
+	<div class="btn-icon"></div>
 </header>
 <div class="form">
-	<h2>ผู้ดูแลโปรเจ็ค</h2>
-
 	<?php if(!empty($space->id) && isset($space->id)){?>
 	<div class="form-items">
 		<label>ผู้ดูแล</label>
