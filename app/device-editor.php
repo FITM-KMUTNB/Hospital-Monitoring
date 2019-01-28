@@ -65,6 +65,37 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 	<div class="btn-icon"></div>
 </header>
 <div class="form vertical-center">
+	<div class="form-items">
+		<label for="name">ชื่ออุปกรณ์</label>
+		<input class="input-text" type="text" id="name" value="<?php echo $devices->name;?>" autofocus>
+	</div>
+	<div class="form-items">
+		<label for="min">อุณหภูมิตั้งค่า</label>
+		<div class="inputs">
+			<input class="input-text" type="number" id="min" value="<?php echo (!empty($devices->min)?$devices->min:0);?>" placeholder="อุณหภูมิต่ำสุด">
+			<input class="input-text" type="number" id="max" value="<?php echo (!empty($devices->max)?$devices->max:5);?>" placeholder="อุณหภูมิสูงสุด">
+		</div>
+	</div>
+
+	<?php if(!empty($devices->id)){?>
+	<div class="form-items">
+		<label>
+			<div>คีย์ (Token)</div>
+			<div class="label-button" id="btn-token-reset">สร้างคีย์ใหม่</div>
+		</label>
+		<div class="input">
+			<input class="input-text" type="text" value="<?php echo $devices->token;?>" disabled>
+		</div>
+		<div class="note">ส่งข้อมูล: <i><?php echo DOMAIN;?>/push.php</i></div>
+	</div>
+	<?php }?>
+	<div class="form-items hidden">
+		<label for="description">รายละเอียด</label>
+		<div class="input">
+			<textarea class="input-textarea" id="description"><?php echo $devices->description;?></textarea>
+		</div>
+	</div>
+
 	<?php if(!empty($devices->id)){?>
 		<div class="toggle-items">
 			<div class="label">รับข้อมูลจากอุปกรณ์</div>
@@ -80,38 +111,6 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 		</div>
 	</div>
 	<?php }?>
-
-	<div class="form-items">
-		<label for="name">ชื่ออุปกรณ์</label>
-		<input class="input-text" type="text" id="name" value="<?php echo $devices->name;?>" autofocus>
-	</div>
-	<div class="form-items">
-		<label for="min">อุณหภูมิตั้งค่า</label>
-		<div class="inputs">
-			<input class="input-text" type="number" id="min" value="<?php echo (!empty($devices->min)?$devices->min:0);?>" placeholder="อุณหภูมิต่ำสุด">
-			<input class="input-text" type="number" id="max" value="<?php echo (!empty($devices->max)?$devices->max:5);?>" placeholder="อุณหภูมิสูงสุด">
-		</div>
-		<div class="note">ระบบจะเริ่มแจ้งเตือน เมื่ออุณหภูมิของอุปกรณ์สูงหรือตำ่กว่าค่าที่กำหนดไว้</div>
-	</div>
-
-	<?php if(!empty($devices->id)){?>
-	<div class="form-items">
-		<label>
-			<div>คีย์ (Token)</div>
-			<div class="label-button" id="btn-token-reset"><i class="fal fa-redo"></i>สร้างคีย์ใหม่</div>
-		</label>
-		<div class="input">
-			<input class="input-text" type="text" value="<?php echo $devices->token;?>" disabled>
-		</div>
-		<div class="note">ส่งข้อมูล: <i><?php echo DOMAIN;?>/push.php</i></div>
-	</div>
-	<?php }?>
-	<div class="form-items hidden">
-		<label for="description">รายละเอียด</label>
-		<div class="input">
-			<textarea class="input-textarea" id="description"><?php echo $devices->description;?></textarea>
-		</div>
-	</div>
 
 	<input type="hidden" id="device_id" value="<?php echo $devices->id?>">
 	<input type="hidden" id="space_id" value="<?php echo $space->id;;?>">

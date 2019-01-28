@@ -15,23 +15,16 @@
 // http://www.color-hex.com/color/21ce99
 @primary_color      :#2962FF; // Active Color
 @primary_color_dark :#3581C2;
-@primary_color_light:#64BEE3;
+@primary_color_light:#E3F2FD;
 
 @second_color       :#e74c3c; // Alert Color
 @second_color_dark  :#451612; // Alert Color
 @second_color_light :#f3a59d; // Alert Color
 
-@third_color        :#ff9800; // Lost Color
-@third_color_dark   :#4c2d00; // Lost Color
-@third_color_light  :#ffcb7f; // Lost Color
-
-// http://www.color-hex.com/color/040d14
-@bg_color           :#FAFAFA;
+@bg_color           :#FFFFFF;
 @bg_color_dark      :#030a10;
 @bg_color_light     :#1d252b;
 @text_active_color  :#000000;
-
-// @text_normal_color  :#111111;
 
 @text_color_normal: #37474F;
 @text_color_light: #B0BEC5;
@@ -44,7 +37,8 @@
 @font-size-mini: 0.75em;
 
 @green_color: #00B900;
-@red_color: #eb4e3d;
+@red_color: #FF1744;
+@red_color_light: #FFCDD2;
 
 html {
     -ms-touch-action: manipulation;
@@ -58,7 +52,7 @@ a[href], button {
 
 body{
     background: @bg_color;
-    font-family: 'sans-serif';
+    font-family: @font_family_topic;
     font-weight: 200;
     overflow-x:hidden;
 }

@@ -59,7 +59,7 @@ if(!empty($space->id) && isset($space->id)){
 		<div class="input">
 			<input class="input-text" type="text" id="line_token" value="<?php echo $space->line_token;?>">
 		</div>
-		<div class="note">ต้องมี LINE Notify Token เพื่อใช้ในการแจ้งเตือน <a href="https://notify-bot.line.me/th/">ขอคีย์ที่นี่</a></div>
+		<div class="note">ต้องมี LINE Notify Token เพื่อใช้ในการแจ้งเตือน <a href="https://notify-bot.line.me/th/">สร้างคีย์ใหม่</a></div>
 	</div>
 	<div class="form-items hidden">
 		<label for="description">รายละเอียด</label>

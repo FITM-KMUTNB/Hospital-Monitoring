@@ -99,7 +99,7 @@ if(!$user_online){ // ไม่ออนไลน์
 			<p>ต่ำสุด <span id="timelowest"></span></p>
 		</div>
 		<div class="box">
-			<h3><?php echo $devices->min;?>° / <?php echo $devices->max;?>°</h3>
+			<h3><?php echo $devices->min;?>° . <?php echo $devices->max;?>°</h3>
 			<p>อุณหภูมิตั้งค่า</p>
 		</div>
 	</div>

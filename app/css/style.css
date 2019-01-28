@@ -143,8 +143,8 @@ button {
   /* IE11 */
 }
 body {
-  background: #fafafa;
-  font-family: 'sans-serif';
+  background: #ffffff;
+  font-family: 'maledpan';
   font-weight: 200;
   overflow-x: hidden;
 }
@@ -196,34 +196,30 @@ body {
 .header {
   width: 80%;
   padding: 0 10%;
-  height: 80px;
+  height: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   z-index: 99;
-  background: #fafafa;
+  background: #ffffff;
 }
 .header .btn-icon {
   font-size: 1.8em;
-  width: 80px;
-  height: 80px;
-  color: #b0bec5;
+  width: 100px;
+  height: 100px;
+  color: #2962ff;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
 }
-.header .btn-icon.create {
-  color: #2962ff;
-}
 .header .title {
-  height: 80px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   color: #37474f;
-  font-family: 'maledpan';
   font-size: 2.4em;
   font-weight: bold;
 }
@@ -241,12 +237,12 @@ body {
 }
 .header a.logo-icon img {
   padding: 10px;
-  height: 60px;
+  height: 80px;
 }
 .container {
   width: 60%;
   margin: 5% 20%;
-  margin-top: 80px;
+  margin-top: 100px;
   float: left;
   display: block;
 }
@@ -262,7 +258,6 @@ body {
   flex-direction: row;
   align-items: center;
   margin-bottom: 25px;
-  font-family: 'maledpan';
 }
 .container .box .head h2 {
   font-size: 2.4em;
@@ -273,7 +268,7 @@ body {
   height: 50px;
   width: 50px;
   color: #b0bec5;
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-left: 7px;
   display: flex;
   justify-content: center;
@@ -306,7 +301,7 @@ body {
   flex-direction: column;
   justify-content: center;
   background: #eceff1;
-  color: #999999;
+  color: #b0bec5;
   transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -319,12 +314,8 @@ body {
   background: #FFFFFF;
   border: 2px dashed #b0bec5;
   color: #b0bec5;
-  font-size: 1.2em;
+  font-size: 1.4em;
   align-items: center;
-  box-shadow: none;
-}
-.container .box .device-list a.device-card.create-button p {
-  font-family: 'maledpan';
 }
 .container .box .device-list a.device-card.create-button:hover {
   transform: initial;
@@ -333,9 +324,8 @@ body {
   margin-right: 0%;
 }
 .container .box .device-list a.device-card .info {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-bottom: 5px;
-  font-family: 'maledpan';
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -353,28 +343,22 @@ body {
   overflow: hidden;
   font-size: 2.4em;
   font-weight: bold;
-  font-family: 'maledpan';
 }
 .container .box .device-list a.device-card .desc {
-  font-size: 0.9em;
+  font-size: 1.2em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
-.container .box .device-list a.device-card.disable {
-  background: #eceff1;
-  color: #2962FF;
-  box-shadow: none;
-}
 .container .box .device-list a.device-card.active {
-  background: #2962FF;
-  color: #90CAF9;
+  background: #2962ff;
+  color: #e3f2fd;
 }
 .container .box .device-list a.device-card.active .temp {
   color: #FFFFFF;
 }
 .container .box .device-list a.device-card.alret {
-  background: #FF1744;
+  background: #ff1744;
   color: #FFFFFF;
   -webkit-animation-name: bounce;
   animation-name: bounce;
@@ -387,16 +371,22 @@ body {
 }
 .container .box .device-list a.device-card.alret .desc,
 .container .box .device-list a.device-card.alret .status-icon {
-  color: #FFCDD2;
+  color: #ffcdd2;
 }
 .container .box .device-list a.device-card.lostconnect {
-  background: #eceff1;
-  color: #b0bec5;
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 .form {
   width: 40%;
   margin: 80px 30%;
-  margin-top: 80px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
 }
@@ -414,6 +404,7 @@ body {
   top: 0;
   left: 0;
   height: 100%;
+  width: 30%;
   margin: 0 35%;
   text-align: center;
 }
@@ -422,16 +413,16 @@ body {
   color: #2962ff;
 }
 .form.login p {
-  font-size: 1.2em;
+  font-size: 1.4em;
   text-align: center;
 }
 .form.login p a {
-  background: #E3F2FD;
-  padding: 3px 6px;
-  border-radius: 5px;
-  margin-left: 3px;
   color: #2962ff;
   text-decoration: none;
+  font-weight: bold;
+}
+.form.login p a:hover {
+  text-decoration: underline;
 }
 .form.login .logo {
   width: 30%;
@@ -457,7 +448,7 @@ body {
   margin-bottom: 0;
 }
 .form .form-items label {
-  font-size: 0.9em;
+  font-size: 1.2em;
   color: #37474f;
   display: flex;
   flex-direction: row;
@@ -516,13 +507,14 @@ body {
 }
 .form .form-items .btn-submit {
   width: 100%;
+  font-size: 1.4em;
   border: 0px;
   padding: 16px 0;
   margin: 0%;
   margin-top: 15px;
   border-radius: 5px;
   background: #2962ff;
-  color: #fafafa;
+  color: #ffffff;
   font-size: 1.2em;
   font-weight: bold;
 }
@@ -535,32 +527,24 @@ body {
   background: #3581c2;
 }
 .form .form-items .btn-submit.loading {
-  background: #DDDDDD;
-  color: #999999;
-  box-shadow: none;
+  background: #eceff1;
+  color: #b0bec5;
 }
 .form .form-items .btn-submit.completed {
   background: #00b900;
-  box-shadow: none;
 }
 .form .form-items .note {
   color: #37474f;
-  font-size: 0.9em;
+  font-size: 1.2em;
   margin-top: 10px;
 }
 .form .form-items .note a {
   color: #2962ff;
-  background: #E3F2FD;
   text-decoration: none;
-  padding: 3px 6px;
-  border-radius: 5px;
-  margin-left: 3px;
+  font-weight: bold;
 }
 .form .form-items .note a:hover {
   text-decoration: underline;
-}
-.form .form-items .note a i {
-  margin-left: 5px;
 }
 .form .form-items .inputs {
   display: flex;
@@ -601,11 +585,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #DDDDDD;
+  color: #eceff1;
 }
 .form .form-items .lists .list-items .btn:hover {
   cursor: pointer;
-  color: #999999;
+  color: #b0bec5;
 }
 .form .toggle-items {
   display: flex;
@@ -613,13 +597,13 @@ body {
   align-items: center;
   line-height: 1em;
   justify-content: space-between;
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-bottom: 15px;
 }
 .form .toggle-items i {
-  font-size: 2.1em;
+  font-size: 2.0999999999999996em;
   padding: 0;
-  color: #eceff1;
+  color: #b0bec5;
 }
 .form .toggle-items i.fa-toggle-on {
   color: #2962ff;
@@ -630,7 +614,7 @@ body {
 .device-info {
   width: 40%;
   margin: 80px 30%;
-  margin-top: 80px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
 }
@@ -641,7 +625,6 @@ body {
   margin-bottom: 40px;
 }
 .device-info .info .temperature-current {
-  font-family: 'maledpan';
   font-size: 7.199999999999999em;
   line-height: 1.2em;
   font-weight: bold;
@@ -651,7 +634,7 @@ body {
   color: #e74c3c;
 }
 .device-info .info p {
-  font-size: 0.9em;
+  font-size: 1.2em;
   color: #b0bec5;
 }
 .device-info .temperature-stat {
@@ -676,13 +659,12 @@ body {
   margin-right: 0%;
 }
 .device-info .temperature-stat .box h3 {
-  font-family: 'maledpan';
   font-size: 2.4em;
   line-height: 1.2em;
   color: #37474f;
 }
 .device-info .temperature-stat .box p {
-  font-size: 0.9em;
+  font-size: 1.2em;
   color: #b0bec5;
 }
 .device-info .temperature-stat .box.highest .over {
@@ -702,8 +684,7 @@ body {
   height: 150px;
 }
 .device-info h2 {
-  font-family: 'maledpan';
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-bottom: 15px;
   color: #b0bec5;
   font-weight: normal;
@@ -721,8 +702,7 @@ body {
   flex-direction: row;
   align-items: center;
   padding: 15px 25px;
-  font-size: 1.2em;
-  font-family: 'maledpan';
+  font-size: 1.4em;
   color: #37474f;
   border-bottom: 1px dotted #b0bec5;
 }
@@ -733,12 +713,12 @@ body {
   cursor: pointer;
 }
 .device-info .history .logitems.alert .status {
-  color: #FF1744;
+  color: #ff1744;
 }
 .device-info .history .logitems .status {
   width: 5%;
   color: #2962ff;
-  font-size: 0.6em;
+  font-size: 0.7em;
 }
 .device-info .history .logitems .time {
   width: 70%;
@@ -749,29 +729,30 @@ body {
 .device-info .history .logitems .icon {
   width: 5%;
   text-align: right;
-  font-size: 0.6em;
+  font-size: 0.7em;
   color: #b0bec5;
 }
 .device-info .history .logitems .temp {
   width: 20%;
   text-align: right;
+  font-weight: bold;
 }
 .device-info .history .loading {
   width: 100%;
   padding: 15% 0;
   display: flex;
   justify-content: center;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-style: italic;
-  color: #CCCCCC;
+  color: #b0bec5;
 }
 .device-info .history .empty {
   width: 100%;
   padding: 15% 0;
   display: flex;
   justify-content: center;
-  color: #eceff1;
-  font-size: 1.2em;
+  color: #b0bec5;
+  font-size: 1.4em;
   font-style: italic;
 }
 .footer {
@@ -780,7 +761,7 @@ body {
   margin-bottom: 2%;
   color: #37474f;
   display: flex;
-  font-size: 0.9em;
+  font-size: 1.2em;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -791,8 +772,8 @@ body {
 .footer a {
   padding: 3px 10px;
   text-decoration: none;
-  background: #EEEEEE;
-  color: #666666;
+  background: #eceff1;
+  color: #b0bec5;
   border-radius: 5px;
 }
 #progress-bar {
@@ -890,15 +871,14 @@ body {
 }
 #disconnect-bar {
   position: fixed;
-  bottom: -50px;
+  bottom: -60px;
   left: 0px;
   width: 100%;
-  height: 50px;
+  height: 60px;
   display: flex;
   background: #eceff1;
-  color: #666666;
-  font-family: 'maledpan';
-  font-size: 1.2em;
+  color: #b0bec5;
+  font-size: 1.4em;
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -911,7 +891,7 @@ body {
   transform: translateY(-100%);
 }
 #disconnect-bar i {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 /* Other Device and Screen */
 @media only screen and (min-width: 1910px) {
