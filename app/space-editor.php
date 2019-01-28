@@ -47,9 +47,9 @@ if(!empty($space->id) && isset($space->id)){
 <header class="header">
 	<a class="btn-icon btn-back" href="/" target="_parent"><i class="fal fa-arrow-left"></i></a>
 	<div class="title">ตั้งค่าโปรเจ็ค</div>
-	<div class="btn-icon"><i class="fal fa-check-circle"></i></div>
+	<div class="btn-icon"></div>
 </header>
-<div class="form">
+<div class="form vertical-center">
 	<div class="form-items">
 		<label for="name">ชื่อโปรเจ็ค</label>
 		<div class="input"><input class="input-text" type="text" id="name" value="<?php echo $space->title;?>"></div>

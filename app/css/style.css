@@ -207,7 +207,7 @@ body {
   font-size: 1.8em;
   width: 80px;
   height: 80px;
-  color: #999999;
+  color: #b0bec5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -228,7 +228,7 @@ body {
   font-weight: bold;
 }
 .header .title i {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 .header .title:hover {
   cursor: default;
@@ -272,7 +272,7 @@ body {
   text-decoration: none;
   height: 50px;
   width: 50px;
-  color: #455a64;
+  color: #b0bec5;
   font-size: 1.2em;
   margin-left: 7px;
   display: flex;
@@ -307,12 +307,20 @@ body {
   justify-content: center;
   background: #eceff1;
   color: #999999;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.container .box .device-list a.device-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transform: translateY(-10px);
 }
 .container .box .device-list a.device-card.create-button {
   background: #FFFFFF;
-  border: 2px dashed #eceff1;
-  color: #eceff1;
+  border: 2px dashed #b0bec5;
+  color: #b0bec5;
   font-size: 1.2em;
   align-items: center;
   box-shadow: none;
@@ -321,8 +329,7 @@ body {
   font-family: 'maledpan';
 }
 .container .box .device-list a.device-card.create-button:hover {
-  border: 2px dashed #b0bec5;
-  color: #b0bec5;
+  transform: initial;
 }
 .container .box .device-list a.device-card:nth-child(4n+0) {
   margin-right: 0%;
@@ -389,11 +396,19 @@ body {
   color: #b0bec5;
 }
 .form {
-  width: 30%;
-  margin: 80px 35%;
+  width: 40%;
+  margin: 80px 30%;
   margin-top: 80px;
   display: flex;
   flex-direction: column;
+}
+.form.vertical-center {
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  margin: 0 30%;
 }
 .form.login {
   justify-content: center;
@@ -440,6 +455,9 @@ body {
 .form .form-items.hidden {
   display: none;
 }
+.form .form-items:last-child {
+  margin-bottom: 0;
+}
 .form .form-items label {
   font-size: 0.9em;
   color: #37474f;
@@ -468,7 +486,7 @@ body {
   float: left;
   display: block;
   font-size: 1.2em;
-  padding: 14px;
+  padding: 16px 14px;
   background: #eceff1;
   color: #2962ff;
   margin: 0%;
@@ -477,8 +495,8 @@ body {
   border: 2px solid #eceff1;
   resize: none;
 }
-.form .form-items .input-text.-loading,
-.form .form-items .input-textarea.-loading {
+.form .form-items .input-text.loading,
+.form .form-items .input-textarea.loading {
   background: transparent;
   color: #2962ff;
 }
@@ -500,10 +518,8 @@ body {
 }
 .form .form-items .btn-submit {
   width: 100%;
-  float: left;
-  display: block;
   border: 0px;
-  padding: 14px;
+  padding: 16px 0;
   margin: 0%;
   margin-top: 15px;
   border-radius: 5px;
@@ -524,6 +540,10 @@ body {
 .form .form-items .btn-submit.loading {
   background: #DDDDDD;
   color: #999999;
+  box-shadow: none;
+}
+.form .form-items .btn-submit.completed {
+  background: #00b900;
   box-shadow: none;
 }
 .form .form-items .note {
@@ -635,7 +655,7 @@ body {
 }
 .device-info .info p {
   font-size: 0.9em;
-  color: #455a64;
+  color: #b0bec5;
 }
 .device-info .temperature-stat {
   display: flex;
@@ -646,8 +666,8 @@ body {
 .device-info .temperature-stat .box {
   width: 31.33%;
   background: #eceff1;
-  text-align: center;
   margin-right: 3%;
+  padding: 0 5%;
   height: 150px;
   display: flex;
   flex-direction: column;
@@ -667,7 +687,7 @@ body {
 }
 .device-info .temperature-stat .box p {
   font-size: 0.9em;
-  color: #455a64;
+  color: #b0bec5;
 }
 .device-info .temperature-stat .box.highest .over {
   color: #e74c3c;
@@ -689,7 +709,7 @@ body {
   font-family: 'maledpan';
   font-size: 1.2em;
   margin-bottom: 15px;
-  color: #455a64;
+  color: #b0bec5;
   font-weight: normal;
 }
 .device-info .history {
@@ -708,8 +728,8 @@ body {
   padding: 15px 25px;
   font-size: 1.2em;
   font-family: 'maledpan';
-  color: #666666;
-  border-bottom: 1px solid #b0bec5;
+  color: #37474f;
+  border-bottom: 1px dotted #b0bec5;
 }
 .device-info .history .logitems:last-child {
   border-bottom: 0;
@@ -735,7 +755,7 @@ body {
   width: 5%;
   text-align: right;
   font-size: 0.6em;
-  color: #eceff1;
+  color: #b0bec5;
 }
 .device-info .history .logitems .temp {
   width: 20%;
@@ -871,7 +891,7 @@ body {
 }
 .message-box .control a.btn.btn-not-Accept {
   background: transparent;
-  color: #455a64;
+  color: #b0bec5;
 }
 #disconnect-bar {
   position: fixed;

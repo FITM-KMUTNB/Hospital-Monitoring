@@ -64,7 +64,7 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 	<div class="title"><?php echo $page_title;?></div>
 	<div class="btn-icon"></div>
 </header>
-<div class="form">
+<div class="form vertical-center">
 	<?php if(!empty($devices->id)){?>
 		<div class="toggle-items">
 			<div class="label">รับข้อมูลจากอุปกรณ์</div>

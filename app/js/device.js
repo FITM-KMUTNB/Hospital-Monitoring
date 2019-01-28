@@ -4,8 +4,8 @@ $(document).ready(function(){
 	var device_id 	= $('#device_id').val();
 
 	$('#name , #description , #min , #max').focus(function(){
-		$('#btn-save').removeClass('-completed');
-		$('#btn-nav').removeClass('-show');
+		$('#btn-save').removeClass('completed');
+		$('#btn-nav').removeClass('show');
 		$('#btn-save').html('บันทึก');
 	});
 
@@ -143,7 +143,7 @@ $(document).ready(function(){
 	        		window.location = 'device/'+data.return;
 	        	},1000);
 	        }else{
-	        	$('#btn-save').addClass('-completed');
+	        	$('#btn-save').addClass('completed');
 	        	$('#btn-save').html('บันทึกแล้ว<i class="fa fa-check" aria-hidden="true"></i>');
 	        	$('#btn-nav').addClass('-show');
 	        }
