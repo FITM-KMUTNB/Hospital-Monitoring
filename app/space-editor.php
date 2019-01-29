@@ -40,24 +40,24 @@ if(!empty($space->id) && isset($space->id)){
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
-<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.0.9/css/fontawesome-all.min.css"/>
+<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 
 </head>
 <body>
 <header class="header">
-	<a class="btn-icon btn-back" href="/" target="_parent"><i class="fal fa-arrow-left"></i></a>
+	<a class="btn-icon btn-back" href="/" target="_parent"><i class="fas fa-arrow-left"></i></a>
 	<div class="title">ตั้งค่าโปรเจ็ค</div>
 	<div class="btn-icon"></div>
 </header>
 <div class="form vertical-center">
 	<div class="form-items">
 		<label for="name">ชื่อโปรเจ็ค</label>
-		<div class="input"><input class="input-text" type="text" id="name" value="<?php echo $space->title;?>"></div>
+		<div class="input"><input class="input-text" type="text" placeholder="ไม่เกิน 20 ตัวอักษร" autocomplete="off" id="name" value="<?php echo $space->title;?>"></div>
 	</div>
 	<div class="form-items <?php echo (empty($space->id) ? 'hidden' : '');?>">
 		<label for="line_token">LINE Access Token</label>
 		<div class="input">
-			<input class="input-text" type="text" id="line_token" value="<?php echo $space->line_token;?>">
+			<input class="input-text" type="text" autocomplete="off" id="line_token" value="<?php echo $space->line_token;?>">
 		</div>
 		<div class="note">ต้องมี LINE Notify Token เพื่อใช้ในการแจ้งเตือน <a href="https://notify-bot.line.me/th/">สร้างคีย์ใหม่</a></div>
 	</div>

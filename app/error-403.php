@@ -21,12 +21,12 @@
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
-<link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 
 </head>
 <body>
 <div class="message-box">
-	<div class="icon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
+	<div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
 	<div class="msg">ไม่พบหน้าที่คุณต้องการ (403 Forbidden)</div>
 	<div class="control"><a class="btn" href="<?php echo DOMAIN;?>">กลับไปหน้าแรก</a></div>
 </div>

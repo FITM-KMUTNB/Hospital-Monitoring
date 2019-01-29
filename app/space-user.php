@@ -40,12 +40,12 @@ if(!empty($space->id) && isset($space->id)){
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
-<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.0.9/css/fontawesome-all.min.css"/>
+<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 
 </head>
 <body>
 <header class="header -nonfixed">
-	<a href="space/<?php echo $space->id;?>" class="btn-icon" target="_parent"><i class="fal fa-arrow-left" aria-hidden="true"></i></a>
+	<a href="space/<?php echo $space->id;?>" class="btn-icon" target="_parent"><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
 	<div class="title">ผู้ดูแลโปรเจ็ค</div>
 	<div class="btn-icon"></div>
 </header>
@@ -58,9 +58,9 @@ if(!empty($space->id) && isset($space->id)){
 			<div class="list-items" id="admin-<?php echo $var['user_id'];?>" data-user="<?php echo $var['user_id'];?>" title="<?php echo $var['email'];?>">
 				<div class="c"><?php echo $var['fname'].' '.$var['lname'];?></div>
 				<?php if ($var['permission'] == 1) {?>
-				<div class="btn"><i class="fal fa-lock-alt"></i></div>
+				<div class="btn"><i class="fas fa-lock-alt"></i></div>
 				<?php } else {?>
-				<span class="btn btn-amin-delete"><i class="fal fa-times"></i></span>
+				<span class="btn btn-amin-delete"><i class="fas fa-times"></i></span>
 				<?php }?>
 			</div>
 			<?php }?>
@@ -69,7 +69,7 @@ if(!empty($space->id) && isset($space->id)){
 
 	<div class="form-items">
 		<label for="email_admin">เพิ่มผู้ดูแล</label>
-		<input type="text" id="email_admin" class="input-text" placeholder="เชิญผู้ดูแลด้วยอีเมล...">
+		<input type="text" id="email_admin" class="input-text" placeholder="เชิญผู้ดูแลด้วยอีเมล">
 	</div>
 	<div class="form-items">
 		<button class="btn-submit" id="btn-admin-add">เพิ่มผู้ดูแล</button>

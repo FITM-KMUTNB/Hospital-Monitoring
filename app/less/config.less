@@ -9,33 +9,19 @@
     font-style: normal;
 }
 
-@FontStylePrimary   : sans-serif;
-@font_family_topic  : 'maledpan';
+@FontStylePrimary: sans-serif;
+@font_family_topic: 'maledpan';
 
 // http://www.color-hex.com/color/21ce99
-@primary_color      :#2962FF; // Active Color
-@primary_color_dark :#3581C2;
-@primary_color_light:#E3F2FD;
-
-@second_color       :#e74c3c; // Alert Color
-@second_color_dark  :#451612; // Alert Color
-@second_color_light :#f3a59d; // Alert Color
-
-@bg_color           :#FFFFFF;
-@bg_color_dark      :#030a10;
-@bg_color_light     :#1d252b;
-@text_active_color  :#000000;
-
+@primary_color: #2962FF; // Active Color
+@primary_color_dark: #3581C2;
+@primary_color_light: #E3F2FD;
+@bg_color: #FFFFFF;
 @text_color_normal: #37474F;
 @text_color_light: #B0BEC5;
 @text_color_dark: #263238;
-
 @border_color: #ECEFF1;
 @border_color_hover: #B0BEC5;
-
-@font-size-normal: 1.2em;
-@font-size-mini: 0.75em;
-
 @green_color: #00B900;
 @red_color: #FF1744;
 @red_color_light: #FFCDD2;
@@ -50,11 +36,10 @@ a[href], button {
     touch-action: none;     /* IE11 */
 }
 
-body{
+body {
     background: @bg_color;
     font-family: @font_family_topic;
-    font-weight: 200;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
 // Freebie: Google Material Design Shadow Helper
@@ -86,7 +71,7 @@ body{
     60% {transform: translateY(-5px);}
 }
 
-.bounce{
+.bounce {
     -webkit-animation-name: bounce;
     animation-name: bounce;
     -webkit-animation-duration: 1s;
@@ -98,13 +83,13 @@ body{
 }
 
 // Animation of Textarea
-.animated{
+.animated {
     -webkit-transition: height 0.2s;
     -moz-transition: height 0.2s;
     transition: height 0.2s;
 }
 
-.transitionAnimation(@s){
+.transitionAnimation(@s) {
     transition: all @s ease-in-out;
     -moz-transition: all @s ease-in-out;
     -webkit-transition: all @s ease-in-out;

@@ -56,7 +56,7 @@ if(!$user_online){ // ไม่ออนไลน์
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
-<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.0.9/css/fontawesome-all.min.css"/>
+<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 
 </head>
 <body>
@@ -66,14 +66,14 @@ if(!$user_online){ // ไม่ออนไลน์
 <div id="disconnect-bar"><i class="fas fa-sync fa-spin"></i>ขาดการติดต่อ!</div>
 
 <header class="header">
-	<a class="btn-icon btn-back" href="space/<?php echo $devices->space_id;?>" target="_parent"><i class="fal fa-arrow-left"></i></a>
+	<a class="btn-icon btn-back" href="space/<?php echo $devices->space_id;?>" target="_parent"><i class="fas fa-arrow-left"></i></a>
 
 	<div class="title">
-			<?php echo ($devices->notify != 'active' ? '<i class="fal fa-bell-slash"></i> ':'');?><?php echo $devices->name;?> <?php echo $devices->space_name;?>
+			<?php echo ($devices->notify != 'active' ? '<i class="fas fa-bell-slash"></i> ':'');?><?php echo $devices->name;?> <?php echo $devices->space_name;?>
 	</div>
 
 	<?php if ($hasPermission && $user_online) {?>
-	<a class="btn-icon" href="editdevice/<?php echo $devices->id;?>" target="_parent" title="แก้ไขอุปกรณ์"><i class="fal fa-cog"></i></a>
+	<a class="btn-icon" href="editdevice/<?php echo $devices->id;?>" target="_parent" title="แก้ไขอุปกรณ์"><i class="fas fa-cog"></i></a>
 	<?php }?>
 </header>
 

@@ -51,15 +51,15 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
-<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.0.9/css/fontawesome-all.min.css"/>
+<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 
 </head>
 <body>
 <header class="header">
 	<?php if (empty($devices->id)) {?>
-	<a class="btn-icon" href="space/<?php echo $space->id;?>" target="_parent"><i class="fa fa-arrow-left"></i></a>	
+	<a class="btn-icon" href="space/<?php echo $space->id;?>" target="_parent"><i class="fas fa-arrow-left"></i></a>	
 	<?php } else {?>
-	<a href="device/<?php echo $devices->id;?>" class="btn-icon" target="_parent"><i class="fal fa-arrow-left"></i></a>
+	<a href="device/<?php echo $devices->id;?>" class="btn-icon" target="_parent"><i class="fas fa-arrow-left"></i></a>
 	<?php }?>
 	<div class="title"><?php echo $page_title;?></div>
 	<div class="btn-icon"></div>
@@ -67,7 +67,7 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 <div class="form vertical-center">
 	<div class="form-items">
 		<label for="name">ชื่ออุปกรณ์</label>
-		<input class="input-text" type="text" id="name" value="<?php echo $devices->name;?>" autofocus>
+		<input class="input-text" type="text" id="name" value="<?php echo $devices->name;?>" placeholder="ไม่เกิน 15 ตัวอักษร" autofocus>
 	</div>
 	<div class="form-items">
 		<label for="min">อุณหภูมิตั้งค่า</label>
@@ -100,14 +100,14 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 		<div class="toggle-items">
 			<div class="label">รับข้อมูลจากอุปกรณ์</div>
 			<div id="btn-status-toggle">
-				<?php echo ($devices->status == 'active' ? '<i class="fal fa-toggle-on"></i>' : '<i class="fal fa-toggle-off"></i>');?>
+				<?php echo ($devices->status == 'active' ? '<i class="fas fa-toggle-on"></i>' : '<i class="fas fa-toggle-off"></i>');?>
 			</div>
 		</div>
 
 	<div class="toggle-items">
 		<div class="label">การแจ้งเตือน</div>
 		<div id="btn-notify-toggle">
-			<?php echo ($devices->notify == 'active' ? '<i class="fal fa-toggle-on"></i>' : '<i class="fal fa-toggle-off"></i>');?>
+			<?php echo ($devices->notify == 'active' ? '<i class="fas fa-toggle-on"></i>' : '<i class="fas fa-toggle-off"></i>');?>
 		</div>
 	</div>
 	<?php }?>
@@ -117,7 +117,7 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 	<input type="hidden" id="sign" value="<?php echo $signature->generateSignature('device_editor',SECRET_KEY);?>">
 
 	<div class="form-items">
-		<button class="btn-submit" id="btn-save"><?php echo (!empty($devices->id)?'บันทึก':'เพิ่มอุปกรณ์ใหม่');?></button>
+		<button class="btn-submit" id="btn-save"><?php echo (!empty($devices->id) ? 'บันทึก' : 'เพิ่มอุปกรณ์ใหม่');?></button>
 	</div>
 </div>
 

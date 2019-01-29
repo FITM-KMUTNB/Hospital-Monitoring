@@ -4,22 +4,16 @@ header('Access-Control-Allow-Origin: *');
 header("Content-type: text/json");
 // header('Accept: application/json');
 
-// $req 	= file_get_contents("php://input");
-// $data 	= json_decode($req,true);
-// $token 	= $data['token'];
-// $temp 	= $data['temp'];
+$alert_delay = 480; // ระยะห่างการแจ้งเตือนแต่ละครั้ง (กรณีที่สูงหรือต่ำเกินไป)
+$protect_time = 30; // ระยะเวลาป้องกันส่งซ้ำ
 
-$alert_delay 	= 480; // ระยะห่างการแจ้งเตือนแต่ละครั้ง (กรณีที่สูงหรือต่ำเกินไป)
-$protect_time 	= 30; // ระยะเวลาป้องกันส่งซ้ำ
-
-$token 			= $_POST['token'];
-$temp 			= $_POST['temp'];
+$token = $_POST['token'];
+$temp = $_POST['temp'];
 
 // Temp value validation
-if(!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85){
+if (!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85) {
 	$message = 'temperature is not numeric!';
-}else if($devices->tokenValid($token)){
-
+} else if ($devices->tokenValid($token)) {
 	// Find Device id with Token.
 	$device_id = $devices->deviceAuthentication($token);
 
@@ -28,7 +22,6 @@ if(!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85){
 
 	// Get Device data.
 	$devices->getdevice($device_id);
-
 	$lastUpdateTime = $log->lastUpdate($device_id);
 
 	// Frequency checking and Protect.
@@ -53,32 +46,32 @@ if(!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85){
 	$lastNotify = $notify->lastUpdate($device_id); // GET LAST UPDATE!
 	// $firstNotify = $notify->firstNotify($device_id);
 
-	$lasttime 	= $lastNotify['update_time'];
-	$lasttype 	= $lastNotify['type'];
-	$lastcount 	= $lastNotify['count'];
+	$lasttime = $lastNotify['update_time'];
+	$lasttype = $lastNotify['type'];
+	$lastcount = $lastNotify['count'];
 
-	if(empty($lastcount)) $lastcount = 0;
+	if (empty($lastcount)) $lastcount = 0;
 
-	if(!empty($device_id) && $devices->status == 'active'){
+	if (!empty($device_id) && $devices->status == 'active'){
 
 		$log_id = $log->save($device_id,$temp); // บันทึกค่าล่าสุด!
 
-		if($devices->notify == 'active'){ // เปิดการแจ้งเตือน
+		if ($devices->notify == 'active') { // เปิดการแจ้งเตือน
 
-			if($temp >= $devices->max || $temp <= $devices->min){
-
-				// First Alert่
-				if($lasttype == 'standard' || empty($lasttype)){
+			if ($temp >= $devices->max || $temp <= $devices->min) {
+				if ($lasttype == 'standard' || empty($lasttype)) {
+					// First Alert่
 					$msg = $message['alert'];
 					$msg .= " · ".today();
 					$msg .= "\n\nตรวจสอบ [".DOMAIN."/device/".$devices->id.']';
 
 					$noti_id = $notify->save($device_id,$msg,'alert',1,1);
-					$res = $notify->lineNotify($msg,2,153,$devices->line_token);
-				}
-				// สูงหรือต่ำเกินไป
-				else if($lasttype == 'alert' && (time() - $lasttime) >= $alert_delay){
 
+					if (!empty($devices->line_token)) {
+						$res = $notify->lineNotify($msg,2,153,$devices->line_token);
+					}
+				} else if ($lasttype == 'alert' && (time() - $lasttime) >= $alert_delay) {
+					// สูงหรือต่ำเกินไป
 					$msg = $message['alert'];
 					
 					if($lastcount > 0)
@@ -89,7 +82,7 @@ if(!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85){
 					$noti_id 	= $notify->save($device_id,$msg,'alert',++$lastcount,1);
 					$res 		= $notify->lineNotify($msg,NULL,NULL,$devices->line_token);
 				}
-			}else{
+			} else {
 				// สภาวะปกติ
 				if($lasttype == 'alert'){
 					$lastcount = 1;
@@ -144,7 +137,7 @@ $data = array(
 		"notify" 	=> $data,
 		"state" 	=> $state,
 		"update" 	=> time(),
-		"execute" 	=> floatval(round(microtime(true)-StTime,4)),
+		"execute" => floatval(round(microtime(true)-StTime,4)),
 	),
 );
 

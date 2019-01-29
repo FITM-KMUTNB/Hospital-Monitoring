@@ -7,6 +7,7 @@
 @fontsize_input: 1.2em;
 @fontsize_icon: 1.8em;
 @header_height: 100px;
+@radius: 7px;
 
 .header {
 	width: 80%;
@@ -63,10 +64,7 @@
 
 .container{
 	width: 60%;
-	margin: 5% 20%;
-	margin-top: @header_height;
-	float: left;
-	display: block;
+	margin: @header_height 20%;
 
 	.box {
 		display: flex;
@@ -125,7 +123,7 @@
 				margin-bottom: 2.66%;
 				height: 170px;
 				text-decoration: none;
-				border-radius: 7px;
+				border-radius: @radius;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -331,7 +329,7 @@
 			background: @border_color;
 			color: @primary_color;
 			margin: 0%;
-			border-radius: 5px;
+			border-radius: @radius;
 			box-sizing: border-box;
 			border: 2px solid @border_color;
 			resize: none;
@@ -366,7 +364,7 @@
 			padding: 16px 0;
 			margin: 0%;
 			margin-top: 15px;
-			border-radius: 5px;
+			border-radius: @radius;
 			background: @primary_color;
 			color: @bg_color;
 			font-size: @fontsize_input;
@@ -424,7 +422,7 @@
 			display: flex;
 			flex-direction: column;
 			border: 2px solid @border_color;
-			border-radius: 5px;
+			border-radius: @radius;
 			font-size: 1.2em;
 			margin-bottom: 10px;
 
@@ -471,7 +469,7 @@
 		margin-bottom: 15px;
 
 		i {
-			font-size: @fontsize_normal * 1.5;
+			font-size: @fontsize_normal * 1.25;
 			padding: 0;
 			color: @border_color_hover;
 
@@ -488,8 +486,7 @@
 
 .device-info{
 	width: 40%;
-	margin: 80px 30%;
-	margin-top: @header_height;
+	margin: @header_height 30%;
 	display: flex;
 	flex-direction: column;
 
@@ -506,7 +503,7 @@
 			color: @primary_color;
 
 			&.over {
-				color: @second_color;
+				color: @red_color;
 			}
 		}
 
@@ -531,7 +528,7 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			border-radius: 7px;
+			border-radius: @radius;
 			box-sizing: border-box;
 
 			&:nth-child(3n+0) {
@@ -549,10 +546,10 @@
 			}
 
 			&.highest {
-				.over { color: @second_color; }
+				.over { color: @red_color; }
 			}
 			&.lowest {
-				.over { color: @second_color; }
+				.over { color: @red_color; }
 			}
 		}
 	}
@@ -581,7 +578,7 @@
 		display: flex;
 		flex-direction: column;
 		box-sizing: border-box;
-		border-radius: 10px;
+		border-radius: @radius;
 		background: @border_color;
 
 		.logitems {
@@ -674,7 +671,7 @@
 		text-decoration: none;
 		background: @border_color;
 		color: @border_color_hover;
-		border-radius: 5px;
+		border-radius: @radius;
 	}
 }
 
@@ -727,44 +724,51 @@
 }
 
 .message-box {
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
-	padding: 12% 0%;
-	float: left;
-	display: block;
-	text-align: center;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
 	&.-minibox{
 		padding: 8% 0%;
 		.msg{ margin-bottom: 4%; }
 	}
 
-	.icon{
-		width: 100%;
-		float: left;
-		display: block;
-		font-size: 5em;
-		color: @bg_color_light;
+	.icon {
+		font-size: @fontsize_topic;
+		color: @border_color_hover;
 	}
-	.msg{
-		width: 100%;
-		margin-bottom: 8%;
-		float: left;
-		display: block;
-		font-size: 2em;
-		color: @text_active_color;
-	}
-	.control{
-		width: 100%;
-		float: left;
-		display: block;
+	.msg {
+		font-size: @fontsize_topic;
+		color: @text_color_normal;
+		margin-bottom: 25px;
 
-		a.btn{
+		strong {
+			color: @text_color_normal;
+		}
+	}
+	.control {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		a.btn {
 			text-decoration: none;
 			background: @primary_color;
 			color: @primary_color_dark;
-			padding: 10px 25px;
-			margin: 5px;
-			border-radius: 2px;
+			color: #FFFFFF;
+			font-size: @fontsize_input;
+			font-family: initial;
+			padding: 16px;
+			margin: 0 10px;
+			font-weight: bold;
+			border-radius: @radius;
+			display: block;
 
 			i { margin-left: 10px; }
 

@@ -10,7 +10,6 @@ date_default_timezone_set('Asia/Bangkok');
 error_reporting(E_ALL ^ E_NOTICE);
 
 include_once'config/config.php';
-
 define("VERSION" 	,'1.0');
 
 // Mobile Detect is a lightweight PHP

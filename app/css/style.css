@@ -145,7 +145,6 @@ button {
 body {
   background: #ffffff;
   font-family: 'maledpan';
-  font-weight: 200;
   overflow-x: hidden;
 }
 @-webkit-keyframes bounce {
@@ -241,10 +240,7 @@ body {
 }
 .container {
   width: 60%;
-  margin: 5% 20%;
-  margin-top: 100px;
-  float: left;
-  display: block;
+  margin: 100px 20%;
 }
 .container .box {
   display: flex;
@@ -479,7 +475,7 @@ body {
   background: #eceff1;
   color: #2962ff;
   margin: 0%;
-  border-radius: 5px;
+  border-radius: 7px;
   box-sizing: border-box;
   border: 2px solid #eceff1;
   resize: none;
@@ -512,7 +508,7 @@ body {
   padding: 16px 0;
   margin: 0%;
   margin-top: 15px;
-  border-radius: 5px;
+  border-radius: 7px;
   background: #2962ff;
   color: #ffffff;
   font-size: 1.2em;
@@ -560,7 +556,7 @@ body {
   display: flex;
   flex-direction: column;
   border: 2px solid #eceff1;
-  border-radius: 5px;
+  border-radius: 7px;
   font-size: 1.2em;
   margin-bottom: 10px;
 }
@@ -601,7 +597,7 @@ body {
   margin-bottom: 15px;
 }
 .form .toggle-items i {
-  font-size: 2.0999999999999996em;
+  font-size: 1.75em;
   padding: 0;
   color: #b0bec5;
 }
@@ -613,8 +609,7 @@ body {
 }
 .device-info {
   width: 40%;
-  margin: 80px 30%;
-  margin-top: 100px;
+  margin: 100px 30%;
   display: flex;
   flex-direction: column;
 }
@@ -631,7 +626,7 @@ body {
   color: #2962ff;
 }
 .device-info .info .temperature-current.over {
-  color: #e74c3c;
+  color: #ff1744;
 }
 .device-info .info p {
   font-size: 1.2em;
@@ -668,10 +663,10 @@ body {
   color: #b0bec5;
 }
 .device-info .temperature-stat .box.highest .over {
-  color: #e74c3c;
+  color: #ff1744;
 }
 .device-info .temperature-stat .box.lowest .over {
-  color: #e74c3c;
+  color: #ff1744;
 }
 .device-info .graph {
   width: 100%;
@@ -694,7 +689,7 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 7px;
   background: #eceff1;
 }
 .device-info .history .logitems {
@@ -774,7 +769,7 @@ body {
   text-decoration: none;
   background: #eceff1;
   color: #b0bec5;
-  border-radius: 5px;
+  border-radius: 7px;
 }
 #progress-bar {
   position: fixed;
@@ -822,11 +817,15 @@ body {
   display: none;
 }
 .message-box {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 12% 0%;
-  float: left;
-  display: block;
-  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .message-box.-minibox {
   padding: 8% 0%;
@@ -835,32 +834,34 @@ body {
   margin-bottom: 4%;
 }
 .message-box .icon {
-  width: 100%;
-  float: left;
-  display: block;
-  font-size: 5em;
-  color: #1d252b;
+  font-size: 2.4em;
+  color: #b0bec5;
 }
 .message-box .msg {
-  width: 100%;
-  margin-bottom: 8%;
-  float: left;
-  display: block;
-  font-size: 2em;
-  color: #000000;
+  font-size: 2.4em;
+  color: #37474f;
+  margin-bottom: 25px;
+}
+.message-box .msg strong {
+  color: #37474f;
 }
 .message-box .control {
-  width: 100%;
-  float: left;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .message-box .control a.btn {
   text-decoration: none;
   background: #2962ff;
   color: #3581c2;
-  padding: 10px 25px;
-  margin: 5px;
-  border-radius: 2px;
+  color: #FFFFFF;
+  font-size: 1.2em;
+  font-family: initial;
+  padding: 16px;
+  margin: 0 10px;
+  font-weight: bold;
+  border-radius: 7px;
+  display: block;
 }
 .message-box .control a.btn i {
   margin-left: 10px;
@@ -894,998 +895,3 @@ body {
   margin-right: 15px;
 }
 /* Other Device and Screen */
-@media only screen and (min-width: 1910px) {
-  .header .btn {
-    width: 3%;
-  }
-  .container {
-    width: 60%;
-    margin: 5% 20%;
-    margin-top: 60px;
-  }
-  .container .temp-card .icon {
-    padding: 6% 0%;
-    font-size: 1.8em;
-  }
-  .container .temp-card .detail {
-    width: 55%;
-    padding-top: 4.5%;
-    line-height: 1.2em;
-  }
-  .container .temp-card .detail .name {
-    font-size: 1.2em;
-  }
-  .container .temp-card .detail .desc {
-    font-size: 0.7em;
-  }
-  .container .temp-card a.temp {
-    width: 25%;
-    padding: 6% 0%;
-    padding-right: 3%;
-    font-size: 1.8em;
-  }
-  .container .temp-card .status {
-    top: 8%;
-  }
-  .logout {
-    margin-top: 25%;
-  }
-  .login .welcome {
-    width: 30%;
-    margin: 0% 10%;
-    margin-top: 18%;
-  }
-  .login .welcome h1 {
-    font-size: 2.4em;
-  }
-  .login .detail {
-    width: 15%;
-    padding: 0% 17%;
-    margin-top: 17%;
-  }
-  .form {
-    width: 40%;
-    margin: 0% 30%;
-    padding-bottom: 5%;
-  }
-  .device-head {
-    width: 60%;
-    margin: 0% 20%;
-    padding: 4% 0%;
-  }
-  .device-head .title .name {
-    font-size: 2.5em;
-    line-height: 1.3em;
-  }
-  .device-head .title .location {
-    font-size: 0.9em;
-  }
-  .device-head .current .current-items.-highest {
-    margin-top: 1.5%;
-  }
-  .device-head .current .current-items.-lowest {
-    margin-top: 1.5%;
-  }
-  .device-head .current .current-items .v {
-    font-size: 3em;
-    line-height: 1.1em;
-  }
-  .device-info {
-    width: 29%;
-    margin-left: 20%;
-  }
-  .device-info .info {
-    width: 90%;
-    padding: 2% 5%;
-  }
-  .device-info .graph {
-    margin-top: 15%;
-    height: 270px;
-  }
-  .device-info .graph canvas {
-    height: 270px;
-  }
-  .device-history {
-    width: 29%;
-    margin-right: 20%;
-  }
-  .device-history .history {
-    width: 90%;
-    padding: 2% 5%;
-  }
-  .device-history .history .logitems .id {
-    width: 30%;
-  }
-  .device-history .history .logitems .time {
-    width: 40%;
-  }
-  .device-history .history .logitems .temp {
-    width: 20%;
-  }
-  .device-history .history .logitems .icon {
-    width: 10%;
-  }
-  .footer {
-    width: 60%;
-    padding: 1% 20%;
-  }
-  .slide-panel {
-    left: -15%;
-    width: 15%;
-  }
-  .slide-panel.-zone-panel {
-    right: -15%;
-  }
-  .slide-panel .menu-list a.btn {
-    padding: 5% 8%;
-  }
-}
-@media only screen and (min-width: 1024px) and (max-width: 1365px) {
-  .header .navi-items {
-    margin-right: 2%;
-  }
-  .header .btn {
-    width: 7%;
-  }
-  .container {
-    width: 96%;
-    margin: 5% 2%;
-    margin-top: 60px;
-  }
-  .container .temp-card {
-    width: 31.33%;
-    margin-top: 2%;
-    margin-right: 2%;
-  }
-  .container .temp-card .icon {
-    width: 17%;
-    padding: 6% 0%;
-    font-size: 1.6em;
-  }
-  .container .temp-card .detail {
-    width: 55%;
-    padding-top: 4.8%;
-    line-height: 1.1em;
-  }
-  .container .temp-card .detail .name {
-    font-size: 1em;
-  }
-  .container .temp-card .detail .desc {
-    font-size: 0.7em;
-  }
-  .container .temp-card a.temp {
-    width: 25%;
-    padding: 6% 0%;
-    padding-right: 3%;
-    font-size: 1.6em;
-  }
-  .container .temp-card .status {
-    top: 10%;
-    right: 2%;
-    font-size: 0.5em;
-  }
-  .logout {
-    margin-top: 30%;
-  }
-  .login .welcome {
-    width: 50%;
-    margin-top: 21%;
-  }
-  .login .welcome .logo {
-    width: 20%;
-    margin: 3% 40%;
-  }
-  .login .welcome h1 {
-    font-size: 2.2em;
-  }
-  .login .detail {
-    width: 25%;
-    padding: 0% 12%;
-    margin-top: 20%;
-  }
-  .login .detail .input-text {
-    margin-bottom: 3%;
-  }
-  .login .detail .btn {
-    padding: 5%;
-  }
-  .form {
-    width: 80%;
-    margin: 0% 10%;
-    padding-bottom: 5%;
-  }
-  .form .form-items .input button.btn {
-    padding: 5%;
-  }
-  .form .form-items .input a.btn-nav {
-    padding: 5%;
-  }
-  .device-head {
-    width: 96%;
-    margin: 0% 2%;
-    padding: 3% 0%;
-  }
-  .device-head .title .name {
-    font-size: 2.4em;
-    line-height: 1.3em;
-  }
-  .device-head .current .current-items.-highest {
-    margin-top: 1.5%;
-  }
-  .device-head .current .current-items.-lowest {
-    margin-top: 1.5%;
-  }
-  .device-head .current .current-items .v {
-    font-size: 3em;
-    line-height: 1.1em;
-  }
-  .device-info {
-    width: 47%;
-    margin-left: 2%;
-  }
-  .device-info .info {
-    width: 90%;
-    padding: 1% 5%;
-  }
-  .device-info .info .info-items {
-    padding: 4% 0%;
-  }
-  .device-info .graph {
-    margin-top: 11%;
-    height: 250px;
-  }
-  .device-info .graph canvas {
-    height: 250px;
-  }
-  .device-history {
-    width: 47%;
-    margin-right: 2%;
-  }
-  .device-history .history {
-    width: 90%;
-    padding: 1% 5%;
-  }
-  .device-history .history .logitems .id {
-    width: 30%;
-  }
-  .device-history .history .logitems .time {
-    width: 40%;
-  }
-  .device-history .history .logitems .temp {
-    width: 20%;
-  }
-  .device-history .history .logitems .icon {
-    width: 10%;
-  }
-  .footer {
-    width: 96%;
-    padding: 1% 2%;
-  }
-  .slide-panel {
-    left: -30%;
-    width: 30%;
-  }
-  .slide-panel.-zone-panel {
-    right: -30%;
-  }
-  .slide-panel .menu-list {
-    padding-bottom: 2%;
-    margin-bottom: 2%;
-  }
-  .slide-panel .menu-list a.btn {
-    padding: 4% 8%;
-  }
-  .message-box {
-    padding: 18% 0%;
-  }
-  .message-box.-minibox {
-    padding: 7% 0%;
-  }
-  .message-box.-minibox .msg {
-    margin-bottom: 5%;
-  }
-  .message-box .icon {
-    font-size: 3.5em;
-  }
-  .message-box .msg {
-    margin-bottom: 8%;
-    font-size: 1.8em;
-  }
-  .message-box .control a.btn {
-    padding: 10px 20px;
-  }
-  #disconnect-bar {
-    line-height: 1.5em;
-  }
-  #disconnect-bar i {
-    margin-right: 5px;
-    font-size: 1em;
-  }
-}
-@media only screen and (min-width: 760px) and (max-width: 1023px) {
-  .header .title {
-    width: 80%;
-    padding: 16px 0px;
-    height: 28px;
-    display: inline-block;
-  }
-  .header .title .name {
-    line-height: 1.3em;
-  }
-  .header .title .location {
-    font-size: 0.75em;
-  }
-  .header .mobile-title {
-    width: 80%;
-    display: inline-block;
-  }
-  .header .navi-items {
-    display: none;
-  }
-  .header .btn {
-    width: 10%;
-    padding: 22px 0%;
-    height: 16px;
-  }
-  .header .btn.btn-zone-toggle {
-    display: inline-block;
-  }
-  .container {
-    width: 93%;
-    margin: 5% 3.5%;
-    margin-top: 60px;
-  }
-  .container .temp-card {
-    width: 48%;
-    margin-top: 2%;
-    margin-right: 0%;
-  }
-  .container .temp-card:nth-child(2n+0) {
-    margin-left: 2%;
-  }
-  .container .temp-card .icon {
-    width: 17%;
-    padding: 6% 0%;
-    font-size: 1.8em;
-  }
-  .container .temp-card .detail {
-    width: 55%;
-    padding-top: 5.5%;
-    line-height: 1.1em;
-  }
-  .container .temp-card .detail .name {
-    font-size: 1.2em;
-  }
-  .container .temp-card .detail .desc {
-    font-size: 0.7em;
-  }
-  .container .temp-card a.temp {
-    width: 25%;
-    padding: 6% 0%;
-    padding-right: 3%;
-    font-size: 1.8em;
-  }
-  .container .temp-card .status {
-    right: 2%;
-    font-size: 0.5em;
-  }
-  .logout {
-    margin-top: 45%;
-  }
-  .login .welcome {
-    width: 60%;
-    margin: 10% 20%;
-  }
-  .login .welcome .logo {
-    width: 20%;
-    margin: 3% 40%;
-  }
-  .login .welcome h1 {
-    font-size: 2.2em;
-  }
-  .login .welcome p {
-    font-size: 1em;
-  }
-  .login .detail {
-    width: 40%;
-    padding: 0% 30%;
-    margin: 0%;
-    border: 0px;
-  }
-  .login .detail .input-text {
-    margin-bottom: 3%;
-  }
-  .login .detail .btn {
-    padding: 5%;
-    margin-top: 5%;
-  }
-  .form {
-    width: 80%;
-    margin: 0% 10%;
-    padding-bottom: 10%;
-  }
-  .form h2 {
-    display: none;
-  }
-  .form .form-items {
-    margin-top: 5%;
-    margin-bottom: 0%;
-  }
-  .form .form-items .input button.btn {
-    padding: 5% 7%;
-  }
-  .form .form-items .input a.btn-nav {
-    padding: 5% 7%;
-  }
-  .device-head {
-    width: 80%;
-    margin: 0% 10%;
-    padding: 7% 0%;
-  }
-  .device-head .title {
-    display: none;
-  }
-  .device-head .current {
-    width: 100%;
-  }
-  .device-info {
-    width: 80%;
-    margin: 0% 10%;
-  }
-  .device-info .info {
-    width: 90%;
-    padding: 1% 5%;
-  }
-  .device-info .graph {
-    margin-top: 5%;
-    height: 200px;
-  }
-  .device-info .graph canvas {
-    height: 200px;
-  }
-  .device-history {
-    width: 80%;
-    margin: 0% 10%;
-  }
-  .device-history .history {
-    width: 100%;
-    padding: 5% 0%;
-    background: transparent;
-  }
-  .device-history .history .logitems {
-    padding: 3.5% 0%;
-  }
-  .device-history .history .logitems .id {
-    width: 30%;
-  }
-  .device-history .history .logitems .time {
-    width: 40%;
-  }
-  .device-history .history .logitems .temp {
-    width: 20%;
-  }
-  .device-history .history .logitems .icon {
-    width: 10%;
-  }
-  .footer {
-    width: 93%;
-    padding: 1% 3.5%;
-  }
-  .slide-panel {
-    left: -35%;
-    width: 35%;
-  }
-  .slide-panel.-zone-panel {
-    right: -35%;
-  }
-  .message-box {
-    padding: 40% 0%;
-  }
-  .message-box.-minibox {
-    padding: 10% 0%;
-  }
-  .message-box.-minibox .msg {
-    margin-bottom: 5%;
-  }
-  .message-box .icon {
-    font-size: 4em;
-  }
-  .message-box .msg {
-    margin-bottom: 8%;
-    font-size: 1.8em;
-  }
-  #disconnect-bar {
-    line-height: 1.5em;
-  }
-  #disconnect-bar i {
-    margin-right: 5px;
-    font-size: 1em;
-  }
-}
-@media only screen and (min-width: 520px) and (max-width: 759px) {
-  .header .title {
-    width: 80%;
-    padding: 16px 0px;
-    height: 28px;
-    display: inline-block;
-  }
-  .header .title .name {
-    line-height: 1.3em;
-  }
-  .header .title .location {
-    font-size: 0.75em;
-  }
-  .header .mobile-title {
-    width: 80%;
-    display: inline-block;
-  }
-  .header .navi-items {
-    display: none;
-  }
-  .header .btn {
-    width: 10%;
-    padding: 22px 0%;
-    height: 16px;
-  }
-  .header .btn.btn-zone-toggle {
-    display: inline-block;
-  }
-  .container {
-    width: 93%;
-    margin: 5% 3.5%;
-    margin-top: 60px;
-  }
-  .container .temp-card {
-    width: 48%;
-    margin-top: 2%;
-    margin-right: 0%;
-  }
-  .container .temp-card:nth-child(2n+0) {
-    margin-left: 2%;
-  }
-  .container .temp-card .icon {
-    width: 17%;
-    padding: 6% 0%;
-    font-size: 1.8em;
-  }
-  .container .temp-card .detail {
-    width: 55%;
-    padding-top: 5.5%;
-    line-height: 1.1em;
-  }
-  .container .temp-card .detail .name {
-    font-size: 1.2em;
-  }
-  .container .temp-card .detail .desc {
-    font-size: 0.7em;
-  }
-  .container .temp-card a.temp {
-    width: 25%;
-    padding: 6% 0%;
-    padding-right: 3%;
-    font-size: 1.8em;
-  }
-  .container .temp-card .status {
-    right: 2%;
-    font-size: 0.5em;
-  }
-  .logout {
-    margin-top: 45%;
-  }
-  .login .welcome {
-    width: 60%;
-    margin: 10% 20%;
-  }
-  .login .welcome .logo {
-    width: 20%;
-    margin: 3% 40%;
-  }
-  .login .welcome h1 {
-    font-size: 2.2em;
-  }
-  .login .welcome p {
-    font-size: 1em;
-  }
-  .login .detail {
-    width: 40%;
-    padding: 0% 30%;
-    margin: 0%;
-    border: 0px;
-  }
-  .login .detail .input-text {
-    margin-bottom: 3%;
-  }
-  .login .detail .btn {
-    padding: 5%;
-    margin-top: 5%;
-  }
-  .form {
-    width: 80%;
-    margin: 0% 10%;
-    padding-bottom: 10%;
-  }
-  .form h2 {
-    display: none;
-  }
-  .form .form-items {
-    margin-top: 5%;
-    margin-bottom: 0%;
-  }
-  .form .form-items .input button.btn {
-    padding: 5% 7%;
-  }
-  .form .form-items .input a.btn-nav {
-    padding: 5% 7%;
-  }
-  .device-head {
-    width: 80%;
-    margin: 0% 10%;
-    padding: 7% 0%;
-  }
-  .device-head .title {
-    display: none;
-  }
-  .device-head .current {
-    width: 100%;
-  }
-  .device-info {
-    width: 80%;
-    margin: 0% 10%;
-  }
-  .device-info .info {
-    width: 90%;
-    padding: 1% 5%;
-  }
-  .device-info .graph {
-    margin-top: 5%;
-    height: 200px;
-  }
-  .device-info .graph canvas {
-    height: 200px;
-  }
-  .device-history {
-    width: 80%;
-    margin: 0% 10%;
-  }
-  .device-history .history {
-    width: 100%;
-    padding: 5% 0%;
-    background: transparent;
-  }
-  .device-history .history .logitems {
-    padding: 3.5% 0%;
-  }
-  .device-history .history .logitems .id {
-    width: 30%;
-  }
-  .device-history .history .logitems .time {
-    width: 40%;
-  }
-  .device-history .history .logitems .temp {
-    width: 20%;
-  }
-  .device-history .history .logitems .icon {
-    width: 10%;
-  }
-  .footer {
-    width: 93%;
-    padding: 1% 3.5%;
-  }
-  .slide-panel {
-    left: -35%;
-    width: 35%;
-  }
-  .slide-panel.-zone-panel {
-    right: -35%;
-  }
-  .message-box {
-    padding: 40% 0%;
-  }
-  .message-box.-minibox {
-    padding: 10% 0%;
-  }
-  .message-box.-minibox .msg {
-    margin-bottom: 5%;
-  }
-  .message-box .icon {
-    font-size: 4em;
-  }
-  .message-box .msg {
-    margin-bottom: 8%;
-    font-size: 1.8em;
-  }
-  #disconnect-bar {
-    line-height: 1.5em;
-  }
-  #disconnect-bar i {
-    margin-right: 5px;
-    font-size: 1em;
-  }
-}
-@media only screen and (min-width: 0px) and (max-width: 519px) {
-  .header {
-    height: 54px;
-  }
-  .header .mobile-title {
-    width: 68%;
-    padding: 16px 0%;
-    height: 22px;
-    display: inline-block;
-  }
-  .header .title {
-    width: 68%;
-    padding: 16px 0%;
-    height: 22px;
-    text-align: center;
-  }
-  .header .navi-items {
-    display: none;
-  }
-  .header .btn {
-    width: 16%;
-    padding: 16px 0%;
-    height: 22px;
-  }
-  .header .btn.btn-zone-toggle {
-    display: inline-block;
-  }
-  .container {
-    width: 100%;
-    margin: 5% 0%;
-    margin-top: 54px;
-  }
-  .container .temp-card {
-    width: 47%;
-    padding: 2% 0%;
-    padding-top: 4%;
-    margin: 0%;
-    margin-left: 2%;
-    margin-bottom: 2%;
-  }
-  .container .temp-card .icon {
-    width: 90%;
-    padding: 5%;
-    font-size: 0.6em;
-  }
-  .container .temp-card a.temp {
-    width: 80%;
-    padding: 5% 10%;
-    font-size: 2.8em;
-  }
-  .container .temp-card .detail {
-    width: 80%;
-    padding: 0% 10%;
-    line-height: 1.3em;
-  }
-  .container .temp-card .detail .name {
-    font-size: 1.1em;
-    padding: 3% 0%;
-  }
-  .container .temp-card .detail .desc {
-    font-size: 0.7em;
-    letter-spacing: 0px;
-  }
-  .logout {
-    margin-top: 60%;
-  }
-  .login .welcome {
-    width: 90%;
-    margin: 5%;
-  }
-  .login .welcome .logo {
-    width: 20%;
-    margin: 3% 40%;
-  }
-  .login .welcome h1 {
-    font-size: 1.6em;
-  }
-  .login .welcome p {
-    font-size: 1em;
-  }
-  .login .detail {
-    width: 80%;
-    padding: 0%;
-    margin: 10%;
-    border: 0px;
-  }
-  .login .detail .input-text {
-    margin-bottom: 3%;
-  }
-  .login .detail .btn {
-    padding: 5%;
-    margin-top: 5%;
-  }
-  .form {
-    width: 90%;
-    margin: 0% 5%;
-    padding-bottom: 5%;
-  }
-  .form h2 {
-    display: none;
-  }
-  .form .form-items {
-    margin-top: 5%;
-    margin-bottom: 0%;
-  }
-  .form .form-items.toggle-type {
-    border-bottom: 1px solid #eceff1;
-  }
-  .form .form-items.toggle-type .label {
-    width: 50%;
-  }
-  .form .form-items.toggle-type .input {
-    width: 50%;
-    text-align: right;
-  }
-  .form .form-items .label {
-    width: 100%;
-    padding: 2% 0%;
-    margin-right: 0%;
-    line-height: 1.5em;
-    text-align: left;
-  }
-  .form .form-items .input {
-    width: 100%;
-  }
-  .form .form-items .input .input-text,
-  .form .form-items .input .input-textarea {
-    width: 94%;
-    padding: 3%;
-  }
-  .form .form-items .input .select select {
-    padding: 3%;
-  }
-  .form .form-items .input #btn-status-toggle,
-  .form .form-items .input #btn-notify-toggle {
-    font-size: 3em;
-    margin-top: -12%;
-  }
-  .form .form-items .input button.btn {
-    width: 100%;
-    padding: 5%;
-    margin-top: 5%;
-  }
-  .form .form-items .input a.btn-nav {
-    width: 90%;
-    padding: 5%;
-    margin-top: 5%;
-    text-align: center;
-  }
-  .form .form-items .input .list .list-items {
-    margin-top: 2%;
-  }
-  .form .form-items .input .list .list-items .c {
-    padding: 3% 4%;
-  }
-  .form .form-items .input .list .list-items .btn {
-    width: 6%;
-    padding: 3% 2%;
-  }
-  .form .form-items .input .list-input {
-    margin-top: 3%;
-  }
-  .form .form-items .input .list-input .btn {
-    width: 10%;
-  }
-  .device-info {
-    position: relative;
-    top: 0px;
-    width: 90%;
-    padding: 5%;
-    border: 0px;
-    right: 0%;
-    border-radius: 0px;
-    box-shadow: none;
-  }
-  .device-info .current {
-    padding-bottom: 10%;
-  }
-  .device-info .current .current-now {
-    width: 100%;
-    text-align: center;
-  }
-  .device-info .current .current-now .v {
-    font-size: 5em;
-  }
-  .device-info .current .current-now .c {
-    font-size: 0.75em;
-  }
-  .device-info .current .current-items {
-    width: 50%;
-    text-align: center;
-  }
-  .device-info .current .current-items .v {
-    font-size: 2em;
-    margin-bottom: 3%;
-  }
-  .device-info .current .current-items .c {
-    font-size: 0.75em;
-  }
-  .device-info .info .info-items {
-    padding: 4% 0%;
-    font-size: 1.1em;
-  }
-  .device-info .graph {
-    height: 200px;
-  }
-  .device-info .graph canvas {
-    height: 200px;
-  }
-  .device-history {
-    width: 90%;
-    margin: 0% 5%;
-  }
-  .device-history .history .logitems {
-    padding: 4% 0%;
-    font-size: 1.1em;
-  }
-  .device-history .history .logitems .temp {
-    font-weight: bold;
-  }
-  .footer {
-    display: none;
-  }
-  .slide-panel {
-    left: -70%;
-    width: 70%;
-  }
-  .slide-panel.-zone-panel {
-    left: inherit;
-    right: -70%;
-  }
-  .slide-panel .btn-close {
-    padding: 18px 10%;
-    height: 18px;
-    font-size: 1.1em;
-  }
-  .slide-panel .menu-list {
-    padding-bottom: 2%;
-    margin-bottom: 2%;
-  }
-  .slide-panel .menu-list.-profile {
-    position: relative;
-  }
-  .slide-panel .menu-list a.btn {
-    width: 84%;
-    padding: 5% 8%;
-  }
-  .slide-panel .menu-list a.btn i {
-    margin-right: 20px;
-    font-size: 1.2em;
-  }
-  .message-box {
-    width: 90%;
-    padding: 28% 5%;
-  }
-  .message-box.-minibox {
-    padding: 1% 5%;
-    padding-bottom: 10%;
-  }
-  .message-box.-minibox .msg {
-    margin-bottom: 10%;
-  }
-  .message-box .icon {
-    font-size: 3em;
-  }
-  .message-box .msg {
-    width: 100%;
-    margin-bottom: 30%;
-    font-size: 1.4em;
-  }
-  .message-box .control a.btn {
-    margin: 10px;
-  }
-  .message-box .control a.btn i {
-    margin-left: 15px;
-  }
-  #disconnect-bar {
-    top: -16px;
-    height: 16px;
-    font-size: 0.7em;
-    line-height: 1.5em;
-  }
-  #disconnect-bar i {
-    margin-right: 5px;
-    font-size: 1em;
-  }
-}
