@@ -52,12 +52,12 @@ if(!empty($space->id) && isset($space->id)){
 <div class="form vertical-center">
 	<div class="form-items">
 		<label for="name">ชื่อโปรเจ็ค</label>
-		<div class="input"><input class="input-text" type="text" id="name" value="<?php echo $space->title;?>"></div>
+		<div class="input"><input class="input-text" type="text" placeholder="ไม่เกิน 20 ตัวอักษร" autocomplete="off" id="name" value="<?php echo $space->title;?>"></div>
 	</div>
 	<div class="form-items <?php echo (empty($space->id) ? 'hidden' : '');?>">
 		<label for="line_token">LINE Access Token</label>
 		<div class="input">
-			<input class="input-text" type="text" id="line_token" value="<?php echo $space->line_token;?>">
+			<input class="input-text" type="text" autocomplete="off" id="line_token" value="<?php echo $space->line_token;?>">
 		</div>
 		<div class="note">ต้องมี LINE Notify Token เพื่อใช้ในการแจ้งเตือน <a href="https://notify-bot.line.me/th/">สร้างคีย์ใหม่</a></div>
 	</div>

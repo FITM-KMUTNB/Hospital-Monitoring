@@ -67,7 +67,7 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 <div class="form vertical-center">
 	<div class="form-items">
 		<label for="name">ชื่ออุปกรณ์</label>
-		<input class="input-text" type="text" id="name" value="<?php echo $devices->name;?>" autofocus>
+		<input class="input-text" type="text" id="name" value="<?php echo $devices->name;?>" placeholder="ไม่เกิน 15 ตัวอักษร" autofocus>
 	</div>
 	<div class="form-items">
 		<label for="min">อุณหภูมิตั้งค่า</label>

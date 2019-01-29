@@ -69,7 +69,7 @@ if(!empty($space->id) && isset($space->id)){
 
 	<div class="form-items">
 		<label for="email_admin">เพิ่มผู้ดูแล</label>
-		<input type="text" id="email_admin" class="input-text" placeholder="เชิญผู้ดูแลด้วยอีเมล...">
+		<input type="text" id="email_admin" class="input-text" placeholder="เชิญผู้ดูแลด้วยอีเมล">
 	</div>
 	<div class="form-items">
 		<button class="btn-submit" id="btn-admin-add">เพิ่มผู้ดูแล</button>
