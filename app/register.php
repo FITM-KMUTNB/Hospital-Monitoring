@@ -1,24 +1,24 @@
 <?php
 include_once 'autoload.php';
-if($user_online){
+if ($user_online) {
 	header("Location: index.php");
 	die();
 }
 
 $invite_code = $_GET['invite'];
 
-if(strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)){
+if (strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)) {
 	$space->getSpaceWithInviteCode($invite_code);
 }
 
 $title 	= TITLE;
 $desc 	= DESCRIPTION;
-$link 	= DOMAIN.'/signup';
+$link 	= DOMAIN.'/register.php';
 $image 	= DOMAIN.'/image/ogimage.png';
 
 if(!empty($space->id)){
 	$title 	= 'คำเชิญเข้ากลุ่ม '.$space->title.' - '.TITLE;
-	$link 	= DOMAIN.'/signup?invite='.$invite_code;
+	$link 	= DOMAIN.'/register.php?invite='.$invite_code;
 	$image 	= DOMAIN.'/image/ogimage_invite.png';
 }
 ?>
@@ -82,7 +82,7 @@ if(!empty($space->id)){
 	<div class="form-items">
 		<button class="btn-submit" id="btn-register">ลงทะเบียน<?php echo (!empty($space->id)?'และร่วมกลุ่ม':'');?></button>
 	</div>
-	<p>ถ้าคุณมีบัญชีอยู่แล้ว <a href="signin<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">เข้าระบบ</a></p>
+	<p>ถ้าคุณมีบัญชีอยู่แล้ว <a href="login.php<?php echo (!empty($_GET['invite']) ? '?invite='.$_GET['invite'] : '');?>">เข้าระบบ</a></p>
 </form>
 
 <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>

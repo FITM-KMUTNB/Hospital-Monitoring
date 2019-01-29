@@ -1,24 +1,24 @@
 <?php
 include_once 'autoload.php';
-if($user_online){
+if ($user_online) {
 	header("Location: index.php");
 	die();
 }
 
 $invite_code = $_GET['invite'];
 
-if(strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)){
+if (strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)) {
 	$space->getSpaceWithInviteCode($invite_code);
 }
 
 $title 	= TITLE;
 $desc 	= DESCRIPTION;
-$link 	= DOMAIN.'/signin';
+$link 	= DOMAIN.'/login.php';
 $image 	= DOMAIN.'/image/ogimage.png';
 
 if(!empty($space->id)){
 	$title 	= 'คำเชิญเข้ากลุ่ม '.$space->title.' - '.TITLE;
-	$link 	= DOMAIN.'/signin?invite='.$invite_code;
+	$link 	= DOMAIN.'/register.php?invite='.$invite_code;
 	$image 	= DOMAIN.'/image/ogimage_invite.png';
 }
 ?>
@@ -79,7 +79,7 @@ if(!empty($space->id)){
 		<button class="btn-submit" id="btn-login">เข้าสู่ระบบ<?php echo (!empty($space->id) ? 'และร่วมกลุ่ม' : '');?></button>
 	</div>
 	
-	<p>ยังไม่มีบัญชี <a href="signup<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">ลงทะเบียน</a></p>
+	<p>ยังไม่มีบัญชี <a href="register.php<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">ลงทะเบียน</a></p>
 	
 	<input type="hidden" id="redirect_page" value="<?php echo $_GET['redirect'];?>">
 	<input type="hidden" id="redirect_id" value="<?php echo $_GET['id'];?>">

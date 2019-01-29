@@ -1,7 +1,7 @@
 <?php
 include_once 'autoload.php';
 if (!$user_online) {
-	header('Location: '.DOMAIN.'/signin');
+	header('Location: '.DOMAIN.'/login.php');
 	die();
 }
 $spacelist = $devices->listDevices($user->id);
