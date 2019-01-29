@@ -14,6 +14,7 @@ $temp = $_POST['temp'];
 if (!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85) {
 	$message = 'temperature is not numeric!';
 } else if ($devices->tokenValid($token)) {
+	
 	// Find Device id with Token.
 	$device_id = $devices->deviceAuthentication($token);
 
@@ -25,14 +26,13 @@ if (!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85) {
 	$lastUpdateTime = $log->lastUpdate($device_id);
 
 	// Frequency checking and Protect.
-	if((time() - $lastUpdateTime) < $protect_time){
+	if ((time() - $lastUpdateTime) < $protect_time) {
 		$data = array(
 			"apiVersion" => "1.0",
 			"data" => array(
 				"waiting" => floatval(($protect_time-(time()-$lastUpdateTime)))
 			)
 		);
-
 		echo json_encode($data);
 		exit();
 	}
@@ -41,7 +41,6 @@ if (!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85) {
 		'alert' 	=> "🚨 ".$devices->name." ผิดปกติ [".$temp."°C]",
 		'standard' 	=> "👍 ".$devices->name." สู่สภาวะปกติแล้ว [".$temp."°C]",
 	);
-
 
 	$lastNotify = $notify->lastUpdate($device_id); // GET LAST UPDATE!
 	// $firstNotify = $notify->firstNotify($device_id);
@@ -74,7 +73,7 @@ if (!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85) {
 					// สูงหรือต่ำเกินไป
 					$msg = $message['alert'];
 					
-					if($lastcount > 0)
+					if ($lastcount > 0)
 						$msg .= " · ".today();
 					else
 						$msg .= "\n\nตรวจสอบ ".DOMAIN."/device/".$devices->id;
@@ -84,11 +83,10 @@ if (!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85) {
 				}
 			} else {
 				// สภาวะปกติ
-				if($lasttype == 'alert'){
+				if ($lasttype == 'alert') {
 					$lastcount = 1;
 					$msg = $message['standard'];
 					$noti_id = $notify->save($device_id,$msg,'standard',$lastcount,1);
-					
 					$res = $notify->lineNotify($msg,2,516,$devices->line_token);
 				}
 			}
@@ -148,7 +146,7 @@ function today(){
 	$monthText = array('ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.');
 	
 	$hour   = date('H',strtotime($datetime));
-    $minute = date("i",strtotime($datetime));
+  $minute = date("i",strtotime($datetime));
 	$year   = date('Y',strtotime($datetime))+543;
 	$month  = date('n',strtotime($datetime));
 	$date   = date('j',strtotime($datetime));

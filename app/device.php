@@ -1,7 +1,7 @@
 <?php
 include_once 'autoload.php';
 
-$device_id = $_GET['device'];
+$device_id = $_GET['id'];
 
 // ดึงข้อมูลอุปกรณ์
 $devices->getdevice($device_id);
