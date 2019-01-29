@@ -475,7 +475,7 @@ body {
   background: #eceff1;
   color: #2962ff;
   margin: 0%;
-  border-radius: 5px;
+  border-radius: 7px;
   box-sizing: border-box;
   border: 2px solid #eceff1;
   resize: none;
@@ -508,7 +508,7 @@ body {
   padding: 16px 0;
   margin: 0%;
   margin-top: 15px;
-  border-radius: 5px;
+  border-radius: 7px;
   background: #2962ff;
   color: #ffffff;
   font-size: 1.2em;
@@ -556,7 +556,7 @@ body {
   display: flex;
   flex-direction: column;
   border: 2px solid #eceff1;
-  border-radius: 5px;
+  border-radius: 7px;
   font-size: 1.2em;
   margin-bottom: 10px;
 }
@@ -689,7 +689,7 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 7px;
   background: #eceff1;
 }
 .device-info .history .logitems {
@@ -769,7 +769,7 @@ body {
   text-decoration: none;
   background: #eceff1;
   color: #b0bec5;
-  border-radius: 5px;
+  border-radius: 7px;
 }
 #progress-bar {
   position: fixed;
@@ -817,11 +817,15 @@ body {
   display: none;
 }
 .message-box {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 12% 0%;
-  float: left;
-  display: block;
-  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .message-box.-minibox {
   padding: 8% 0%;
@@ -830,32 +834,34 @@ body {
   margin-bottom: 4%;
 }
 .message-box .icon {
-  width: 100%;
-  float: left;
-  display: block;
-  font-size: 5em;
+  font-size: 2.4em;
   color: #b0bec5;
 }
 .message-box .msg {
-  width: 100%;
-  margin-bottom: 8%;
-  float: left;
-  display: block;
-  font-size: 2em;
+  font-size: 2.4em;
+  color: #37474f;
+  margin-bottom: 25px;
+}
+.message-box .msg strong {
   color: #37474f;
 }
 .message-box .control {
-  width: 100%;
-  float: left;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .message-box .control a.btn {
   text-decoration: none;
   background: #2962ff;
   color: #3581c2;
-  padding: 10px 25px;
-  margin: 5px;
-  border-radius: 2px;
+  color: #FFFFFF;
+  font-size: 1.2em;
+  font-family: initial;
+  padding: 16px;
+  margin: 0 10px;
+  font-weight: bold;
+  border-radius: 7px;
+  display: block;
 }
 .message-box .control a.btn i {
   margin-left: 10px;

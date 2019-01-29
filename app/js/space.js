@@ -173,9 +173,8 @@ $(document).ready(function(){
 	        if(data.return != 0){
 	        	setTimeout(function(){ window.location = 'space/'+data.return; },2000);
 	        }else{
-	        	$('#btn-save').addClass('-completed');
-	        	$('#btn-save').html('บันทึกแล้ว<i class="fa fa-check" aria-hidden="true"></i>');
-	        	$('#btn-nav').addClass('-show');
+	        	$('#btn-save').addClass('completed');
+	        	$('#btn-save').html('บันทึกแล้ว<i class="fas fa-check"></i>');
 
 	        	if(return_device != ''){
 	        		setTimeout(function(){ window.location = 'editdevice/'+return_device; },1000);

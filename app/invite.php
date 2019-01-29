@@ -50,14 +50,13 @@ if(strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)){
 </head>
 <body>
 <div class="message-box">
-	<div class="icon"><i class="fa fa-sign-in" aria-hidden="true"></i></div>
-	<div class="msg">คุณต้องการเข้าร่วมกลุ่ม "<?php echo $space->title;?>" ใช่หรือไม่ ?</div>
+	<div class="msg">คุณต้องการเข้าร่วมกลุ่ม <strong><?php echo $space->title;?></strong> ใช่หรือไม่ ?</div>
 	<div class="control">
 		<?php if ($_GET['action'] == 'accept') {?>
 			<p>กรุณารอซักครู่...</p>
-		<?php }else{?>
+		<?php } else {?>
 			<a href="index.php" class="btn btn-not-Accept">ยกเลิก</a>
-			<a href="invite?c=<?php echo $invite_code;?>&action=accept" class="btn btn-accept">เข้ากลุ่ม<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+			<a href="invite?c=<?php echo $invite_code;?>&action=accept" class="btn btn-accept">เข้ากลุ่ม<i class="fa fa-arrow-right"></i></a>
 		<?php }?>
 	</div>
 </div>
