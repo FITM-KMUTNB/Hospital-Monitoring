@@ -45,9 +45,9 @@ if(!empty($space->id) && isset($space->id)){
 </head>
 <body>
 <header class="header">
-	<a class="btn-icon btn-back" href="/" target="_parent"><i class="fas fa-arrow-left"></i></a>
-	<div class="title">ตั้งค่าโปรเจ็ค</div>
 	<div class="btn-icon"></div>
+	<div class="title">ตั้งค่าโปรเจ็ค</div>
+	<a class="btn-icon" href="/" target="_parent"><i class="fas fa-times"></i></a>
 </header>
 <div class="form vertical-center">
 	<div class="form-items">

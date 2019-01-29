@@ -1,7 +1,7 @@
 <?php
 include_once 'autoload.php';
 
-$device_id = $_GET['device'];
+$device_id = $_GET['id'];
 
 // ดึงข้อมูลอุปกรณ์
 $devices->getdevice($device_id);
@@ -9,16 +9,16 @@ $devices->getdevice($device_id);
 // เช็คสิทธิ์การเข้าถึง
 $hasPermission = $space->hasPermission($user->id,$devices->space_id);
 
-// if (!$user_online) { // ไม่ออนไลน์
-// 	header("Location: ".DOMAIN."/login.php?redirect=editdevice&id=".$device_id);
-// 	die();
-// } else if (!$hasPermission && !empty($devices->id)) { // ไม่มีสิทธิ์เข้าถึงข้อมูล
-// 	header("Location: ".DOMAIN."/permission-error.php");
-// 	die();
-// } else if (empty($devices->id) && empty($_GET['space'])) { // Device ID ไม่มีในระบบ
-// 	header("Location: ".DOMAIN."/error-400.php");
-// 	die();
-// }
+if (!$user_online) { // ไม่ออนไลน์
+	header("Location: ".DOMAIN."/login.php?redirect=editdevice&id=".$device_id);
+	die();
+} else if (!$hasPermission && !empty($devices->id)) { // ไม่มีสิทธิ์เข้าถึงข้อมูล
+	header("Location: ".DOMAIN."/permission-error.php");
+	die();
+} else if (empty($devices->id) && empty($_GET['space'])) { // Device ID ไม่มีในระบบ
+	header("Location: ".DOMAIN."/error-400.php");
+	die();
+}
 
 if(empty($_GET['space']) && isset($devices->space_id)){
 	$space_id = $devices->space_id;
@@ -56,13 +56,9 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 </head>
 <body>
 <header class="header">
-	<?php if (empty($devices->id)) {?>
-	<a class="btn-icon" href="space/<?php echo $space->id;?>" target="_parent"><i class="fas fa-arrow-left"></i></a>	
-	<?php } else {?>
-	<a href="device/<?php echo $devices->id;?>" class="btn-icon" target="_parent"><i class="fas fa-arrow-left"></i></a>
-	<?php }?>
-	<div class="title"><?php echo $page_title;?></div>
 	<div class="btn-icon"></div>
+	<div class="title"><?php echo $page_title;?></div>
+	<a class="btn-icon" href="device.php?id=<?php echo $devices->id;?>" target="_parent"><i class="fas fa-times"></i></a>
 </header>
 <div class="form vertical-center">
 	<div class="form-items">

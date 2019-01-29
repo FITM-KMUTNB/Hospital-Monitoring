@@ -40,7 +40,7 @@ $spacelist = $devices->listDevices($user->id);
 <div id="filter"></div>
 <header class="header">
 	<a class="logo-icon" href="index.php" target="_parent"><img src="image/logo.png" alt="logo"></a>
-	<a class="btn-icon" href="newspace" target="_parent" title="สร้างโปรเจ็ค"><i class="fas fa-folder-plus"></i></a>
+	<a class="btn-icon" href="space-editor.php" target="_parent" title="สร้างโปรเจ็ค"><i class="fas fa-folder-plus"></i></a>
 </header>
 <div class="container">
 	<?php foreach ($spacelist as $project) { ?>
@@ -48,9 +48,9 @@ $spacelist = $devices->listDevices($user->id);
 		<div class="head">
 			<h2><?php echo $project['title'];?></h2>
 			<a class="button-option first-right" href="space-user.php?id=<?php echo $project['id'];?>" title="เพิ่มผู้ดูแล"><i class="fas fa-user-plus"></i></a>
-			<a class="button-option" href="editspace/<?php echo $project['id'];?>" title="ตั้งค่า"><i class="fas fa-cog"></i></a>
+			<a class="button-option" href="space-editor.php?id=<?php echo $project['id'];?>" title="ตั้งค่า"><i class="fas fa-cog"></i></a>
 			<?php if(empty($project['line_token'])){?>
-			<a class="button-option" href="editspace/<?php echo $project['id'];?>#line_token" title="ใส่ LINE Token"><i class="fas fa-exclamation-circle"></i></a>
+			<a class="button-option" href="space-editor.php?id=<?php echo $project['id'];?>#line_token" title="ใส่ LINE Token"><i class="fas fa-exclamation-circle"></i></a>
 			<?php }?>
 		</div>
 		<div class="device-list">
@@ -72,7 +72,7 @@ $spacelist = $devices->listDevices($user->id);
 			</a>
 			<?php }?>
 
-			<a class="device-card create-button" href="newdevice/space/<?php echo $project['id'];?>">
+			<a class="device-card create-button" href="device-editor.php?space=<?php echo $project['id'];?>">
 				<p>เพิ่มอุปกรณ์</p>
 			</a>
 		</div>
