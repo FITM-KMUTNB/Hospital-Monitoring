@@ -33,24 +33,24 @@ $spacelist = $devices->listDevices($user->id);
 <title><?php echo $space->title;?> | <?php echo TITLE.' '.VERSION;?></title>
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
-<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.0.9/css/fontawesome-all.min.css"/>
+<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 </head>
 <body>
 <div id="loading-bar"></div>
 <div id="filter"></div>
 <header class="header">
-	<a class="logo-icon" href="index.php"><img src="image/logo.png" alt="logo"></a>
-	<a class="btn-icon create" href="newspace" target="_parent" title="สร้างโปรเจ็ค"><i class="fal fa-plus-hexagon"></i></a>
+	<a class="logo-icon" href="index.php" target="_parent"><img src="image/logo.png" alt="logo"></a>
+	<a class="btn-icon" href="newspace" target="_parent" title="สร้างโปรเจ็ค"><i class="fas fa-folder-plus"></i></a>
 </header>
 <div class="container">
 	<?php foreach ($spacelist as $project) { ?>
 	<div class="box">
 		<div class="head">
 			<h2><?php echo $project['title'];?></h2>
-			<a class="button-option first-right" href="space-user.php?id=<?php echo $project['id'];?>" title="เพิ่มผู้ดูแล"><i class="fal fa-user-plus"></i></a>
-			<a class="button-option" href="editspace/<?php echo $project['id'];?>" title="ตั้งค่า"><i class="fal fa-cog"></i></a>
+			<a class="button-option first-right" href="space-user.php?id=<?php echo $project['id'];?>" title="เพิ่มผู้ดูแล"><i class="fas fa-user-plus"></i></a>
+			<a class="button-option" href="editspace/<?php echo $project['id'];?>" title="ตั้งค่า"><i class="fas fa-cog"></i></a>
 			<?php if(empty($project['line_token'])){?>
-			<a class="button-option" href="editspace/<?php echo $project['id'];?>#line_token" title="ใส่ LINE Token"><i class="fal fa-exclamation-circle"></i></a>
+			<a class="button-option" href="editspace/<?php echo $project['id'];?>#line_token" title="ใส่ LINE Token"><i class="fas fa-exclamation-circle"></i></a>
 			<?php }?>
 		</div>
 		<div class="device-list">
@@ -62,10 +62,10 @@ $spacelist = $devices->listDevices($user->id);
 			<a class="device-card" id="device-<?php echo $device['id'];?>" a href="device/<?php echo $device['id'];?>">
 				<div class="info">
 					<div class="name">
-						<?php echo ($device['notify'] != 'active' ? '<i class="fa fa-bell-slash"></i>' : '');?>
+						<?php echo ($device['notify'] != 'active' ? '<i class="fas fa-bell-slash"></i>' : '');?>
 						<?php echo $device['name'];?>
 					</div>
-					<div class="status-icon"><i class="far fa-thermometer-full"></i></div>
+					<div class="status-icon"><i class="fas fa-thermometer-full"></i></div>
 				</div>
 				<div class="temp">n/a</div>
 				<div class="desc"><?php echo (status ? 'กำลังโหลด' : 'ปิดรับข้อมูล');?></div>

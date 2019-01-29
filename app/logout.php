@@ -40,7 +40,7 @@ session_destroy();
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
-<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.0.9/css/fontawesome-all.min.css"/>
+<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 
 </head>
 <body>

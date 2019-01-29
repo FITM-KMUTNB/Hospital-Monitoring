@@ -45,7 +45,7 @@ if(strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)){
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
-<link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 
 </head>
 <body>

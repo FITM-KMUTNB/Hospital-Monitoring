@@ -145,7 +145,6 @@ button {
 body {
   background: #ffffff;
   font-family: 'maledpan';
-  font-weight: 200;
   overflow-x: hidden;
 }
 @-webkit-keyframes bounce {
@@ -241,10 +240,7 @@ body {
 }
 .container {
   width: 60%;
-  margin: 5% 20%;
-  margin-top: 100px;
-  float: left;
-  display: block;
+  margin: 100px 20%;
 }
 .container .box {
   display: flex;
@@ -601,7 +597,7 @@ body {
   margin-bottom: 15px;
 }
 .form .toggle-items i {
-  font-size: 2.0999999999999996em;
+  font-size: 1.75em;
   padding: 0;
   color: #b0bec5;
 }
@@ -613,8 +609,7 @@ body {
 }
 .device-info {
   width: 40%;
-  margin: 80px 30%;
-  margin-top: 100px;
+  margin: 100px 30%;
   display: flex;
   flex-direction: column;
 }
