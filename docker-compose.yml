@@ -1,14 +1,32 @@
 version: '3.7'
 services:
-    phpapp:
-        image: tutum/apache-php
-        container_name: hos_monitor_apache
-        environment:
-            - ALLOW_OVERRIDE=true
+    # phpapp:
+    #     image: tutum/apache-php
+    #     container_name: hos_monitor_apache
+    #     environment:
+    #         - ALLOW_OVERRIDE=true
+    #     ports:
+    #         - "9000:80"
+    #     volumes:
+    #         - ./app:/app
+    nginx:
+        build:
+            context: ./docker/nginx
+        container_name: hos_monitor_nginx
+        restart: always
+        volumes:
+            - ./app:/var/app
         ports:
             - "9000:80"
+    phpfpm:
+        build:
+            context: ./docker/php7-fpm
+        container_name: hos_monitor_phpfpm
+        restart: always
         volumes:
-            - ./app:/app
+            - ./app:/var/app
+        expose:
+            - "9000"
     database:
         image: mariadb:10.3.9
         container_name: hos_monitor_mariadb

@@ -54,7 +54,7 @@ class Notify extends Database{
 	public function save($device_id,$message,$type,$count,$status){
 		parent::query('INSERT INTO notify(device_id,message,type,count,update_time,status) VALUE(:device_id,:message,:type,:count,:update_time,:status)');
 		parent::bind(':device_id' 	,$device_id);
-		parent::bind(':message' 	,$message);
+		parent::bind(':message' 	, '');
 		parent::bind(':type' 		,$type);
 		parent::bind(':count' 		,$count);
 		parent::bind(':update_time' ,time());

@@ -59,7 +59,7 @@ $spacelist = $devices->listDevices($user->id);
 				$status = ($device['status'] == 'active' ? true : false);
 				$notify = ($device['notify'] == 'active' ? true : false);
 			?>
-			<a class="device-card" id="device-<?php echo $device['id'];?>" a href="device/<?php echo $device['id'];?>">
+			<a class="device-card" id="device-<?php echo $device['id'];?>" a href="device.php?id=<?php echo $device['id'];?>">
 				<div class="info">
 					<div class="name">
 						<?php echo ($device['notify'] != 'active' ? '<i class="fas fa-bell-slash"></i>' : '');?>
