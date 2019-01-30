@@ -26,8 +26,7 @@
 </head>
 <body>
 <div class="message-box">
-	<div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
-	<div class="msg">ระบบทำงานผิดพลาด เรากำลังเร่งแก้ไข (500 Internal Server Error)</div>
+	<div class="msg">ระบบทำงานผิดพลาด เรากำลังเร่งแก้ไข</div>
 	<div class="control"><a class="btn" href="<?php echo DOMAIN;?>">กลับไปหน้าแรก</a></div>
 </div>
 </body>

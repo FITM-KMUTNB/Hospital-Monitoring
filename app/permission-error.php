@@ -18,7 +18,6 @@
 <?php include'favicon.php';?>
 <title>Permission Error</title>
 <base href="<?php echo DOMAIN;?>">
-
 <!-- CSS -->
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
@@ -26,7 +25,6 @@
 </head>
 <body>
 <div class="message-box">
-	<div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
 	<div class="msg">คุณไม่มีสิทธิ์เข้าถึงหน้านี้ (Permission Error)</div>
 	<div class="control"><a class="btn" href="<?php echo DOMAIN;?>">กลับไปหน้าแรก</a></div>
 </div>

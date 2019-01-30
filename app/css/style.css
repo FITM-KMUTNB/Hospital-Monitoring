@@ -472,9 +472,7 @@ body {
 }
 .form .form-items label .label-button {
   color: #2962ff;
-}
-.form .form-items label .label-button i {
-  margin-right: 5px;
+  text-decoration: none;
 }
 .form .form-items label .label-button:hover {
   cursor: pointer;
@@ -868,24 +866,28 @@ body {
   flex-direction: row;
   justify-content: center;
 }
+.message-box .control p {
+  padding: 14px 0;
+  font-size: 1.4em;
+  color: #b0bec5;
+}
 .message-box .control a.btn {
   text-decoration: none;
   background: #2962ff;
-  color: #3581c2;
   color: #FFFFFF;
   font-size: 1.2em;
   font-family: initial;
-  padding: 16px;
+  padding: 14px 28px;
   margin: 0 10px;
   font-weight: bold;
   border-radius: 7px;
   display: block;
 }
 .message-box .control a.btn i {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 .message-box .control a.btn.btn-not-Accept {
-  background: transparent;
+  background: #eceff1;
   color: #b0bec5;
 }
 #disconnect-bar {

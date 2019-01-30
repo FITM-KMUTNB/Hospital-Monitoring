@@ -324,10 +324,8 @@
 
 			.label-button {
 					color: @primary_color;
-					i {
-							margin-right: 5px;
-					}
-
+					text-decoration: none;
+					
 					&:hover {
 							cursor: pointer;
 							text-decoration: underline;
@@ -776,24 +774,31 @@
 		flex-direction: row;
 		justify-content: center;
 
+		p {
+			padding: 14px 0;
+			font-size: @fontsize_normal;
+			color: @border_color_hover;
+		}
+
 		a.btn {
 			text-decoration: none;
 			background: @primary_color;
-			color: @primary_color_dark;
 			color: #FFFFFF;
 			font-size: @fontsize_input;
 			font-family: initial;
-			padding: 16px;
+			padding: 14px 28px;
 			margin: 0 10px;
 			font-weight: bold;
 			border-radius: @radius;
 			display: block;
 
-			i { margin-left: 10px; }
+			i {
+				margin-left: 15px;
+			}
 
 			&.btn-not-Accept {
-				background: transparent;
-				color: @text_color_light;
+				background: @border_color;;
+				color: @border_color_hover;
 			}
 		}
 	}

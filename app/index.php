@@ -40,7 +40,7 @@ $spacelist = $devices->listDevices($user->id);
 <div id="filter"></div>
 <header class="header">
 	<a class="logo-icon" href="index.php" target="_parent"><img src="image/logo.png" alt="logo"></a>
-	<a class="btn-icon" href="space-editor.php" target="_parent" title="สร้างโปรเจ็ค"><i class="fas fa-plus"></i></a>
+	<a class="btn-icon" href="space-editor.php" target="_parent" title="สร้างโปรเจค"><i class="fas fa-plus"></i></a>
 </header>
 <div class="container">
 	<?php if (count($spacelist) > 0) {?>

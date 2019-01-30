@@ -13,7 +13,7 @@ if(!$user_online){ // ไม่ออนไลน์
 	// header("Location: ".DOMAIN."/login.php?redirect=device&id=".$device_id);
 	// die();
 }else if(empty($devices->id)){ // Device ID ไม่มีในระบบ
-	header("Location: ".DOMAIN."/error-400.php");
+	header("Location: ".DOMAIN."/error-404.php");
 	die();
 }else if(!$hasPermission){ // ไม่มีสิทธิ์เข้าถึงข้อมูล
 	header("Location: ".DOMAIN."/permission-error.php");
