@@ -137,12 +137,12 @@ $(document).ready(function(){
 	        }
 	    }).done(function(data){
 	        console.log(data);
-	        if(data.return != 0){
+	        if (data.return != 0) {
 	        	console.log('Device created!');
-	        	setTimeout(function(){
-	        		window.location = 'device/'+data.return;
-	        	},1000);
-	        }else{
+	        	setTimeout(function() {
+	        		window.location = 'device.php?id=' + data.return;
+	        	}, 1000);
+	        } else {
 	        	$('#btn-save').addClass('completed');
 	        	$('#btn-save').html('บันทึกแล้ว<i class="fa fa-check" aria-hidden="true"></i>');
 	        	$('#btn-nav').addClass('-show');

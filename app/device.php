@@ -116,7 +116,6 @@ if(!$user_online){ // ไม่ออนไลน์
 
 <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/lib/chart.min.js"></script>
-<script type="text/javascript" src="js/lib/chart.rounded.bar.min.js"></script>
 <script type="text/javascript" src="js/min/device.feed.min.js"></script>
 <script type="text/javascript" src="js/lib/tippy.all.min.js"></script>
 </body>

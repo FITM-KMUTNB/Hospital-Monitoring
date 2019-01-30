@@ -82,7 +82,6 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 		<div class="input">
 			<input class="input-text" type="text" value="<?php echo $devices->token;?>" disabled>
 		</div>
-		<div class="note">ส่งข้อมูล: <i><?php echo DOMAIN;?>/push.php</i></div>
 	</div>
 	<?php }?>
 	<div class="form-items hidden">
@@ -118,6 +117,6 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 </div>
 
 <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/min/device.min.js"></script>
+<script type="text/javascript" src="js/min/device.manage.min.js"></script>
 </body>
 </html>

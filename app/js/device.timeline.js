@@ -25,7 +25,7 @@ function getlastlog(){
     }).done(function(data){
         console.log(data);
         var currentdate = new Date();
-        var datetime    = currentdate.getHours()+":"+currentdate.getMinutes()+":"+currentdate.getSeconds();
+        var datetime    = currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
 
         $('#extime').html(data.data.execute);
         $('#updatetime').html(datetime);
@@ -50,6 +50,6 @@ function getlastlog(){
             $('#device-'+v.device_id+' .temp').html(v.device_temp+'°');
         });
 
-        setTimeout(getlastlog,10000)
+        setTimeout(getlastlog, 10000)
     });
 }

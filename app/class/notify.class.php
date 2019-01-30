@@ -9,9 +9,9 @@ class Notify extends Database{
 	// $res = notify_message('จริงจังแค่ไหน แค่ไหนเรียกจริงจัง ผิดเพียงแปดครั้ง ถึงเก้าซะที่ไหน',1,103);
 	// var_dump($res);
 
-	public function lineNotify($message,$stickerPkg,$stickerId,$token){
+	public function lineNotify($message, $stickerPkg, $stickerId, $token){
 
-		if(empty($token) && strlen($token) > 35) return false;
+		if (empty($token) || strlen($token) < 35) return false;
 
 		$queryData = array(
 			'message' => $message,

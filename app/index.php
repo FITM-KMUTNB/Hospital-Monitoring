@@ -40,9 +40,10 @@ $spacelist = $devices->listDevices($user->id);
 <div id="filter"></div>
 <header class="header">
 	<a class="logo-icon" href="index.php" target="_parent"><img src="image/logo.png" alt="logo"></a>
-	<a class="btn-icon" href="space-editor.php" target="_parent" title="สร้างโปรเจ็ค"><i class="fas fa-folder-plus"></i></a>
+	<a class="btn-icon" href="space-editor.php" target="_parent" title="สร้างโปรเจ็ค"><i class="fas fa-plus"></i></a>
 </header>
 <div class="container">
+	<?php if (count($spacelist) > 0) {?>
 	<?php foreach ($spacelist as $project) { ?>
 	<div class="box">
 		<div class="head">
@@ -78,12 +79,20 @@ $spacelist = $devices->listDevices($user->id);
 		</div>
 	</div>
 	<?php }?>
+	<?php } else {?>
+	<div class="box-empty">
+		<a href="space-editor.php" target="_parent">สร้างโปรเจ็คใหม่</a>
+	</div>
+	<?php }?>
 </div>
 <input type="hidden" value="<?php echo $user->id;?>" id="space_id">
-<?php include'footer.php';?>
+<?php
+if (count($spacelist) > 0) {
+	include'footer.php';
+}
+?>
 <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/min/timeline.min.js"></script>
-<script type="text/javascript" src="js/min/layout.min.js"></script>
+<script type="text/javascript" src="js/min/device.timeline.min.js"></script>
 <script type="text/javascript" src="js/lib/tippy.all.min.js"></script>
 </body>
 </html>

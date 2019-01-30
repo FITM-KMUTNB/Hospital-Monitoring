@@ -64,12 +64,13 @@ class Space extends Database{
 	}
 
 	public function create($title,$description,$line_token,$owner_id){
-		parent::query('INSERT INTO space(owner_id,title,description,line_token,create_time,invite_code) VALUE(:owner_id,:title,:description,:line_token,:create_time,:invite_code)');
+		parent::query('INSERT INTO space(owner_id,title,description,line_token,create_time,update_time,invite_code) VALUE(:owner_id,:title,:description,:line_token,:create_time,:update_time,:invite_code)');
 		parent::bind(':owner_id' 	,$owner_id);
 		parent::bind(':title' 		,$title);
 		parent::bind(':description' ,$description);
 		parent::bind(':line_token' 	,$line_token);
 		parent::bind(':create_time' , date('Y-m-d H:i:s'));
+		parent::bind(':update_time' , date('Y-m-d H:i:s'));
 		parent::bind(':invite_code' ,$this->randInviteCode());
 		parent::execute();
 		return parent::lastInsertId();

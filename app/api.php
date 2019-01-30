@@ -36,7 +36,7 @@ if($_POST['calling'] != ''){
 						"apiVersion" => "1.0",
 						"data" => array(
 							"update" 		=> time(),
-							"execute" 		=> round(microtime(true)-StTime,4)." s.",
+							"execute" 		=> round(microtime(true)-StTime, 4),
 							"totalFeeds" 	=> floatval($total),
 							"items" 		=> $dataset,
 						)

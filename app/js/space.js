@@ -162,22 +162,21 @@ $(document).ready(function(){
 	            sign 		:sign
 	        },
 	        error: function (request, status, error) {
-	            console.log("Request Error");
+	            console.log(request, status, error);
 	        }
 	    }).done(function(data){
-
 	        console.log(data);
-
 	        var return_device = $('#return_device').val();
 
-	        if(data.return != 0){
-	        	setTimeout(function(){ window.location = 'space/'+data.return; },2000);
-	        }else{
+	        if (data.return != 0) {
+	        	setTimeout(function(){ window.location = 'index.php'; }, 2000);
+	        } else {
 	        	$('#btn-save').addClass('completed');
 	        	$('#btn-save').html('บันทึกแล้ว<i class="fas fa-check"></i>');
 
-	        	if(return_device != ''){
-	        		setTimeout(function(){ window.location = 'editdevice/'+return_device; },1000);
+	        	if (return_device != '') {
+	        		setTimeout(function() {
+						window.location = 'space-editor.php?id=' + return_device; }, 1000);
 	        	}
 	        }
 

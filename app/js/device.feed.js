@@ -214,8 +214,8 @@ function historyRender(dataset){
         html +='<div class="logitems ' + alert + '">';
         html +='<div class="status"><i class="fas fa-circle"></i></div>';
         html +='<div class="time">' + v.log_time_fb + '</div>';
-        html +='<div class="temp">' + v.log_temp + ' °C</div>';
         html +='<div class="icon">' + icon + '</div>';
+        html +='<div class="temp">' + v.log_temp + ' °C</div>';
         html +='</div>';
     });
 

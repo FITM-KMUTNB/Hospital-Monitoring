@@ -58,7 +58,7 @@ class Devices extends Database{
 
 	public function create($name,$description,$space_id,$max,$min,$warning) {
 		$sort = $this->getLastSort($space_id);
-		parent::query('INSERT INTO devices(name,description,space_id,token,max,min,warning,ip,create_time,edit_time,sort,status) VALUE(:name,:description,:space_id,:token,:max,:min,:warning,:ip,:create_time,:edit_time,:sort,:status)');
+		parent::query('INSERT INTO devices(name,description,space_id,token,max,min,warning,ip,create_time,update_time,edit_time,sort,status) VALUE(:name,:description,:space_id,:token,:max,:min,:warning,:ip,:create_time,:update_time,:edit_time,:sort,:status)');
 		parent::bind(':name', $name);
 		parent::bind(':description', $description);
 		parent::bind(':space_id', $space_id);
@@ -68,6 +68,7 @@ class Devices extends Database{
 		parent::bind(':warning', $warning);
 		parent::bind(':ip', parent::GetIpAddress());
 		parent::bind(':create_time', date('Y-m-d H:i:s'));
+		parent::bind(':update_time', date('Y-m-d H:i:s'));
 		parent::bind(':edit_time', date('Y-m-d H:i:s'));
 		parent::bind(':sort', ($sort + 1));
 		parent::bind(':status', 'active');

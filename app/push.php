@@ -65,10 +65,7 @@ if (!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85) {
 					$msg .= "\n\nตรวจสอบ [".DOMAIN."/device/".$devices->id.']';
 
 					$noti_id = $notify->save($device_id,$msg,'alert',1,1);
-
-					if (!empty($devices->line_token)) {
-						$res = $notify->lineNotify($msg,2,153,$devices->line_token);
-					}
+					$res = $notify->lineNotify($msg, 2, 153, $devices->line_token);
 				} else if ($lasttype == 'alert' && (time() - $lasttime) >= $alert_delay) {
 					// สูงหรือต่ำเกินไป
 					$msg = $message['alert'];
@@ -78,8 +75,8 @@ if (!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85) {
 					else
 						$msg .= "\n\nตรวจสอบ ".DOMAIN."/device/".$devices->id;
 
-					$noti_id 	= $notify->save($device_id,$msg,'alert',++$lastcount,1);
-					$res 		= $notify->lineNotify($msg,NULL,NULL,$devices->line_token);
+					$noti_id = $notify->save($device_id,$msg,'alert',++$lastcount,1);
+					$res = $notify->lineNotify($msg,NULL,NULL,$devices->line_token);
 				}
 			} else {
 				// สภาวะปกติ
@@ -87,12 +84,11 @@ if (!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85) {
 					$lastcount = 1;
 					$msg = $message['standard'];
 					$noti_id = $notify->save($device_id,$msg,'standard',$lastcount,1);
-					$res = $notify->lineNotify($msg,2,516,$devices->line_token);
+					$res = $notify->lineNotify($msg, 2, 516, $devices->line_token);
 				}
 			}
 		}
-
-
+		
 		$data = array(
 			'timediff' 	=> floatval(time()-$lasttime),
 			'notify' 	=> $msg,
