@@ -3,7 +3,7 @@ require_once 'autoload.php';
 $invite_code = $_GET['c'];
 
 if(!$user_online){
-	header('Location: '.DOMAIN.'/signup?invite='.$invite_code);
+	header('Location: '.DOMAIN.'/register.php?invite='.$invite_code);
 	die();
 }
 
@@ -16,7 +16,7 @@ if(strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)){
 				$space->addPermission($space->id,$user->id,3);
 			}
 
-			$redirect = DOMAIN.'/space/'.$space->id;
+			$redirect = 'index.php';
 		}else{
 			$redirect = 'index.php';
 		}
@@ -56,7 +56,7 @@ if(strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)){
 			<p>กรุณารอซักครู่...</p>
 		<?php } else {?>
 			<a href="index.php" class="btn btn-not-Accept">ยกเลิก</a>
-			<a href="invite?c=<?php echo $invite_code;?>&action=accept" class="btn btn-accept">เข้ากลุ่ม<i class="fa fa-arrow-right"></i></a>
+			<a href="invite.php?c=<?php echo $invite_code;?>&action=accept" class="btn btn-accept">เข้ากลุ่ม<i class="fa fa-arrow-right"></i></a>
 		<?php }?>
 	</div>
 </div>

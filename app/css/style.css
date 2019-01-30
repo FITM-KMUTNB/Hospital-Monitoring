@@ -206,7 +206,7 @@ body {
   font-size: 1.8em;
   width: 100px;
   height: 100px;
-  color: #2962ff;
+  color: #b0bec5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -610,6 +610,7 @@ body {
 .device-info {
   width: 40%;
   margin: 100px 30%;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
 }
@@ -762,7 +763,7 @@ body {
 }
 .footer i {
   margin-right: 5px;
-  color: #2962ff;
+  color: #b0bec5;
 }
 .footer a {
   padding: 3px 10px;

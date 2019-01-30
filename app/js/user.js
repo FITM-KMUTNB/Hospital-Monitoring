@@ -47,7 +47,7 @@ function login() {
 
 			setTimeout(function() {
 	        	if (invite_code != '') {
-	        		window.location = 'invite?c=' + invite_code;
+	        		window.location = 'invite.php?c=' + invite_code;
 	        	} else if (redirect_page != '' && redirect_id != '') {
 	        		window.location = redirect_page + '/' + redirect_id;
 	        	} else {
@@ -115,13 +115,13 @@ function register(){
 		$progress.animate({width:'70%'},300);
 
 		if(data.return != 0){
-			$('#btn-register').addClass('-loading');
+			$('#btn-register').addClass('loading');
 			$('#btn-register').html('กำลังลงทะเบียน...');
 			$progress.animate({width:'100%'},300);
 
 			setTimeout(function(){
 				if(invite_code != ''){
-					window.location = 'invite?c='+invite_code;
+					window.location = 'invite.php?c='+invite_code;
 				}else{
 					window.location = 'index.php?regsiter=success';	
 				}

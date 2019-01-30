@@ -20,9 +20,9 @@ if (!$user_online) { // ไม่ออนไลน์
 	die();
 }
 
-if(empty($_GET['space']) && isset($devices->space_id)){
+if (empty($_GET['space']) && isset($devices->space_id)) {
 	$space_id = $devices->space_id;
-}else{ // สร้างอุปกรณ์ใหม่
+} else { // สร้างอุปกรณ์ใหม่
 	$space_id = $_GET['space'];
 }
 
