@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var sign = $('#sign').val();
 
 	$('#name , #description , #line_token').focus(function(){
-		$('#btn-save').removeClass('-completed');
+		$('#btn-save').removeClass('completed');
 		$('#btn-save').html('บันทึก');
 		$('#btn-nav').removeClass('-show');
 	});
@@ -137,14 +137,14 @@ $(document).ready(function(){
 		var line_token 	= $('#line_token').val();
 		var space_id 	= $('#space_id').val();
 
-		if(name == ''){
-			alert('คุณจำเป็นต้องใส่ชื่อกลุ่ม!');
+		if (name == '') {
+			alert('คุณจำเป็นต้องใส่ชื่อโปรเจค!');
 			$('#name').focus();
 			return false;
 		}
 
-		if(space_id == ''){
-			$('#btn-save').html('กำลังสร้างกลุ่มใหม่...');
+		if (space_id == '') {
+			$('#btn-save').html('กำลังสร้างโปรเจคใหม่...');
 		}
 
 		$.ajax({
@@ -166,12 +166,12 @@ $(document).ready(function(){
 	        }
 	    }).done(function(data){
 	        console.log(data);
-	        var return_device = $('#return_device').val();
+			var return_device = $('#return_device').val();
+			$('#btn-save').addClass('completed');
 
 	        if (data.return != 0) {
 	        	setTimeout(function(){ window.location = 'index.php'; }, 2000);
 	        } else {
-	        	$('#btn-save').addClass('completed');
 	        	$('#btn-save').html('บันทึกแล้ว<i class="fas fa-check"></i>');
 
 	        	if (return_device != '') {

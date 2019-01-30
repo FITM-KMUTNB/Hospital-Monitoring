@@ -224,6 +224,7 @@ body {
 }
 .header .title i {
   margin-right: 15px;
+  color: #b0bec5;
 }
 .header .title:hover {
   cursor: default;
