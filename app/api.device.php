@@ -9,10 +9,10 @@ if($_POST['calling'] != '' && $signature->verifySign($_POST['sign'])){
 			switch ($_POST['action']) {
 				case 'submit':
 					if(!empty($_POST['device_id'])){
-						$devices->edit($_POST['device_id'],$_POST['name'],$_POST['description'],$_POST['space_id'],$_POST['max'],$_POST['min'],0);
+						$devices->edit($_POST['device_id'],$_POST['name'],$_POST['description'],$_POST['project_id'],$_POST['max'],$_POST['min'],0);
 						$api->successMessage('Device Updated.',0,'');
 					}else{
-						$device_id = $devices->create($_POST['name'],$_POST['description'],$_POST['space_id'],$_POST['max'],$_POST['min'],0);
+						$device_id = $devices->create($_POST['name'],$_POST['description'],$_POST['project_id'],$_POST['max'],$_POST['min'],0);
 						$api->successMessage('New Device Created.',$device_id,'');
 					}
 					break;

@@ -87,7 +87,7 @@ $(document).ready(function(){
 	$('#btn-save').click(function(){
 		var name 		= $('#name').val();
 		var description = $('#description').val();
-		var space_id 	= $('#space_id').val();
+		var project_id 	= $('#project_id').val();
 		var min 		= parseFloat($('#min').val());
 		var max 		= parseFloat($('#max').val());
 		var device_id 	= $('#device_id').val();
@@ -124,7 +124,7 @@ $(document).ready(function(){
 	            action      :'submit',
 	            name		:name,
 	            description	:description,
-	            space_id	:space_id,
+	            project_id	:project_id,
 	            min			:min,
 	            max			:max,
 	            warning		:0,
@@ -136,14 +136,14 @@ $(document).ready(function(){
 	            console.log("Request Error");
 	        }
 	    }).done(function(data){
-	        console.log(data);
+			console.log(data);
+			$('#btn-save').addClass('completed');
 	        if (data.return != 0) {
 	        	console.log('Device created!');
 	        	setTimeout(function() {
 	        		window.location = 'device.php?id=' + data.return;
 	        	}, 1000);
 	        } else {
-	        	$('#btn-save').addClass('completed');
 	        	$('#btn-save').html('บันทึกแล้ว<i class="fa fa-check" aria-hidden="true"></i>');
 	        	$('#btn-nav').addClass('-show');
 	        }

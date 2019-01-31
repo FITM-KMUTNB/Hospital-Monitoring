@@ -6,7 +6,7 @@ $(document).ready(function(){
 });
 
 function getlastlog(){
-    var space_id = $('#space_id').val();
+    var project_id = $('#project_id').val();
     $('#loading-bar').toggleClass('-action');
 
     $.ajax({
@@ -17,7 +17,7 @@ function getlastlog(){
         data:{
             calling     :'log',
             action      :'getupdated',
-            space_id    :space_id,
+            project_id    :project_id,
         },
         error: function (request, status, error) {
             console.log("Request Error");

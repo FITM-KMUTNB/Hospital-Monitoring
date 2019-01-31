@@ -321,6 +321,7 @@ body {
   -moz-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .container .box .device-list a.device-card:hover {
   transform: translateY(-5px);
@@ -331,6 +332,7 @@ body {
   color: #b0bec5;
   font-size: 1.4em;
   align-items: center;
+  box-shadow: none;
 }
 .container .box .device-list a.device-card.create-button:hover {
   transform: initial;
@@ -496,6 +498,7 @@ body {
   box-sizing: border-box;
   border: 2px solid #eceff1;
   resize: none;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .form .form-items .input-text.loading,
 .form .form-items .input-textarea.loading {
@@ -530,6 +533,7 @@ body {
   color: #ffffff;
   font-size: 1.2em;
   font-weight: bold;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .form .form-items .btn-submit i {
   margin-left: 10px;
@@ -542,9 +546,11 @@ body {
 .form .form-items .btn-submit.loading {
   background: #eceff1;
   color: #b0bec5;
+  box-shadow: none;
 }
 .form .form-items .btn-submit.completed {
   background: #00b900;
+  box-shadow: none;
 }
 .form .form-items .note {
   color: #37474f;
@@ -620,6 +626,7 @@ body {
 }
 .form .toggle-items i.fa-toggle-on {
   color: #2962ff;
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .form .toggle-items i:hover {
   cursor: pointer;
@@ -667,6 +674,7 @@ body {
   justify-content: center;
   border-radius: 7px;
   box-sizing: border-box;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .device-info .temperature-stat .box:nth-child(3n+0) {
   margin-right: 0%;
@@ -709,6 +717,7 @@ body {
   box-sizing: border-box;
   border-radius: 7px;
   background: #eceff1;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .device-info .history .logitems {
   display: flex;
