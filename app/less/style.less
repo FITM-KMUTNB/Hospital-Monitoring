@@ -353,7 +353,7 @@
 			box-sizing: border-box;
 			border: 2px solid @border_color;
 			resize: none;
-			.BoxShadow();
+			.transitionAnimation(0.3s);
 			
 			&.loading {
 				background: transparent;
@@ -365,7 +365,8 @@
 			}
 
 			&:focus {
-				border: 2px solid @border_color_hover;
+				border: 2px solid @primary_color;
+				.BoxShadow();
 			}
 
 			&:disabled {
@@ -537,6 +538,10 @@
 			font-size: @fontsize_mini;
 			color: @text_color_light;
 		}
+
+		&:hover {
+			cursor: default;
+		}
 	}
 
 	.temperature-stat {
@@ -577,6 +582,10 @@
 			}
 			&.lowest {
 				.over { color: @red_color; }
+			}
+
+			&:hover {
+				cursor: default;
 			}
 		}
 	}
@@ -623,7 +632,7 @@
 			}
 
 			&:hover {
-				cursor: pointer;
+				cursor: default;
 			}
 
 			&.alert {
@@ -718,10 +727,10 @@
 
 #loading-bar {
 	position: fixed;
-	top: 0;
+	top: 5px;
 	left: 0;
 	width: 5%;
-	height: 2px;
+	height: 3px;
 	border-radius: 20%;
 	background: @primary_color;
 	float: left;
@@ -730,7 +739,7 @@
 
 	.transitionAnimation(10s);
 
-	&.-action{
+	&.action{
 		transform: translateX(1900%);
 	}
 }
@@ -830,7 +839,7 @@
 	
 	.transitionAnimation(0.3s);
 
-	&.-active {
+	&.active {
 		transform: translateY(-100%);
 	}
 

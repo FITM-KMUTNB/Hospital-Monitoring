@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: database
--- Generation Time: Jan 07, 2019 at 06:46 AM
+-- Generation Time: Jan 31, 2019 at 06:30 AM
 -- Server version: 10.3.9-MariaDB-1:10.3.9+maria~bionic
 -- PHP Version: 7.2.13
 
@@ -30,8 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `devices` (
   `id` mediumint(8) NOT NULL,
-  `space_id` mediumint(8) DEFAULT NULL,
-  `zone_id` int(5) DEFAULT 0,
+  `project_id` mediumint(8) DEFAULT NULL,
   `name` text NOT NULL,
   `description` text DEFAULT NULL,
   `url_short` text DEFAULT NULL,
@@ -97,6 +96,38 @@ CREATE TABLE `notify` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `project`
+--
+
+CREATE TABLE `project` (
+  `id` mediumint(8) NOT NULL,
+  `owner_id` int(8) NOT NULL,
+  `title` text NOT NULL,
+  `description` text DEFAULT NULL,
+  `line_token` text DEFAULT NULL,
+  `create_time` datetime NOT NULL,
+  `update_time` datetime NOT NULL,
+  `invite_code` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `project_permission`
+--
+
+CREATE TABLE `project_permission` (
+  `id` mediumint(8) NOT NULL,
+  `project_id` mediumint(8) NOT NULL,
+  `user_id` mediumint(8) NOT NULL,
+  `permission` int(2) NOT NULL DEFAULT 3,
+  `create_time` datetime NOT NULL,
+  `status` varchar(20) NOT NULL DEFAULT 'active'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `signature`
 --
 
@@ -107,38 +138,6 @@ CREATE TABLE `signature` (
   `create_time` datetime NOT NULL,
   `active_time` datetime DEFAULT NULL,
   `form` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `space`
---
-
-CREATE TABLE `space` (
-  `id` mediumint(8) NOT NULL,
-  `owner_id` int(8) NOT NULL,
-  `title` text NOT NULL,
-  `description` text DEFAULT NULL,
-  `line_token` text DEFAULT NULL,
-  `create_time` datetime NOT NULL,
-  `update_time` datetime NOT NULL,
-  `invite_code` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `space_permission`
---
-
-CREATE TABLE `space_permission` (
-  `id` mediumint(8) NOT NULL,
-  `space_id` mediumint(8) NOT NULL,
-  `user_id` mediumint(8) NOT NULL,
-  `permission` int(2) NOT NULL DEFAULT 3,
-  `create_time` datetime NOT NULL,
-  `status` varchar(20) NOT NULL DEFAULT 'active'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -161,19 +160,6 @@ CREATE TABLE `user` (
   `visit_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `zone`
---
-
-CREATE TABLE `zone` (
-  `id` int(5) NOT NULL,
-  `title` text DEFAULT NULL,
-  `description` text DEFAULT NULL,
-  `space_id` mediumint(8) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Indexes for dumped tables
 --
@@ -183,8 +169,7 @@ CREATE TABLE `zone` (
 --
 ALTER TABLE `devices`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `space_id` (`space_id`),
-  ADD KEY `zone_id` (`zone_id`);
+  ADD KEY `space_id` (`project_id`);
 
 --
 -- Indexes for table `log`
@@ -209,24 +194,24 @@ ALTER TABLE `notify`
   ADD KEY `device_id` (`device_id`);
 
 --
+-- Indexes for table `project`
+--
+ALTER TABLE `project`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `project_permission`
+--
+ALTER TABLE `project_permission`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `space_id` (`project_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `signature`
 --
 ALTER TABLE `signature`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `space`
---
-ALTER TABLE `space`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `space_permission`
---
-ALTER TABLE `space_permission`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `space_id` (`space_id`),
-  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `user`
@@ -234,13 +219,6 @@ ALTER TABLE `space_permission`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD KEY `email` (`email`);
-
---
--- Indexes for table `zone`
---
-ALTER TABLE `zone`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `space_id` (`space_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -271,34 +249,28 @@ ALTER TABLE `notify`
   MODIFY `id` mediumint(8) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `project`
+--
+ALTER TABLE `project`
+  MODIFY `id` mediumint(8) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `project_permission`
+--
+ALTER TABLE `project_permission`
+  MODIFY `id` mediumint(8) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `signature`
 --
 ALTER TABLE `signature`
   MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `space`
---
-ALTER TABLE `space`
-  MODIFY `id` mediumint(8) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `space_permission`
---
-ALTER TABLE `space_permission`
-  MODIFY `id` mediumint(8) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `zone`
---
-ALTER TABLE `zone`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

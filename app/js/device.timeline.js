@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 function getlastlog(){
     var project_id = $('#project_id').val();
-    $('#loading-bar').toggleClass('-action');
+    $('#loading-bar').toggleClass('action');
 
     $.ajax({
         url         :'api.php',

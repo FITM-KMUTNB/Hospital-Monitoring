@@ -45,12 +45,12 @@ if (!empty($project->id) && isset($project->id)) {
 <body>
 <header class="header">
 	<div class="btn-icon"></div>
-	<div class="title">ตั้งค่าโปรเจ็ค</div>
+	<div class="title">ตั้งค่าโปรเจค</div>
 	<a class="btn-icon" href="/" target="_parent"><i class="fas fa-times"></i></a>
 </header>
 <div class="form vertical-center">
 	<div class="form-items">
-		<label for="name">ชื่อโปรเจ็ค</label>
+		<label for="name">ชื่อโปรเจค</label>
 		<div class="input"><input class="input-text" type="text" placeholder="ไม่เกิน 20 ตัวอักษร" autocomplete="off" id="name" value="<?php echo $project->title;?>"></div>
 	</div>
 	<div class="form-items <?php echo (empty($project->id) ? 'hidden' : '');?>">
@@ -72,7 +72,7 @@ if (!empty($project->id) && isset($project->id)) {
 	<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('project_editor',SECRET_KEY);?>">
 
 	<div class="form-items">
-		<button class="btn-submit" id="btn-save"><?php echo (!empty($project->id) ? 'บันทึก' : 'สร้างกลุ่มใหม่');?></button>
+		<button class="btn-submit" id="btn-save"><?php echo (!empty($project->id) ? 'บันทึก' : 'สร้างโปรเจคใหม่');?></button>
 	</div>
 </div>
 
