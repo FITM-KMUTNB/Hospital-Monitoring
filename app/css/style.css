@@ -930,3 +930,714 @@ body {
   margin-right: 15px;
 }
 /* Other Device and Screen */
+@media only screen and (min-width: 0px) and (max-width: 519px) {
+  .header {
+    width: 100%;
+    padding: 0%;
+    height: 60px;
+    background: #FFFFAA;
+  }
+  .header .btn-icon {
+    font-size: 1.2em;
+    width: 60px;
+    height: 60px;
+  }
+  .header .title {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: #37474f;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .header .title i {
+    margin-right: 15px;
+    color: #b0bec5;
+  }
+  .header a.logo-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+  }
+  .header a.logo-icon img {
+    padding: 10px;
+    height: 40px;
+  }
+  .container {
+    width: 100%;
+    margin: 60px 0;
+    margin-top: 0;
+    background: #FFaaAA;
+  }
+  .container .box-empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+  }
+  .container .box-empty a {
+    color: #2962ff;
+    font-size: 1.4em;
+    border: 2px dashed #e3f2fd;
+    text-decoration: none;
+    border-radius: 7px;
+    padding: 14px 28px;
+  }
+  .container .box:last-child .device-list {
+    border-bottom: 0;
+  }
+  .container .box .head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  .container .box .head h2 {
+    font-size: 1.5em;
+    color: #37474f;
+  }
+  .container .box .head a.button-option {
+    text-decoration: none;
+    height: 50px;
+    width: 50px;
+    color: #b0bec5;
+    font-size: 1.4em;
+    margin-left: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  .container .box .head a.button-option.first-right {
+    margin-left: auto;
+  }
+  .container .box .head a.button-option .fa-exclamation-circle {
+    color: #ff1744;
+  }
+  .container .box .head a.button-option:hover {
+    color: #37474f;
+  }
+  .container .box .device-list {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eceff1;
+  }
+  .container .box .device-list a.device-card {
+    width: 47.5%;
+    padding: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    height: 170px;
+    border-radius: 7px;
+  }
+  .container .box .device-list a.device-card.create-button {
+    font-size: 1.4em;
+  }
+  .container .box .device-list a.device-card:nth-child(2n+0) {
+    margin-right: 0%;
+    background: #FFFFAA;
+  }
+  .container .box .device-list a.device-card:nth-child(4n+0) {
+    margin-right: initial;
+  }
+  .container .box .device-list a.device-card .info {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .container .box .device-list a.device-card .info .name {
+    margin-right: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .container .box .device-list a.device-card .temp {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .container .box .device-list a.device-card .desc {
+    font-size: 1em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .container .box .device-list a.device-card.active {
+    background: #2962ff;
+    color: #e3f2fd;
+  }
+  .container .box .device-list a.device-card.active .temp {
+    color: #FFFFFF;
+  }
+  .container .box .device-list a.device-card.alret {
+    background: #ff1744;
+    color: #FFFFFF;
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  .container .box .device-list a.device-card.alret .desc,
+  .container .box .device-list a.device-card.alret .status-icon {
+    color: #ffcdd2;
+  }
+  .container .box .device-list a.device-card.lostconnect {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  .form {
+    width: 40%;
+    margin: 80px 30%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+  .form.vertical-center {
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    margin: 0 30%;
+  }
+  .form.login {
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30%;
+    margin: 0 35%;
+    text-align: center;
+  }
+  .form.login.logout {
+    font-size: 1.2em;
+    color: #2962ff;
+  }
+  .form.login p {
+    font-size: 1.4em;
+    text-align: center;
+  }
+  .form.login p a {
+    color: #2962ff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .form.login p a:hover {
+    text-decoration: underline;
+  }
+  .form.login .logo {
+    width: 30%;
+    margin: 0 35%;
+    margin-bottom: 15px;
+    float: left;
+    display: block;
+  }
+  .form.login .logo img {
+    width: 100%;
+    float: left;
+    display: block;
+  }
+  .form .form-items {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .form .form-items.hidden {
+    display: none;
+  }
+  .form .form-items:last-child {
+    margin-bottom: 0;
+  }
+  .form .form-items label {
+    font-size: 1em;
+    color: #37474f;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  .form .form-items label .label-button {
+    color: #2962ff;
+    text-decoration: none;
+  }
+  .form .form-items label .label-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .form .form-items label:hover {
+    cursor: pointer;
+  }
+  .form .form-items .input-text,
+  .form .form-items .input-textarea {
+    width: 100%;
+    float: left;
+    display: block;
+    font-size: 1.2em;
+    padding: 16px 14px;
+    background: #eceff1;
+    color: #2962ff;
+    margin: 0%;
+    border-radius: 7px;
+    box-sizing: border-box;
+    border: 2px solid #eceff1;
+    resize: none;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+  }
+  .form .form-items .input-text.loading,
+  .form .form-items .input-textarea.loading {
+    background: transparent;
+    color: #2962ff;
+  }
+  .form .form-items .input-text:hover,
+  .form .form-items .input-textarea:hover {
+    cursor: pointer;
+  }
+  .form .form-items .input-text:focus,
+  .form .form-items .input-textarea:focus {
+    border: 2px solid #2962ff;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  }
+  .form .form-items .input-text:disabled,
+  .form .form-items .input-textarea:disabled {
+    background: #eceff1;
+    color: #2962ff;
+  }
+  .form .form-items .input-textarea {
+    height: 100px;
+  }
+  .form .form-items .btn-submit {
+    width: 100%;
+    font-size: 1.4em;
+    border: 0px;
+    padding: 16px 0;
+    margin: 0%;
+    margin-top: 15px;
+    border-radius: 7px;
+    background: #2962ff;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  }
+  .form .form-items .btn-submit i {
+    margin-left: 10px;
+    font-size: 0.9em;
+  }
+  .form .form-items .btn-submit:hover {
+    cursor: pointer;
+    background: #3581c2;
+  }
+  .form .form-items .btn-submit.loading {
+    background: #eceff1;
+    color: #b0bec5;
+    box-shadow: none;
+  }
+  .form .form-items .btn-submit.completed {
+    background: #00b900;
+    box-shadow: none;
+  }
+  .form .form-items .note {
+    color: #37474f;
+    font-size: 1em;
+    margin-top: 10px;
+  }
+  .form .form-items .note a {
+    color: #2962ff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .form .form-items .note a:hover {
+    text-decoration: underline;
+  }
+  .form .form-items .inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .form .form-items .inputs .input-text {
+    width: 49%;
+    text-align: center;
+    flex-grow: unset;
+  }
+  .form .form-items .lists {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #eceff1;
+    border-radius: 7px;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .form .form-items .lists .list-items {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #eceff1;
+  }
+  .form .form-items .lists .list-items:last-child {
+    border-bottom: 0;
+  }
+  .form .form-items .lists .list-items .c {
+    width: 85%;
+    padding: 2.5% 3%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .form .form-items .lists .list-items .btn {
+    width: 15%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #eceff1;
+  }
+  .form .form-items .lists .list-items .btn:hover {
+    cursor: pointer;
+    color: #b0bec5;
+  }
+  .form .toggle-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 1em;
+    justify-content: space-between;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+  .form .toggle-items i {
+    font-size: 1.75em;
+    padding: 0;
+    color: #b0bec5;
+  }
+  .form .toggle-items i.fa-toggle-on {
+    color: #2962ff;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  }
+  .form .toggle-items i:hover {
+    cursor: pointer;
+  }
+  .device-info {
+    width: 40%;
+    margin: 60px 30%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  .device-info .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .device-info .info .temperature-current {
+    font-size: 4.5em;
+    line-height: 1.2em;
+    font-weight: bold;
+    color: #2962ff;
+  }
+  .device-info .info .temperature-current.over {
+    color: #ff1744;
+  }
+  .device-info .info p {
+    font-size: 1em;
+    color: #b0bec5;
+  }
+  .device-info .info:hover {
+    cursor: default;
+  }
+  .device-info .temperature-stat {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .device-info .temperature-stat .box {
+    width: 31.33%;
+    background: #eceff1;
+    margin-right: 3%;
+    padding: 0 5%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 7px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  }
+  .device-info .temperature-stat .box:nth-child(3n+0) {
+    margin-right: 0%;
+  }
+  .device-info .temperature-stat .box h3 {
+    font-size: 1.5em;
+    line-height: 1.2em;
+    color: #37474f;
+  }
+  .device-info .temperature-stat .box p {
+    font-size: 1em;
+    color: #b0bec5;
+  }
+  .device-info .temperature-stat .box.highest .over {
+    color: #ff1744;
+  }
+  .device-info .temperature-stat .box.lowest .over {
+    color: #ff1744;
+  }
+  .device-info .temperature-stat .box:hover {
+    cursor: default;
+  }
+  .device-info .graph {
+    width: 100%;
+    display: flex;
+    height: 150px;
+    margin-bottom: 40px;
+  }
+  .device-info .graph canvas {
+    width: 100%;
+    height: 150px;
+  }
+  .device-info h2 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #b0bec5;
+    font-weight: normal;
+  }
+  .device-info .history {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 7px;
+    background: #eceff1;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  }
+  .device-info .history .logitems {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 25px;
+    font-size: 1.4em;
+    color: #37474f;
+    border-bottom: 1px dotted #b0bec5;
+  }
+  .device-info .history .logitems:last-child {
+    border-bottom: 0;
+  }
+  .device-info .history .logitems:hover {
+    cursor: default;
+  }
+  .device-info .history .logitems.alert .status {
+    color: #ff1744;
+  }
+  .device-info .history .logitems .status {
+    width: 5%;
+    color: #2962ff;
+    font-size: 0.7em;
+  }
+  .device-info .history .logitems .time {
+    width: 70%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .device-info .history .logitems .icon {
+    width: 5%;
+    text-align: right;
+    font-size: 0.7em;
+    color: #b0bec5;
+  }
+  .device-info .history .logitems .temp {
+    width: 20%;
+    text-align: right;
+    font-weight: bold;
+  }
+  .device-info .history .loading {
+    width: 100%;
+    padding: 15% 0;
+    display: flex;
+    justify-content: center;
+    font-size: 1.4em;
+    font-style: italic;
+    color: #b0bec5;
+  }
+  .device-info .history .empty {
+    width: 100%;
+    padding: 15% 0;
+    display: flex;
+    justify-content: center;
+    color: #b0bec5;
+    font-size: 1.4em;
+    font-style: italic;
+  }
+  .footer {
+    width: 60%;
+    margin: 0 20%;
+    margin-bottom: 2%;
+    color: #b0bec5;
+    display: flex;
+    font-size: 1em;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer i {
+    margin-right: 5px;
+  }
+  .footer a {
+    padding: 3px 10px;
+    text-decoration: none;
+    background: #eceff1;
+    color: #b0bec5;
+    border-radius: 7px;
+  }
+  #progress-bar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 5%;
+    height: 3px;
+    background: #2962ff;
+    float: left;
+    display: block;
+    z-index: 100;
+    display: none;
+  }
+  #loading-bar {
+    position: fixed;
+    top: 5px;
+    left: 0;
+    width: 5%;
+    height: 3px;
+    border-radius: 20%;
+    background: #2962ff;
+    float: left;
+    display: block;
+    z-index: 100;
+    transition: all 10s ease-in-out;
+    -moz-transition: all 10s ease-in-out;
+    -webkit-transition: all 10s ease-in-out;
+    -o-transition: all 10s ease-in-out;
+  }
+  #loading-bar.action {
+    transform: translateX(1900%);
+  }
+  #filter {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: block;
+    z-index: 999;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+  }
+  .message-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .message-box.-minibox {
+    padding: 8% 0%;
+  }
+  .message-box.-minibox .msg {
+    margin-bottom: 4%;
+  }
+  .message-box .icon {
+    font-size: 1.5em;
+    color: #b0bec5;
+  }
+  .message-box .msg {
+    font-size: 1.5em;
+    color: #37474f;
+    margin-bottom: 25px;
+  }
+  .message-box .msg strong {
+    color: #37474f;
+  }
+  .message-box .control {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .message-box .control p {
+    padding: 14px 0;
+    font-size: 1.4em;
+    color: #b0bec5;
+  }
+  .message-box .control a.btn {
+    text-decoration: none;
+    background: #2962ff;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    font-family: initial;
+    padding: 14px 28px;
+    margin: 0 10px;
+    font-weight: bold;
+    border-radius: 7px;
+    display: block;
+  }
+  .message-box .control a.btn i {
+    margin-left: 15px;
+  }
+  .message-box .control a.btn.btn-not-Accept {
+    background: #eceff1;
+    color: #b0bec5;
+  }
+  #disconnect-bar {
+    position: fixed;
+    bottom: -60px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background: #eceff1;
+    color: #b0bec5;
+    font-size: 1.4em;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+  }
+  #disconnect-bar.active {
+    transform: translateY(-100%);
+  }
+  #disconnect-bar i {
+    margin-right: 15px;
+  }
+}
