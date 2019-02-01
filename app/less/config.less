@@ -60,6 +60,9 @@ body {
 .BoxShadowHelper(@level) when (@level = 5) {
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
+.BoxShadow() {
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+}
 @-webkit-keyframes bounce {
     0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
     40% {-webkit-transform: translateY(-10px);}
@@ -80,13 +83,6 @@ body {
     animation-delay: 1s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
-}
-
-// Animation of Textarea
-.animated {
-    -webkit-transition: height 0.2s;
-    -moz-transition: height 0.2s;
-    transition: height 0.2s;
 }
 
 .transitionAnimation(@s) {

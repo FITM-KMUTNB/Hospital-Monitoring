@@ -8,7 +8,7 @@ if ($user_online) {
 $invite_code = $_GET['invite'];
 
 if (strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)) {
-	$space->getSpaceWithInviteCode($invite_code);
+	$project->getProjectWithInviteCode($invite_code);
 }
 
 $title 	= TITLE;
@@ -16,8 +16,8 @@ $desc 	= DESCRIPTION;
 $link 	= DOMAIN.'/register.php';
 $image 	= DOMAIN.'/image/ogimage.png';
 
-if(!empty($space->id)){
-	$title 	= 'คำเชิญเข้ากลุ่ม '.$space->title.' - '.TITLE;
+if(!empty($project->id)){
+	$title 	= 'คำเชิญเข้ากลุ่ม '.$project->title.' - '.TITLE;
 	$link 	= DOMAIN.'/register.php?invite='.$invite_code;
 	$image 	= DOMAIN.'/image/ogimage_invite.png';
 }
@@ -80,7 +80,7 @@ if(!empty($space->id)){
 	<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('register',SECRET_KEY);?>">
 	<input type="hidden" id="invite_code" value="<?php echo $_GET['invite'];?>">
 	<div class="form-items">
-		<button class="btn-submit" id="btn-register">ลงทะเบียน<?php echo (!empty($space->id)?'และร่วมกลุ่ม':'');?></button>
+		<button class="btn-submit" id="btn-register">ลงทะเบียน<?php echo (!empty($project->id)?'และร่วมกลุ่ม':'');?></button>
 	</div>
 	<p>ถ้าคุณมีบัญชีอยู่แล้ว <a href="login.php<?php echo (!empty($_GET['invite']) ? '?invite='.$_GET['invite'] : '');?>">เข้าระบบ</a></p>
 </form>

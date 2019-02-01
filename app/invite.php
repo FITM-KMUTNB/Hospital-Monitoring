@@ -8,12 +8,12 @@ if(!$user_online){
 }
 
 if(strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)){
-	$space->getSpaceWithInviteCode($invite_code);
+	$project->getProjectWithInviteCode($invite_code);
 
 	if($_GET['action'] == 'accept'){
-		if(!empty($space->id)){
-			if($space->alreadyAdmin($user->id,$space->id)){
-				$space->addPermission($space->id,$user->id,3);
+		if(!empty($project->id)){
+			if($project->alreadyAdmin($user->id,$project->id)){
+				$project->addPermission($project->id,$user->id,3);
 			}
 
 			$redirect = 'index.php';
@@ -50,7 +50,7 @@ if(strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)){
 </head>
 <body>
 <div class="message-box">
-	<div class="msg">คุณได้รับคำเชิญเข้าร่วมโปรเจค <strong><?php echo $space->title;?></strong></div>
+	<div class="msg">คุณได้รับคำเชิญเข้าร่วมโปรเจค <strong><?php echo $project->title;?></strong></div>
 	<div class="control">
 		<?php if ($_GET['action'] == 'accept') {?>
 			<p>กำลังเข้าร่วมโปรเจค...</p>

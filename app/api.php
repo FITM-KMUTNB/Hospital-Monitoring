@@ -24,7 +24,7 @@ if($_POST['calling'] != ''){
 		case 'log':
 			switch ($_GET['action']) {
 				case 'getupdated':
-					$space_id = $_GET['space_id'];
+					$project_id = $_GET['project_id'];
 					$dataset = $log->lastlog($user->id);
 					foreach ($dataset as $k => $var) {
 						if ($var['device_temp'] > $var['device_max'] || $var['device_temp'] < $var['device_min'])

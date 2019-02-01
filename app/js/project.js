@@ -8,114 +8,48 @@ $(document).ready(function(){
 		$('#btn-nav').removeClass('-show');
 	});
 
-	$('.btn-zone-delete').click(function(){
-		var zone_id = $(this).parent().attr('data-id');
-		var space_id 	= $('#space_id').val();
-
-		if(!confirm('คุณต้องการลบสถานที่นี้ ใช่หรือไม่ ?')){ return false; }
-
-		$.ajax({
-	        url         :'api.space.php',
-	        cache       :false,
-	        dataType    :"json",
-	        type        :"POST",
-	        data:{
-	            calling     :'space',
-	            action      :'delete_zone',
-	            zone_id 	:zone_id,
-	            space_id 	:space_id,
-	            sign 		:sign
-	        },
-	        error: function (request, status, error) {
-	            console.log("Request Error");
-	        }
-	    }).done(function(data){
-
-	        console.log(data);
-
-	        $('#zone-'+zone_id).fadeOut(100);
-
-	    });
-
-	});
-
 	$('.btn-amin-delete').click(function(){
 		var user_id 	= $(this).parent().attr('data-user');
-		var space_id 	= $('#space_id').val();
+		var project_id 	= $('#project_id').val();
 
 		if(!confirm('คุณต้องการลบผู้ดูแล ใช่หรือไม่ ?')){ return false; }
 
 		console.log('UserID '+ user_id);
 
 		$.ajax({
-	        url         :'api.space.php',
+	        url         :'api.project.php',
 	        cache       :false,
 	        dataType    :"json",
 	        type        :"POST",
 	        data:{
-	            calling     :'space',
+	            calling     :'project',
 	            action      :'remove_admin',
 	            user_id 	:user_id,
-	            space_id 	:space_id,
+	            project_id 	:project_id,
 	            sign 		:sign
 	        },
 	        error: function (request, status, error) {
 	            console.log("Request Error");
 	        }
 	    }).done(function(data){
-
 	        console.log(data);
-
 	        $('#admin-'+user_id).fadeOut(100);
-
-	    });
-
-	});
-
-	$('#btn-zone-save').click(function(){
-
-		var title 		= $('#zone_title').val();
-		var space_id 	= $('#space_id').val();
-
-		$.ajax({
-	        url         :'api.space.php',
-	        cache       :false,
-	        dataType    :"json",
-	        type        :"POST",
-	        data:{
-	            calling     :'space',
-	            action      :'create_zone',
-	            title 		:title,
-	            space_id 	:space_id,
-	            sign 		:sign
-	        },
-	        error: function (request, status, error) {
-	            console.log("Request Error");
-	        }
-	    }).done(function(data){
-
-	        console.log(data);
-
-	        location.reload();
-
 	    });
 	});
 
 	$('#btn-admin-add').click(function(){
-
 		var email 		= $('#email_admin').val();
-		var space_id 	= $('#space_id').val();
-
+		var project_id 	= $('#project_id').val();
 		$.ajax({
-	        url         :'api.space.php',
+	        url         :'api.project.php',
 	        cache       :false,
 	        dataType    :"json",
 	        type        :"POST",
 	        data:{
-	            calling     :'space',
+	            calling     :'project',
 	            action      :'add_admin',
 	            email 		:email,
-	            space_id 	:space_id,
+	            project_id 	:project_id,
 	            sign 		:sign
 	        },
 	        error: function (request, status, error) {
@@ -135,7 +69,7 @@ $(document).ready(function(){
 		var name 		= $('#name').val();
 		var description = $('#description').val();
 		var line_token 	= $('#line_token').val();
-		var space_id 	= $('#space_id').val();
+		var project_id 	= $('#project_id').val();
 
 		if (name == '') {
 			alert('คุณจำเป็นต้องใส่ชื่อโปรเจค!');
@@ -143,22 +77,22 @@ $(document).ready(function(){
 			return false;
 		}
 
-		if (space_id == '') {
+		if (project_id == '') {
 			$('#btn-save').html('กำลังสร้างโปรเจคใหม่...');
 		}
 
 		$.ajax({
-	        url         :'api.space.php',
+	        url         :'api.project.php',
 	        cache       :false,
 	        dataType    :"json",
 	        type        :"POST",
 	        data:{
-	            calling     :'space',
+	            calling     :'project',
 	            action      :'submit',
 	            name 		:name,
 	            description :description,
 	            line_token 	:line_token,
-	            space_id 	:space_id,
+	            project_id 	:project_id,
 	            sign 		:sign
 	        },
 	        error: function (request, status, error) {
@@ -176,7 +110,7 @@ $(document).ready(function(){
 
 	        	if (return_device != '') {
 	        		setTimeout(function() {
-						window.location = 'space-editor.php?id=' + return_device; }, 1000);
+						window.location = 'project-editor.php?id=' + return_device; }, 1000);
 	        	}
 	        }
 

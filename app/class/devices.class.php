@@ -8,9 +8,9 @@ class Devices extends Database{
 	public $token;
 	public $url_short;
 	public $line_token;
-	public $space_id;
-	public $space_name;
-	public $space_description;
+	public $project_id;
+	public $project_name;
+	public $project_description;
 	public $status;
 	public $notify;
 	public $devices_set;
@@ -56,12 +56,12 @@ class Devices extends Database{
 		parent::execute();
 	}
 
-	public function create($name,$description,$space_id,$max,$min,$warning) {
-		$sort = $this->getLastSort($space_id);
-		parent::query('INSERT INTO devices(name,description,space_id,token,max,min,warning,ip,create_time,update_time,edit_time,sort,status) VALUE(:name,:description,:space_id,:token,:max,:min,:warning,:ip,:create_time,:update_time,:edit_time,:sort,:status)');
+	public function create($name,$description,$project_id,$max,$min,$warning) {
+		$sort = $this->getLastSort($project_id);
+		parent::query('INSERT INTO devices(name,description,project_id,token,max,min,warning,ip,create_time,update_time,edit_time,sort,status) VALUE(:name,:description,:project_id,:token,:max,:min,:warning,:ip,:create_time,:update_time,:edit_time,:sort,:status)');
 		parent::bind(':name', $name);
 		parent::bind(':description', $description);
-		parent::bind(':space_id', $space_id);
+		parent::bind(':project_id', $project_id);
 		parent::bind(':token', $this->tokenGenerate());
 		parent::bind(':max', $max);
 		parent::bind(':min', $min);
@@ -76,12 +76,12 @@ class Devices extends Database{
 		return parent::lastInsertId();
 	}
 
-	public function edit($device_id,$name,$description,$space_id,$max,$min,$warning) {
-		parent::query('UPDATE devices SET name = :name, description = :description, space_id = :space_id, min = :min, max = :max, warning = :warning, ip = :ip, edit_time = :edit_time WHERE id = :device_id');
+	public function edit($device_id,$name,$description,$project_id,$max,$min,$warning) {
+		parent::query('UPDATE devices SET name = :name, description = :description, project_id = :project_id, min = :min, max = :max, warning = :warning, ip = :ip, edit_time = :edit_time WHERE id = :device_id');
 		parent::bind(':device_id', $device_id);
 		parent::bind(':name', $name);
 		parent::bind(':description', $description);
-		parent::bind(':space_id', $space_id);
+		parent::bind(':project_id', $project_id);
 		parent::bind(':max', $max);
 		parent::bind(':min', $min);
 		parent::bind(':warning', $warning);
@@ -112,7 +112,7 @@ class Devices extends Database{
 	}
 
 	public function getdevice($device_id) {
-		parent::query('SELECT devices.id,devices.name,devices.description,devices.url_short,devices.token,devices.max,devices.min,devices.warning,devices.ip,devices.create_time,devices.edit_time,devices.type,devices.notify,devices.status,space.title space_name,space.description space_description,space.id space_id,space.line_token line_token FROM devices AS devices LEFT JOIN space AS space ON devices.space_id = space.id WHERE devices.id = :device_id');
+		parent::query('SELECT devices.id,devices.name,devices.description,devices.url_short,devices.token,devices.max,devices.min,devices.warning,devices.ip,devices.create_time,devices.edit_time,devices.type,devices.notify,devices.status,project.title project_name,project.description project_description,project.id project_id,project.line_token line_token FROM devices AS devices LEFT JOIN project AS project ON devices.project_id = project.id WHERE devices.id = :device_id');
 		parent::bind(':device_id',$device_id);
 		parent::execute();
 		$dataset = parent::single();
@@ -126,15 +126,15 @@ class Devices extends Database{
 		$this->max 			= $dataset['max'];
 		$this->status 		= $dataset['status'];
 		$this->notify 		= $dataset['notify'];
-		$this->space_id 	= $dataset['space_id'];
-		$this->space_name 	= $dataset['space_name'];
-		$this->space_description = $dataset['space_description'];
+		$this->project_id 	= $dataset['project_id'];
+		$this->project_name 	= $dataset['project_name'];
+		$this->project_description = $dataset['project_description'];
 		$this->line_token 	= $dataset['line_token'];
 	}
 
-	private function getLastSort($space_id){
-		parent::query('SELECT sort FROM devices WHERE space_id = :space_id ORDER BY sort DESC LIMIT 1');
-		parent::bind(':space_id',$space_id);
+	private function getLastSort($project_id){
+		parent::query('SELECT sort FROM devices WHERE project_id = :project_id ORDER BY sort DESC LIMIT 1');
+		parent::bind(':project_id',$project_id);
 		parent::execute();
 		$dataset = parent::single();
 
@@ -142,20 +142,20 @@ class Devices extends Database{
 	}
 
 	public function listDevices($user_id){
-		parent::query('SELECT space.id,space.title,space.description,space.line_token,permission.permission,space.create_time,space.update_time,space.invite_code FROM space_permission AS permission LEFT JOIN space AS space ON permission.space_id = space.id WHERE permission.user_id = :user_id');
+		parent::query('SELECT project.id,project.title,project.description,project.line_token,permission.permission,project.create_time,project.update_time,project.invite_code FROM project_permission AS permission LEFT JOIN project AS project ON permission.project_id = project.id WHERE permission.user_id = :user_id');
 		parent::bind(':user_id',$user_id);
 		parent::execute();
-		$space_lists = parent::resultset();
+		$project_lists = parent::resultset();
 
-		foreach ($space_lists as $k => $var) {
-			parent::query('SELECT devices.id,devices.name,devices.description,devices.token,devices.max,devices.min,devices.warning,devices.ip,devices.create_time,devices.edit_time,devices.type,devices.status,devices.notify FROM devices AS devices WHERE devices.space_id = :space_id ORDER BY devices.sort ASC');
-			parent::bind(':space_id',$var['id']);
+		foreach ($project_lists as $k => $var) {
+			parent::query('SELECT devices.id,devices.name,devices.description,devices.token,devices.max,devices.min,devices.warning,devices.ip,devices.create_time,devices.edit_time,devices.type,devices.status,devices.notify FROM devices AS devices WHERE devices.project_id = :project_id ORDER BY devices.sort ASC');
+			parent::bind(':project_id',$var['id']);
 			parent::execute();
 			$dataset = parent::resultset();
 
-			$space_lists[$k]['devices'] = $dataset;
+			$project_lists[$k]['devices'] = $dataset;
 		}
-		return $space_lists;
+		return $project_lists;
 	}
 }
 ?>

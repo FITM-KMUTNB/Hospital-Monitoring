@@ -7,7 +7,7 @@ $device_id = $_GET['id'];
 $devices->getdevice($device_id);
 
 // เช็คสิทธิ์การเข้าถึง
-$hasPermission = $space->hasPermission($user->id,$devices->space_id);
+$hasPermission = $project->hasPermission($user->id,$devices->project_id);
 
 if (!$user_online) { // ไม่ออนไลน์
 	header("Location: ".DOMAIN."/login.php?redirect=editdevice&id=".$device_id);
@@ -15,19 +15,19 @@ if (!$user_online) { // ไม่ออนไลน์
 } else if (!$hasPermission && !empty($devices->id)) { // ไม่มีสิทธิ์เข้าถึงข้อมูล
 	header("Location: ".DOMAIN."/permission-error.php");
 	die();
-} else if (empty($devices->id) && empty($_GET['space'])) { // Device ID ไม่มีในระบบ
+} else if (empty($devices->id) && empty($_GET['project'])) { // Device ID ไม่มีในระบบ
 	header("Location: ".DOMAIN."/error-400.php");
 	die();
 }
 
-if (empty($_GET['space']) && isset($devices->space_id)) {
-	$space_id = $devices->space_id;
+if (empty($_GET['project']) && isset($devices->project_id)) {
+	$project_id = $devices->project_id;
 } else { // สร้างอุปกรณ์ใหม่
-	$space_id = $_GET['space'];
+	$project_id = $_GET['project'];
 }
 
 // ดึงข้อมูล Space
-$space->get($space_id);
+$project->get($project_id);
 $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพิ่มอุปกรณ์ใหม่');
 ?>
 <!doctype html>
@@ -47,7 +47,7 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title><?php echo $page_title;?> - <?php echo $space->title;?></title>
+<title><?php echo $page_title;?> - <?php echo $project->title;?></title>
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
@@ -112,7 +112,7 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 	<?php }?>
 
 	<input type="hidden" id="device_id" value="<?php echo $devices->id?>">
-	<input type="hidden" id="space_id" value="<?php echo $space->id;;?>">
+	<input type="hidden" id="project_id" value="<?php echo $project->id;;?>">
 	<input type="hidden" id="sign" value="<?php echo $signature->generateSignature('device_editor',SECRET_KEY);?>">
 
 	<div class="form-items">

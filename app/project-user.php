@@ -1,21 +1,20 @@
 <?php
 include_once 'autoload.php';
-if(!$user_online){
+if (!$user_online) {
 	header("Location: ".DOMAIN."/login.php");
 	die();
 }
 
-$space->get($_GET['id']);
-$hasPermission = $space->hasPermission($user->id,$space->id);
+$project->get($_GET['id']);
+$hasPermission = $project->hasPermission($user->id,$project->id);
 
 if(!$hasPermission && !empty($_GET['id'])){
 	header("Location: ".DOMAIN."/permission-error.php");
 	die();
 }
 
-if(!empty($space->id) && isset($space->id)){
-	$allzone = $space->listZone($space->id);
-	$allAdmin = $space->listAdmin($space->id);
+if (!empty($project->id) && isset($project->id)) {
+	$allAdmin = $project->listAdmin($project->id);
 }
 
 ?>
@@ -36,7 +35,7 @@ if(!empty($space->id) && isset($space->id)){
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>ผู้ดูแลกโปรเจ็ค - <?php echo $space->title;?></title>
+<title>ผู้ดูแลกโปรเจ็ค - <?php echo $project->title;?></title>
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
@@ -45,12 +44,12 @@ if(!empty($space->id) && isset($space->id)){
 </head>
 <body>
 <header class="header -nonfixed">
-	<a href="space/<?php echo $space->id;?>" class="btn-icon" target="_parent"><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+	<a href="project/<?php echo $project->id;?>" class="btn-icon" target="_parent"><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
 	<div class="title">ผู้ดูแลโปรเจ็ค</div>
 	<div class="btn-icon"></div>
 </header>
 <div class="form">
-	<?php if(!empty($space->id) && isset($space->id)){?>
+	<?php if(!empty($project->id) && isset($project->id)){?>
 	<div class="form-items">
 		<label>ผู้ดูแล</label>
 		<div class="lists">
@@ -78,16 +77,16 @@ if(!empty($space->id) && isset($space->id)){
 	<div class="form-items">
 		<label for="invite_url">เชิญผู้ดูแล</label>
 		<div class="input">
-			<input type="text" class="input-text" id="invite_url" value="<?php echo DOMAIN.'/invite.php?c='.$space->invite_code;?>" disabled>
+			<input type="text" class="input-text" id="invite_url" value="<?php echo DOMAIN.'/invite.php?c='.$project->invite_code;?>" disabled>
 		</div>
 	</div>
 	<?php }?>
 
-	<input type="hidden" id="space_id" value="<?php echo $space->id?>">
-	<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('space_editor',SECRET_KEY);?>">
+	<input type="hidden" id="project_id" value="<?php echo $project->id?>">
+	<input type="hidden" id="sign" name="sign" value="<?php echo $signature->generateSignature('project_editor',SECRET_KEY);?>">
 </div>
 
 <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/min/space.min.js"></script>
+<script type="text/javascript" src="js/min/project.min.js"></script>
 </body>
 </html>

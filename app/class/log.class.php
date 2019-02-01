@@ -25,7 +25,7 @@ class Log extends Database{
 	}
 
 	public function lastlog($user_id){
-		parent::query('SELECT devices.id device_id,devices.temp device_temp,devices.update_time,devices.name,devices.description,devices.min device_min,devices.max device_max,devices.status device_status,permission.user_id permission_user_id FROM devices AS devices LEFT JOIN space_permission AS permission ON devices.space_id = permission.space_id WHERE permission.user_id = :user_id');
+		parent::query('SELECT devices.id device_id,devices.temp device_temp,devices.update_time,devices.name,devices.description,devices.min device_min,devices.max device_max,devices.status device_status,permission.user_id permission_user_id FROM devices AS devices LEFT JOIN project_permission AS permission ON devices.project_id = permission.project_id WHERE permission.user_id = :user_id');
 		parent::bind(':user_id',$user_id);
 		parent::execute();
 		$dataset = parent::resultset();
@@ -115,9 +115,9 @@ class Log extends Database{
 		return $dataset['total'];
 	}
 
-	public function avgTemp($space_id){
-		parent::query('SELECT id device_id,name device_name,temp device_temp FROM devices WHERE space_id = :space_id ORDER BY sort ASC');
-		parent::bind(':space_id',$space_id);
+	public function avgTemp($project_id){
+		parent::query('SELECT id device_id,name device_name,temp device_temp FROM devices WHERE project_id = :project_id ORDER BY sort ASC');
+		parent::bind(':project_id',$project_id);
 		parent::execute();
 		$dataset = parent::resultset();
 

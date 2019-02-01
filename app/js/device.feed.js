@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 function init(){
 
-    $('#loading-bar').toggleClass('-action');
+    $('#loading-bar').toggleClass('action');
 
     $.ajax({
         url         :'api.php',
@@ -37,7 +37,7 @@ function init(){
             limit: limit,
         },
         error: function (request, status, error) {
-            $('#disconnect-bar').addClass('-active');
+            $('#disconnect-bar').addClass('active');
             setTimeout(function(){
                 myChart.destroy();
                 init();
@@ -77,9 +77,9 @@ function deviceDisconnect(timestamp, now) {
     var diff = now - timestamp;
 
     if (diff > 300) {
-        $disconnect.addClass('-active');
+        $disconnect.addClass('active');
     } else {
-        $disconnect.removeClass('-active');
+        $disconnect.removeClass('active');
     }
 }
 

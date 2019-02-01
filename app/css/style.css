@@ -187,11 +187,6 @@ body {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
-.animated {
-  -webkit-transition: height 0.2s;
-  -moz-transition: height 0.2s;
-  transition: height 0.2s;
-}
 .header {
   width: 80%;
   padding: 0 10%;
@@ -321,6 +316,7 @@ body {
   -moz-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .container .box .device-list a.device-card:hover {
   transform: translateY(-5px);
@@ -331,6 +327,7 @@ body {
   color: #b0bec5;
   font-size: 1.4em;
   align-items: center;
+  box-shadow: none;
 }
 .container .box .device-list a.device-card.create-button:hover {
   transform: initial;
@@ -496,6 +493,10 @@ body {
   box-sizing: border-box;
   border: 2px solid #eceff1;
   resize: none;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 .form .form-items .input-text.loading,
 .form .form-items .input-textarea.loading {
@@ -508,7 +509,8 @@ body {
 }
 .form .form-items .input-text:focus,
 .form .form-items .input-textarea:focus {
-  border: 2px solid #b0bec5;
+  border: 2px solid #2962ff;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .form .form-items .input-text:disabled,
 .form .form-items .input-textarea:disabled {
@@ -530,6 +532,7 @@ body {
   color: #ffffff;
   font-size: 1.2em;
   font-weight: bold;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .form .form-items .btn-submit i {
   margin-left: 10px;
@@ -542,9 +545,11 @@ body {
 .form .form-items .btn-submit.loading {
   background: #eceff1;
   color: #b0bec5;
+  box-shadow: none;
 }
 .form .form-items .btn-submit.completed {
   background: #00b900;
+  box-shadow: none;
 }
 .form .form-items .note {
   color: #37474f;
@@ -620,6 +625,7 @@ body {
 }
 .form .toggle-items i.fa-toggle-on {
   color: #2962ff;
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .form .toggle-items i:hover {
   cursor: pointer;
@@ -650,6 +656,9 @@ body {
   font-size: 1.2em;
   color: #b0bec5;
 }
+.device-info .info:hover {
+  cursor: default;
+}
 .device-info .temperature-stat {
   display: flex;
   flex-direction: row;
@@ -667,6 +676,7 @@ body {
   justify-content: center;
   border-radius: 7px;
   box-sizing: border-box;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .device-info .temperature-stat .box:nth-child(3n+0) {
   margin-right: 0%;
@@ -685,6 +695,9 @@ body {
 }
 .device-info .temperature-stat .box.lowest .over {
   color: #ff1744;
+}
+.device-info .temperature-stat .box:hover {
+  cursor: default;
 }
 .device-info .graph {
   width: 100%;
@@ -709,6 +722,7 @@ body {
   box-sizing: border-box;
   border-radius: 7px;
   background: #eceff1;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .device-info .history .logitems {
   display: flex;
@@ -723,7 +737,7 @@ body {
   border-bottom: 0;
 }
 .device-info .history .logitems:hover {
-  cursor: pointer;
+  cursor: default;
 }
 .device-info .history .logitems.alert .status {
   color: #ff1744;
@@ -802,10 +816,10 @@ body {
 }
 #loading-bar {
   position: fixed;
-  top: 0;
+  top: 5px;
   left: 0;
   width: 5%;
-  height: 2px;
+  height: 3px;
   border-radius: 20%;
   background: #2962ff;
   float: left;
@@ -816,7 +830,7 @@ body {
   -webkit-transition: all 10s ease-in-out;
   -o-transition: all 10s ease-in-out;
 }
-#loading-bar.-action {
+#loading-bar.action {
   transform: translateX(1900%);
 }
 #filter {
@@ -909,7 +923,7 @@ body {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
 }
-#disconnect-bar.-active {
+#disconnect-bar.active {
   transform: translateY(-100%);
 }
 #disconnect-bar i {

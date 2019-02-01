@@ -150,6 +150,7 @@
 				background: @border_color;
 				color: @border_color_hover;
 				.transitionAnimation(0.3s);
+				.BoxShadow();
 
 				&:hover {
 					transform: translateY(-5px);
@@ -161,6 +162,7 @@
 					color: @border_color_hover;
 					font-size: @fontsize_normal;
 					align-items: center;
+					box-shadow: none;
 
 					&:hover {
 						transform: initial;
@@ -351,6 +353,7 @@
 			box-sizing: border-box;
 			border: 2px solid @border_color;
 			resize: none;
+			.transitionAnimation(0.3s);
 			
 			&.loading {
 				background: transparent;
@@ -362,7 +365,8 @@
 			}
 
 			&:focus {
-				border: 2px solid @border_color_hover;
+				border: 2px solid @primary_color;
+				.BoxShadow();
 			}
 
 			&:disabled {
@@ -387,6 +391,7 @@
 			color: @bg_color;
 			font-size: @fontsize_input;
 			font-weight: bold;
+			.BoxShadow();
 
 			i {
 				margin-left: 10px;
@@ -401,10 +406,12 @@
 			&.loading {
 				background: @border_color;
 				color: @border_color_hover;
+				box-shadow: none;
 			}
 
 			&.completed {
 				background: @green_color;
+				box-shadow: none;
 			}
 		}
 
@@ -493,6 +500,7 @@
 
 			&.fa-toggle-on {
 				color: @primary_color;
+				text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
 			}
 
 			&:hover {
@@ -530,6 +538,10 @@
 			font-size: @fontsize_mini;
 			color: @text_color_light;
 		}
+
+		&:hover {
+			cursor: default;
+		}
 	}
 
 	.temperature-stat {
@@ -549,6 +561,7 @@
 			justify-content: center;
 			border-radius: @radius;
 			box-sizing: border-box;
+			.BoxShadow();
 
 			&:nth-child(3n+0) {
 				margin-right: 0%;
@@ -569,6 +582,10 @@
 			}
 			&.lowest {
 				.over { color: @red_color; }
+			}
+
+			&:hover {
+				cursor: default;
 			}
 		}
 	}
@@ -599,6 +616,7 @@
 		box-sizing: border-box;
 		border-radius: @radius;
 		background: @border_color;
+		.BoxShadow();
 
 		.logitems {
 			display: flex;
@@ -614,7 +632,7 @@
 			}
 
 			&:hover {
-				cursor: pointer;
+				cursor: default;
 			}
 
 			&.alert {
@@ -709,10 +727,10 @@
 
 #loading-bar {
 	position: fixed;
-	top: 0;
+	top: 5px;
 	left: 0;
 	width: 5%;
-	height: 2px;
+	height: 3px;
 	border-radius: 20%;
 	background: @primary_color;
 	float: left;
@@ -721,7 +739,7 @@
 
 	.transitionAnimation(10s);
 
-	&.-action{
+	&.action{
 		transform: translateX(1900%);
 	}
 }
@@ -821,7 +839,7 @@
 	
 	.transitionAnimation(0.3s);
 
-	&.-active {
+	&.active {
 		transform: translateY(-100%);
 	}
 

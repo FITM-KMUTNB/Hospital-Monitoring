@@ -3,15 +3,15 @@ require_once 'autoload.php';
 header('Access-Control-Allow-Origin: *');
 header("Content-type: text/json");
 
-$spaces = $space->listAllSpace();
+$projects = $project->listAllProject();
 
-foreach ($spaces as $k => $var) {
+foreach ($projects as $k => $var) {
 
-	if(!empty($var['space_line_token'])){
+	if(!empty($var['project_line_token'])){
 		
-		$dataset = $log->avgTemp($var['space_id']);
-		$spaces[$k]['dataset'] 	= $dataset;
-		$spaces[$k]['items'] 	= floatval(COUNT($dataset));
+		$dataset = $log->avgTemp($var['project_id']);
+		$projects[$k]['dataset'] 	= $dataset;
+		$projects[$k]['items'] 	= floatval(COUNT($dataset));
 
 		/**
 		 * Emoji Unicode Tables
@@ -25,10 +25,10 @@ foreach ($spaces as $k => $var) {
 			}
 			// echo $msg;
 
-			$res = $notify->lineNotify($msg,2,159,$var['space_line_token']);
+			$res = $notify->lineNotify($msg,2,159,$var['project_line_token']);
 		}
 
-		$spaces[$k]['send'] = $res;
+		$projects[$k]['send'] = $res;
 	}
 }
 
@@ -41,7 +41,7 @@ $data = array(
 		"message" 	=> $message,
 		"execute" 	=> floatval(round(microtime(true)-StTime,4)),
 		"update" 	=> time(),
-		"data" 		=> $spaces,
+		"data" 		=> $projects,
 	),
 );
 
