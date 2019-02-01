@@ -44,7 +44,6 @@ if (!empty($project->id) && isset($project->id)) {
 </head>
 <body>
 <header class="header">
-	<div class="btn-icon"></div>
 	<div class="title">ตั้งค่าโปรเจค</div>
 	<a class="btn-icon" href="/" target="_parent"><i class="fas fa-times"></i></a>
 </header>

@@ -40,6 +40,7 @@ $projectlist = $devices->listDevices($user->id);
 <div id="filter"></div>
 <header class="header">
 	<a class="logo-icon" href="index.php" target="_parent"><img src="image/logo.png" alt="logo"></a>
+	<div class="title">Hospital Monitoring</div>
 	<a class="btn-icon" href="project-editor.php" target="_parent" title="สร้างโปรเจค"><i class="fas fa-plus"></i></a>
 </header>
 <div class="container">
@@ -47,7 +48,8 @@ $projectlist = $devices->listDevices($user->id);
 	<?php foreach ($projectlist as $project) { ?>
 	<div class="box">
 		<div class="head">
-			<h2><?php echo $project['title'];?></h2>
+			<div class="title"><?php echo $project['title'];?></div>
+			
 			<a class="button-option first-right" href="project-user.php?id=<?php echo $project['id'];?>" title="เพิ่มผู้ดูแล"><i class="fas fa-user-plus"></i></a>
 			<a class="button-option" href="project-editor.php?id=<?php echo $project['id'];?>" title="ตั้งค่า"><i class="fas fa-cog"></i></a>
 			<?php if(empty($project['line_token'])){?>

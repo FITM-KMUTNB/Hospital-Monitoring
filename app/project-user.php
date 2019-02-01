@@ -43,10 +43,9 @@ if (!empty($project->id) && isset($project->id)) {
 
 </head>
 <body>
-<header class="header -nonfixed">
-	<a href="project/<?php echo $project->id;?>" class="btn-icon" target="_parent"><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+<header class="header">
 	<div class="title">ผู้ดูแลโปรเจ็ค</div>
-	<div class="btn-icon"></div>
+	<a class="btn-icon" href="/" target="_parent"><i class="fas fa-times"></i></a>
 </header>
 <div class="form">
 	<?php if(!empty($project->id) && isset($project->id)){?>

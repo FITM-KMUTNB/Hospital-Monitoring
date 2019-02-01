@@ -56,7 +56,6 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 </head>
 <body>
 <header class="header">
-	<div class="btn-icon"></div>
 	<div class="title"><?php echo $page_title;?></div>
 	<?php if (!empty($devices->id)) {?>
 	<a class="btn-icon" href="device.php?id=<?php echo $devices->id;?>" target="_parent"><i class="fas fa-times"></i></a>

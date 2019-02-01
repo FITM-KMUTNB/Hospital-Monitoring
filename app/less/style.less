@@ -14,8 +14,8 @@
 	padding: 0 10%;
 	height: @header_height;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	// flex-direction: row;
+	// justify-content: space-between;
 	z-index: 99;
 	background: @bg_color;
 
@@ -28,17 +28,21 @@
 		justify-content: center;
 		align-items: center;
 		text-decoration: none;
+		background: #AADDAA;
 	}
 
 	.title {
 		height: @header_height;
 		display: flex;
-		justify-content: center;
 		align-items: center;
 		flex-direction: row;
 		color: @text_color_normal;
 		font-size: @fontsize_topic;
 		font-weight: bold;
+		margin-left: auto;
+		margin-right: auto;
+		background: #AABBAA;
+		flex: 1;
 		
 		i {
 			margin-right: 15px;
@@ -54,11 +58,12 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-right: auto;
+		// margin-right: auto;
+		background: #AA99AA;
 
 		img {
-			padding: 10px;
-			height: @header_height - (10px * 2);
+			padding: 20px;
+			height: @header_height - (20px * 2);
 		}
 	}
 }
@@ -99,10 +104,14 @@
 			flex-direction: row;
 			align-items: center;
 			margin-bottom: 25px;
+			background: #445544;
 
-			h2 {
+			.title {
 				font-size: @fontsize_topic;
 				color: @text_color_normal;
+				margin-left: auto;
+				margin-right: auto;
+				background: #AABBAA;
 			}
 
 			a.button-option {
@@ -117,9 +126,6 @@
 				align-items: center;
 				border-radius: 50%;
 
-				&.first-right {
-					margin-left: auto;
-				}
 				.fa-exclamation-circle {
 					color: @red_color;
 				}
