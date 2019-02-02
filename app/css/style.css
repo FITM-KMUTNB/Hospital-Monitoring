@@ -190,70 +190,67 @@ body {
 .header {
   width: 80%;
   padding: 0 10%;
-  height: 100px;
+  height: 80px;
   display: flex;
   z-index: 99;
   background: #ffffff;
-}
-.header .btn-icon {
-  font-size: 1.8em;
-  width: 100px;
-  height: 100px;
-  color: #b0bec5;
-  display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  background: #AADDAA;
-}
-.header .title {
-  height: 100px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  color: #37474f;
-  font-size: 2.4em;
-  font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
-  background: #AABBAA;
-  flex: 1;
-}
-.header .title i {
-  margin-right: 15px;
-  color: #b0bec5;
-}
-.header .title:hover {
-  cursor: default;
 }
 .header a.logo-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #AA99AA;
+  margin-right: auto;
 }
 .header a.logo-icon img {
   padding: 20px;
-  height: 60px;
+  height: 40px;
+}
+.header .title {
+  color: #b0bec5;
+  font-size: 1.8em;
+  margin-left: auto;
+  margin-right: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex: 1;
+}
+.header .title:hover {
+  cursor: default;
+}
+.header .title strong {
+  color: #37474f;
+}
+.header .btn-icon {
+  font-size: 1.6em;
+  width: 80px;
+  height: 80px;
+  color: #b0bec5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.header .btn-icon.create {
+  color: #2962ff;
+}
+.header .btn-text {
+  font-size: 1em;
+  text-decoration: none;
+  padding: 8px 20px;
+  background: #eceff1;
+  color: #b0bec5;
+  border-radius: 5px;
+}
+.header .btn-text.create {
+  background: #00b900;
+  color: #FFFFFF;
 }
 .container {
   width: 60%;
-  margin: 100px 20%;
-}
-.container .box-empty {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
-}
-.container .box-empty a {
-  color: #2962ff;
-  font-size: 1.4em;
-  border: 2px dashed #e3f2fd;
-  text-decoration: none;
-  border-radius: 7px;
-  padding: 14px 28px;
+  margin: 0 20%;
 }
 .container .box {
   display: flex;
@@ -264,62 +261,53 @@ body {
 }
 .container .box .head {
   display: flex;
-  flex-direction: row;
+  height: 80px;
+  border-bottom: 2px solid #eceff1;
+  margin-bottom: 26.666666666666668px;
   align-items: center;
-  margin-bottom: 25px;
-  background: #445544;
 }
 .container .box .head .title {
-  font-size: 2.4em;
+  font-size: 1.8em;
   color: #37474f;
-  margin-left: auto;
   margin-right: auto;
-  background: #AABBAA;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.container .box .head a.button-option {
+.container .box .head .title:hover {
+  cursor: default;
+}
+.container .box .head a {
+  font-size: 1em;
   text-decoration: none;
-  height: 50px;
-  width: 50px;
+  padding: 8px 20px;
+  background: #eceff1;
   color: #b0bec5;
-  font-size: 1.4em;
-  margin-left: 7px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-.container .box .head a.button-option .fa-exclamation-circle {
-  color: #ff1744;
-}
-.container .box .head a.button-option:hover {
-  color: #37474f;
+  border-radius: 5px;
 }
 .container .box .device-list {
   display: flex;
   flex-flow: row wrap;
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #eceff1;
+  margin-bottom: 40px;
 }
 .container .box .device-list a.device-card {
   width: 23%;
   padding: 3%;
-  box-sizing: border-box;
   margin-right: 2.66%;
   margin-bottom: 2.66%;
   height: 170px;
   text-decoration: none;
-  border-radius: 7px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: #eceff1;
   color: #b0bec5;
+  box-sizing: border-box;
   transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .container .box .device-list a.device-card:hover {
   transform: translateY(-5px);
@@ -338,32 +326,29 @@ body {
 .container .box .device-list a.device-card:nth-child(4n+0) {
   margin-right: 0%;
 }
-.container .box .device-list a.device-card .info {
+.container .box .device-list a.device-card .name {
   font-size: 1.4em;
-  margin-bottom: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.container .box .device-list a.device-card .info .name {
-  margin-right: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 .container .box .device-list a.device-card .temp {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 2.4em;
+  font-size: 2.16em;
   font-weight: bold;
 }
-.container .box .device-list a.device-card .desc {
-  font-size: 1.2em;
+.container .box .device-list a.device-card .info {
+  font-size: 1em;
+  display: flex;
+}
+.container .box .device-list a.device-card .info .updated {
+  font-size: 1em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  margin-right: auto;
+}
+.container .box .device-list a.device-card .info .icon {
+  margin-left: 10px;
 }
 .container .box .device-list a.device-card.active {
   background: #2962ff;
@@ -388,20 +373,25 @@ body {
 .container .box .device-list a.device-card.alret .status-icon {
   color: #ffcdd2;
 }
-.container .box .device-list a.device-card.lostconnect {
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
+.container .box-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+.container .box-empty a {
+  background: #2962ff;
+  color: #FFFFFF;
+  font-size: 1.4em;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 16px;
 }
 .form {
   width: 40%;
   margin: 80px 30%;
-  margin-top: 100px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
 }
@@ -424,7 +414,7 @@ body {
   text-align: center;
 }
 .form.login.logout {
-  font-size: 1.8em;
+  font-size: 1.6em;
   color: #2962ff;
 }
 .form.login p {
@@ -463,13 +453,16 @@ body {
   margin-bottom: 0;
 }
 .form .form-items label {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #37474f;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 10px;
   font-weight: bold;
+}
+.form .form-items label i {
+  margin-left: 5px;
 }
 .form .form-items label .label-button {
   color: #2962ff;
@@ -488,11 +481,11 @@ body {
   float: left;
   display: block;
   font-size: 1.2em;
-  padding: 16px 14px;
+  padding: 16px 16px;
   background: #eceff1;
   color: #2962ff;
   margin: 0%;
-  border-radius: 7px;
+  border-radius: 5px;
   box-sizing: border-box;
   border: 2px solid #eceff1;
   resize: none;
@@ -513,7 +506,6 @@ body {
 .form .form-items .input-text:focus,
 .form .form-items .input-textarea:focus {
   border: 2px solid #2962ff;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .form .form-items .input-text:disabled,
 .form .form-items .input-textarea:disabled {
@@ -530,12 +522,11 @@ body {
   padding: 16px 0;
   margin: 0%;
   margin-top: 15px;
-  border-radius: 7px;
+  border-radius: 5px;
   background: #2962ff;
   color: #ffffff;
   font-size: 1.2em;
   font-weight: bold;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .form .form-items .btn-submit i {
   margin-left: 10px;
@@ -556,7 +547,7 @@ body {
 }
 .form .form-items .note {
   color: #37474f;
-  font-size: 1.2em;
+  font-size: 1em;
   margin-top: 10px;
 }
 .form .form-items .note a {
@@ -581,7 +572,7 @@ body {
   display: flex;
   flex-direction: column;
   border: 2px solid #eceff1;
-  border-radius: 7px;
+  border-radius: 5px;
   font-size: 1.2em;
   margin-bottom: 10px;
 }
@@ -635,8 +626,8 @@ body {
 }
 .device-info {
   width: 40%;
-  margin: 100px 30%;
-  margin-top: 50px;
+  margin: 80px 30%;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
 }
@@ -647,7 +638,7 @@ body {
   margin-bottom: 40px;
 }
 .device-info .info .temperature-current {
-  font-size: 7.199999999999999em;
+  font-size: 5.4em;
   line-height: 1.2em;
   font-weight: bold;
   color: #2962ff;
@@ -656,7 +647,7 @@ body {
   color: #ff1744;
 }
 .device-info .info p {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #b0bec5;
 }
 .device-info .info:hover {
@@ -677,20 +668,19 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 7px;
+  border-radius: 5px;
   box-sizing: border-box;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .device-info .temperature-stat .box:nth-child(3n+0) {
   margin-right: 0%;
 }
 .device-info .temperature-stat .box h3 {
-  font-size: 2.4em;
+  font-size: 2.16em;
   line-height: 1.2em;
   color: #37474f;
 }
 .device-info .temperature-stat .box p {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #b0bec5;
 }
 .device-info .temperature-stat .box.highest .over {
@@ -723,9 +713,8 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  border-radius: 7px;
+  border-radius: 5px;
   background: #eceff1;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .device-info .history .logitems {
   display: flex;
@@ -791,7 +780,7 @@ body {
   margin-bottom: 2%;
   color: #b0bec5;
   display: flex;
-  font-size: 1.2em;
+  font-size: 1em;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -803,7 +792,7 @@ body {
   text-decoration: none;
   background: #eceff1;
   color: #b0bec5;
-  border-radius: 7px;
+  border-radius: 5px;
 }
 #progress-bar {
   position: fixed;
@@ -819,7 +808,7 @@ body {
 }
 #loading-bar {
   position: fixed;
-  top: 5px;
+  top: 0;
   left: 0;
   width: 5%;
   height: 3px;
@@ -868,11 +857,11 @@ body {
   margin-bottom: 4%;
 }
 .message-box .icon {
-  font-size: 2.4em;
+  font-size: 1.8em;
   color: #b0bec5;
 }
 .message-box .msg {
-  font-size: 2.4em;
+  font-size: 1.8em;
   color: #37474f;
   margin-bottom: 25px;
 }
@@ -898,7 +887,7 @@ body {
   padding: 14px 28px;
   margin: 0 10px;
   font-weight: bold;
-  border-radius: 7px;
+  border-radius: 5px;
   display: block;
 }
 .message-box .control a.btn i {

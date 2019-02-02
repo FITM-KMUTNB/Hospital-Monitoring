@@ -46,7 +46,7 @@ function getlastlog(){
                 $('#device-'+v.device_id+' .info .status-icon').html('<i class="fa fa-thermometer-full"></i>');
             }
 
-            $('#device-'+v.device_id+' .desc').html(v.update_time);
+            $('#device-'+v.device_id+' .info .updated').html(v.update_time);
             $('#device-'+v.device_id+' .temp').html(v.device_temp+'°');
         });
 

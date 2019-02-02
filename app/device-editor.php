@@ -28,7 +28,7 @@ if (empty($_GET['project']) && isset($devices->project_id)) {
 
 // ดึงข้อมูล Space
 $project->get($project_id);
-$page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพิ่มอุปกรณ์ใหม่');
+$page_title = (!empty($devices->id) ? 'แก้ไขอุปกรณ์' : 'เพิ่มอุปกรณ์ใหม่');
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -102,7 +102,7 @@ $page_title = (!empty($devices->id) ? 'แก้ไข'.$devices->name : 'เพ
 			</div>
 		</div>
 
-	<div class="toggle-items">
+	<div class="toggle-items" id="notify">
 		<div class="label">การแจ้งเตือน</div>
 		<div id="btn-notify-toggle">
 			<?php echo ($devices->notify == 'active' ? '<i class="fas fa-toggle-on"></i>' : '<i class="fas fa-toggle-off"></i>');?>
