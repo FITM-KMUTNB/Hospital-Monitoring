@@ -17,7 +17,6 @@
 
 <?php include'favicon.php';?>
 <title>ERROR 500</title>
-<base href="<?php echo DOMAIN;?>">
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/style.css" type="text/css"/>

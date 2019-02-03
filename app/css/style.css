@@ -135,13 +135,6 @@ html {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
-a[href],
-button {
-  -ms-touch-action: none;
-  /* IE10 */
-  touch-action: none;
-  /* IE11 */
-}
 body {
   background: #ffffff;
   font-family: 'maledpan';

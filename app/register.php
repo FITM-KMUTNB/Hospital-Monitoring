@@ -55,8 +55,6 @@ if(!empty($project->id)){
 <meta itemprop="image" content="<?php echo $image;?>">
 
 <title><?php echo $title;?></title>
-
-<base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 

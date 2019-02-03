@@ -54,7 +54,6 @@ if(!$user_online){ // ไม่ออนไลน์
 
 <title><?php echo $devices->name;?> - <?php echo TITLE;?></title>
 
-<base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 

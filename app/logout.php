@@ -36,7 +36,6 @@ session_destroy();
 
 <?php include'favicon.php';?>
 <title>ออกจากระบบ...</title>
-<base href="<?php echo DOMAIN;?>">
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
