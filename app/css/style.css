@@ -190,39 +190,12 @@ body {
 .header {
   width: 80%;
   padding: 0 10%;
-  height: 100px;
+  height: 80px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   z-index: 99;
   background: #ffffff;
-}
-.header .btn-icon {
-  font-size: 1.8em;
-  width: 100px;
-  height: 100px;
-  color: #b0bec5;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  text-decoration: none;
-}
-.header .title {
-  height: 100px;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  color: #37474f;
-  font-size: 2.4em;
-  font-weight: bold;
-}
-.header .title i {
-  margin-right: 15px;
-  color: #b0bec5;
-}
-.header .title:hover {
-  cursor: default;
 }
 .header a.logo-icon {
   display: flex;
@@ -231,27 +204,53 @@ body {
   margin-right: auto;
 }
 .header a.logo-icon img {
-  padding: 10px;
+  padding: 20px 0;
+  height: 40px;
+}
+.header .title {
+  color: #b0bec5;
+  font-size: 1.8em;
+  margin-left: auto;
+  margin-right: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex: 1;
+}
+.header .title:hover {
+  cursor: default;
+}
+.header .title strong {
+  color: #37474f;
+}
+.header .btn-icon {
+  font-size: 1.6em;
+  width: 80px;
   height: 80px;
+  color: #b0bec5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.header .btn-icon.create {
+  color: #2962ff;
+}
+.header .btn-text {
+  font-size: 1em;
+  text-decoration: none;
+  padding: 8px 20px;
+  background: #eceff1;
+  color: #b0bec5;
+  border-radius: 5px;
+}
+.header .btn-text.create {
+  background: #00b900;
+  color: #FFFFFF;
 }
 .container {
   width: 60%;
-  margin: 100px 20%;
-}
-.container .box-empty {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
-}
-.container .box-empty a {
-  color: #2962ff;
-  font-size: 1.4em;
-  border: 2px dashed #e3f2fd;
-  text-decoration: none;
-  border-radius: 7px;
-  padding: 14px 28px;
+  margin: 0 20%;
 }
 .container .box {
   display: flex;
@@ -262,61 +261,53 @@ body {
 }
 .container .box .head {
   display: flex;
-  flex-direction: row;
+  height: 80px;
+  border-bottom: 2px solid #eceff1;
+  margin-bottom: 26.666666666666668px;
   align-items: center;
-  margin-bottom: 25px;
 }
-.container .box .head h2 {
-  font-size: 2.4em;
+.container .box .head .title {
+  font-size: 1.8em;
   color: #37474f;
+  margin-right: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.container .box .head a.button-option {
+.container .box .head .title:hover {
+  cursor: default;
+}
+.container .box .head a {
+  font-size: 1em;
   text-decoration: none;
-  height: 50px;
-  width: 50px;
+  padding: 8px 20px;
+  background: #eceff1;
   color: #b0bec5;
-  font-size: 1.4em;
-  margin-left: 7px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-.container .box .head a.button-option.first-right {
-  margin-left: auto;
-}
-.container .box .head a.button-option .fa-exclamation-circle {
-  color: #ff1744;
-}
-.container .box .head a.button-option:hover {
-  color: #37474f;
+  border-radius: 5px;
 }
 .container .box .device-list {
   display: flex;
   flex-flow: row wrap;
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #eceff1;
+  margin-bottom: 40px;
 }
 .container .box .device-list a.device-card {
   width: 23%;
   padding: 3%;
-  box-sizing: border-box;
   margin-right: 2.66%;
   margin-bottom: 2.66%;
   height: 170px;
   text-decoration: none;
-  border-radius: 7px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: #eceff1;
   color: #b0bec5;
+  box-sizing: border-box;
   transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .container .box .device-list a.device-card:hover {
   transform: translateY(-5px);
@@ -335,32 +326,29 @@ body {
 .container .box .device-list a.device-card:nth-child(4n+0) {
   margin-right: 0%;
 }
-.container .box .device-list a.device-card .info {
+.container .box .device-list a.device-card .name {
   font-size: 1.4em;
-  margin-bottom: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.container .box .device-list a.device-card .info .name {
-  margin-right: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 .container .box .device-list a.device-card .temp {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 2.4em;
+  font-size: 2.16em;
   font-weight: bold;
 }
-.container .box .device-list a.device-card .desc {
-  font-size: 1.2em;
+.container .box .device-list a.device-card .info {
+  font-size: 1em;
+  display: flex;
+}
+.container .box .device-list a.device-card .info .updated {
+  font-size: 1em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  margin-right: auto;
+}
+.container .box .device-list a.device-card .info .icon {
+  margin-left: 10px;
 }
 .container .box .device-list a.device-card.active {
   background: #2962ff;
@@ -385,20 +373,47 @@ body {
 .container .box .device-list a.device-card.alret .status-icon {
   color: #ffcdd2;
 }
-.container .box .device-list a.device-card.lostconnect {
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
+.container .box-empty {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  margin: 0 30%;
+  height: 100%;
+  text-align: left;
+}
+.container .box-empty h1 {
+  font-size: 1.8em;
+  color: #263238;
+  margin-bottom: 5px;
+}
+.container .box-empty p {
+  font-size: 1.4em;
+  margin-bottom: 30px;
+  color: #37474f;
+}
+.container .box-empty a {
+  width: 100%;
+  font-size: 1.4em;
+  border: 0px;
+  padding: 16px 0;
+  margin: 0%;
+  margin-top: 15px;
+  border-radius: 5px;
+  background: #00b900;
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
 }
 .form {
   width: 40%;
   margin: 80px 30%;
-  margin-top: 100px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
 }
@@ -421,7 +436,7 @@ body {
   text-align: center;
 }
 .form.login.logout {
-  font-size: 1.8em;
+  font-size: 1.6em;
   color: #2962ff;
 }
 .form.login p {
@@ -460,13 +475,16 @@ body {
   margin-bottom: 0;
 }
 .form .form-items label {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #37474f;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 10px;
   font-weight: bold;
+}
+.form .form-items label i {
+  margin-left: 5px;
 }
 .form .form-items label .label-button {
   color: #2962ff;
@@ -485,11 +503,11 @@ body {
   float: left;
   display: block;
   font-size: 1.2em;
-  padding: 16px 14px;
+  padding: 16px 16px;
   background: #eceff1;
   color: #2962ff;
   margin: 0%;
-  border-radius: 7px;
+  border-radius: 5px;
   box-sizing: border-box;
   border: 2px solid #eceff1;
   resize: none;
@@ -510,7 +528,6 @@ body {
 .form .form-items .input-text:focus,
 .form .form-items .input-textarea:focus {
   border: 2px solid #2962ff;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .form .form-items .input-text:disabled,
 .form .form-items .input-textarea:disabled {
@@ -527,12 +544,11 @@ body {
   padding: 16px 0;
   margin: 0%;
   margin-top: 15px;
-  border-radius: 7px;
+  border-radius: 5px;
   background: #2962ff;
   color: #ffffff;
   font-size: 1.2em;
   font-weight: bold;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .form .form-items .btn-submit i {
   margin-left: 10px;
@@ -553,7 +569,7 @@ body {
 }
 .form .form-items .note {
   color: #37474f;
-  font-size: 1.2em;
+  font-size: 1em;
   margin-top: 10px;
 }
 .form .form-items .note a {
@@ -578,7 +594,7 @@ body {
   display: flex;
   flex-direction: column;
   border: 2px solid #eceff1;
-  border-radius: 7px;
+  border-radius: 5px;
   font-size: 1.2em;
   margin-bottom: 10px;
 }
@@ -632,8 +648,8 @@ body {
 }
 .device-info {
   width: 40%;
-  margin: 100px 30%;
-  margin-top: 50px;
+  margin: 80px 30%;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
 }
@@ -644,7 +660,7 @@ body {
   margin-bottom: 40px;
 }
 .device-info .info .temperature-current {
-  font-size: 7.199999999999999em;
+  font-size: 5.4em;
   line-height: 1.2em;
   font-weight: bold;
   color: #2962ff;
@@ -653,7 +669,7 @@ body {
   color: #ff1744;
 }
 .device-info .info p {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #b0bec5;
 }
 .device-info .info:hover {
@@ -674,20 +690,19 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 7px;
+  border-radius: 5px;
   box-sizing: border-box;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .device-info .temperature-stat .box:nth-child(3n+0) {
   margin-right: 0%;
 }
 .device-info .temperature-stat .box h3 {
-  font-size: 2.4em;
+  font-size: 2.16em;
   line-height: 1.2em;
   color: #37474f;
 }
 .device-info .temperature-stat .box p {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #b0bec5;
 }
 .device-info .temperature-stat .box.highest .over {
@@ -720,9 +735,8 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  border-radius: 7px;
+  border-radius: 5px;
   background: #eceff1;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .device-info .history .logitems {
   display: flex;
@@ -788,7 +802,7 @@ body {
   margin-bottom: 2%;
   color: #b0bec5;
   display: flex;
-  font-size: 1.2em;
+  font-size: 1em;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -800,7 +814,7 @@ body {
   text-decoration: none;
   background: #eceff1;
   color: #b0bec5;
-  border-radius: 7px;
+  border-radius: 5px;
 }
 #progress-bar {
   position: fixed;
@@ -816,7 +830,7 @@ body {
 }
 #loading-bar {
   position: fixed;
-  top: 5px;
+  top: 0;
   left: 0;
   width: 5%;
   height: 3px;
@@ -865,11 +879,11 @@ body {
   margin-bottom: 4%;
 }
 .message-box .icon {
-  font-size: 2.4em;
+  font-size: 1.8em;
   color: #b0bec5;
 }
 .message-box .msg {
-  font-size: 2.4em;
+  font-size: 1.8em;
   color: #37474f;
   margin-bottom: 25px;
 }
@@ -895,7 +909,7 @@ body {
   padding: 14px 28px;
   margin: 0 10px;
   font-weight: bold;
-  border-radius: 7px;
+  border-radius: 5px;
   display: block;
 }
 .message-box .control a.btn i {
@@ -930,3 +944,394 @@ body {
   margin-right: 15px;
 }
 /* Other Device and Screen */
+@media only screen and (min-width: 0px) and (max-width: 519px) {
+  .header {
+    width: 100%;
+    padding: 0;
+    height: 60px;
+  }
+  .header a.logo-icon {
+    margin-left: 5%;
+  }
+  .header a.logo-icon img {
+    padding: 15px 0;
+    height: 30px;
+  }
+  .header .title {
+    font-size: 1.8em;
+  }
+  .header .title:first-child {
+    padding-left: 5%;
+  }
+  .header .btn-icon {
+    font-size: 1.2em;
+    width: 60px;
+    height: 60px;
+    color: #b0bec5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+  .header .btn-icon.create {
+    color: #2962ff;
+  }
+  .header .btn-text {
+    font-size: 1em;
+    padding: 6px 15px;
+    border-radius: 5px;
+    margin-right: 5%;
+  }
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+  .container .box .head {
+    padding: 0 5%;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+  .container .box .head .title {
+    font-size: 1.8em;
+  }
+  .container .box .head a {
+    font-size: 1em;
+    padding: 6px 15px;
+    border-radius: 5px;
+  }
+  .container .box .device-list {
+    padding: 0 5%;
+    margin-bottom: 30px;
+  }
+  .container .box .device-list a.device-card {
+    width: 47.5%;
+    padding: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    height: 150px;
+    border-radius: 5px;
+  }
+  .container .box .device-list a.device-card.create-button {
+    font-size: 1.4em;
+  }
+  .container .box .device-list a.device-card:nth-child(2n+0) {
+    margin-right: 0%;
+  }
+  .container .box .device-list a.device-card:nth-child(4n+0) {
+    margin-right: 0%;
+  }
+  .container .box .device-list a.device-card .name {
+    font-size: 1.4em;
+  }
+  .container .box .device-list a.device-card .temp {
+    font-size: 2.16em;
+  }
+  .container .box .device-list a.device-card .info {
+    font-size: 1em;
+  }
+  .container .box .device-list a.device-card .info .updated {
+    font-size: 1em;
+  }
+  .container .box .device-list a.device-card .info .icon {
+    margin-left: 10px;
+  }
+  .container .box-empty {
+    width: 90%;
+    margin: 0 5%;
+  }
+  .container .box-empty h1 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+  }
+  .container .box-empty p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+  }
+  .container .box-empty a {
+    font-size: 1.4em;
+    padding: 16px 0;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 1.2em;
+  }
+  .form {
+    width: 90%;
+    margin: 30px 5%;
+    margin-top: 60px;
+  }
+  .form.vertical-center {
+    position: initial;
+    margin: 30px 5%;
+  }
+  .form.login {
+    position: fixed;
+    height: 100%;
+    width: 90%;
+    margin: 0 5%;
+  }
+  .form.login.logout {
+    font-size: 1.2em;
+  }
+  .form.login p {
+    font-size: 1.4em;
+  }
+  .form.login .logo {
+    width: 30%;
+    margin: 0 35%;
+    margin-bottom: 15px;
+  }
+  .form .form-items {
+    margin-bottom: 30px;
+  }
+  .form .form-items label {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  .form .form-items label i {
+    margin-left: 5px;
+  }
+  .form .form-items .input-text,
+  .form .form-items .input-textarea {
+    font-size: 1.2em;
+    padding: 16px 16px;
+    border-radius: 5px;
+  }
+  .form .form-items .btn-submit {
+    font-size: 1.4em;
+    padding: 16px 0;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 1.2em;
+  }
+  .form .form-items .btn-submit i {
+    margin-left: 10px;
+    font-size: 0.9em;
+  }
+  .form .form-items .note {
+    font-size: 1em;
+    margin-top: 10px;
+  }
+  .form .form-items .inputs .input-text {
+    width: 49%;
+  }
+  .form .form-items .lists {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #eceff1;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .form .form-items .lists .list-items {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #eceff1;
+  }
+  .form .form-items .lists .list-items:last-child {
+    border-bottom: 0;
+  }
+  .form .form-items .lists .list-items .c {
+    width: 85%;
+    padding: 2.5% 3%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .form .form-items .lists .list-items .btn {
+    width: 15%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #eceff1;
+  }
+  .form .form-items .lists .list-items .btn:hover {
+    cursor: pointer;
+    color: #b0bec5;
+  }
+  .form .toggle-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 1em;
+    justify-content: space-between;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+  .form .toggle-items i {
+    font-size: 1.75em;
+    padding: 0;
+    color: #b0bec5;
+  }
+  .form .toggle-items i.fa-toggle-on {
+    color: #2962ff;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  }
+  .form .toggle-items i:hover {
+    cursor: pointer;
+  }
+  .device-info {
+    width: 90%;
+    margin: 60px 5%;
+    margin-top: 30px;
+  }
+  .device-info .info {
+    margin-bottom: 40px;
+  }
+  .device-info .info .temperature-current {
+    font-size: 5.4em;
+    line-height: 1.2em;
+  }
+  .device-info .info p {
+    font-size: 1em;
+  }
+  .device-info .temperature-stat {
+    margin-bottom: 40px;
+  }
+  .device-info .temperature-stat .box {
+    width: 31.33%;
+    margin-right: 3%;
+    padding: 0 5%;
+    height: 150px;
+    border-radius: 5px;
+  }
+  .device-info .temperature-stat .box:nth-child(3n+0) {
+    margin-right: 0%;
+  }
+  .device-info .temperature-stat .box h3 {
+    font-size: 2.16em;
+  }
+  .device-info .temperature-stat .box p {
+    font-size: 1em;
+  }
+  .device-info .graph {
+    height: 150px;
+    margin-bottom: 40px;
+  }
+  .device-info .graph canvas {
+    height: 150px;
+  }
+  .device-info h2 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+  .device-info .history {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: #eceff1;
+  }
+  .device-info .history .logitems {
+    padding: 15px 5%;
+    font-size: 1.4em;
+  }
+  .device-info .history .logitems .status {
+    width: 10%;
+    font-size: 0.7em;
+  }
+  .device-info .history .logitems .time {
+    width: 55%;
+  }
+  .device-info .history .logitems .icon {
+    width: 5%;
+    font-size: 0.7em;
+  }
+  .device-info .history .logitems .temp {
+    width: 30%;
+  }
+  .device-info .history .loading {
+    padding: 15% 0;
+    font-size: 1.4em;
+  }
+  .device-info .history .empty {
+    padding: 15% 0;
+    font-size: 1.4em;
+  }
+  .footer {
+    width: 90%;
+    margin: 5%;
+    font-size: 1em;
+  }
+  .footer i {
+    margin-right: 5px;
+  }
+  .footer a {
+    padding: 3px 6px;
+    border-radius: 5px;
+  }
+  #progress-bar {
+    height: 5px;
+  }
+  #loading-bar {
+    height: 5px;
+  }
+  .message-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .message-box.-minibox {
+    padding: 8% 0%;
+  }
+  .message-box.-minibox .msg {
+    margin-bottom: 4%;
+  }
+  .message-box .icon {
+    font-size: 1.8em;
+    color: #b0bec5;
+  }
+  .message-box .msg {
+    font-size: 1.8em;
+    color: #37474f;
+    margin-bottom: 25px;
+  }
+  .message-box .msg strong {
+    color: #37474f;
+  }
+  .message-box .control {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .message-box .control p {
+    padding: 14px 0;
+    font-size: 1.4em;
+    color: #b0bec5;
+  }
+  .message-box .control a.btn {
+    text-decoration: none;
+    background: #2962ff;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    font-family: initial;
+    padding: 14px 28px;
+    margin: 0 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    display: block;
+  }
+  .message-box .control a.btn i {
+    margin-left: 15px;
+  }
+  .message-box .control a.btn.btn-not-Accept {
+    background: #eceff1;
+    color: #b0bec5;
+  }
+  #disconnect-bar {
+    bottom: -60px;
+    width: 100%;
+    height: 60px;
+    font-size: 1.4em;
+  }
+  #disconnect-bar i {
+    margin-right: 15px;
+  }
+}

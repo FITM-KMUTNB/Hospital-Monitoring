@@ -35,7 +35,7 @@ if (!empty($project->id) && isset($project->id)) {
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>ผู้ดูแลกโปรเจ็ค - <?php echo $project->title;?></title>
+<title>ผู้ดูแลกโปรเจค - <?php echo $project->title;?></title>
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
@@ -43,10 +43,9 @@ if (!empty($project->id) && isset($project->id)) {
 
 </head>
 <body>
-<header class="header -nonfixed">
-	<a href="project/<?php echo $project->id;?>" class="btn-icon" target="_parent"><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
-	<div class="title">ผู้ดูแลโปรเจ็ค</div>
-	<div class="btn-icon"></div>
+<header class="header">
+	<div class="title">ผู้ดูแลโปรเจค</div>
+	<a class="btn-icon" href="/" target="_parent"><i class="fas fa-times"></i></a>
 </header>
 <div class="form">
 	<?php if(!empty($project->id) && isset($project->id)){?>

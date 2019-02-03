@@ -17,6 +17,8 @@ if (!empty($project->id) && isset($project->id)) {
 	$allAdmin = $project->listAdmin($project->id);
 }
 
+$page_title = (!empty($project->id) ? 'ตั้งค่าโปรเจค' : 'สร้างโปรเจคใหม่');
+
 ?>
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/Blog" prefix="og: http://ogp.me/ns#">
@@ -35,7 +37,7 @@ if (!empty($project->id) && isset($project->id)) {
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title><?php echo $project->title;?></title>
+<title><?php echo $page_title;?></title>
 
 <base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
@@ -44,8 +46,10 @@ if (!empty($project->id) && isset($project->id)) {
 </head>
 <body>
 <header class="header">
-	<div class="btn-icon"></div>
-	<div class="title">ตั้งค่าโปรเจค</div>
+	<div class="title"><?php echo $page_title;?></div>
+	<?php if (!empty($project->id)) {?>
+	<a class="btn-icon" href="project-user.php?id=<?php echo $project->id;?>" title="เพิ่มผู้ดูแล"><i class="fas fa-user-plus"></i></a>
+	<?php }?>
 	<a class="btn-icon" href="/" target="_parent"><i class="fas fa-times"></i></a>
 </header>
 <div class="form vertical-center">
@@ -55,7 +59,7 @@ if (!empty($project->id) && isset($project->id)) {
 	</div>
 	<div class="form-items <?php echo (empty($project->id) ? 'hidden' : '');?>">
 		<label for="line_token">
-			<div>LINE Access Token</div>
+			<div>LINE Access Token<i class="fas fa-exclamation-circle"></i></div>
 			<a href="https://notify-bot.line.me/th/" target="_blank" class="label-button">สร้างคีย์ใหม่</a>
 		</label>
 		<div class="input">

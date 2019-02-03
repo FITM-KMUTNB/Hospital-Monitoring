@@ -40,19 +40,17 @@ $projectlist = $devices->listDevices($user->id);
 <div id="filter"></div>
 <header class="header">
 	<a class="logo-icon" href="index.php" target="_parent"><img src="image/logo.png" alt="logo"></a>
-	<a class="btn-icon" href="project-editor.php" target="_parent" title="สร้างโปรเจค"><i class="fas fa-plus"></i></a>
+	<?php if (count($projectlist) > 0) {?>
+	<a class="btn-text create" href="project-editor.php" target="_parent">สร้างโปรเจค</a>
+	<?php }?>
 </header>
 <div class="container">
 	<?php if (count($projectlist) > 0) {?>
 	<?php foreach ($projectlist as $project) { ?>
 	<div class="box">
 		<div class="head">
-			<h2><?php echo $project['title'];?></h2>
-			<a class="button-option first-right" href="project-user.php?id=<?php echo $project['id'];?>" title="เพิ่มผู้ดูแล"><i class="fas fa-user-plus"></i></a>
-			<a class="button-option" href="project-editor.php?id=<?php echo $project['id'];?>" title="ตั้งค่า"><i class="fas fa-cog"></i></a>
-			<?php if(empty($project['line_token'])){?>
-			<a class="button-option" href="project-editor.php?id=<?php echo $project['id'];?>#line_token" title="ใส่ LINE Token"><i class="fas fa-exclamation-circle"></i></a>
-			<?php }?>
+			<div class="title"><?php echo $project['title'];?></div>
+			<a href="project-editor.php?id=<?php echo $project['id'];?>">ตั้งค่า</a>
 		</div>
 		<div class="device-list">
 			<?php
@@ -61,15 +59,15 @@ $projectlist = $devices->listDevices($user->id);
 				$notify = ($device['notify'] == 'active' ? true : false);
 			?>
 			<a class="device-card" id="device-<?php echo $device['id'];?>" a href="device.php?id=<?php echo $device['id'];?>">
-				<div class="info">
-					<div class="name">
-						<?php echo ($device['notify'] != 'active' ? '<i class="fas fa-bell-slash"></i>' : '');?>
-						<?php echo $device['name'];?>
-					</div>
-					<div class="status-icon"><i class="fas fa-thermometer-full"></i></div>
-				</div>
+				<div class="name"><?php echo $device['name'];?></div>
 				<div class="temp">n/a</div>
-				<div class="desc"><?php echo (status ? 'กำลังโหลด' : 'ปิดรับข้อมูล');?></div>
+				<div class="info">
+					<div class="updated"><?php echo ($status ? 'กำลังโหลด' : 'ปิดรับข้อมูล');?></div>
+					<?php if ($device['notify'] != 'active') {?>
+					<div class="icon"><i class="fas fa-bell-slash"></i></div>
+					<?php }?>
+					<div class="icon status-icon"><i class="fas fa-thermometer-full"></i></div>
+				</div>
 			</a>
 			<?php }?>
 
@@ -81,7 +79,9 @@ $projectlist = $devices->listDevices($user->id);
 	<?php }?>
 	<?php } else {?>
 	<div class="box-empty">
-		<a href="project-editor.php" target="_parent">สร้างโปรเจ็คใหม่</a>
+		<h1>FITM Monitoring</h1>
+		<p>ซอฟต์แวร์ที่ช่วยให้อุปกรณ์ที่เชื่อมต่อสามารถทำงานร่วมกับแอปพลิเคชัน จัดระเบียบ ตรวจสอบจากระยะไกล ได้อย่างปลอดภัยและง่ายดาย</p>
+		<a href="project-editor.php" target="_parent">สร้างโปรเจคใหม่</a>
 	</div>
 	<?php }?>
 </div>

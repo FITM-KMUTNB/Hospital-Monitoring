@@ -66,12 +66,13 @@ if(!$user_online){ // ไม่ออนไลน์
 <div id="disconnect-bar"><i class="fas fa-sync fa-spin"></i>ขาดการติดต่อ!</div>
 
 <header class="header">
-	<a class="btn-icon btn-back" href="index.php" target="_parent"><i class="fas fa-arrow-left"></i></a>
-	<div class="title">
-			<?php echo ($devices->notify != 'active' ? '<i class="fas fa-bell-slash" title="ปิดการแจ้งเตือน"></i> ':'');?><?php echo $devices->name;?> <?php echo $devices->project_name;?>
-	</div>
+	<a class="btn-icon" href="index.php" target="_parent"><i class="fas fa-arrow-left"></i></a>
+	<div class="title"><strong><?php echo $devices->name;?></strong> <?php echo $devices->project_name;?></div>
 	<?php if ($hasPermission && $user_online) {?>
-	<a class="btn-icon" href="device-editor.php?id=<?php echo $devices->id;?>" target="_parent" title="แก้ไขอุปกรณ์"><i class="fas fa-cog"></i></a>
+	<?php if ($devices->notify != 'active') {?>
+	<a class="btn-icon" href="device-editor.php?id=<?php echo $devices->id;?>#notify" target="_parent" title="เปิดการแจ้งเตือน"><i class="fas fa-bell-slash"></i></a>
+	<?php }?>
+	<a class="btn-text" href="device-editor.php?id=<?php echo $devices->id;?>" target="_parent">ตั้งค่า</a>
 	<?php }?>
 </header>
 
