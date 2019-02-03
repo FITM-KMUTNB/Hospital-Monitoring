@@ -136,7 +136,7 @@ html {
   touch-action: manipulation;
 }
 body {
-  background: #ffffff;
+  background: #236cba;
   font-family: 'maledpan';
   overflow-x: hidden;
 }
@@ -189,6 +189,7 @@ body {
   background: #ffffff;
   align-items: center;
   justify-content: center;
+  background: #236cba;
 }
 .header a.logo-icon {
   display: flex;
@@ -227,7 +228,7 @@ body {
   text-decoration: none;
 }
 .header .btn-icon.create {
-  color: #2962ff;
+  color: #236cba;
 }
 .header .btn-text {
   font-size: 1em;
@@ -344,7 +345,7 @@ body {
   margin-left: 10px;
 }
 .container .box .device-list a.device-card.active {
-  background: #2962ff;
+  background: #236cba;
   color: #e3f2fd;
 }
 .container .box .device-list a.device-card.active .temp {
@@ -430,14 +431,14 @@ body {
 }
 .form.login.logout {
   font-size: 1.6em;
-  color: #2962ff;
+  color: #236cba;
 }
 .form.login p {
   font-size: 1.4em;
   text-align: center;
 }
 .form.login p a {
-  color: #2962ff;
+  color: #236cba;
   text-decoration: none;
   font-weight: bold;
 }
@@ -480,7 +481,7 @@ body {
   margin-left: 5px;
 }
 .form .form-items label .label-button {
-  color: #2962ff;
+  color: #236cba;
   text-decoration: none;
 }
 .form .form-items label .label-button:hover {
@@ -498,7 +499,7 @@ body {
   font-size: 1.2em;
   padding: 16px 16px;
   background: #eceff1;
-  color: #2962ff;
+  color: #236cba;
   margin: 0%;
   border-radius: 5px;
   box-sizing: border-box;
@@ -512,7 +513,7 @@ body {
 .form .form-items .input-text.loading,
 .form .form-items .input-textarea.loading {
   background: transparent;
-  color: #2962ff;
+  color: #236cba;
 }
 .form .form-items .input-text:hover,
 .form .form-items .input-textarea:hover {
@@ -520,12 +521,12 @@ body {
 }
 .form .form-items .input-text:focus,
 .form .form-items .input-textarea:focus {
-  border: 2px solid #2962ff;
+  border: 2px solid #236cba;
 }
 .form .form-items .input-text:disabled,
 .form .form-items .input-textarea:disabled {
   background: #eceff1;
-  color: #2962ff;
+  color: #236cba;
 }
 .form .form-items .input-textarea {
   height: 100px;
@@ -538,7 +539,7 @@ body {
   margin: 0%;
   margin-top: 15px;
   border-radius: 5px;
-  background: #2962ff;
+  background: #236cba;
   color: #ffffff;
   font-size: 1.2em;
   font-weight: bold;
@@ -566,7 +567,7 @@ body {
   margin-top: 10px;
 }
 .form .form-items .note a {
-  color: #2962ff;
+  color: #236cba;
   text-decoration: none;
   font-weight: bold;
 }
@@ -633,7 +634,7 @@ body {
   color: #b0bec5;
 }
 .form .toggle-items i.fa-toggle-on {
-  color: #2962ff;
+  color: #236cba;
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .form .toggle-items i:hover {
@@ -656,7 +657,7 @@ body {
   font-size: 5.4em;
   line-height: 1.2em;
   font-weight: bold;
-  color: #2962ff;
+  color: #236cba;
 }
 .device-info .info .temperature-current.over {
   color: #ff1744;
@@ -712,6 +713,10 @@ body {
   display: flex;
   height: 150px;
   margin-bottom: 40px;
+  background: #eceff1;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 5%;
 }
 .device-info .graph canvas {
   width: 100%;
@@ -751,7 +756,7 @@ body {
 }
 .device-info .history .logitems .status {
   width: 5%;
-  color: #2962ff;
+  color: #236cba;
   font-size: 0.7em;
 }
 .device-info .history .logitems .time {
@@ -815,7 +820,7 @@ body {
   left: 0px;
   width: 5%;
   height: 3px;
-  background: #2962ff;
+  background: #236cba;
   float: left;
   display: block;
   z-index: 100;
@@ -828,7 +833,7 @@ body {
   width: 5%;
   height: 3px;
   border-radius: 20%;
-  background: #2962ff;
+  background: #236cba;
   float: left;
   display: block;
   z-index: 100;
@@ -895,7 +900,7 @@ body {
 }
 .message-box .control a.btn {
   text-decoration: none;
-  background: #2962ff;
+  background: #236cba;
   color: #FFFFFF;
   font-size: 1.2em;
   font-family: initial;
@@ -967,7 +972,7 @@ body {
     text-decoration: none;
   }
   .header .btn-icon.create {
-    color: #2962ff;
+    color: #236cba;
   }
   .header .btn-text {
     font-size: 1em;
@@ -1157,7 +1162,7 @@ body {
     color: #b0bec5;
   }
   .form .toggle-items i.fa-toggle-on {
-    color: #2962ff;
+    color: #236cba;
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   }
   .form .toggle-items i:hover {
@@ -1301,7 +1306,7 @@ body {
   }
   .message-box .control a.btn {
     text-decoration: none;
-    background: #2962ff;
+    background: #236cba;
     color: #FFFFFF;
     font-size: 1.2em;
     font-family: initial;
