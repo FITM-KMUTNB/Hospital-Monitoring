@@ -8,13 +8,13 @@ if($_POST['calling'] != '' && $signature->verifySign($_POST['sign'])){
 		case 'project':
 			switch ($_POST['action']) {
 				case 'submit':
-					if(!empty($_POST['project_id'])){
+					if (!empty($_POST['project_id'])) {
 						$project->edit($_POST['project_id'],$_POST['name'],$_POST['description'],$_POST['line_token']);
 						$api->successMessage('Space Updated.',0,'');
-					}else{
-						$project_id = $project->create($_POST['name'],$_POST['description'],$_POST['line_token'],$user->id);
-						$project->addPermission($project_id,$user->id,1);
-						$api->successMessage('New Space Created.',$project_id,'');
+					} else {
+						$project_id = $project->create($_POST['name'], $_POST['description'], $_POST['line_token'], $user->id);
+						$project->addPermission($project_id, $user->id, 1);
+						$api->successMessage('New Space Created.', $project_id, '');
 					}
 					break;
 				case 'add_admin':

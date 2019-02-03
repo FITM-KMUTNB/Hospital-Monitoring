@@ -40,7 +40,9 @@ $projectlist = $devices->listDevices($user->id);
 <div id="filter"></div>
 <header class="header">
 	<a class="logo-icon" href="index.php" target="_parent"><img src="image/logo.png" alt="logo"></a>
+	<?php if (count($projectlist) > 0) {?>
 	<a class="btn-text create" href="project-editor.php" target="_parent">สร้างโปรเจค</a>
+	<?php }?>
 </header>
 <div class="container">
 	<?php if (count($projectlist) > 0) {?>
@@ -77,6 +79,8 @@ $projectlist = $devices->listDevices($user->id);
 	<?php }?>
 	<?php } else {?>
 	<div class="box-empty">
+		<h1>FITM Monitoring</h1>
+		<p>ซอฟต์แวร์ที่ช่วยให้อุปกรณ์ที่เชื่อมต่อสามารถทำงานร่วมกับแอปพลิเคชัน จัดระเบียบ ตรวจสอบจากระยะไกล ได้อย่างปลอดภัยและง่ายดาย</p>
 		<a href="project-editor.php" target="_parent">สร้างโปรเจคใหม่</a>
 	</div>
 	<?php }?>
