@@ -38,8 +38,6 @@ $page_title = (!empty($project->id) ? 'ตั้งค่าโปรเจค' 
 
 <?php include'favicon.php';?>
 <title><?php echo $page_title;?></title>
-
-<base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 

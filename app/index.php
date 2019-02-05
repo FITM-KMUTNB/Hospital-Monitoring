@@ -1,7 +1,7 @@
 <?php
 include_once 'autoload.php';
 if (!$user_online) {
-	header('Location: '.DOMAIN.'/login.php');
+	header('Location: login.php');
 	die();
 }
 $projectlist = $devices->listDevices($user->id);
@@ -31,7 +31,6 @@ $projectlist = $devices->listDevices($user->id);
 <meta itemprop="description" content="<?php echo DESCRIPTION;?>">
 <meta itemprop="image" content="<?php echo DOMAIN;?>/image/ogimage.jpg">
 <title><?php echo $project->title;?> | <?php echo TITLE.' '.VERSION;?></title>
-<base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 </head>

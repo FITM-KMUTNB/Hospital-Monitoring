@@ -17,7 +17,6 @@
 
 <?php include'favicon.php';?>
 <title>Permission Error</title>
-<base href="<?php echo DOMAIN;?>">
 <!-- CSS -->
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>

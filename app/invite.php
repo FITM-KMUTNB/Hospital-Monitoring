@@ -41,7 +41,6 @@ if(strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)){
 
 <?php include'favicon.php';?>
 <title>กำลังเข้ากลุ่ม...</title>
-<base href="<?php echo DOMAIN;?>">
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/style.css"/>

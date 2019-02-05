@@ -45,11 +45,8 @@ $page_title = (!empty($devices->id) ? 'แก้ไขอุปกรณ์' : '
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
-
 <?php include'favicon.php';?>
 <title><?php echo $page_title;?> - <?php echo $project->title;?></title>
-
-<base href="<?php echo DOMAIN;?>">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 
