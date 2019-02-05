@@ -136,7 +136,7 @@ html {
   touch-action: manipulation;
 }
 body {
-  background: #236cba;
+  background: #ffffff;
   font-family: 'maledpan';
   overflow-x: hidden;
 }
@@ -186,10 +186,9 @@ body {
   height: 80px;
   display: flex;
   z-index: 99;
-  background: #ffffff;
   align-items: center;
   justify-content: center;
-  background: #236cba;
+  background: #ffffff;
 }
 .header a.logo-icon {
   display: flex;
