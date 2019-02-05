@@ -62,12 +62,11 @@ if (!empty($project->id)) {
 <div id="progress-bar"></div>
 <form class="form login" action="javascript:login();">
 	<div class="logo"><img src="image/logo.png" alt="logo"></div>
+	<p>สวัสดี! เข้าระบบเพื่อจัดการอุปกรณ์ของคุณ หากยังไม่มีบัญชี <a href="register.php<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">ลงทะเบียน</a></p>
 	<div class="form-items">
-		<label for="email">อีเมล</label>
 		<input class="input-text" type="email" id="email" placeholder="อีเมล" autofocus>
 	</div>
 	<div class="form-items">
-		<label for="password">รหัสผ่าน</label>
 		<input class="input-text" type="password" id="password" placeholder="รหัสผ่าน">
 	</div>
 
@@ -76,8 +75,6 @@ if (!empty($project->id)) {
 	<div class="form-items">
 		<button class="btn-submit" id="btn-login">เข้าสู่ระบบ<?php echo (!empty($project->id) ? 'และร่วมกลุ่ม' : '');?></button>
 	</div>
-	
-	<p>ยังไม่มีบัญชี <a href="register.php<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">ลงทะเบียน</a></p>
 	
 	<input type="hidden" id="redirect_page" value="<?php echo $_GET['redirect'];?>">
 	<input type="hidden" id="redirect_id" value="<?php echo $_GET['id'];?>">

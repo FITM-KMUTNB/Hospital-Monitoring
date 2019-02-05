@@ -4,7 +4,7 @@
 @fontsize_mini: 1em;
 @fontsize_topic: 1.8em;
 @fontsize_normal: 1.4em;
-@fontsize_input: 1.2em;
+@fontsize_input: 1.4em;
 @fontsize_icon: 1.6em;
 @header_height: 80px;
 @radius: 5px;
@@ -16,10 +16,9 @@
 	height: @header_height;
 	display: flex;
 	z-index: 99;
-	background: @bg_color;
+	background: @primary_color;
 	align-items: center;
 	justify-content: center;
-	background: @bg_color;
 
 	a.logo-icon {
 		display: flex;
@@ -70,13 +69,14 @@
 		font-size: @fontsize_mini;
 		text-decoration: none;
 		padding: (@header_height / 10) (@header_height / 4);
-		background: @border_color;
-		color: @border_color_hover;
+		color: @border_color;
 		border-radius: @radius;
+		border: 2px solid @border_color;
+		box-sizing: border-box;
 
 		&.create {
-			background: @green_color;
 			color: #FFFFFF;
+			border: 2px solid #FFFFFF;
 		}
 	}
 }
@@ -98,8 +98,7 @@
 		.head {
 			display: flex;
 			height: @header_height;
-			border-bottom: 2px solid @border_color;
-			margin-bottom: @header_height / 3;
+			margin-bottom: @header_height / 8;
 			align-items: center;
 
 			.title {
@@ -118,9 +117,9 @@
 			a {
 				font-size: @fontsize_mini;
 				text-decoration: none;
-				padding: (@header_height / 10) (@header_height / 4);
-				background: @border_color;
-				color: @border_color_hover;
+				padding: (@header_height / 20) (@header_height / 4);
+				border: 2px solid @border_color;
+				color: @border_color;
 				border-radius: @radius;
 			}
 		}
@@ -150,7 +149,7 @@
 				}
 
 				&.create-button {
-					background: #FFFFFF;
+					background: transparent;
 					border: 2px dashed @border_color_hover;
 					color: @border_color_hover;
 					font-size: @fontsize_normal;
@@ -278,14 +277,13 @@
 	}
 
 	&.login {
-		justify-content: center;
 		position: fixed;
+		justify-content: center;
 		top: 0;
 		left: 0;
 		height: 100%;
 		width: 30%;
 		margin: 0 35%;
-		text-align: center;
 
 		&.logout {
 			font-size: @fontsize_icon;
@@ -294,23 +292,18 @@
 
 		p {
 			font-size: @fontsize_normal;
-			text-align: center;
+			margin-bottom: @input_padding * 2;
+			color: @border_color_hover;
 
 			a {
-				color: @primary_color;
-				text-decoration: none;
+				color: @primary_color_light;
 				font-weight: bold;
-
-				&:hover {
-					text-decoration: underline;
-				}
 			}
 		}
 	
 		.logo{
-			width: 30%;
-			margin: 0 35%;
-			margin-bottom: 15px;
+			width: 20%;
+			margin-bottom: @input_padding;
 			float: left;
 			display: block;
 	
@@ -325,7 +318,7 @@
 	.form-items {
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 30px;
+		margin-bottom: @input_padding;
 
 		&.hidden {
 			display: none;
@@ -369,18 +362,26 @@
 			display: block;
 			font-size: @fontsize_input;
 			padding: @input_padding @input_padding;
-			background: @border_color;
-			color: @primary_color;
+			background: transparent;
+			color: @border_color_hover;
 			margin: 0%;
-			border-radius: @radius;
 			box-sizing: border-box;
 			border: 2px solid @border_color;
 			resize: none;
+			outline: none;
+			border-radius: @radius;
 			.transitionAnimation(0.3s);
+			font-weight: bold;
+			font-family: @font_family_topic;
+			line-height: 1.25em;
 			
 			&.loading {
 				background: transparent;
 				color: @primary_color;
+			}
+
+			&::placeholder {
+				color: @border_color;
 			}
 
 			&:hover {
@@ -388,7 +389,8 @@
 			}
 
 			&:focus {
-				border: 2px solid @primary_color;
+				color: #FFFFFF;
+				border: 2px solid #FFFFFF;
 			}
 
 			&:disabled {
@@ -407,12 +409,15 @@
 			border: 0px;
 			padding: @input_padding 0;
 			margin: 0%;
-			margin-top: 15px;
+			margin-top: @input_padding;
 			border-radius: @radius;
-			background: @primary_color;
-			color: @bg_color;
+			background: #FFFFFF;
+			color: @primary_color;
 			font-size: @fontsize_input;
 			font-weight: bold;
+			margin-left: auto;
+			font-family: @font_family_topic;
+			line-height: 1.25em;
 
 			i {
 				margin-left: 10px;
