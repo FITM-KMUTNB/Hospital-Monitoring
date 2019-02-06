@@ -295,6 +295,7 @@ body {
   flex-direction: column;
   justify-content: center;
   background: #3e556b;
+  background: #27f66a;
   color: #a7c4e0;
   box-sizing: border-box;
   transition: all 0.3s ease-in-out;
@@ -344,8 +345,8 @@ body {
   margin-left: 10px;
 }
 .container .box .device-list a.device-card.active {
-  background: #0e2b47;
-  color: #e3f2fd;
+  background: #27f66a;
+  color: #FFFFFF;
 }
 .container .box .device-list a.device-card.active .temp {
   color: #FFFFFF;
@@ -395,7 +396,7 @@ body {
   margin: 0%;
   margin-top: 15px;
   border-radius: 5px;
-  background: #00b900;
+  background: #27f66a;
   color: #ffffff;
   font-size: 1.4em;
   font-weight: bold;
@@ -562,7 +563,7 @@ body {
   box-shadow: none;
 }
 .form .form-items .btn-submit.completed {
-  background: #00b900;
+  background: #27f66a;
   box-shadow: none;
 }
 .form .form-items .note {
