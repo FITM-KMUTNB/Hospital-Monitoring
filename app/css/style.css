@@ -239,8 +239,8 @@ body {
   box-sizing: border-box;
 }
 .header .btn-text.create {
-  color: #FFFFFF;
-  border: 2px solid #FFFFFF;
+  color: #ffffff;
+  border: 2px solid #ffffff;
 }
 .container {
   width: 60%;
@@ -295,7 +295,6 @@ body {
   flex-direction: column;
   justify-content: center;
   background: #3e556b;
-  background: #27f66a;
   color: #a7c4e0;
   box-sizing: border-box;
   transition: all 0.3s ease-in-out;
@@ -345,15 +344,15 @@ body {
   margin-left: 10px;
 }
 .container .box .device-list a.device-card.active {
-  background: #27f66a;
-  color: #FFFFFF;
+  background: #1db954;
+  color: #ffffff;
 }
 .container .box .device-list a.device-card.active .temp {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .container .box .device-list a.device-card.alret {
   background: #ff1744;
-  color: #FFFFFF;
+  color: #ffffff;
   -webkit-animation-name: bounce;
   animation-name: bounce;
   -webkit-animation-duration: 1s;
@@ -396,7 +395,7 @@ body {
   margin: 0%;
   margin-top: 15px;
   border-radius: 5px;
-  background: #27f66a;
+  background: #1db954;
   color: #ffffff;
   font-size: 1.4em;
   font-weight: bold;
@@ -441,8 +440,8 @@ body {
   font-weight: bold;
 }
 .form.login .logo {
-  width: 20%;
-  margin-bottom: 16px;
+  width: 25%;
+  margin-bottom: 32px;
   float: left;
   display: block;
 }
@@ -491,7 +490,7 @@ body {
   float: left;
   display: block;
   font-size: 1.4em;
-  padding: 16px 16px;
+  padding: 13.333333333333334px 16px;
   background: transparent;
   color: #a7c4e0;
   margin: 0%;
@@ -500,13 +499,12 @@ body {
   resize: none;
   outline: none;
   border-radius: 5px;
+  font-weight: bold;
+  font-family: 'maledpan';
   transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
-  font-weight: bold;
-  font-family: 'maledpan';
-  line-height: 1.25em;
 }
 .form .form-items .input-text.loading,
 .form .form-items .input-textarea.loading {
@@ -523,8 +521,8 @@ body {
 }
 .form .form-items .input-text:focus,
 .form .form-items .input-textarea:focus {
-  color: #FFFFFF;
-  border: 2px solid #FFFFFF;
+  color: #ffffff;
+  border: 2px solid #ffffff;
 }
 .form .form-items .input-text:disabled,
 .form .form-items .input-textarea:disabled {
@@ -541,7 +539,7 @@ body {
   margin: 0%;
   margin-top: 16px;
   border-radius: 5px;
-  background: #FFFFFF;
+  background: #ffffff;
   color: #0e2b47;
   font-size: 1.4em;
   font-weight: bold;
@@ -563,7 +561,7 @@ body {
   box-shadow: none;
 }
 .form .form-items .btn-submit.completed {
-  background: #27f66a;
+  background: #1db954;
   box-shadow: none;
 }
 .form .form-items .note {
@@ -906,7 +904,7 @@ body {
 .message-box .control a.btn {
   text-decoration: none;
   background: #0e2b47;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 1.4em;
   font-family: initial;
   padding: 14px 28px;

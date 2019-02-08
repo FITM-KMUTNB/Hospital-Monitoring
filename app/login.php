@@ -62,7 +62,7 @@ if (!empty($project->id)) {
 <div id="progress-bar"></div>
 <form class="form login" action="javascript:login();">
 	<div class="logo"><img src="image/logo.png" alt="logo"></div>
-	<p>สวัสดี! เข้าระบบเพื่อจัดการอุปกรณ์ของคุณ หากยังไม่มีบัญชี <a href="register.php<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">ลงทะเบียน</a></p>
+	<p>สวัสดี, ล็อคอินเข้าระบบเพื่อจัดการอุปกรณ์ของคุณ หากยังไม่มีบัญชี <a href="register.php<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">ลงทะเบียนใหม่</a></p>
 	<div class="form-items">
 		<input class="input-text" type="email" id="email" placeholder="อีเมล" autofocus>
 	</div>

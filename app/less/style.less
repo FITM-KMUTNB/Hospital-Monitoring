@@ -75,8 +75,8 @@
 		box-sizing: border-box;
 
 		&.create {
-			color: #FFFFFF;
-			border: 2px solid #FFFFFF;
+			color: @white_color;
+			border: 2px solid @white_color;
 		}
 	}
 }
@@ -140,7 +140,6 @@
 				flex-direction: column;
 				justify-content: center;
 				background: @border_color;
-				background: @green_color;
 				color: @border_color_hover;
 				box-sizing: border-box;
 				.transitionAnimation(0.3s);
@@ -193,16 +192,16 @@
 
 				&.active {
 					background: @green_color;
-					color: #FFFFFF;
+					color: @white_color;
 
 					.temp {
-						color: #FFFFFF;
+						color: @white_color;
 					}
 				}
 				
 				&.alret {
 					background: @red_color;
-					color: #FFFFFF;
+					color: @white_color;
 
 					.desc , .status-icon {
 						color: @red_color_light;
@@ -303,8 +302,8 @@
 		}
 	
 		.logo{
-			width: 20%;
-			margin-bottom: @input_padding;
+			width: 25%;
+			margin-bottom: @input_padding * 2;
 			float: left;
 			display: block;
 	
@@ -362,7 +361,7 @@
 			float: left;
 			display: block;
 			font-size: @fontsize_input;
-			padding: @input_padding @input_padding;
+			padding: (@input_padding / 1.2) @input_padding;
 			background: transparent;
 			color: @border_color_hover;
 			margin: 0%;
@@ -371,10 +370,9 @@
 			resize: none;
 			outline: none;
 			border-radius: @radius;
-			.transitionAnimation(0.3s);
 			font-weight: bold;
 			font-family: @font_family_topic;
-			line-height: 1.25em;
+			.transitionAnimation(0.3s);
 			
 			&.loading {
 				background: transparent;
@@ -390,8 +388,8 @@
 			}
 
 			&:focus {
-				color: #FFFFFF;
-				border: 2px solid #FFFFFF;
+				color: @white_color;
+				border: 2px solid @white_color;
 			}
 
 			&:disabled {
@@ -412,7 +410,7 @@
 			margin: 0%;
 			margin-top: @input_padding;
 			border-radius: @radius;
-			background: #FFFFFF;
+			background: @white_color;
 			color: @primary_color;
 			font-size: @fontsize_input;
 			font-weight: bold;
@@ -831,7 +829,7 @@
 		a.btn {
 			text-decoration: none;
 			background: @primary_color;
-			color: #FFFFFF;
+			color: @white_color;
 			font-size: @fontsize_input;
 			font-family: initial;
 			padding: 14px 28px;
