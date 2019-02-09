@@ -5,9 +5,9 @@ var device_max = 0;
 var device_od;
 var myChart;
 var limit = 40;
-var disconnect_time = 240;
+var disconnect_time = 300;
 
-Chart.defaults.global.defaultFontColor = '#999999';
+Chart.defaults.global.defaultFontColor = '#DDDDDD';
 Chart.defaults.global.defaultFontSize = '10';
 
 $(document).ready(function() {
@@ -58,9 +58,32 @@ function init(){
             tstemp.push(v.log_timestamp);
         });
 
-        deviceDisconnect(tstemp[0],data.data.update);
         graphRender(dataTemp.reverse(),dataTime.reverse());
         historyRender(dataItems);
+
+        // Device disconnect checking
+        $disconnect = $('#disconnect-bar')
+        var deviceLog = data.data.device_log
+        $('body').removeClass('alert active disconnect disable')
+
+        if (data.data.status === 'disable') {
+            $('body').addClass('disable')
+        } else if ((data.data.update - tstemp[0]) > disconnect_time) {
+            $('body').addClass('disconnect')
+        } else if (deviceLog.current.temp < device_min || deviceLog.current.temp > device_max) {
+            $('body').removeClass('active')
+            $('body').addClass('alert')
+        } else {
+            $('body').removeClass('alert')
+            $('body').addClass('active')
+        }
+
+        // if ((data.data.update - tstemp[0]) > 300) {
+        //     $disconnect.addClass('active');
+        //     $('body').addClass('disconnect')
+        // } else {
+        //     $disconnect.removeClass('active');
+        // }
 
         renderCurrent(data.data.device_log);
 
@@ -72,62 +95,22 @@ function init(){
     });
 }
 
-function deviceDisconnect(timestamp, now) {
-    $disconnect = $('#disconnect-bar');
-    var diff = now - timestamp;
-
-    if (diff > 300) {
-        $disconnect.addClass('active');
-    } else {
-        $disconnect.removeClass('active');
-    }
-}
-
 function renderCurrent(data){
     var site_title  = $('#site_title').val();
     var device_name = $('#device_name').val();
 
     document.title =  data.current.temp + '° | ' + device_name;
 
-    $('#tempcurrent').html(data.current.temp+'°');
+    $('#tempcurrent').html(data.current.temp + '°');
     $('#timecurrent').html(data.current.time);
-    $('#templowest').html(data.min.temp+'°');
+    $('#templowest').html(data.min.temp + '°');
     $('#timelowest').html(data.min.time);
-    $('#temphighest').html(data.max.temp+'°');
+    $('#temphighest').html(data.max.temp + '°');
     $('#timehighest').html(data.max.time);
-
-    if (data.max.temp >= device_max) $('#temphighest').addClass('over');
-    else $('#temphighest').removeClass('over');
-
-    if (data.min.temp <= device_min) $('#templowest').addClass('over');
-    else $('#templowest').removeClass('over');
-
-    if (data.current.temp >= device_max || data.current.temp <= device_min) {
-        $('#tempcurrent').addClass('over')
-    } else {
-        $('#tempcurrent').removeClass('over')
-    }
-}
-
-function limitChecking(temp){
-
-    var current = temp[(temp.length) - 1];
-
-    if (current >= device_max || current <= device_min) {
-        var color = ['#e74c3c','#451612'];
-        return color;
-    } else {
-        var color = ['#2962FF','#ebf4f9'];
-        return color;
-    }
 }
 
 function graphRender(dataTemp,dataTime){
-
     $('#graph').html('');
-
-    var borderColor = limitChecking(dataTemp);
-
     var ctx = document.getElementById("graph").getContext('2d');
     myChart = new Chart(ctx, {
         type: 'line',
@@ -135,8 +118,8 @@ function graphRender(dataTemp,dataTime){
             labels: dataTime,
             datasets: [{
                 data: dataTemp,
-                backgroundColor: borderColor[0],
-                borderColor: borderColor[0],
+                backgroundColor: '#FFFFFF',
+                borderColor: '#FFFFFF',
                 borderWidth: 4,
                 pointBorderWidth: 0,
                 fill: false,
@@ -212,8 +195,8 @@ function historyRender(dataset){
                 ;
         }
         html +='<div class="logitems ' + alert + '">';
-        html +='<div class="status"><i class="fas fa-circle"></i></div>';
         html +='<div class="time">' + v.log_time_fb + '</div>';
+        html +='<div class="status"><i class="fas fa-circle"></i></div>';
         html +='<div class="icon">' + icon + '</div>';
         html +='<div class="temp">' + v.log_temp + ' °C</div>';
         html +='</div>';

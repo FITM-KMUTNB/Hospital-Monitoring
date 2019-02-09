@@ -140,6 +140,15 @@ body {
   font-family: 'maledpan';
   overflow-x: hidden;
 }
+body.alert {
+  background: #ff1744;
+}
+body.active {
+  background: #1db954;
+}
+body.disconnect {
+  background: #f78e11;
+}
 @-webkit-keyframes bounce {
   0%,
   20%,
@@ -186,7 +195,7 @@ body {
   height: 80px;
   display: flex;
   z-index: 99;
-  background: #0e2b47;
+  background: transparent;
   align-items: center;
   justify-content: center;
 }
@@ -233,14 +242,10 @@ body {
   font-size: 1em;
   text-decoration: none;
   padding: 8px 20px;
-  color: #3e556b;
   border-radius: 5px;
-  border: 2px solid #3e556b;
+  background: #ffffff;
+  color: #0e2b47;
   box-sizing: border-box;
-}
-.header .btn-text.create {
-  color: #ffffff;
-  border: 2px solid #ffffff;
 }
 .container {
   width: 60%;
@@ -342,6 +347,10 @@ body {
 }
 .container .box .device-list a.device-card .info .icon {
   margin-left: 10px;
+}
+.container .box .device-list a.device-card.lostconnect {
+  background: #f78e11;
+  color: #191500;
 }
 .container .box .device-list a.device-card.active {
   background: #1db954;
@@ -660,10 +669,7 @@ body {
   font-size: 5.4em;
   line-height: 1.2em;
   font-weight: bold;
-  color: #0e2b47;
-}
-.device-info .info .temperature-current.over {
-  color: #ff1744;
+  color: #ffffff;
 }
 .device-info .info p {
   font-size: 1em;
@@ -680,7 +686,6 @@ body {
 }
 .device-info .temperature-stat .box {
   width: 31.33%;
-  background: #3e556b;
   margin-right: 3%;
   padding: 0 5%;
   height: 150px;
@@ -689,6 +694,7 @@ body {
   justify-content: center;
   border-radius: 5px;
   box-sizing: border-box;
+  border: 2px solid #ffffff;
 }
 .device-info .temperature-stat .box:nth-child(3n+0) {
   margin-right: 0%;
@@ -702,12 +708,6 @@ body {
   font-size: 1em;
   color: #ffffff;
 }
-.device-info .temperature-stat .box.highest .over {
-  color: #ff1744;
-}
-.device-info .temperature-stat .box.lowest .over {
-  color: #ff1744;
-}
 .device-info .temperature-stat .box:hover {
   cursor: default;
 }
@@ -716,10 +716,7 @@ body {
   display: flex;
   height: 150px;
   margin-bottom: 40px;
-  background: #3e556b;
-  border-radius: 5px;
   box-sizing: border-box;
-  padding: 5%;
 }
 .device-info .graph canvas {
   width: 100%;
@@ -736,14 +733,12 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  border-radius: 5px;
-  background: #3e556b;
 }
 .device-info .history .logitems {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 15px 25px;
+  padding: 15px 0;
   font-size: 1.4em;
   color: #eeeeee;
   border-bottom: 1px dotted #a7c4e0;
@@ -836,7 +831,7 @@ body {
   width: 5%;
   height: 3px;
   border-radius: 20%;
-  background: #0e2b47;
+  background: #ffffff;
   float: left;
   display: block;
   z-index: 100;

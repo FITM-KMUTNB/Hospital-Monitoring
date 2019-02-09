@@ -26,6 +26,8 @@
 @border_color: #3e556b;
 @border_color_hover: #a7c4e0;
 @green_color: #1DB954;
+@orange_color: #F78E11;
+@orange_color_text: #191500; 
 @red_color: #FF1744;
 @red_color_light: #FFCDD2;
 
@@ -43,6 +45,18 @@ body {
     background: @primary_color;
     font-family: @font_family_topic;
     overflow-x: hidden;
+
+    &.alert {
+        background: @red_color;
+    }
+
+    &.active {
+        background: @green_color;
+    }
+
+    &.disconnect {
+        background: @orange_color;
+    }
 }
 
 // Freebie: Google Material Design Shadow Helper

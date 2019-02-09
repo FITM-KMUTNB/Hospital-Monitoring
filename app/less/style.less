@@ -16,7 +16,7 @@
 	height: @header_height;
 	display: flex;
 	z-index: 99;
-	background: @primary_color;
+	background: transparent;
 	align-items: center;
 	justify-content: center;
 
@@ -69,15 +69,10 @@
 		font-size: @fontsize_mini;
 		text-decoration: none;
 		padding: (@header_height / 10) (@header_height / 4);
-		color: @border_color;
 		border-radius: @radius;
-		border: 2px solid @border_color;
+		background: @white_color;
+		color: @primary_color;
 		box-sizing: border-box;
-
-		&.create {
-			color: @white_color;
-			border: 2px solid @white_color;
-		}
 	}
 }
 
@@ -188,6 +183,11 @@
 					.icon {
 						margin-left: 10px;
 					}
+				}
+
+				&.lostconnect {
+					background: @orange_color;
+					color: @orange_color_text;
 				}
 
 				&.active {
@@ -552,11 +552,7 @@
 			font-size: @fontsize_topic * 3;
 			line-height: 1.2em;
 			font-weight: bold;
-			color: @primary_color;
-
-			&.over {
-				color: @red_color;
-			}
+			color: @white_color;
 		}
 
 		p {
@@ -577,7 +573,6 @@
 
 		.box {
 			width: 31.33%;
-			background: @border_color;
 			margin-right: 3%;
 			padding: 0 5%;
 			height: 150px;
@@ -586,6 +581,7 @@
 			justify-content: center;
 			border-radius: @radius;
 			box-sizing: border-box;
+			border: 2px solid @white_color;
 
 			&:nth-child(3n+0) {
 				margin-right: 0%;
@@ -601,13 +597,6 @@
 				color: @text_color_light;
 			}
 
-			&.highest {
-				.over { color: @red_color; }
-			}
-			&.lowest {
-				.over { color: @red_color; }
-			}
-
 			&:hover {
 				cursor: default;
 			}
@@ -619,10 +608,7 @@
 		display: flex;
 		height: 150px;
 		margin-bottom: 40px;
-		background: @border_color;
-		border-radius: @radius;
 		box-sizing: border-box;
-		padding: 5%;
 
 		canvas {
 			width: 100%;
@@ -642,14 +628,12 @@
 		display: flex;
 		flex-direction: column;
 		box-sizing: border-box;
-		border-radius: @radius;
-		background: @border_color;
 
 		.logitems {
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-			padding: 15px 25px;
+			padding: 15px 0;
 			font-size: @fontsize_normal;
 			color: @text_color_normal;
 			border-bottom: 1px dotted @border_color_hover;
@@ -759,7 +743,7 @@
 	width: 5%;
 	height: 3px;
 	border-radius: 20%;
-	background: @primary_color;
+	background: @white_color;
 	float: left;
 	display: block;
 	z-index: 100;
