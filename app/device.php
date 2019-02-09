@@ -62,47 +62,60 @@ if(!$user_online){ // ไม่ออนไลน์
 <div id="loading-bar"></div>
 <div id="filter"></div>
 
-<div id="disconnect-bar"><i class="fas fa-sync fa-spin"></i>ขาดการติดต่อ!</div>
-
 <header class="header">
 	<a class="btn-icon" href="index.php" target="_parent"><i class="fas fa-arrow-left"></i></a>
-	<div class="title"><strong><?php echo $devices->name;?></strong> <?php echo $devices->project_name;?></div>
+	<div class="title"><?php echo $devices->name;?> <span class="font-color"><?php echo $devices->project_name;?></span></div>
 	<?php if ($hasPermission && $user_online) {?>
-	<?php if ($devices->notify != 'active') {?>
-	<a class="btn-icon" href="device-editor.php?id=<?php echo $devices->id;?>#notify" target="_parent" title="เปิดการแจ้งเตือน"><i class="fas fa-bell-slash"></i></a>
-	<?php }?>
 	<a class="btn-text" href="device-editor.php?id=<?php echo $devices->id;?>" target="_parent">ตั้งค่า</a>
 	<?php }?>
 </header>
 
 <div class="device-info">
 	<div class="info">
-		<div class="temperature-current" id="tempcurrent">C</div>
-		<p>ล่าสุด <span id="timecurrent"></span></p>
+		<div class="temperature-current">
+			<span class="value" id="tempcurrent"></span>
+			<span class="unit font-color">°C</span>
+		</div>
+		<p class="font-color">
+			<span>ล่าสุด <strong id="timecurrent"></strong></span>
+			<?php if ($devices->notify != 'active') {?>
+			<span title="อุปกรณ์นี้ปิดการแจ้งเตือน"><i class="fas fa-bell-slash"></i></span>
+			<?php }?>
+			<?php if ($devices->status != 'active') {?>
+			<span title="อุปกรณ์นี้ปิดรับข้อมูล"><i class="fas fa-lock"></i></span>
+			<?php }?>
+		</p>
 	</div>
-
-	<h2>วิเคราะห์</h2>
 	<div class="graph">
 		<canvas id="graph"></canvas>
 	</div>
 
-	<h2>สถิติ</h2>
+	<h2 class="font-color"><i class="fas fa-temperature-frigid"></i>อุณหภูมิตั้งค่า <strong><?php echo $devices->min;?>°C</strong> ถึง <strong><?php echo $devices->max;?>°C</strong></h2>
 	<div class="temperature-stat">
-		<div class="box highest">
-			<h3 id="temphighest">H</h3>
-			<p>สูงสุด <span id="timehighest"></span></p>
+		<div class="box bg-secondary">
+			<div>
+				<span class="value" id="temphighest">H</span>
+				<span class="unit font-color">°C</span>
+			</div>
+			<p class="font-color">สูงสุด <span id="timehighest"></span></p>
 		</div>
-		<div class="box lowest">
-			<h3 id="templowest">L</h3>
-			<p>ต่ำสุด <span id="timelowest"></span></p>
+		<div class="box bg-secondary">
+			<div>
+				<span class="value" id="templowest">L</span>
+				<span class="unit font-color">°C</span>
+			</div>
+			<p class="font-color">ต่ำสุด <span id="timelowest"></span></p>
 		</div>
-		<div class="box">
-			<h3><?php echo $devices->min;?>° . <?php echo $devices->max;?>°</h3>
-			<p>อุณหภูมิตั้งค่า</p>
+		<div class="box bg-secondary">
+			<div>
+				<span class="value" id="tempaverage">A</span>
+				<span class="unit font-color">°C</span>
+			</div>
+			<p class="font-color">อุณหภูมิเฉลี่ย</p>
 		</div>
 	</div>
 
-	<h2>อุณหภูมิย้อนหลัง</h2>
+	<h2 class="font-color"><i class="fas fa-clipboard-list"></i>อุณหภูมิย้อนหลัง</h2>
 	<div class="history" id="historylog">
 		<div class="loading">กำลังโหลด...</div>
 	</div>
@@ -112,7 +125,6 @@ if(!$user_online){ // ไม่ออนไลน์
 <input type="hidden" id="device_min" value="<?php echo $devices->min;?>">
 <input type="hidden" id="device_max" value="<?php echo $devices->max;?>">
 <input type="hidden" id="device_name" value="<?php echo $devices->name;?>">
-<input type="hidden" id="site_title" value="<?php echo TITLE;?>">
 
 <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/lib/chart.min.js"></script>

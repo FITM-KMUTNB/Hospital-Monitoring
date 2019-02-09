@@ -140,14 +140,50 @@ body {
   font-family: 'maledpan';
   overflow-x: hidden;
 }
+body .bg-secondary {
+  background: #264059 !important;
+}
+body .font-color {
+  color: #9eaab5 !important;
+}
+body .border-color {
+  border-bottom: 1px solid #264059 !important;
+}
 body.alert {
-  background: #ff1744;
+  background: #c62828;
+}
+body.alert .bg-secondary {
+  background: #e53935 !important;
+}
+body.alert .font-color {
+  color: #ef9a9a !important;
+}
+body.alert .border-color {
+  border-bottom: 1px solid #e53935 !important;
 }
 body.active {
-  background: #1db954;
+  background: #43a047;
+}
+body.active .bg-secondary {
+  background: #388e3c !important;
+}
+body.active .font-color {
+  color: #a5d6a7 !important;
+}
+body.active .border-color {
+  border-bottom: 1px solid #388e3c !important;
 }
 body.disconnect {
-  background: #f78e11;
+  background: #ff8f00;
+}
+body.disconnect .bg-secondary {
+  background: #ffa000 !important;
+}
+body.disconnect .font-color {
+  color: #ffe082 !important;
+}
+body.disconnect .border-color {
+  border-bottom: 1px solid #ffa000 !important;
 }
 @-webkit-keyframes bounce {
   0%,
@@ -210,7 +246,7 @@ body.disconnect {
   height: 40px;
 }
 .header .title {
-  color: #a7c4e0;
+  color: #eeeeee;
   font-size: 1.8em;
   margin-left: auto;
   margin-right: auto;
@@ -222,30 +258,25 @@ body.disconnect {
 .header .title:hover {
   cursor: default;
 }
-.header .title strong {
-  color: #eeeeee;
-}
 .header .btn-icon {
   font-size: 1.6em;
   width: 80px;
   height: 80px;
-  color: #a7c4e0;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
 }
-.header .btn-icon.create {
-  color: #0e2b47;
-}
 .header .btn-text {
   font-size: 1em;
   text-decoration: none;
   padding: 8px 20px;
+  border: 2px solid #ffffff;
   border-radius: 5px;
-  background: #ffffff;
-  color: #0e2b47;
+  color: #ffffff;
   box-sizing: border-box;
+  font-weight: bold;
 }
 .container {
   width: 60%;
@@ -349,18 +380,21 @@ body.disconnect {
   margin-left: 10px;
 }
 .container .box .device-list a.device-card.lostconnect {
-  background: #f78e11;
-  color: #191500;
+  background: #ff8f00;
+  color: #ffffff;
+}
+.container .box .device-list a.device-card.lostconnect .info {
+  color: #ffe082;
 }
 .container .box .device-list a.device-card.active {
-  background: #1db954;
+  background: #43a047;
   color: #ffffff;
 }
-.container .box .device-list a.device-card.active .temp {
-  color: #ffffff;
+.container .box .device-list a.device-card.active .info {
+  color: #a5d6a7;
 }
 .container .box .device-list a.device-card.alret {
-  background: #ff1744;
+  background: #c62828;
   color: #ffffff;
   -webkit-animation-name: bounce;
   animation-name: bounce;
@@ -371,9 +405,8 @@ body.disconnect {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
-.container .box .device-list a.device-card.alret .desc,
-.container .box .device-list a.device-card.alret .status-icon {
-  color: #ffcdd2;
+.container .box .device-list a.device-card.alret .info {
+  color: #ef9a9a;
 }
 .container .box-empty {
   position: fixed;
@@ -404,7 +437,7 @@ body.disconnect {
   margin: 0%;
   margin-top: 15px;
   border-radius: 5px;
-  background: #1db954;
+  background: #43a047;
   color: #ffffff;
   font-size: 1.4em;
   font-weight: bold;
@@ -570,7 +603,7 @@ body.disconnect {
   box-shadow: none;
 }
 .form .form-items .btn-submit.completed {
-  background: #1db954;
+  background: #43a047;
   box-shadow: none;
 }
 .form .form-items .note {
@@ -639,14 +672,15 @@ body.disconnect {
   justify-content: space-between;
   font-size: 1.4em;
   margin-bottom: 15px;
+  color: #ffffff;
 }
 .form .toggle-items i {
   font-size: 1.75em;
   padding: 0;
-  color: #a7c4e0;
+  color: #3e556b;
 }
 .form .toggle-items i.fa-toggle-on {
-  color: #0e2b47;
+  color: #43a047;
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .form .toggle-items i:hover {
@@ -663,17 +697,27 @@ body.disconnect {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .device-info .info .temperature-current {
-  font-size: 5.4em;
   line-height: 1.2em;
   font-weight: bold;
   color: #ffffff;
+  margin-bottom: 10px;
+}
+.device-info .info .temperature-current .value {
+  font-size: 7.2em;
+  text-shadow: 3px 6px 15px rgba(0, 0, 0, 0.1);
+}
+.device-info .info .temperature-current .unit {
+  font-size: 1.4em;
 }
 .device-info .info p {
   font-size: 1em;
   color: #ffffff;
+}
+.device-info .info p i {
+  margin-left: 10px;
 }
 .device-info .info:hover {
   cursor: default;
@@ -694,39 +738,42 @@ body.disconnect {
   justify-content: center;
   border-radius: 5px;
   box-sizing: border-box;
-  border: 2px solid #ffffff;
+  color: #eeeeee;
 }
 .device-info .temperature-stat .box:nth-child(3n+0) {
   margin-right: 0%;
 }
-.device-info .temperature-stat .box h3 {
+.device-info .temperature-stat .box div .value {
   font-size: 2.16em;
   line-height: 1.2em;
-  color: #eeeeee;
+}
+.device-info .temperature-stat .box div .unit {
+  font-size: 1em;
 }
 .device-info .temperature-stat .box p {
   font-size: 1em;
-  color: #ffffff;
 }
 .device-info .temperature-stat .box:hover {
   cursor: default;
-}
-.device-info .graph {
-  width: 100%;
-  display: flex;
-  height: 150px;
-  margin-bottom: 40px;
-  box-sizing: border-box;
-}
-.device-info .graph canvas {
-  width: 100%;
-  height: 150px;
 }
 .device-info h2 {
   font-size: 1.4em;
   margin-bottom: 15px;
   color: #ffffff;
   font-weight: normal;
+}
+.device-info h2 i {
+  margin-right: 15px;
+}
+.device-info .graph {
+  width: 100%;
+  display: flex;
+  height: 100px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+.device-info .graph canvas {
+  width: 100%;
 }
 .device-info .history {
   width: 100%;
@@ -750,11 +797,11 @@ body.disconnect {
   cursor: default;
 }
 .device-info .history .logitems.alert .status {
-  color: #ff1744;
+  color: #ffffff;
 }
 .device-info .history .logitems .status {
   width: 5%;
-  color: #0e2b47;
+  color: transparent;
   font-size: 0.7em;
 }
 .device-info .history .logitems .time {
@@ -767,7 +814,6 @@ body.disconnect {
   width: 5%;
   text-align: right;
   font-size: 0.7em;
-  color: #a7c4e0;
 }
 .device-info .history .logitems .temp {
   width: 20%;
@@ -830,7 +876,7 @@ body.disconnect {
   left: 0;
   width: 5%;
   height: 3px;
-  border-radius: 20%;
+  border-radius: 5px;
   background: #ffffff;
   float: left;
   display: block;
@@ -914,30 +960,6 @@ body.disconnect {
 .message-box .control a.btn.btn-not-Accept {
   background: #3e556b;
   color: #a7c4e0;
-}
-#disconnect-bar {
-  position: fixed;
-  bottom: -60px;
-  left: 0px;
-  width: 100%;
-  height: 60px;
-  display: flex;
-  background: #3e556b;
-  color: #a7c4e0;
-  font-size: 1.4em;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-}
-#disconnect-bar.active {
-  transform: translateY(-100%);
-}
-#disconnect-bar i {
-  margin-right: 15px;
 }
 /* Other Device and Screen */
 @media only screen and (min-width: 0px) and (max-width: 519px) {

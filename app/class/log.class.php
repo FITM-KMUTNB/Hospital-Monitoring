@@ -65,6 +65,16 @@ class Log extends Database{
 		$dataset['time'] = parent::datetimeformat($dataset['time']);
 		return $dataset;
 	}
+	
+	public function findAvg($device_id){
+		parent::query('SELECT AVG(temp) temp FROM log WHERE device_id = :device_id AND DATE(update_time) = :nowdate');
+		parent::bind(':device_id',$device_id);
+		parent::bind(':nowdate',date('Y-m-d'));
+		parent::execute();
+		$dataset = parent::single();
+		$dataset['temp'] = floatval(round($dataset['temp'],1));
+		return $dataset;
+	}
 
 	public function lastUpdate($device_id){
 		parent::query('SELECT time_stamp FROM log WHERE device_id = :device_id ORDER BY time_stamp DESC');

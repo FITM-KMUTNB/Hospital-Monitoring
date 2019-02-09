@@ -44,10 +44,11 @@ if($_POST['calling'] != ''){
 					echo json_encode($data);
 					break;
 				case 'history_log':
-					$dataset = $log->historylog($_GET['device_id'],0,$_GET['limit'],$_GET['time_stamp']);
 					$devices->getdevice($_GET['device_id']);
-					$min = $log->findMin($_GET['device_id']);
-					$max = $log->findMax($_GET['device_id']);
+					$dataset = $log->historylog($devices->id,0,$_GET['limit'],$_GET['time_stamp']);
+					$min = $log->findMin($devices->id);
+					$max = $log->findMax($devices->id);
+					$avg = $log->findAvg($devices->id);
 
 					$current_data = $dataset[0];
 
@@ -78,6 +79,9 @@ if($_POST['calling'] != ''){
 								'max' => array(
 									'temp' => floatval($max['temp']),
 									'time' => $max['time'],
+								),
+								'avg' => array(
+									'temp' => floatval($avg['temp']),
 								)
 							)
 						),

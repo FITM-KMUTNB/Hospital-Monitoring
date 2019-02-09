@@ -23,7 +23,6 @@ function getlastlog(){
             console.log("Request Error");
         }
     }).done(function(data){
-        console.log(data);
         var currentdate = new Date();
         var datetime    = currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
 

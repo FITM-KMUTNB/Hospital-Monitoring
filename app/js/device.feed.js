@@ -70,6 +70,7 @@ function init(){
             $('body').addClass('disable')
         } else if ((data.data.update - tstemp[0]) > disconnect_time) {
             $('body').addClass('disconnect')
+            $('#timecurrent').html('ขาดการติดต่อ!');
         } else if (deviceLog.current.temp < device_min || deviceLog.current.temp > device_max) {
             $('body').removeClass('active')
             $('body').addClass('alert')
@@ -77,14 +78,6 @@ function init(){
             $('body').removeClass('alert')
             $('body').addClass('active')
         }
-
-        // if ((data.data.update - tstemp[0]) > 300) {
-        //     $disconnect.addClass('active');
-        //     $('body').addClass('disconnect')
-        // } else {
-        //     $disconnect.removeClass('active');
-        // }
-
         renderCurrent(data.data.device_log);
 
         setTimeout(function(){
@@ -95,18 +88,18 @@ function init(){
     });
 }
 
-function renderCurrent(data){
-    var site_title  = $('#site_title').val();
+function renderCurrent(data) {
     var device_name = $('#device_name').val();
 
-    document.title =  data.current.temp + '° | ' + device_name;
+    document.title =  '(' + data.current.temp + '°C) ' + device_name;
 
-    $('#tempcurrent').html(data.current.temp + '°');
+    $('#tempcurrent').html(data.current.temp);
     $('#timecurrent').html(data.current.time);
-    $('#templowest').html(data.min.temp + '°');
+    $('#templowest').html(data.min.temp);
     $('#timelowest').html(data.min.time);
-    $('#temphighest').html(data.max.temp + '°');
+    $('#temphighest').html(data.max.temp);
     $('#timehighest').html(data.max.time);
+    $('#tempaverage').html(data.avg.temp);
 }
 
 function graphRender(dataTemp,dataTime){
@@ -194,11 +187,11 @@ function historyRender(dataset){
             default: 
                 ;
         }
-        html +='<div class="logitems ' + alert + '">';
+        html +='<div class="logitems border-color ' + alert + '">';
         html +='<div class="time">' + v.log_time_fb + '</div>';
-        html +='<div class="status"><i class="fas fa-circle"></i></div>';
-        html +='<div class="icon">' + icon + '</div>';
+        html +='<div class="status"><i class="fas fa-exclamation-triangle"></i></div>';
         html +='<div class="temp">' + v.log_temp + ' °C</div>';
+        html +='<div class="icon font-color">' + icon + '</div>';
         html +='</div>';
     });
 
