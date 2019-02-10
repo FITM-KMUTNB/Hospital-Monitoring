@@ -765,7 +765,7 @@ body.disconnect .border-color {
   font-weight: normal;
 }
 .device-info h2 i {
-  margin-right: 15px;
+  width: 35px;
 }
 .device-info .graph {
   width: 100%;

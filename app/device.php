@@ -114,7 +114,7 @@ if(!$user_online){ // ไม่ออนไลน์
 			<p class="font-color">อุณหภูมิเฉลี่ย</p>
 		</div>
 	</div>
-
+	<h2 class="font-color" title="คีย์สำหรับเชื่อมต่ออุปกรณ์"><i class="fas fa-key"></i><span><?php echo $devices->token;?></span></h2>
 	<h2 class="font-color"><i class="fas fa-clipboard-list"></i>อุณหภูมิย้อนหลัง</h2>
 	<div class="history" id="historylog">
 		<div class="loading">กำลังโหลด...</div>
