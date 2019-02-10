@@ -956,38 +956,61 @@ body.disconnect .border-color {
 /* Other Device and Screen */
 @media only screen and (min-width: 0px) and (max-width: 519px) {
   .header {
-    width: 100%;
-    padding: 0;
-    height: 60px;
+    width: 80%;
+    padding: 0 10%;
+    height: 80px;
+    display: flex;
+    z-index: 99;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
   }
   .header a.logo-icon {
-    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
   }
   .header a.logo-icon img {
-    padding: 15px 0;
-    height: 30px;
+    padding: 20px 0;
+    height: 40px;
   }
   .header .title {
-    font-size: 1.8em;
+    color: #ffffff;
+    font-size: 1.4em;
+    margin-left: auto;
+    margin-right: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    flex: 1;
   }
-  .header .title:first-child {
-    padding-left: 5%;
+  .header .title:hover {
+    cursor: default;
   }
   .header .btn-icon {
-    width: 60px;
-    height: 60px;
+    font-size: 1.4em;
+    width: 80px;
+    height: 80px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
   }
   .header .btn-text {
-    font-size: 1em;
-    padding: 6px 15px;
+    font-size: 0.9799999999999999em;
+    text-decoration: none;
+    padding: 8px 20px;
     border-radius: 5px;
-  }
-  .header .btn-text:last-child {
-    margin-right: 5%;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    box-sizing: border-box;
+    font-weight: bold;
   }
   .container {
-    width: 90%;
-    margin: 0 5%;
+    width: 60%;
+    margin: 0 20%;
   }
   .container .box {
     display: flex;
@@ -998,12 +1021,12 @@ body.disconnect .border-color {
   }
   .container .box .head {
     display: flex;
-    height: 60px;
-    margin-bottom: 7.5px;
+    height: 80px;
+    margin-bottom: 10px;
     align-items: center;
   }
   .container .box .head .title {
-    font-size: 1.8em;
+    font-size: 1.9599999999999997em;
     color: #9eaab5;
     margin-right: auto;
     white-space: nowrap;
@@ -1014,47 +1037,106 @@ body.disconnect .border-color {
     cursor: default;
   }
   .container .box .head a {
-    font-size: 1em;
+    font-size: 0.9799999999999999em;
     text-decoration: none;
-    padding: 3px 15px;
+    padding: 4px 20px;
     background: #264059;
     color: #9eaab5;
     border-radius: 5px;
   }
   .container .box .device-list {
-    margin-bottom: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 40px;
   }
   .container .box .device-list a.device-card {
-    width: 47.5%;
-    padding: 5%;
-    margin-right: 5%;
-    margin-bottom: 5%;
+    width: 23%;
+    padding: 3%;
+    margin-right: 2.66%;
+    margin-bottom: 2.66%;
     height: 170px;
+    text-decoration: none;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #264059;
+    color: #9eaab5;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+  }
+  .container .box .device-list a.device-card:hover {
+    transform: translateY(-5px);
   }
   .container .box .device-list a.device-card.create-button {
+    background: transparent;
+    border: 2px dashed #9eaab5;
+    color: #9eaab5;
     font-size: 1.4em;
+    align-items: center;
+    box-shadow: none;
+  }
+  .container .box .device-list a.device-card.create-button:hover {
+    transform: initial;
   }
   .container .box .device-list a.device-card:nth-child(4n+0) {
-    margin-right: inherit;
-  }
-  .container .box .device-list a.device-card:nth-child(2n+0) {
     margin-right: 0%;
   }
   .container .box .device-list a.device-card .name {
     font-size: 1.4em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
   .container .box .device-list a.device-card .temp {
-    font-size: 2.16em;
+    font-size: 2.3519999999999994em;
+    font-weight: bold;
   }
   .container .box .device-list a.device-card .info {
-    font-size: 1em;
+    font-size: 0.9799999999999999em;
+    display: flex;
   }
   .container .box .device-list a.device-card .info .updated {
-    font-size: 1em;
+    font-size: 0.9799999999999999em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: auto;
   }
   .container .box .device-list a.device-card .info .icon {
     margin-left: 10px;
+  }
+  .container .box .device-list a.device-card.lostconnect {
+    background: #ff8f00;
+    color: #ffffff;
+  }
+  .container .box .device-list a.device-card.lostconnect .info {
+    color: #ffe082;
+  }
+  .container .box .device-list a.device-card.active {
+    background: #43a047;
+    color: #ffffff;
+  }
+  .container .box .device-list a.device-card.active .info {
+    color: #a5d6a7;
+  }
+  .container .box .device-list a.device-card.alret {
+    background: #c62828;
+    color: #ffffff;
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  .container .box .device-list a.device-card.alret .info {
+    color: #ef9a9a;
   }
   .container .box-empty {
     position: fixed;
@@ -1065,9 +1147,11 @@ body.disconnect .border-color {
     justify-content: center;
     width: 40%;
     margin: 0 30%;
+    height: 100%;
+    text-align: left;
   }
   .container .box-empty h1 {
-    font-size: 1.8em;
+    font-size: 1.9599999999999997em;
     color: #9eaab5;
     margin-bottom: 5px;
   }
@@ -1091,24 +1175,26 @@ body.disconnect .border-color {
   }
   .form {
     width: 90%;
-    margin: 80px 5%;
-    margin-top: 60px;
+    margin: 5%;
+    margin-top: 80px;
   }
   .form.vertical-center {
-    position: initial;
-    height: 90%;
-    margin: 0 5%;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    margin: 0 30%;
   }
   .form.login {
     position: initial;
-    height: 100%;
     width: 90%;
-    height: 90%;
     margin: 5%;
   }
   .form.login.logout {
-    font-size: 1.6em;
+    font-size: 1.4em;
     color: #ffffff;
+    text-align: center;
   }
   .form.login p {
     font-size: 1.4em;
@@ -1142,7 +1228,7 @@ body.disconnect .border-color {
     margin-bottom: 0;
   }
   .form .form-items label {
-    font-size: 1em;
+    font-size: 0.9799999999999999em;
     color: #9eaab5;
     display: flex;
     flex-direction: row;
@@ -1172,7 +1258,7 @@ body.disconnect .border-color {
     float: left;
     display: block;
     font-size: 1.4em;
-    padding: 13.333333333333334px 16px;
+    padding: 10.666666666666666px 16px;
     background: transparent;
     color: #9eaab5;
     margin: 0%;
@@ -1209,7 +1295,7 @@ body.disconnect .border-color {
   .form .form-items .input-text:disabled,
   .form .form-items .input-textarea:disabled {
     background: #264059;
-    color: #0e2b47;
+    color: #9eaab5;
   }
   .form .form-items .input-textarea {
     height: 100px;
@@ -1242,13 +1328,13 @@ body.disconnect .border-color {
     box-shadow: none;
   }
   .form .form-items .btn-submit.completed {
-    background: #43a047;
-    color: #ffffff;
+    background: #264059;
+    color: #9eaab5;
     box-shadow: none;
   }
   .form .form-items .note {
     color: #9eaab5;
-    font-size: 1em;
+    font-size: 0.9799999999999999em;
     margin-top: 10px;
   }
   .form .form-items .note a {
@@ -1321,127 +1407,274 @@ body.disconnect .border-color {
     color: #264059;
   }
   .form .toggle-items i.fa-toggle-on {
-    color: #43a047;
+    color: #ffffff;
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   }
   .form .toggle-items i:hover {
     cursor: pointer;
   }
   .device-info {
-    width: 90%;
-    margin: 60px 5%;
-    margin-top: 30px;
+    width: 40%;
+    margin: 80px 30%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
   }
   .device-info .info {
-    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .device-info .info .temperature-current {
+    line-height: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
   }
   .device-info .info .temperature-current .value {
-    font-size: 3.6em;
+    font-size: 7.839999999999999em;
+    text-shadow: 3px 6px 15px rgba(0, 0, 0, 0.1);
   }
   .device-info .info .temperature-current .unit {
     font-size: 1.4em;
   }
   .device-info .info p {
-    font-size: 1em;
+    font-size: 0.9799999999999999em;
+    color: #ffffff;
   }
   .device-info .info p i {
     margin-left: 10px;
   }
+  .device-info .info:hover {
+    cursor: default;
+  }
   .device-info .temperature-stat {
-    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
   }
   .device-info .temperature-stat .box {
     width: 31.33%;
     margin-right: 3%;
     padding: 0 5%;
-    height: 90px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-radius: 5px;
+    box-sizing: border-box;
+    color: #ffffff;
+  }
+  .device-info .temperature-stat .box:nth-child(3n+0) {
+    margin-right: 0%;
   }
   .device-info .temperature-stat .box div .value {
-    font-size: 2.16em;
+    font-size: 2.3519999999999994em;
+    line-height: 1.2em;
   }
   .device-info .temperature-stat .box div .unit {
-    font-size: 1em;
+    font-size: 0.9799999999999999em;
   }
   .device-info .temperature-stat .box p {
-    font-size: 1em;
+    font-size: 0.9799999999999999em;
+  }
+  .device-info .temperature-stat .box:hover {
+    cursor: default;
   }
   .device-info h2 {
     font-size: 1.4em;
     margin-bottom: 15px;
+    color: #ffffff;
+    font-weight: normal;
   }
   .device-info h2 i {
     width: 35px;
   }
   .device-info .graph {
+    width: 100%;
+    display: flex;
     height: 100px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+  }
+  .device-info .graph canvas {
+    width: 100%;
+  }
+  .device-info .history {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
   }
   .device-info .history .logitems {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: 15px 0;
     font-size: 1.4em;
+    color: #ffffff;
+    border-bottom: 1px dotted #9eaab5;
+  }
+  .device-info .history .logitems:last-child {
+    border-bottom: 0;
+  }
+  .device-info .history .logitems:hover {
+    cursor: default;
+  }
+  .device-info .history .logitems.alert .status {
+    color: #ffffff;
   }
   .device-info .history .logitems .status {
     width: 5%;
+    color: transparent;
     font-size: 0.7em;
   }
   .device-info .history .logitems .time {
     width: 70%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
   .device-info .history .logitems .icon {
     width: 5%;
+    text-align: right;
     font-size: 0.7em;
   }
   .device-info .history .logitems .temp {
     width: 20%;
+    text-align: right;
+    font-weight: bold;
   }
   .device-info .history .loading {
+    width: 100%;
     padding: 15% 0;
+    display: flex;
+    justify-content: center;
     font-size: 1.4em;
+    font-style: italic;
+    color: #9eaab5;
   }
   .device-info .history .empty {
+    width: 100%;
     padding: 15% 0;
+    display: flex;
+    justify-content: center;
+    color: #9eaab5;
     font-size: 1.4em;
+    font-style: italic;
   }
   .footer {
-    width: 90%;
-    margin: 0 5%;
-    margin-bottom: 5%;
-    font-size: 1em;
+    width: 60%;
+    margin: 0 20%;
+    margin-bottom: 2%;
+    color: #9eaab5;
+    display: flex;
+    font-size: 0.9799999999999999em;
+    flex-direction: row;
+    justify-content: space-between;
   }
   .footer i {
     margin-right: 5px;
   }
   .footer a {
     padding: 3px 10px;
+    text-decoration: none;
+    background: #264059;
+    color: #9eaab5;
     border-radius: 5px;
   }
   #progress-bar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 5%;
     height: 3px;
+    background: #0e2b47;
+    float: left;
+    display: block;
+    z-index: 100;
+    display: none;
   }
   #loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 5%;
     height: 3px;
     border-radius: 5px;
+    background: #ffffff;
+    float: left;
+    display: block;
+    z-index: 100;
+    transition: all 10s ease-in-out;
+    -moz-transition: all 10s ease-in-out;
+    -webkit-transition: all 10s ease-in-out;
+    -o-transition: all 10s ease-in-out;
+  }
+  #loading-bar.action {
+    transform: translateX(1900%);
+  }
+  #filter {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: block;
+    z-index: 999;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
   }
   .message-box {
-    width: 90%;
-    margin: 0 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .message-box .msg {
-    font-size: 1.8em;
+    font-size: 1.9599999999999997em;
+    color: #9eaab5;
     margin-bottom: 25px;
+  }
+  .message-box .msg strong {
+    color: #ffffff;
+  }
+  .message-box .control {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
   .message-box .control p {
     padding: 14px 0;
     font-size: 1.4em;
+    color: #9eaab5;
   }
   .message-box .control a.btn {
+    text-decoration: none;
+    background: #ffffff;
+    color: #0e2b47;
     font-size: 1.4em;
     padding: 14px 28px;
     margin: 0 10px;
+    font-weight: bold;
     border-radius: 5px;
+    display: block;
   }
   .message-box .control a.btn i {
     margin-left: 15px;
+  }
+  .message-box .control a.btn.btn-not-Accept {
+    background: #264059;
+    color: #9eaab5;
   }
 }

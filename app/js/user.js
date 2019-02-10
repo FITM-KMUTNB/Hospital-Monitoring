@@ -49,7 +49,7 @@ function login() {
 	        	if (invite_code != '') {
 	        		window.location = 'invite.php?c=' + invite_code;
 	        	} else if (redirect_page != '' && redirect_id != '') {
-	        		window.location = redirect_page + '/' + redirect_id;
+	        		window.location = 'device.php?id=' + redirect_id;
 	        	} else {
 	        		window.location = 'index.php?login=success';
 	        	}
