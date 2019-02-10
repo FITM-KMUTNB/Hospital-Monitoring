@@ -50,8 +50,7 @@ $(document).ready(function(){
 	        error: function (request, status, error) {
 	            console.log("Request Error");
 	        }
-	    }).done(function(data){
-	        // console.log(data);
+	    }).done(function(data) {
 	        location.reload();
 
 	    });
@@ -59,7 +58,7 @@ $(document).ready(function(){
 
 	$('#btn-token-reset').click(function(){
 
-		if(!confirm('คุณต้องการคีย์ใหม่ ใช่หรือไม่ ?')){ return false; }
+		if (!confirm('คุณต้องการคีย์ใหม่ ใช่หรือไม่ ?')) { return false; }
 
 		var device_id = $('#device_id').val();
 
@@ -111,7 +110,7 @@ $(document).ready(function(){
 		}
 
 		if(device_id == ''){
-			$('#btn-save').html('กำลังสร้างอุปกรณ์ใหม่...');
+			$('#btn-save').html('กำลังสร้างอุปกรณ์ใหม่');
 		}
 
 		$.ajax({
@@ -137,16 +136,15 @@ $(document).ready(function(){
 	        }
 	    }).done(function(data){
 			console.log(data);
-			$('#btn-save').addClass('completed');
-	        if (data.return != 0) {
-	        	console.log('Device created!');
-	        	setTimeout(function() {
-	        		window.location = 'device.php?id=' + data.return;
-	        	}, 1000);
-	        } else {
-	        	$('#btn-save').html('บันทึกแล้ว<i class="fa fa-check" aria-hidden="true"></i>');
-	        	$('#btn-nav').addClass('-show');
-	        }
+			$('#btn-save').addClass('completed')
+			var deviceId = (data.return != 0 ? data.return : device_id)
+			console.log('deviceId', deviceId)
+	        if (data.return == 0) {
+				$('#btn-save').html('บันทึกแล้ว<i class="fa fa-check"></i>')	
+			}
+			setTimeout(function() {
+				window.location = 'device.php?id=' + deviceId;
+			}, 1000)
 	    });
 	});
 });

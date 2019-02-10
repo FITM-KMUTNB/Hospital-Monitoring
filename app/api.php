@@ -44,10 +44,11 @@ if($_POST['calling'] != ''){
 					echo json_encode($data);
 					break;
 				case 'history_log':
-					$dataset = $log->historylog($_GET['device_id'],0,$_GET['limit'],$_GET['time_stamp']);
 					$devices->getdevice($_GET['device_id']);
-					$min = $log->findMin($_GET['device_id']);
-					$max = $log->findMax($_GET['device_id']);
+					$dataset = $log->historylog($devices->id,0,$_GET['limit'],$_GET['time_stamp']);
+					$min = $log->findMin($devices->id);
+					$max = $log->findMax($devices->id);
+					$avg = $log->findAvg($devices->id);
 
 					$current_data = $dataset[0];
 
@@ -58,13 +59,14 @@ if($_POST['calling'] != ''){
 							$dataset[$k]['alert'] = false;
 					}
 					$data = array(
-						"apiVersion" => "1.1",
+						"apiVersion" => "1.2",
 						"data" => array(
-							"message" 		=> 'History Logs',
-							"update" 		=> time(),
-							"execute" 		=> floatval(round(microtime(true)-StTime,4)),
-							"totalFeeds" 	=> floatval(count($dataset)),
-							"items" 		=> $dataset,
+							"message" => 'History Logs',
+							"status" => $devices->status,
+							"update" => time(),
+							"execute" => floatval(round(microtime(true)-StTime,4)),
+							"totalFeeds" => floatval(count($dataset)),
+							"items" => $dataset,
 							"device_log" => array(
 								'current' => array(
 									'temp' => floatval($current_data['log_temp']),
@@ -77,6 +79,9 @@ if($_POST['calling'] != ''){
 								'max' => array(
 									'temp' => floatval($max['temp']),
 									'time' => $max['time'],
+								),
+								'avg' => array(
+									'temp' => floatval($avg['temp']),
 								)
 							)
 						),

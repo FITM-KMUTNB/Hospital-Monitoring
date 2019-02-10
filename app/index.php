@@ -30,7 +30,7 @@ $projectlist = $devices->listDevices($user->id);
 <meta itemprop="name" content="<?php echo TITLE;?>">
 <meta itemprop="description" content="<?php echo DESCRIPTION;?>">
 <meta itemprop="image" content="<?php echo DOMAIN;?>/image/ogimage.jpg">
-<title><?php echo $project->title;?> | <?php echo TITLE.' '.VERSION;?></title>
+<title><?php echo TITLE.' '.VERSION;?></title>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <link rel="stylesheet" type="text/css" href="plugin/fontawesome-pro-5.6/css/all.min.css"/>
 </head>

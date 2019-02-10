@@ -23,7 +23,6 @@ function getlastlog(){
             console.log("Request Error");
         }
     }).done(function(data){
-        console.log(data);
         var currentdate = new Date();
         var datetime    = currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
 
@@ -35,7 +34,7 @@ function getlastlog(){
             if (!v.device_status) {
                 $('#device-'+v.device_id).addClass('disable');
                 $('#device-'+v.device_id+' .info .status-icon').html('<i class="fa fa-lock-alt"></i>');
-            } else if (v.update_timestemp > 240) {
+            } else if (v.update_timestemp > 300) {
                 $('#device-'+v.device_id).addClass('lostconnect');
                 $('#device-'+v.device_id+' .info .status-icon').html('<i class="fa fa-sync fa-spin"></i>');
             } else if (v.device_alert) {

@@ -40,7 +40,7 @@ if(strlen($invite_code) == 8 && !empty($invite_code) && isset($invite_code)){
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">
 
 <?php include'favicon.php';?>
-<title>กำลังเข้ากลุ่ม...</title>
+<title>คำเชิญเข้าร่วมโปรเจค</title>
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/style.css"/>

@@ -9,37 +9,59 @@
     font-style: normal;
 }
 
-@FontStylePrimary: sans-serif;
-@font_family_topic: 'maledpan';
+@font_sans_serif: sans-serif;
+@font_family_maledpan: 'maledpan';
 
-// http://www.color-hex.com/color/21ce99
-@primary_color: #236CBA; // Active Color
-@primary_color_dark: #3581C2;
-@primary_color_light: #E3F2FD;
-@bg_color: #FFFFFF;
-@text_color_normal: #37474F;
-@text_color_light: #B0BEC5;
-@text_color_dark: #263238;
-@border_color: #ECEFF1;
-@border_color_hover: #B0BEC5;
-@green_color: #00B900;
-@red_color: #FF1744;
-@red_color_light: #FFCDD2;
+// http://www.color-hex.com/color/0e2b47
+@primary_color: #0e2b47;
+@primary_color_secondary: #264059;
+@primary_color_font: #9eaab5;
+@green_color: #43A047;
+@green_color_secondary: #388E3C;
+@green_color_font: #A5D6A7;
+@orange_color: #FF8F00;
+@orange_color_secondary: #FFA000;
+@orange_color_font: #FFE082;
+@red_color: #C62828;
+@red_color_secondary: #E53935;
+@red_color_font: #EF9A9A;
+
+@white_color: #FFFFFF;
 
 html {
     -ms-touch-action: manipulation;
     touch-action: manipulation;
 }
 
-// a[href], button {
-//     -ms-touch-action: none; /* IE10 */
-//     touch-action: none;     /* IE11 */
-// }
-
 body {
-    background: @bg_color;
-    font-family: @font_family_topic;
+    background: @primary_color;
+    font-family: @font_family_maledpan;
     overflow-x: hidden;
+
+    .bg-secondary { background: @primary_color_secondary !important; }
+    .font-color { color: @primary_color_font !important; }
+    .border-color { border-bottom: 1px solid @primary_color_secondary !important; }
+
+    &.alert {
+        background: @red_color;
+        .bg-secondary { background: @red_color_secondary !important; }
+        .font-color { color: @red_color_font !important; }
+        .border-color { border-bottom: 1px solid @red_color_secondary !important; }
+    }
+
+    &.active {
+        background: @green_color;
+        .bg-secondary { background: @green_color_secondary !important; }
+        .font-color { color: @green_color_font !important; }
+        .border-color { border-bottom: 1px solid @green_color_secondary !important; }
+    }
+
+    &.disconnect {
+        background: @orange_color;
+        .bg-secondary { background: @orange_color_secondary !important; }
+        .font-color { color: @orange_color_font !important; }
+        .border-color { border-bottom: 1px solid @orange_color_secondary !important; }
+    }
 }
 
 // Freebie: Google Material Design Shadow Helper
