@@ -247,7 +247,7 @@ body.disconnect .border-color {
 }
 .header .title {
   color: #ffffff;
-  font-size: 1.8em;
+  font-size: 1.4em;
   margin-left: auto;
   margin-right: auto;
   text-overflow: ellipsis;
@@ -259,7 +259,7 @@ body.disconnect .border-color {
   cursor: default;
 }
 .header .btn-icon {
-  font-size: 1.6em;
+  font-size: 1.4em;
   width: 80px;
   height: 80px;
   color: #ffffff;
@@ -269,11 +269,11 @@ body.disconnect .border-color {
   text-decoration: none;
 }
 .header .btn-text {
-  font-size: 1em;
+  font-size: 0.9799999999999999em;
   text-decoration: none;
   padding: 8px 20px;
-  border: 2px solid #ffffff;
   border-radius: 5px;
+  border: 2px solid #ffffff;
   color: #ffffff;
   box-sizing: border-box;
   font-weight: bold;
@@ -296,7 +296,7 @@ body.disconnect .border-color {
   align-items: center;
 }
 .container .box .head .title {
-  font-size: 1.8em;
+  font-size: 1.9599999999999997em;
   color: #9eaab5;
   margin-right: auto;
   white-space: nowrap;
@@ -307,7 +307,7 @@ body.disconnect .border-color {
   cursor: default;
 }
 .container .box .head a {
-  font-size: 1em;
+  font-size: 0.9799999999999999em;
   text-decoration: none;
   padding: 4px 20px;
   background: #264059;
@@ -362,15 +362,15 @@ body.disconnect .border-color {
   overflow: hidden;
 }
 .container .box .device-list a.device-card .temp {
-  font-size: 2.16em;
+  font-size: 2.3519999999999994em;
   font-weight: bold;
 }
 .container .box .device-list a.device-card .info {
-  font-size: 1em;
+  font-size: 0.9799999999999999em;
   display: flex;
 }
 .container .box .device-list a.device-card .info .updated {
-  font-size: 1em;
+  font-size: 0.9799999999999999em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -421,7 +421,7 @@ body.disconnect .border-color {
   text-align: left;
 }
 .container .box-empty h1 {
-  font-size: 1.8em;
+  font-size: 1.9599999999999997em;
   color: #9eaab5;
   margin-bottom: 5px;
 }
@@ -468,7 +468,7 @@ body.disconnect .border-color {
   margin: 0 35%;
 }
 .form.login.logout {
-  font-size: 1.6em;
+  font-size: 1.4em;
   color: #ffffff;
 }
 .form.login p {
@@ -503,7 +503,7 @@ body.disconnect .border-color {
   margin-bottom: 0;
 }
 .form .form-items label {
-  font-size: 1em;
+  font-size: 0.9799999999999999em;
   color: #9eaab5;
   display: flex;
   flex-direction: row;
@@ -609,7 +609,7 @@ body.disconnect .border-color {
 }
 .form .form-items .note {
   color: #9eaab5;
-  font-size: 1em;
+  font-size: 0.9799999999999999em;
   margin-top: 10px;
 }
 .form .form-items .note a {
@@ -708,14 +708,14 @@ body.disconnect .border-color {
   margin-bottom: 10px;
 }
 .device-info .info .temperature-current .value {
-  font-size: 7.2em;
+  font-size: 7.839999999999999em;
   text-shadow: 3px 6px 15px rgba(0, 0, 0, 0.1);
 }
 .device-info .info .temperature-current .unit {
   font-size: 1.4em;
 }
 .device-info .info p {
-  font-size: 1em;
+  font-size: 0.9799999999999999em;
   color: #ffffff;
 }
 .device-info .info p i {
@@ -746,14 +746,14 @@ body.disconnect .border-color {
   margin-right: 0%;
 }
 .device-info .temperature-stat .box div .value {
-  font-size: 2.16em;
+  font-size: 2.3519999999999994em;
   line-height: 1.2em;
 }
 .device-info .temperature-stat .box div .unit {
-  font-size: 1em;
+  font-size: 0.9799999999999999em;
 }
 .device-info .temperature-stat .box p {
-  font-size: 1em;
+  font-size: 0.9799999999999999em;
 }
 .device-info .temperature-stat .box:hover {
   cursor: default;
@@ -846,7 +846,7 @@ body.disconnect .border-color {
   margin-bottom: 2%;
   color: #9eaab5;
   display: flex;
-  font-size: 1em;
+  font-size: 0.9799999999999999em;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -917,7 +917,7 @@ body.disconnect .border-color {
   align-items: center;
 }
 .message-box .msg {
-  font-size: 1.8em;
+  font-size: 1.9599999999999997em;
   color: #9eaab5;
   margin-bottom: 25px;
 }
@@ -953,3 +953,494 @@ body.disconnect .border-color {
   color: #9eaab5;
 }
 /* Other Device and Screen */
+@media only screen and (min-width: 0px) and (max-width: 519px) {
+  .header {
+    width: 100%;
+    padding: 0;
+    height: 60px;
+  }
+  .header a.logo-icon {
+    padding: 0 5%;
+  }
+  .header a.logo-icon img {
+    padding: 15px 0;
+    height: 30px;
+  }
+  .header .title {
+    font-size: 1.8em;
+  }
+  .header .title:first-child {
+    padding-left: 5%;
+  }
+  .header .btn-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .header .btn-text {
+    font-size: 1em;
+    padding: 6px 15px;
+    border-radius: 5px;
+  }
+  .header .btn-text:last-child {
+    margin-right: 5%;
+  }
+  .container {
+    width: 90%;
+    margin: 0 5%;
+  }
+  .container .box {
+    display: flex;
+    flex-direction: column;
+  }
+  .container .box:last-child .device-list {
+    border-bottom: 0;
+  }
+  .container .box .head {
+    display: flex;
+    height: 60px;
+    margin-bottom: 7.5px;
+    align-items: center;
+  }
+  .container .box .head .title {
+    font-size: 1.8em;
+    color: #9eaab5;
+    margin-right: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .container .box .head .title:hover {
+    cursor: default;
+  }
+  .container .box .head a {
+    font-size: 1em;
+    text-decoration: none;
+    padding: 3px 15px;
+    background: #264059;
+    color: #9eaab5;
+    border-radius: 5px;
+  }
+  .container .box .device-list {
+    margin-bottom: 30px;
+  }
+  .container .box .device-list a.device-card {
+    width: 47.5%;
+    padding: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    height: 170px;
+    border-radius: 5px;
+  }
+  .container .box .device-list a.device-card.create-button {
+    font-size: 1.4em;
+  }
+  .container .box .device-list a.device-card:nth-child(4n+0) {
+    margin-right: inherit;
+  }
+  .container .box .device-list a.device-card:nth-child(2n+0) {
+    margin-right: 0%;
+  }
+  .container .box .device-list a.device-card .name {
+    font-size: 1.4em;
+  }
+  .container .box .device-list a.device-card .temp {
+    font-size: 2.16em;
+  }
+  .container .box .device-list a.device-card .info {
+    font-size: 1em;
+  }
+  .container .box .device-list a.device-card .info .updated {
+    font-size: 1em;
+  }
+  .container .box .device-list a.device-card .info .icon {
+    margin-left: 10px;
+  }
+  .container .box-empty {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    margin: 0 30%;
+  }
+  .container .box-empty h1 {
+    font-size: 1.8em;
+    color: #9eaab5;
+    margin-bottom: 5px;
+  }
+  .container .box-empty p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    color: #9eaab5;
+  }
+  .container .box-empty a {
+    width: 100%;
+    border: 0px;
+    padding: 16px 0;
+    margin: 0%;
+    margin-top: 15px;
+    border-radius: 5px;
+    background: #43a047;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+  }
+  .form {
+    width: 90%;
+    margin: 80px 5%;
+    margin-top: 60px;
+  }
+  .form.vertical-center {
+    position: initial;
+    height: 90%;
+    margin: 0 5%;
+  }
+  .form.login {
+    position: initial;
+    height: 100%;
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+  }
+  .form.login.logout {
+    font-size: 1.6em;
+    color: #ffffff;
+  }
+  .form.login p {
+    font-size: 1.4em;
+    margin-bottom: 32px;
+    color: #9eaab5;
+  }
+  .form.login p a {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  .form.login .logo {
+    width: 25%;
+    margin-bottom: 32px;
+    float: left;
+    display: block;
+  }
+  .form.login .logo img {
+    width: 100%;
+    float: left;
+    display: block;
+  }
+  .form .form-items {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+  .form .form-items.hidden {
+    display: none;
+  }
+  .form .form-items:last-child {
+    margin-bottom: 0;
+  }
+  .form .form-items label {
+    font-size: 1em;
+    color: #9eaab5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  .form .form-items label i {
+    margin-left: 5px;
+  }
+  .form .form-items label .label-button {
+    color: #9eaab5;
+    text-decoration: none;
+    background: #264059;
+    padding: 0px 10px;
+    border-radius: 5px;
+  }
+  .form .form-items label .label-button:hover {
+    cursor: pointer;
+  }
+  .form .form-items label:hover {
+    cursor: pointer;
+  }
+  .form .form-items .input-text,
+  .form .form-items .input-textarea {
+    width: 100%;
+    float: left;
+    display: block;
+    font-size: 1.4em;
+    padding: 13.333333333333334px 16px;
+    background: transparent;
+    color: #9eaab5;
+    margin: 0%;
+    box-sizing: border-box;
+    border: 2px solid #264059;
+    resize: none;
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'maledpan';
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+  }
+  .form .form-items .input-text.loading,
+  .form .form-items .input-textarea.loading {
+    background: transparent;
+    color: #0e2b47;
+  }
+  .form .form-items .input-text::placeholder,
+  .form .form-items .input-textarea::placeholder {
+    color: #264059;
+  }
+  .form .form-items .input-text:hover,
+  .form .form-items .input-textarea:hover {
+    cursor: pointer;
+  }
+  .form .form-items .input-text:focus,
+  .form .form-items .input-textarea:focus {
+    color: #ffffff;
+    border: 2px solid #ffffff;
+  }
+  .form .form-items .input-text:disabled,
+  .form .form-items .input-textarea:disabled {
+    background: #264059;
+    color: #0e2b47;
+  }
+  .form .form-items .input-textarea {
+    height: 100px;
+  }
+  .form .form-items .btn-submit {
+    width: 100%;
+    border: 0px;
+    padding: 16px 0;
+    margin: 0%;
+    margin-top: 16px;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #0e2b47;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-left: auto;
+    font-family: 'maledpan';
+    line-height: 1.25em;
+  }
+  .form .form-items .btn-submit i {
+    margin-left: 10px;
+    font-size: 0.9em;
+  }
+  .form .form-items .btn-submit:hover {
+    cursor: pointer;
+  }
+  .form .form-items .btn-submit.loading {
+    background: #264059;
+    color: #9eaab5;
+    box-shadow: none;
+  }
+  .form .form-items .btn-submit.completed {
+    background: #43a047;
+    color: #ffffff;
+    box-shadow: none;
+  }
+  .form .form-items .note {
+    color: #9eaab5;
+    font-size: 1em;
+    margin-top: 10px;
+  }
+  .form .form-items .note a {
+    color: #0e2b47;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .form .form-items .note a:hover {
+    text-decoration: underline;
+  }
+  .form .form-items .inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .form .form-items .inputs .input-text {
+    width: 49%;
+    text-align: center;
+    flex-grow: unset;
+  }
+  .form .form-items .lists {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #264059;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .form .form-items .lists .list-items {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #264059;
+  }
+  .form .form-items .lists .list-items:last-child {
+    border-bottom: 0;
+  }
+  .form .form-items .lists .list-items .c {
+    width: 85%;
+    padding: 2.5% 3%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #ffffff;
+  }
+  .form .form-items .lists .list-items .btn {
+    width: 15%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #264059;
+  }
+  .form .form-items .lists .list-items .btn:hover {
+    cursor: pointer;
+    color: #9eaab5;
+  }
+  .form .toggle-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 1em;
+    justify-content: space-between;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+  .form .toggle-items i {
+    font-size: 1.75em;
+    padding: 0;
+    color: #264059;
+  }
+  .form .toggle-items i.fa-toggle-on {
+    color: #43a047;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  }
+  .form .toggle-items i:hover {
+    cursor: pointer;
+  }
+  .device-info {
+    width: 90%;
+    margin: 60px 5%;
+    margin-top: 30px;
+  }
+  .device-info .info {
+    margin-bottom: 15px;
+  }
+  .device-info .info .temperature-current .value {
+    font-size: 3.6em;
+  }
+  .device-info .info .temperature-current .unit {
+    font-size: 1.4em;
+  }
+  .device-info .info p {
+    font-size: 1em;
+  }
+  .device-info .info p i {
+    margin-left: 10px;
+  }
+  .device-info .temperature-stat {
+    margin-bottom: 30px;
+  }
+  .device-info .temperature-stat .box {
+    width: 31.33%;
+    margin-right: 3%;
+    padding: 0 5%;
+    height: 90px;
+    border-radius: 5px;
+  }
+  .device-info .temperature-stat .box div .value {
+    font-size: 2.16em;
+  }
+  .device-info .temperature-stat .box div .unit {
+    font-size: 1em;
+  }
+  .device-info .temperature-stat .box p {
+    font-size: 1em;
+  }
+  .device-info h2 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+  .device-info h2 i {
+    width: 35px;
+  }
+  .device-info .graph {
+    height: 100px;
+    margin-bottom: 30px;
+  }
+  .device-info .history .logitems {
+    padding: 15px 0;
+    font-size: 1.4em;
+  }
+  .device-info .history .logitems .status {
+    width: 5%;
+    font-size: 0.7em;
+  }
+  .device-info .history .logitems .time {
+    width: 70%;
+  }
+  .device-info .history .logitems .icon {
+    width: 5%;
+    font-size: 0.7em;
+  }
+  .device-info .history .logitems .temp {
+    width: 20%;
+  }
+  .device-info .history .loading {
+    padding: 15% 0;
+    font-size: 1.4em;
+  }
+  .device-info .history .empty {
+    padding: 15% 0;
+    font-size: 1.4em;
+  }
+  .footer {
+    width: 90%;
+    margin: 0 5%;
+    margin-bottom: 5%;
+    font-size: 1em;
+  }
+  .footer i {
+    margin-right: 5px;
+  }
+  .footer a {
+    padding: 3px 10px;
+    border-radius: 5px;
+  }
+  #progress-bar {
+    height: 3px;
+  }
+  #loading-bar {
+    height: 3px;
+    border-radius: 5px;
+  }
+  .message-box {
+    width: 90%;
+    margin: 0 5%;
+  }
+  .message-box .msg {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+  }
+  .message-box .control p {
+    padding: 14px 0;
+    font-size: 1.4em;
+  }
+  .message-box .control a.btn {
+    font-size: 1.4em;
+    padding: 14px 28px;
+    margin: 0 10px;
+    border-radius: 5px;
+  }
+  .message-box .control a.btn i {
+    margin-left: 15px;
+  }
+}

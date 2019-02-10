@@ -1,14 +1,14 @@
 @import "reset";
 @import "config";
 
-@fontsize_mini: 1em;
-@fontsize_topic: 1.8em;
 @fontsize_normal: 1.4em;
-@fontsize_input: 1.4em;
-@fontsize_icon: 1.6em;
+@fontsize_mini: @fontsize_normal * 0.7;
+@fontsize_topic: @fontsize_normal * 1.4;
+@fontsize_icon: @fontsize_normal;
+
 @header_height: 80px;
-@radius: 5px;
 @input_padding: 16px;
+@radius: 5px;
 
 .header {
 	width: 80%;
@@ -34,7 +34,7 @@
 
 	.title {
 		color: @white_color;
-		font-size: @fontsize_topic;
+		font-size: @fontsize_normal;
 		margin-left: auto;
 		margin-right: auto;
 		text-overflow: ellipsis;
@@ -64,7 +64,6 @@
 		padding: (@header_height / 10) (@header_height / 4);
 		border-radius: @radius;
 		border: 2px solid @white_color;
-		border-radius: @radius;
 		color: @white_color;
 		box-sizing: border-box;
 		font-weight: bold;
@@ -242,7 +241,7 @@
 			margin-top: 15px;
 			border-radius: @radius;
 			background: @green_color;
-			font-size: @fontsize_input;
+			font-size: @fontsize_normal;
 			font-weight: bold;
 			text-decoration: none;
 			text-align: center;
@@ -352,7 +351,7 @@
 			width: 100%;
 			float: left;
 			display: block;
-			font-size: @fontsize_input;
+			font-size: @fontsize_normal;
 			padding: (@input_padding / 1.2) @input_padding;
 			background: transparent;
 			color: @primary_color_font;
@@ -404,7 +403,7 @@
 			border-radius: @radius;
 			background: @white_color;
 			color: @primary_color;
-			font-size: @fontsize_input;
+			font-size: @fontsize_normal;
 			font-weight: bold;
 			margin-left: auto;
 			font-family: @font_family_maledpan;
@@ -816,7 +815,7 @@
 			text-decoration: none;
 			background: @white_color;
 			color: @primary_color;
-			font-size: @fontsize_input;
+			font-size: @fontsize_normal;
 			padding: 14px 28px;
 			margin: 0 10px;
 			font-weight: bold;
