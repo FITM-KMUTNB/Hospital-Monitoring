@@ -4,7 +4,6 @@
 @fontsize_normal: 1.4em;
 @fontsize_mini: @fontsize_normal * 0.7;
 @fontsize_topic: @fontsize_normal * 1.4;
-@fontsize_icon: @fontsize_normal;
 
 @header_height: 80px;
 @input_padding: 16px;
@@ -48,7 +47,7 @@
 	}
 
 	.btn-icon {
-		font-size: @fontsize_icon;
+		font-size: @fontsize_normal;
 		width: @header_height;
 		height: @header_height;
 		color: @white_color;
@@ -275,7 +274,7 @@
 		margin: 0 35%;
 
 		&.logout {
-			font-size: @fontsize_icon;
+			font-size: @fontsize_normal;
 			color: @white_color;
 		}
 
@@ -352,7 +351,7 @@
 			float: left;
 			display: block;
 			font-size: @fontsize_normal;
-			padding: (@input_padding / 1.2) @input_padding;
+			padding: (@input_padding / 1.5) @input_padding;
 			background: transparent;
 			color: @primary_color_font;
 			margin: 0%;
