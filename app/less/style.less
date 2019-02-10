@@ -222,7 +222,7 @@
 
 		h1 {
 			font-size: @fontsize_topic;
-			color: @primary_color_font;
+			color: @white_color;
 			margin-bottom: 5px;
 		}
 		p {
@@ -237,9 +237,10 @@
 			border: 0px;
 			padding: @input_padding 0;
 			margin: 0%;
-			margin-top: 15px;
+			margin-top: @input_padding;
 			border-radius: @radius;
-			background: @green_color;
+			background: @white_color;
+			color: @primary_color;
 			font-size: @fontsize_normal;
 			font-weight: bold;
 			text-decoration: none;
@@ -331,15 +332,15 @@
 			}
 
 			.label-button {
-					color: @primary_color_font;
-					text-decoration: none;
-					background: @primary_color_secondary;
-					padding: 0px 10px;
-					border-radius: @radius;
+				color: @primary_color_font;
+				text-decoration: none;
+				background: @primary_color_secondary;
+				padding: 0px 10px;
+				border-radius: @radius;
 					
-					&:hover {
-							cursor: pointer;
-					}
+				&:hover {
+					cursor: pointer;
+				}
 			}
 
 			&:hover {
@@ -411,7 +412,6 @@
 
 			i {
 				margin-left: 10px;
-				font-size: 0.9em;
 			}
 			
 			&:hover {
@@ -431,21 +431,21 @@
 			}
 		}
 
-		.note {
-			color: @primary_color_font;
-			font-size: @fontsize_mini;
-			margin-top: 10px;
+		// .note {
+		// 	color: @primary_color_font;
+		// 	font-size: @fontsize_mini;
+		// 	margin-top: 10px;
 
-			a {
-				color: @primary_color;
-				text-decoration: none;
-				font-weight: bold;
+		// 	a {
+		// 		color: @primary_color;
+		// 		text-decoration: none;
+		// 		font-weight: bold;
 
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-		}
+		// 		&:hover {
+		// 			text-decoration: underline;
+		// 		}
+		// 	}
+		// }
 
 		.inputs {
 			display: flex;
@@ -464,7 +464,7 @@
 			flex-direction: column;
 			border: 2px solid @primary_color_secondary;
 			border-radius: @radius;
-			font-size: 1.2em;
+			font-size: @fontsize_normal;
 			margin-bottom: 10px;
 
 			.list-items {
@@ -634,7 +634,7 @@
 		}
 	}
 
-	.history{
+	.history {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
