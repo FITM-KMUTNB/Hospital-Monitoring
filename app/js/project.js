@@ -12,7 +12,7 @@ $(document).ready(function(){
 		var user_id 	= $(this).parent().attr('data-user');
 		var project_id 	= $('#project_id').val();
 
-		if(!confirm('คุณต้องการลบผู้ดูแล ใช่หรือไม่ ?')){ return false; }
+		if (!confirm('คุณต้องการลบผู้ดูแล ใช่หรือไม่ ?')) { return false; }
 
 		console.log('UserID '+ user_id);
 
@@ -98,22 +98,14 @@ $(document).ready(function(){
 	        error: function (request, status, error) {
 	            console.log(request, status, error);
 	        }
-	    }).done(function(data){
-	        console.log(data);
-			var return_device = $('#return_device').val();
+	    }).done(function(data) {
 			$('#btn-save').addClass('completed');
-
-	        if (data.return != 0) {
-	        	setTimeout(function(){ window.location = 'index.php'; }, 2000);
-	        } else {
+	        if (data.return == 0) {
 	        	$('#btn-save').html('บันทึกแล้ว<i class="fas fa-check"></i>');
-
-	        	if (return_device != '') {
-	        		setTimeout(function() {
-						window.location = 'project-editor.php?id=' + return_device; }, 1000);
-	        	}
 	        }
-
+			setTimeout(function() {
+				window.location = 'index.php';
+			}, 1000);
 	    });
 	});
 });

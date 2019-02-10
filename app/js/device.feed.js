@@ -165,7 +165,7 @@ function historyRender(dataset){
     var html = '';
     var gtemp = new Array();
     if(dataset.length == 0){
-        $('#historylog').html('<div class="empty">ไม่มีข้อมูลอุปกรณ์นี้</div>');
+        $('#historylog').html('<div class="empty font-color">ไม่มีข้อมูลอุปกรณ์นี้</div>');
         return false;
     }
     $.each(dataset,function(k,v){
