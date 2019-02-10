@@ -276,6 +276,7 @@
 		&.logout {
 			font-size: @fontsize_normal;
 			color: @white_color;
+			text-align: center;
 		}
 
 		p {
@@ -384,7 +385,7 @@
 
 			&:disabled {
 				background: @primary_color_secondary;
-				color: @primary_color;
+				color: @primary_color_font;
 			}
 		}
 
@@ -424,8 +425,8 @@
 			}
 
 			&.completed {
-				background: @green_color;
-				color: @white_color;
+				background: @primary_color_secondary;
+				color: @primary_color_font;
 				box-shadow: none;
 			}
 		}
@@ -516,7 +517,7 @@
 			color: @primary_color_secondary;
 
 			&.fa-toggle-on {
-				color: @green_color;
+				color: @white_color;
 				text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
 			}
 

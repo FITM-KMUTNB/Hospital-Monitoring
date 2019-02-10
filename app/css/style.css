@@ -470,6 +470,7 @@ body.disconnect .border-color {
 .form.login.logout {
   font-size: 1.4em;
   color: #ffffff;
+  text-align: center;
 }
 .form.login p {
   font-size: 1.4em;
@@ -570,7 +571,7 @@ body.disconnect .border-color {
 .form .form-items .input-text:disabled,
 .form .form-items .input-textarea:disabled {
   background: #264059;
-  color: #0e2b47;
+  color: #9eaab5;
 }
 .form .form-items .input-textarea {
   height: 100px;
@@ -603,8 +604,8 @@ body.disconnect .border-color {
   box-shadow: none;
 }
 .form .form-items .btn-submit.completed {
-  background: #43a047;
-  color: #ffffff;
+  background: #264059;
+  color: #9eaab5;
   box-shadow: none;
 }
 .form .form-items .note {
@@ -682,7 +683,7 @@ body.disconnect .border-color {
   color: #264059;
 }
 .form .toggle-items i.fa-toggle-on {
-  color: #43a047;
+  color: #ffffff;
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .form .toggle-items i:hover {

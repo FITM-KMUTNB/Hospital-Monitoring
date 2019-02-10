@@ -36,13 +36,13 @@ function getlastlog(){
                 $('#device-'+v.device_id+' .info .status-icon').html('<i class="fa fa-lock-alt"></i>');
             } else if (v.update_timestemp > 300) {
                 $('#device-'+v.device_id).addClass('lostconnect');
-                $('#device-'+v.device_id+' .info .status-icon').html('<i class="fa fa-sync fa-spin"></i>');
+                $('#device-'+v.device_id+' .info .status-icon').html('<i class="fas fa-spinner fa-pulse"></i>');
             } else if (v.device_alert) {
                 $('#device-'+v.device_id).addClass('alret');
                 $('#device-'+v.device_id+' .info .status-icon').html('<i class="fa fa-exclamation-circle"></i>');
             } else {
                 $('#device-'+v.device_id).addClass('active');
-                $('#device-'+v.device_id+' .info .status-icon').html('<i class="fa fa-thermometer-full"></i>');
+                $('#device-'+v.device_id+' .info .status-icon').html('<i class="far fa-snowflake"></i>');
             }
 
             $('#device-'+v.device_id+' .info .updated').html(v.update_time);
