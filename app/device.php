@@ -93,23 +93,23 @@ if(!$user_online){ // ไม่ออนไลน์
 	<h2 class="font-color"><i class="fas fa-temperature-frigid"></i>อุณหภูมิตั้งค่า <strong><?php echo $devices->min;?>°C</strong> ถึง <strong><?php echo $devices->max;?>°C</strong></h2>
 	<div class="temperature-stat">
 		<div class="box bg-secondary">
-			<p class="font-color">อุณหภูมิสูงสุด</p>
+			<p class="font-color">สูงสุด</p>
 			<div>
 				<span class="value" id="temphighest">H</span>
 				<span class="unit font-color">°C</span>
 			</div>
-			<p class="font-color">เมื่อ <span id="timehighest"></span></p>
+			<p class="font-color"><span id="timehighest"></span></p>
 		</div>
 		<div class="box bg-secondary">
-			<p class="font-color">อุณหภูมิต่ำสุด</p>
+			<p class="font-color">ต่ำสุด</p>
 			<div>
 				<span class="value" id="templowest">L</span>
 				<span class="unit font-color">°C</span>
 			</div>
-			<p class="font-color">ต่ำสุด <span id="timelowest"></span></p>
+			<p class="font-color"><span id="timelowest"></span></p>
 		</div>
 		<div class="box bg-secondary">
-			<p class="font-color">อุณหภูมิเฉลี่ย</p>
+			<p class="font-color">เฉลี่ย</p>
 			<div>
 				<span class="value" id="tempaverage">A</span>
 				<span class="unit font-color">°C</span>
@@ -117,7 +117,6 @@ if(!$user_online){ // ไม่ออนไลน์
 			<p class="font-color">ภายในวันนี้</p>
 		</div>
 	</div>
-	<h2 class="font-color" title="คีย์สำหรับเชื่อมต่ออุปกรณ์"><i class="fas fa-key"></i><span><?php echo $devices->token;?></span></h2>
 	<h2 class="font-color"><i class="fas fa-clipboard-list"></i>อุณหภูมิย้อนหลัง</h2>
 	<div class="history" id="historylog">
 		<div class="loading">กำลังโหลด...</div>

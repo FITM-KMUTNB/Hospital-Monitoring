@@ -17,3 +17,4 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#0e2b47">
 <meta name="apple-mobile-web-app-title" content="<?php echo TITLE;?>">
+<meta name="theme-color" content="#0e2b47"/>

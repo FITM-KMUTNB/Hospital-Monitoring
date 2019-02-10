@@ -1,11 +1,10 @@
-@fontsize_mini: 1em;
-@fontsize_topic: 1.8em;
-@fontsize_normal: 1.4em;
-@fontsize_input: 1.4em;
-@fontsize_icon: 1.6em;
-@header_height: 60px;
-@radius: 5px;
+@fontsize_normal: 1.2em;
+@fontsize_mini: @fontsize_normal * 0.7;
+@fontsize_topic: @fontsize_normal * 1.4;
+
+@header_height: 70px;
 @input_padding: 16px;
+@radius: 5px;
 
 .header {
 	width: 100%;
@@ -13,8 +12,7 @@
 	height: @header_height;
 
 	a.logo-icon {
-    padding: 0 5%;
-
+		padding: 0 5%;
 		img {
 			padding: (@header_height / 4) 0;
 			height: @header_height - ((@header_height / 4) * 2);
@@ -22,26 +20,28 @@
 	}
 
 	.title {
-    font-size: @fontsize_topic;
-    
-    &:first-child {
-      padding-left: 5%;
-    }
+		font-size: @fontsize_normal;
+
+		&:first-child {
+			padding-left: 5%;
+		}
 	}
 
 	.btn-icon {
-		width: @header_height;
-    height: @header_height;
+		font-size: @fontsize_normal;
+		width: auto;
+		padding: 0 5%;
+		height: @header_height;
 	}
 
 	.btn-text {
 		font-size: @fontsize_mini;
 		padding: (@header_height / 10) (@header_height / 4);
-    border-radius: @radius;
-    
-    &:last-child {
-      margin-right: 5%;
-    }
+		border-radius: @radius;
+
+		&:last-child {
+			margin-right: 5%;
+		}
 	}
 }
 
@@ -50,40 +50,17 @@
 	margin: 0 5%;
 
 	.box {
-		display: flex;
-		flex-direction: column;
-
-		&:last-child {
-			.device-list {
-				border-bottom: 0;
-			}
-		}
-
 		.head {
-			display: flex;
 			height: @header_height;
 			margin-bottom: @header_height / 8;
-			align-items: center;
 
 			.title {
 				font-size: @fontsize_topic;
-				color: @primary_color_font;
-				margin-right: auto;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
-
-				&:hover {
-					cursor: default;
-				}
 			}
 
 			a {
 				font-size: @fontsize_mini;
-				text-decoration: none;
 				padding: (@header_height / 20) (@header_height / 4);
-				background: @primary_color_secondary;
-				color: @primary_color_font;
 				border-radius: @radius;
 			}
 		}
@@ -95,18 +72,18 @@
 				padding: 5%;
 				margin-right: 5%;
 				margin-bottom: 5%;
-				height: 170px;
+				height: 140px;
 				border-radius: @radius;
 
 				&.create-button {
 					font-size: @fontsize_normal;
 				}
 
+				&:nth-child(2n+0) {
+					margin-right: 0%;
+				}
 				&:nth-child(4n+0) {
 					margin-right: inherit;
-        }
-        &:nth-child(2n+0) {
-					margin-right: 0%;
 				}
 				.name {	
 					font-size: @fontsize_normal;
@@ -129,174 +106,79 @@
 	}
 
 	.box-empty {
-		position: fixed;
-		top: 0;
-		left: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		width: 40%;
-		margin: 0 30%;
+		width: 90%;
+		margin: 0 5%;
 
 		h1 {
 			font-size: @fontsize_topic;
-			color: @primary_color_font;
 			margin-bottom: 5px;
 		}
 		p {
 			font-size: @fontsize_normal;
 			margin-bottom: 30px;
-			color: @primary_color_font;
 		}
 
 		a {
-			width: 100%;
 			font-size: @fontsize_normal;
-			border: 0px;
 			padding: @input_padding 0;
-			margin: 0%;
-			margin-top: 15px;
+			margin-top: @input_padding;
 			border-radius: @radius;
-			background: @green_color;
-			font-size: @fontsize_input;
-			font-weight: bold;
-			text-decoration: none;
-			text-align: center;
+			font-size: @fontsize_normal;
 		}
 	}
 }
 
 .form {
 	width: 90%;
-	margin: 80px 5%;
+	margin: 5%;
 	margin-top: @header_height;
 
 	&.vertical-center {
 		position: initial;
-		height: 90%;
-		margin: 0 5%;
+		margin: 5%;
 	}
 
 	&.login {
 		position: initial;
-		height: 100%;
-    width: 90%;
-    height: 90%;
+		width: 90%;
 		margin: 5%;
 
 		&.logout {
-			font-size: @fontsize_icon;
-			color: @white_color;
+			font-size: @fontsize_normal;
 		}
 
 		p {
 			font-size: @fontsize_normal;
 			margin-bottom: @input_padding * 2;
-			color: @primary_color_font;
-
-			a {
-				color: @white_color;
-				font-weight: bold;
-			}
 		}
 	
 		.logo{
 			width: 25%;
 			margin-bottom: @input_padding * 2;
-			float: left;
-			display: block;
-	
-			img{
-				width: 100%;
-				float: left;
-				display: block;
-			}
 		}
 	}
 
 	.form-items {
-		display: flex;
-		flex-direction: column;
 		margin-bottom: @input_padding;
-
-		&.hidden {
-			display: none;
-		}
-
-		&:last-child {
-			margin-bottom: 0;
-		}
 
 		label {
 			font-size: @fontsize_mini;
-			color: @primary_color_font;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
 			margin-bottom: 10px;
-			font-weight: bold;
 
 			i {
-				margin-left: 5px;
+				margin-left: 7px;
 			}
 
 			.label-button {
-					color: @primary_color_font;
-					text-decoration: none;
-					background: @primary_color_secondary;
-					padding: 0px 10px;
-					border-radius: @radius;
-					
-					&:hover {
-							cursor: pointer;
-					}
-			}
-
-			&:hover {
-				cursor: pointer;
+				padding: 0px 10px;
+				border-radius: @radius;
 			}
 		}
 
 		.input-text, .input-textarea {
-			width: 100%;
-			float: left;
-			display: block;
-			font-size: @fontsize_input;
-			padding: (@input_padding / 1.2) @input_padding;
-			background: transparent;
-			color: @primary_color_font;
-			margin: 0%;
-			box-sizing: border-box;
-			border: 2px solid @primary_color_secondary;
-			resize: none;
-			outline: none;
+			font-size: @fontsize_normal;
+			padding: (@input_padding / 1.5) @input_padding;
 			border-radius: @radius;
-			font-weight: bold;
-			font-family: @font_family_maledpan;
-			.transitionAnimation(0.3s);
-			
-			&.loading {
-				background: transparent;
-				color: @primary_color;
-			}
-
-			&::placeholder {
-				color: @primary_color_secondary;
-			}
-
-			&:hover {
-				cursor: pointer;
-			}
-
-			&:focus {
-				color: @white_color;
-				border: 2px solid @white_color;
-			}
-
-			&:disabled {
-				background: @primary_color_secondary;
-				color: @primary_color;
-			}
 		}
 
 		.input-textarea {
@@ -304,136 +186,48 @@
 		}
 
 		.btn-submit {
-			width: 100%;
 			font-size: @fontsize_normal;
-			border: 0px;
 			padding: @input_padding 0;
-			margin: 0%;
 			margin-top: @input_padding;
 			border-radius: @radius;
-			background: @white_color;
-			color: @primary_color;
-			font-size: @fontsize_input;
-			font-weight: bold;
-			margin-left: auto;
-			font-family: @font_family_maledpan;
+			font-size: @fontsize_normal;
 			line-height: 1.25em;
 
 			i {
 				margin-left: 10px;
-				font-size: 0.9em;
-			}
-			
-			&:hover {
-				cursor: pointer;
-			}
-			
-			&.loading {
-				background: @primary_color_secondary;
-				color: @primary_color_font;
-				box-shadow: none;
-			}
-
-			&.completed {
-				background: @green_color;
-				color: @white_color;
-				box-shadow: none;
-			}
-		}
-
-		.note {
-			color: @primary_color_font;
-			font-size: @fontsize_mini;
-			margin-top: 10px;
-
-			a {
-				color: @primary_color;
-				text-decoration: none;
-				font-weight: bold;
-
-				&:hover {
-					text-decoration: underline;
-				}
 			}
 		}
 
 		.inputs {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-
 			.input-text {
-				width: 49%;
-				text-align: center;
-				flex-grow: unset;
+				width: 47.5%;
 			}
 		}
 
 		.lists {
-			display: flex;
-			flex-direction: column;
-			border: 2px solid @primary_color_secondary;
 			border-radius: @radius;
-			font-size: 1.2em;
+			font-size: @fontsize_normal;
 			margin-bottom: 10px;
 
 			.list-items {
-				display: flex;
-				flex-direction: row;
-				border-bottom: 1px solid @primary_color_secondary;
-
-				&:last-child {
-					border-bottom: 0;
-				}
 				.c {
 					width: 85%;
 					padding: 2.5% 3%;
-					text-overflow: ellipsis;
-					white-space: nowrap;
-					overflow: hidden;
-					color: @white_color;
 				}
 
 				.btn {
 					width: 15%;
-					text-align: center;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					color: @primary_color_secondary;
-
-					&:hover {
-						cursor: pointer;
-						color: @primary_color_font;
-					}
 				}
 			}
 		}
 	}
 
 	.toggle-items {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		line-height: 1em;
-		justify-content: space-between;
 		font-size: @fontsize_normal;
 		margin-bottom: 15px;
-		color: @white_color;
 
 		i {
 			font-size: @fontsize_normal * 1.25;
-			padding: 0;
-			color: @primary_color_secondary;
-
-			&.fa-toggle-on {
-				color: @green_color;
-				text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
-			}
-
-			&:hover {
-				cursor: pointer;
-			}
 		}
 	}
 }
@@ -447,8 +241,10 @@
 		margin-bottom: @header_height / 4;
 
 		.temperature-current {
+			margin-bottom: 10px;
+
 			.value {
-				font-size: @fontsize_topic * 2;
+				font-size: @fontsize_topic * 3;
 			}
 			.unit {
 				font-size: @fontsize_normal;
@@ -464,13 +260,16 @@
 	}
 
 	.temperature-stat {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 		margin-bottom: @header_height / 2;
 
 		.box {
-			width: 31.33%;
-			margin-right: 3%;
+			width: 30%;
+			margin-right: 5%;
 			padding: 0 5%;
-			height: 90px;
+			height: 100px;
 			border-radius: @radius;
 
 			div {
@@ -492,7 +291,7 @@
 		margin-bottom: 15px;
 
 		i {
-			width: 35px;
+			width: 30px;
 		}
 	}
 	
@@ -507,27 +306,24 @@
 			font-size: @fontsize_normal;
 
 			.status {
-				width: 5%;
+				width: 10%;
 				font-size: @fontsize_normal * 0.5;
 			}
-
 			.time {
-				width: 70%;
+				width: 55%;
 			}
 			.icon{
-				width: 5%;
+				width: 10%;
 				font-size: @fontsize_normal * 0.5;
 			}
 			.temp {
-				width: 20%;
+				width: 25%;
 			}
 		}
-
 		.loading {
 			padding: 15% 0;
 			font-size: @fontsize_normal;
 		}
-
 		.empty {
 			padding: 15% 0;
 			font-size: @fontsize_normal;
@@ -537,8 +333,7 @@
 
 .footer {
 	width: 90%;
-	margin: 0 5%;
-	margin-bottom: 5%;
+	margin: 5%;
 	font-size: @fontsize_mini;
 
 	i {
@@ -550,20 +345,15 @@
 		border-radius: @radius;
 	}
 }
-
-#progress-bar {
-	height: 3px;
-}
-
-
 #loading-bar {
-	height: 3px;
+	height: 5px;
 	border-radius: @radius;
 }
 
 .message-box {
-  width: 90%;
-  margin: 0 5%;
+	width: 90%;
+	height: 90%;
+	margin: 5%;
 
 	.msg {
 		font-size: @fontsize_topic;
@@ -576,7 +366,7 @@
 		}
 
 		a.btn {
-			font-size: @fontsize_input;
+			font-size: @fontsize_normal;
 			padding: 14px 28px;
 			margin: 0 10px;
 			border-radius: @radius;

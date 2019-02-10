@@ -3,6 +3,10 @@ $(document).ready(function(){
 	var sign 		= $('#sign').val();
 	var device_id 	= $('#device_id').val();
 
+	tippy('[title]', {
+        arrow: true
+    })
+
 	$('#name , #description , #min , #max').focus(function(){
 		$('#btn-save').removeClass('completed');
 		$('#btn-nav').removeClass('show');

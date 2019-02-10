@@ -79,7 +79,7 @@ $page_title = (!empty($devices->id) ? 'แก้ไขอุปกรณ์' : '
 			<div>คีย์ (Token)</div>
 			<div class="label-button" id="btn-token-reset">สร้างคีย์ใหม่</div>
 		</label>
-		<div class="input">
+		<div class="input" title="คีย์สำหรับเชื่อมต่ออุปกรณ์">
 			<input class="input-text" type="text" value="<?php echo $devices->token;?>" disabled>
 		</div>
 	</div>
@@ -118,5 +118,6 @@ $page_title = (!empty($devices->id) ? 'แก้ไขอุปกรณ์' : '
 
 <script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/min/device.manage.min.js"></script>
+<script type="text/javascript" src="js/lib/tippy.all.min.js"></script>
 </body>
 </html>
