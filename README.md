@@ -14,19 +14,22 @@ git clone https://github.com/FITM-KMUTNB/Hospital-Monitoring.git
 ```
 cd Hospital-Monitoring
 ```
-Build and Start
+### Build and Start
 ```
 docker-compose up -d --build && docker-compose ps
 ```
 ### Open Web Application
 [http://localhost:9000](http://localhost:9000)
 ### Open Database (phpMyAdmin)
-<b>username:</b> admin <b>password:</b> dinsorsee
 [http://localhost:9001](http://localhost:9001)
+- <b>Username:</b> admin
+- <b>Password:</b> dinsorsee
 ### Pushing Temperature Data: POST (HTTP)
 ```
 curl --request POST --url http://localhost:9000/push.php --form token={{ device_token }} --form temp={{ temperature }}
 ```
+- device_token 
+- temperature
 ### Shutdown Web Application
 ```
 docker-compose down
