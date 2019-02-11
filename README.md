@@ -6,7 +6,7 @@
 - Mobile Friendly support Android and iOS Devices.
 ## Installation
 To install, you must have Git and Docker Engine installed already.
-### Cloning a Git repository.
+### Cloning a Repository.
 ```
 git clone https://github.com/FITM-KMUTNB/Hospital-Monitoring.git
 ```
@@ -18,19 +18,19 @@ cd Hospital-Monitoring
 ```
 docker-compose up -d --build && docker-compose ps
 ```
-### Open Web Application
+### Web Application
 [http://localhost:9000](http://localhost:9000)
-### Open Database (phpMyAdmin)
+### Database (phpMyAdmin)
 [http://localhost:9001](http://localhost:9001)
 - <b>Username:</b> admin
 - <b>Password:</b> dinsorsee
-### Pushing Temperature Data: POST (HTTP)
+### Pushing temperature data POST (HTTP)
 ```
 curl --request POST --url http://localhost:9000/push.php --form token={{ device_token }} --form temp={{ temperature }}
 ```
-- device_token 
-- temperature
-### Shutdown Web Application
+- <b>device_token</b> — is a unique key for the ioT devices, Example: 754a0148dc1d37069dc011d4a5fa04bbd
+- <b>temperature</b> — you can send number 4 or 5.3 or -12
+### Shutdown
 ```
 docker-compose down
 ```
