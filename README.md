@@ -30,6 +30,7 @@ curl --request POST --url http://localhost:9000/push.php --form token={{ device_
 ```
 - <b>device_token</b> — is a unique key for the ioT devices, Example: 754a0148dc1d37069dc011d4a5fa04bbd
 - <b>temperature</b> — you can send number 4 or 5.3 or -12
+![alt Pushing with Insomnia REST client](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/push_data.png?token=AEtRcsbboJdJM-XJ3oZx9cefOK-jY9Riks5caoz0wA%3D%3D)
 ### Shutdown
 ```
 docker-compose down
