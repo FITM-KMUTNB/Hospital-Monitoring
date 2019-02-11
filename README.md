@@ -1,7 +1,7 @@
 # FITM Hospital Monitoring
 **IoT WebBased Temperature Monitoring** system that can be access anywhere and anytime through the Internet is build. With this system a user can remotely monitor the room temperature from anywhere which could save the human expenses, The main purpose of this system model is to make it easy for the user to view the current temperature.
 ## Feature
-- Set an alert condition will push a notification to your **LINE Group** (LINE Notify).
+- Set an alert condition will push a notification to your **LINE Group** *(LINE Notify)*
 - Supports multiple users on a single project.
 - Mobile Friendly support Android and iOS Devices.
 ## Installation
@@ -18,11 +18,11 @@ cd Hospital-Monitoring
 ```
 docker-compose up -d --build && docker-compose ps
 ```
-Web Application
+**Web Application**
 ```
 http://localhost:9000
 ```
-Database *(phpMyAdmin)*
+**Database** *(phpMyAdmin)*
 ```
 http://localhost:9001
 ```
@@ -32,8 +32,8 @@ http://localhost:9001
 ```
 curl --request POST --url http://localhost:9000/push.php --form token={{ device_token }} --form temp={{ temperature }}
 ```
-- **device_token** — is a unique key for the ioT devices, Example: *754a0148dc1d37069dc011d4a5fa04bbd*
-- **temperature** — can send number *4* or *5.3* or *-12*
+- **device_token** — Is a unique key for the ioT devices, **Example:** *754a0148dc1d37069dc011d4a5fa04bbd*
+- **temperature** — Can send number *4* or *5.3* or *-12*
 ![alt Pushing with Insomnia REST client](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/push_data.png?token=AEtRcsbboJdJM-XJ3oZx9cefOK-jY9Riks5caoz0wA%3D%3D)
 ### Shutdown
 ```
