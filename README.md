@@ -1,5 +1,5 @@
 # FITM Hospital Monitoring
-**IoT WebBased Temperature Monitoring** system that can be access anywhere and anytime through the Internet is build. With this system a user can remotely monitor the room temperature from anywhere which could save the human expenses, The main purpose of this system model is to make it easy for the user to view the current temperature.
+**IoT WebBased Temperature Monitoring** system that can be access anywhere and anytime through the Internet is build. With this system a user can remotely monitor the room temperature from anywhere which could save the human expenses, The main purpose of this system model is to make it easy for the user to view the current temperature.  
 ![alt IoT WebBased Temperature Monitoring](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/mobile.jpg?token=AEtRcsr3_vNEJAhycQCcTJOfiHoQhwyMks5ca4ciwA%3D%3D)
 ## Feature
 - Set an alert condition will push a notification to your **LINE Group** *(LINE Notify)*
@@ -36,15 +36,19 @@ http://localhost:9001
 ```
 curl --request POST --url http://localhost:9000/push.php --form token={{ device_token }} --form temp={{ temperature }}
 ```
-- **device_token** — Is a unique key for the ioT devices, **Example:** *754a0148dc1d37069dc011d4a5fa04bbd*
+- **device_token** — Is a unique key for the ioT devices.
 - **temperature** — Can send number *4* or *5.3* or *-12*
+
+You need to get a device token for push temperature to server. With this token you can view Device settings, **Example:** *754a0148dc1d37069dc011d4a5fa04bbd*
+![alt Find device_token](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/device-setting.png?token=AEtRchArIrDO8Tppn3oa5nlEQUYeiXgUks5ca6xwwA%3D%3D)
+
+Pushing with Insomnia REST client
 ![alt Pushing with Insomnia REST client](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/push_data.png?token=AEtRcsbboJdJM-XJ3oZx9cefOK-jY9Riks5caoz0wA%3D%3D)
 ### Shutdown
 ```
 docker-compose down
 ```
 ![alt docker-compose down](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/docker-compose-down.png?token=AEtRch6uIQoMwEWsCcZf32K3USV96ohCks5ca2DswA%3D%3D)
-### Reset Database
 ## Tutorial
 ![alt index page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/index.png?token=AEtRcvO-i626gLOeMUnfEhtgcAV9GgYwks5ca48pwA%3D%3D)
 ## LINE Notify
