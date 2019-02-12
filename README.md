@@ -1,6 +1,6 @@
 # FITM Hospital Monitoring
 **IoT WebBased Temperature Monitoring** system that can be access anywhere and anytime through the Internet is build. With this system a user can remotely monitor the room temperature from anywhere which could save the human expenses, The main purpose of this system model is to make it easy for the user to view the current temperature.</br></br>
-![alt IoT WebBased Temperature Monitoring](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/mobile.jpg?token=AEtRcsr3_vNEJAhycQCcTJOfiHoQhwyMks5ca4ciwA%3D%3D)
+![alt IoT WebBased Temperature Monitoring](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/mobile.jpg?sanitize=true&raw=true)
 
 ## Feature
 - Set an alert condition will push a notification to your **LINE Group** *(LINE Notify)*
