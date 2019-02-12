@@ -36,7 +36,7 @@ http://localhost:9000
 #### Create a Device
 To get started quickly, create your project and create new device.
 ![alt Create your first project](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/project-first-create.png?token=AEtRcqknOz5ibukRZKfFo3szgdZTxLYMks5ca7p2wA%3D%3D)
-Index page list all projects and devices
+List all projects and devices
 ![alt index page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/index.png?token=AEtRcvO-i626gLOeMUnfEhtgcAV9GgYwks5ca48pwA%3D%3D)
 
 #### Database (phpMyAdmin)
