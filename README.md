@@ -12,11 +12,11 @@ To install, you must have **Git** and **Docker Engine** installed already.
 ```
 git clone https://github.com/FITM-KMUTNB/Hospital-Monitoring.git
 ```
-### Start project with docker-compose
+### Change the current directory to Project
 ```
 cd Hospital-Monitoring
 ```
-### Build and Start
+### Build and Start with docker-compose
 ```
 docker-compose up -d --build && docker-compose ps
 ```
@@ -26,6 +26,7 @@ docker-compose up -d --build && docker-compose ps
 http://localhost:9000
 ```
 ![alt Login page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/login.png?token=AEtRcpKM0Mi5qYNAec18aMDIoUbLOiX9ks5ca48XwA%3D%3D)
+![alt index page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/index.png?token=AEtRcvO-i626gLOeMUnfEhtgcAV9GgYwks5ca48pwA%3D%3D)
 ###### Database (phpMyAdmin)
 ```
 http://localhost:9001
@@ -38,19 +39,18 @@ curl --request POST --url http://localhost:9000/push.php --form token={{ device_
 ```
 - **device_token** — Is a unique key for the ioT devices.
 - **temperature** — Can send number *4* or *5.3* or *-12*
-
+###### Device Token
 You need to get a device token for push temperature to server. With this token you can view Device settings.</br>
 **Example:** *754a0148dc1d37069dc011d4a5fa04bbd*
 ![alt Find device_token](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/device-setting.png?token=AEtRchArIrDO8Tppn3oa5nlEQUYeiXgUks5ca6xwwA%3D%3D)
 
-Pushing with Insomnia REST client
+Pushing with [Insomnia REST client](https://insomnia.rest)
 ![alt Pushing with Insomnia REST client](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/push_data.png?token=AEtRcsbboJdJM-XJ3oZx9cefOK-jY9Riks5caoz0wA%3D%3D)
+## LINE Notify
+Set LINE Notify Token in to project setting, You have to generate access token on [LINE Notify](https://notify-bot.line.me/th/)
+![alt Project setting page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/project-edit.png?token=AEtRcuuPSUKvJI0NrMFaowQrPVuCiFd3ks5ca7SRwA%3D%3D)
 ### Shutdown
 ```
 docker-compose down
 ```
 ![alt docker-compose down](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/docker-compose-down.png?token=AEtRch6uIQoMwEWsCcZf32K3USV96ohCks5ca2DswA%3D%3D)
-## Tutorial
-![alt index page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/index.png?token=AEtRcvO-i626gLOeMUnfEhtgcAV9GgYwks5ca48pwA%3D%3D)
-## LINE Notify
-[LINE Notify](https://notify-bot.line.me/th/)
