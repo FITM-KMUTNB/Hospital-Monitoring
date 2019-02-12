@@ -6,7 +6,7 @@
 - Set an alert condition will push a notification to your **LINE Group** *(LINE Notify)*
 - Supports multiple users on a single project.
 - Mobile Friendly support Android and iOS Devices.
-![alt Push a notification to your LINE Group](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/line-notify.png?token=AEtRcpEwYxVAdpiCqoSUwdhGbZb1nMlLks5ca-U9wA%3D%3D)
+![alt Push a notification to your LINE Group](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/line-notify.png?token=AEtRcu5ZhHwRlyPab58Qf2u64K5NmcUyks5ca-bEwA%3D%3D)
 
 ## Installation
 To install, you must have **Git** and **Docker Engine** installed already.
@@ -25,19 +25,19 @@ cd Hospital-Monitoring
 ```
 docker-compose up -d --build && docker-compose ps
 ```
-![alt docker-compose up -d --build && docker-compose ps](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/docker-compose-up.png?token=AEtRcsKREVrDVkVBII6-doeVQ2BjKGbbks5ca2D2wA%3D%3D)
+![alt docker-compose up -d --build && docker-compose ps](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/docker-compose-up.png?token=AEtRcjdGupS2xk5Bz1PSt5SQmwhy4PrVks5ca-bcwA%3D%3D)
 
 #### Web Application
 ```
 http://localhost:9000
 ```
-![alt Login page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/login.png?raw=true)
+![alt Login page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/login.png?token=AEtRcgAFGxFo2OLmW8Z_0qryyI07YtlQks5ca-b1wA%3D%3D)
 
 #### Create a Device
 To get started quickly, create your project and create new device.
-![alt Create your first project](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/project-first-create.png?token=AEtRcqknOz5ibukRZKfFo3szgdZTxLYMks5ca7p2wA%3D%3D)
+![alt Create your first project](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/project-first-create.png?token=AEtRchoJmv0dv8YWNkpVmzUEAhq9eVubks5ca-cMwA%3D%3D)
 List all projects and devices
-![alt index page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/index.png?token=AEtRcvO-i626gLOeMUnfEhtgcAV9GgYwks5ca48pwA%3D%3D)
+![alt index page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/index.png?token=AEtRcvEpORAS4niGiwrjAjmey51wBythks5ca-chwA%3D%3D)
 
 #### Database (phpMyAdmin)
 ```
@@ -56,20 +56,20 @@ curl --request POST --url http://localhost:9000/push.php --form token={{ device_
 ##### Device Token
 You need to get a device token for push temperature to server. With this token you can view Device settings.</br>
 **Example:** *754a0148dc1d37069dc011d4a5fa04bbd*
-![alt Find device_token](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/device-setting.png?token=AEtRchArIrDO8Tppn3oa5nlEQUYeiXgUks5ca6xwwA%3D%3D)
+![alt Find device_token](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/device-setting.png?token=AEtRcidIOEZNlzV9XA28VgXnYzZSWnwPks5ca-c7wA%3D%3D)
 
 Pushing with [Insomnia REST client](https://insomnia.rest)
-![alt Pushing with Insomnia REST client](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/push_data.png?token=AEtRcsbboJdJM-XJ3oZx9cefOK-jY9Riks5caoz0wA%3D%3D)
+![alt Pushing with Insomnia REST client](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/push_data.png?token=AEtRcsBVdecKwlem8haEscSKtyZas2Dcks5ca-dRwA%3D%3D)
 
 ## LINE Notify
 Set LINE Notify token in to project setting, you have to generate access token on [LINE Notify](https://notify-bot.line.me/th/)
-![alt Project setting page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/project-edit.png?token=AEtRcuuPSUKvJI0NrMFaowQrPVuCiFd3ks5ca7SRwA%3D%3D)
+![alt Project setting page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/project-edit.png?token=AEtRcl7Br6jONX30ofKzqQhqUjQlA6ifks5ca-g3wA%3D%3D)
 
 ### Shutdown
 ```
 docker-compose down
 ```
-![alt docker-compose down](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/docker-compose-down.png?token=AEtRch6uIQoMwEWsCcZf32K3USV96ohCks5ca2DswA%3D%3D)
+![alt docker-compose down](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/docker-compose-down.png?token=AEtRcpQM2zalshWgLFjoUBzQl1SAv3yBks5ca-hMwA%3D%3D)
 
 ### Reset database
 ```
