@@ -1,5 +1,5 @@
 # FITM Hospital Monitoring
-**IoT WebBased Temperature Monitoring** system that can be access anywhere and anytime through the Internet is build. With this system a user can remotely monitor the room temperature from anywhere which could save the human expenses, The main purpose of this system model is to make it easy for the user to view the current temperature.  
+**IoT WebBased Temperature Monitoring** system that can be access anywhere and anytime through the Internet is build. With this system a user can remotely monitor the room temperature from anywhere which could save the human expenses, The main purpose of this system model is to make it easy for the user to view the current temperature.</br></br>
 ![alt IoT WebBased Temperature Monitoring](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/mobile.jpg?token=AEtRcsr3_vNEJAhycQCcTJOfiHoQhwyMks5ca4ciwA%3D%3D)
 ## Feature
 - Set an alert condition will push a notification to your **LINE Group** *(LINE Notify)*
@@ -39,7 +39,8 @@ curl --request POST --url http://localhost:9000/push.php --form token={{ device_
 - **device_token** — Is a unique key for the ioT devices.
 - **temperature** — Can send number *4* or *5.3* or *-12*
 
-You need to get a device token for push temperature to server. With this token you can view Device settings, **Example:** *754a0148dc1d37069dc011d4a5fa04bbd*
+You need to get a device token for push temperature to server. With this token you can view Device settings.</br>
+**Example:** *754a0148dc1d37069dc011d4a5fa04bbd*
 ![alt Find device_token](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/device-setting.png?token=AEtRchArIrDO8Tppn3oa5nlEQUYeiXgUks5ca6xwwA%3D%3D)
 
 Pushing with Insomnia REST client
