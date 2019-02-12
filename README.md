@@ -18,6 +18,7 @@ cd Hospital-Monitoring
 ```
 docker-compose up -d --build && docker-compose ps
 ```
+![alt docker-compose up -d --build && docker-compose ps](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/docker-compose-up.png?token=AEtRcsKREVrDVkVBII6-doeVQ2BjKGbbks5ca2D2wA%3D%3D)
 **Web Application**
 ```
 http://localhost:9000
@@ -39,6 +40,7 @@ curl --request POST --url http://localhost:9000/push.php --form token={{ device_
 ```
 docker-compose down
 ```
+![alt docker-compose down](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/docker-compose-down.png?token=AEtRch6uIQoMwEWsCcZf32K3USV96ohCks5ca2DswA%3D%3D)
 ### Reset Database
 ## Tutorial
 ## LINE Notify
