@@ -31,7 +31,7 @@ docker-compose up -d --build && docker-compose ps
 ```
 http://localhost:9000
 ```
-![alt Login page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/login.png)
+![alt Login page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/login.png?raw=true)
 
 #### Create a Device
 To get started quickly, create your project and create new device.
