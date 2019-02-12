@@ -1,12 +1,12 @@
 # FITM Hospital Monitoring
 **IoT WebBased Temperature Monitoring** system that can be access anywhere and anytime through the Internet is build. With this system a user can remotely monitor the room temperature from anywhere which could save the human expenses, The main purpose of this system model is to make it easy for the user to view the current temperature.</br></br>
-![alt IoT WebBased Temperature Monitoring](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/mobile.jpg?sanitize=true&raw=true)
+![alt IoT WebBased Temperature Monitoring](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/master/screenshot/mobile.jpg?token=AEtRcpEwYxVAdpiCqoSUwdhGbZb1nMlLks5ca-U9wA%3D%3D)
 
 ## Feature
 - Set an alert condition will push a notification to your **LINE Group** *(LINE Notify)*
 - Supports multiple users on a single project.
 - Mobile Friendly support Android and iOS Devices.
-![alt Push a notification to your LINE Group](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/line-notify.png?token=AEtRclAV4_jc_j91FZPNmH0DXLOmUpDdks5ca2J1wA%3D%3D)
+![alt Push a notification to your LINE Group](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/readme/screenshot/line-notify.png?token=AEtRcpEwYxVAdpiCqoSUwdhGbZb1nMlLks5ca-U9wA%3D%3D)
 
 ## Installation
 To install, you must have **Git** and **Docker Engine** installed already.
