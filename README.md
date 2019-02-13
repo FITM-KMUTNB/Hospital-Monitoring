@@ -6,7 +6,7 @@
 - Set an alert condition will push a notification to your **LINE Group** *(LINE Notify)*
 - Supports multiple users on a single project.
 - Mobile Friendly support Android and iOS Devices.</br>
-![alt Push a notification to your LINE Group](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/line-notify.png)
+![alt Push a notification to your LINE Group](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/master/screenshot/line-notify.png)
 
 ## Installation
 To install, you must have **Git** and **Docker Engine** installed already.
@@ -25,19 +25,19 @@ cd Hospital-Monitoring
 ```
 docker-compose up -d --build && docker-compose ps
 ```
-![alt docker-compose up -d --build && docker-compose ps](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/docker-compose-up.png)
+![alt docker-compose up -d --build && docker-compose ps](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/master/screenshot/docker-compose-up.png)
 
 #### Web Application
 ```
 http://localhost:9000
 ```
-![alt Login page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/login.png)
+![alt Login page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/master/screenshot/login.png)
 
 #### Create a Device
 To get started quickly, create your project and create new device.</br>
-![alt Create your first project](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/project-first-create.png)
+![alt Create your first project](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/master/screenshot/project-first-create.png)
 </br>List all projects and devices</br>
-![alt index page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/index.png)
+![alt index page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/master/screenshot/index.png)
 
 #### Database (phpMyAdmin)
 ```
@@ -56,20 +56,20 @@ curl --request POST --url http://localhost:9000/push.php --form token={{ device_
 ##### Device Token
 You need to get a device token for push temperature to server. With this token you can view Device settings.</br>
 **Example:** *754a0148dc1d37069dc011d4a5fa04bbd*</br>
-![alt Find device_token](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/device-setting.png)
+![alt Find device_token](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/master/screenshot/device-setting.png)
 
 Pushing with [Insomnia REST client](https://insomnia.rest)</br>
-![alt Pushing with Insomnia REST client](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/push_data.png)
+![alt Pushing with Insomnia REST client](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/master/screenshot/push_data.png)
 
 ## LINE Notify
 Set LINE Notify token in to project setting, you have to generate access token on [LINE Notify](https://notify-bot.line.me/th/)</br>
-![alt Project setting page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/project-edit.png)
+![alt Project setting page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/master/screenshot/project-edit.png)
 
 ### Shutdown
 ```
 docker-compose down
 ```
-![alt docker-compose down](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/fix-readme/screenshot/docker-compose-down.png)
+![alt docker-compose down](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/master/screenshot/docker-compose-down.png)
 
 ### Reset database
 ```
