@@ -7,7 +7,7 @@ services:
       - ./docker/mysql/initdb/:/docker-entrypoint-initdb.d
       - ./docker/mysql/data/:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_ROOT_PASSWORD=dinsorsee
       - MYSQL_DATABASE=hosmonitor
       - MYSQL_USER=admin
       - MYSQL_PASSWORD=dinsorsee
@@ -30,7 +30,6 @@ services:
     build:
       context: ./docker/nginx
     container_name: hos_monitor_nginx
-    restart: always
     volumes:
       - ./app:/var/app
     ports:
@@ -39,7 +38,6 @@ services:
     build:
       context: ./docker/php7-fpm
     container_name: hos_monitor_phpfpm
-    restart: always
     volumes:
       - ./app:/var/app
     expose:

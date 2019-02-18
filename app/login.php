@@ -61,9 +61,8 @@ if (!empty($project->id)) {
 <body>
 <div id="progress-bar"></div>
 <form class="form login" action="javascript:login();">
-	<div class="logo" style="margin-bottom: 5px;"><img src="image/logo.png" alt="logo"></div>
-	<p style="font-size:0.9em;">Faculty of Industrial Technology and Management</p>
-	
+	<div class="logo"><img src="image/logo.png" alt="logo"></div>
+	<div class="logo-name">Faculty of Industrial Technology and Management</div>
 	<p>สวัสดี, ล็อคอินเข้าระบบเพื่อจัดการอุปกรณ์ของคุณ หากยังไม่มีบัญชี <a href="register.php<?php echo (!empty($_GET['invite'])?'?invite='.$_GET['invite']:'');?>">ลงทะเบียนใหม่</a></p>
 	<div class="form-items">
 		<input class="input-text" type="email" id="email" placeholder="อีเมล" autofocus>
