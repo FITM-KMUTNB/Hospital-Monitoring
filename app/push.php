@@ -1,14 +1,14 @@
 <?php
 require_once 'autoload.php';
 header('Access-Control-Allow-Origin: *');
-header("Content-type: text/json");
-// header('Accept: application/json');
+header('Accept: application/json');
+$datajson = json_decode(file_get_contents('php://input'), true);
 
 $alert_delay = 480; // ระยะห่างการแจ้งเตือนแต่ละครั้ง (กรณีที่สูงหรือต่ำเกินไป)
 $protect_time = 30; // ระยะเวลาป้องกันส่งซ้ำ
 
-$token = $_POST['token'];
-$temp = $_POST['temp'];
+$token = $datajson['token'];
+$temp = $datajson['temp'];
 
 // Temp value validation
 if (!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85) {

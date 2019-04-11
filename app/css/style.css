@@ -493,9 +493,6 @@ body.disconnect .border-color {
   float: left;
   display: block;
 }
-.form.login .logo-name {
-  font-size: 0.9799999999999999em;
-}
 .form .form-items {
   display: flex;
   flex-direction: column;
