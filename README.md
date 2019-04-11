@@ -48,10 +48,10 @@ http://localhost:9001
 
 ### Pushing temperature data POST (HTTP)
 ```
-curl --request POST --url http://localhost:9000/push.php --form token={{ device_token }} --form temp={{ temperature }}
+curl --request POST --url http://localhost:9000/push.php --header 'content-type: application/json' --data '{"token": "DEVICE_TOPKEN","temp": TEMPERATURE}'
 ```
-- **device_token** — Is a unique key for the ioT devices.
-- **temperature** — Can send number *4* or *5.3* or *-12*
+- **DEVICE_TOPKEN** — Is a unique key for the ioT devices.
+- **TEMPERATURE** — Can send number *4* or *5.3* or *-12*
 
 ##### Device Token
 You need to get a device token for push temperature to server. With this token you can view Device settings.</br>
