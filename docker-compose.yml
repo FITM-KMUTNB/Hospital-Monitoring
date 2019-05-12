@@ -33,7 +33,7 @@ services:
     volumes:
       - ./app:/var/app
     ports:
-      - '9000:80'
+      - '80:80'
   phpfpm:
     build:
       context: ./docker/php7-fpm
