@@ -29,7 +29,7 @@ docker-compose up -d --build && docker-compose ps
 
 #### Web Application
 ```
-http://localhost:9000
+http://localhost
 ```
 ![alt Login page](https://raw.githubusercontent.com/FITM-KMUTNB/Hospital-Monitoring/master/screenshot/login.png)
 
