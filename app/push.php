@@ -149,6 +149,6 @@ function today(){
 
 	$month  = $monthText[$month-1];
 	// return $hour.':'.$minute.' น.';
-	return ''
+	return '';
 }
 ?>
