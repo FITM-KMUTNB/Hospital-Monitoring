@@ -62,7 +62,7 @@ if (!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85) {
 					// First Alert่
 					$msg = $message['alert'];
 					$msg .= " · ".today();
-					$msg .= "\n\nตรวจสอบ [".DOMAIN."/device/".$devices->id.']';
+					$msg .= "\n\nตรวจสอบ [".DOMAIN."/device.php?id=".$devices->id.']';
 
 					$noti_id = $notify->save($device_id,$msg,'alert',1,1);
 					$res = $notify->lineNotify($msg, 2, 153, $devices->line_token);
@@ -73,7 +73,7 @@ if (!is_numeric($temp) || $temp < -50 || $temp > 150 || $temp == 85) {
 					if ($lastcount > 0)
 						$msg .= " · ".today();
 					else
-						$msg .= "\n\nตรวจสอบ ".DOMAIN."/device/".$devices->id;
+						$msg .= "\n\nตรวจสอบ ".DOMAIN."/device.php?id=".$devices->id;
 
 					$noti_id = $notify->save($device_id,$msg,'alert',++$lastcount,1);
 					$res = $notify->lineNotify($msg,NULL,NULL,$devices->line_token);
@@ -148,6 +148,7 @@ function today(){
 	$date   = date('j',strtotime($datetime));
 
 	$month  = $monthText[$month-1];
-	return $hour.':'.$minute.' น.';
+	// return $hour.':'.$minute.' น.';
+	return ''
 }
 ?>
