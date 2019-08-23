@@ -4,7 +4,8 @@ define("DB_HOST" 	,"database");
 define("DB_NAME" 	,"hosmonitor");
 define("DB_USER"	,"admin");
 define("DB_PASS" 	,"dinsorsee");
-define("DOMAIN" 	,"http://".$_SERVER['SERVER_NAME'].":9000");
+// define("DOMAIN" 	,"http://".$_SERVER['SERVER_NAME'].":9000");
+define("DOMAIN" 	,"http://165.22.58.147");
 
 // SITE SETUP
 define("TITLE" 		,'Hospital Monitoring');
