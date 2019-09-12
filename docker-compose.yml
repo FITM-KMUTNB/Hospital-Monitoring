@@ -3,6 +3,7 @@ services:
   database:
     image: mariadb:10.3.9
     container_name: hos_monitor_mariadb
+    restart: always
     volumes:
       - ./docker/mysql/initdb/:/docker-entrypoint-initdb.d
       - ./docker/mysql/data/:/var/lib/mysql
@@ -16,6 +17,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: hos_monitor_phpmyadmin
+    restart: always
     environment:
       - MYSQL_USER=admin
       - MYSQL_PASSWORD=dinsorsee
@@ -30,6 +32,7 @@ services:
     build:
       context: ./docker/nginx
     container_name: hos_monitor_nginx
+    restart: always
     volumes:
       - ./app:/var/app
     ports:
@@ -38,6 +41,7 @@ services:
     build:
       context: ./docker/php7-fpm
     container_name: hos_monitor_phpfpm
+    restart: always
     volumes:
       - ./app:/var/app
     expose:
